@@ -1,0 +1,45 @@
+---
+import BlockControl from "$lib/Aries/BlockControl.astro"
+let itm: FeaturesItem<string, string[], string[][]>
+({ itm } = Astro.props)
+
+const presets = {
+  def: "",
+};
+
+---
+
+<div class="feature-box">
+  <h4 class="has-text-primary is-size-4 pl-3">
+    <span class="icon is-large fa-2x mr-2">
+      <i class={itm.icon} aria-hidden="true" />
+    </span>
+    <span>
+      {itm.$title}
+    </span>
+  </h4>
+  <BlockControl blks={itm.$blks} />
+</div>
+
+<style lang="scss">
+  h4 {
+    border-bottom: dotted 2px teal;
+  }
+
+  div.feature-box {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 3rem;
+
+    &:hover {
+      background-color: green;
+      transition: 0.5s;
+    }
+    @media (min-width: 1024px) {
+      width: calc(100% - 2rem * 1);
+      max-width: calc(50% - 2rem * 2);
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+</style>

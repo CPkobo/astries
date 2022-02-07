@@ -1,0 +1,62 @@
+name: philosophy
+position: 2
+includes:
+  - ja
+$title:
+  ja: 経営理念・社是
+$description:
+  ja: 株式会社ゴールデンブリッジの経営理念・社是についてご紹介します
+$summary:
+  ja: 株式会社ゴールデンブリッジの経営理念・社是についてご紹介します
+href: /
+img: gb-logo.png
+contents:
+  - type: Icon Heading 2
+    icon: fa fa-square
+    $text:
+      ja: 経営理念
+
+  - type: Image
+    $alt:
+      ja: |-
+        社員に信頼される会社である。
+        お客様に信頼される会社である。
+        社会に信頼される会社である。
+        事業活動を通じて平和と社会発展に貢献する。
+    src: about/philosophy1.png
+
+  - type: Spacer
+    y: 2
+
+  - type: Separator
+
+  - type: Spacer
+    y: 2
+
+  - type: Icon Heading 2
+    icon: fa fa-square
+    $text:
+      ja: 社是
+
+  - type: Image
+    $alt:
+      ja: 先義後利
+    src: about/philosophy2.jpg
+
+  - type: Plain
+    $texts:
+      ja:
+        - 中国の古典「四書」のひとつである『孟子』の言葉。
+        - この言葉の指すとおり、ビジネスにおいては利益を追求するだけではなく、まず「道義」を重視しなければならないと考えています。
+
+  - type: Image
+    $alt:
+      ja: 順理則裕（理にしたがえば、すなわち裕かなり）
+    src: about/philosophy3.jpg
+
+  - type: Plain
+    $texts:
+      ja:
+        - 中国宋代の朱子学者、程頤（ていい）の言葉で、「理にしたがえば、すなわち裕かなり」と読み下します。
+        - 道理に順って生きることが繁栄につながるということです。
+        - 2024年から発行される新一万円札の顔「渋沢栄一」氏も重視したというこの考えを大切にしたいと考えています。

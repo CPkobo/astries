@@ -1,5 +1,25 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": false,
+    "lib": [
+      "es2020",
+      "DOM"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "$lib": [
+        "src/lib"
+      ],
+      "$lib/*": [
+        "src/lib/*"
+      ],
+      "$scripts": [
+        "src/scripts"
+      ],
+      "$scripts/*": [
+        "src/scripts/*"
+      ],
+    }
   }
 }

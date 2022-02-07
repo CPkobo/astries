@@ -1,0 +1,123 @@
+---
+// import BlkControl from "$lib/Block/BlockControl.astro";
+import Plain from "$lib/Aries/Simple/Plain.astro"
+import List from "$lib/Aries/Simple/List.astro"
+import Define from "$lib/Aries/Simple/Define.astro"
+import Link from "$lib/Aries/Simple/Link.astro"
+import Image from "$lib/Aries/Simple/Image.astro"
+import Hd2 from "$lib/Aries/Simple/Headings/Hd2.astro"
+import Hd3 from "$lib/Aries/Simple/Headings/Hd3.astro"
+import Hd4 from "$lib/Aries/Simple/Headings/Hd4.astro"
+import Ih2 from "$lib/Aries/Simple/Headings/Ih2.astro"
+import Ih3 from "$lib/Aries/Simple/Headings/Ih3.astro"
+import Ih4 from "$lib/Aries/Simple/Headings/Ih4.astro"
+import Hero from "$lib/Aries/Simple/Hero/Hero.astro"
+import SubHero from "$lib/Aries/Simple/Hero/SubHero.astro"
+import SubBar from "$lib/Aries/Simple/Hero/SubBar.astro"
+import Relatives from "$lib/Aries/Simple/Relatives/Relatives.astro"
+import Spacer from "$lib/Aries/Simple/Spacer.astro";
+import Separator from "$lib/Aries/Simple/Separator.astro";
+
+import MediaLeft from "$lib/Aries/Complex/Media/MediaLeft.astro";
+import MediaRight from "$lib/Aries/Complex/Media/MediaRight.astro";
+import Gallary from "./Complex/Gallary/Gallary.astro";
+import Features from "./Complex/Features/Features.astro";
+import Horizontal from "./Complex/Horizontal/Horizontal.astro";
+import Flows from "./Complex/Flow/Flow.astro";
+import Table from "./Complex/Table/Table.astro";
+
+  // import Flexlayout from "./Layout/FlexLayout.astro";
+  // import Columnlayout from "./Layout/ColumnLayout.astro";
+
+let blks: AnyBlock<string, string[], string[][]>[]
+({ blks } = Astro.props)
+---
+
+<div class="contents">
+  {blks.map(blk => {
+    switch (blk.type) {
+      case "Heading 2":
+          return (<Hd2 blk={blk} />)
+          
+      case "Heading 3":
+        return (<Hd3 blk={blk} />)
+        
+      case "Heading 4":
+        return (<Hd4 blk={blk} />)
+      
+      case "Icon Heading 2":
+        return (<Ih2 blk={blk} />)
+
+      case  "Icon Heading 3":
+        return (<Ih3 blk={blk} />)
+          
+      case  "Icon Heading 4":
+        return (<Ih4 blk={blk} />)
+
+      case "Plain":
+        return (<Plain blk={blk} />)
+      
+      case  "Link":
+        return (<Link blk={blk} />)
+                
+      case  "Image":
+        return <Image blk={blk} />
+        
+      case  "List":
+        return (<List blk={blk} />)
+      
+      case  "Define":
+          return (<Define blk={blk} />)
+          
+      case  "Hero":
+        return (<Hero blk={blk} />)
+        
+      case  "Sub Hero":
+        return (<SubHero blk={blk} />)
+        
+      case  "Sub Bar":
+        return (<SubBar blk={blk} />)
+        
+      case  "Spacer":
+        return (<Spacer blk={blk} />)
+
+      case  "Separator":
+        return (<Separator blk={blk} />)
+
+      case  "RawHTML":
+          
+      case  "Relatives":
+        return (<Relatives blk={blk} />)
+
+      case  "Media Right":
+          return <MediaRight blk={blk} />
+          
+      case  "Media Left":
+        return <MediaLeft blk={blk} />
+          
+      case  "Gallary":
+        return <Gallary blk={blk} />
+        
+      case  "Features":
+        return <Features blk={blk} />
+          
+      case  "Horizontal":
+        return <Horizontal blk={blk} />
+          
+      case  "Flow":
+        return <Flows blk={blk} />
+        
+      case  "Table":
+        return <Table blk={blk} />
+          
+        // case  "FLEX":
+        //   return <Flexlayout blk={blk} />
+        //   
+        // case  "COLUMN":
+        //   return <Columnlayout blk={blk} />
+        //
+      default:
+        return (<p>{blk.type}</p>)
+    }
+  })}
+</div>

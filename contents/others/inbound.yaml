@@ -1,0 +1,140 @@
+name: INBOUND
+position: 2
+includes:
+  - ja
+$title:
+  ja: インバウンド交流事業
+$description:
+  ja: 株式会社ゴールデンブリッジのインバウンド事業の紹介です
+$summary:
+  ja: 株式会社ゴールデンブリッジのインバウンド事業の紹介です
+href: /
+img: gb-logo.png
+contents:
+  - type: Plain
+    $texts:
+      ja:
+        - 通訳・翻訳事業の基盤を持つ弊社だからこそ提供できる、企業間の深い日中交流プログラムを提案します。
+        - 中国の企業家たちを日本に招き、日本企業のファン、日本文化の理解者になれるような体験を。
+
+  - type: Icon Heading 2
+    icon: fa fa-building
+    $text:
+      ja: 企業訪問や経営セミナーなど
+
+  - type: Media Right
+    src: others/inbound-seminar1.jpg
+    $alt:
+      ja: 研修の様子
+    $blks:
+      - type: Plain
+        $texts:
+          ja:
+            - 中国の企業家ニーズと、日本企業のシーズを組み合わせツアーをコーディネートいたします。
+            - 団員の大部分が中国の著名なビジネススクール出身者やEMBAコース在籍者です。
+            - 第三種旅行業登録の旅行社として、バスやホテルの手配まで、全て弊社で対応しております。
+
+  - type: Separator
+
+  - type: Media Right
+    src: others/inbound-seminar2.jpg
+    $alt:
+      ja: 研修の様子
+    $blks:
+      - type: Plain
+        $texts:
+          ja:
+            - 「心と心の交流」をテーマとし、日本企業の本社や関連施設・工場に訪問し経営者様との座談会や施設の見学などを通じて交流するプログラムを企画いたします。
+            - 中国企業は日本企業に学ぶ機会、また日本企業にとっては自社の魅力を中国に伝える機会となる、win-winの関係の構築を使命とし日々取り組んでおります。
+            - ビジネス交流で日中双方のファンづくりを。
+
+  - type: Icon Heading 2
+    icon: fa fa-hospital-o
+    $text:
+      ja: 医療・美容ツーリズム
+
+  - type: Media Right
+    src: others/inbound-medical1.jpg
+    $alt:
+      ja: クリニック受付
+    $blks:
+      - type: Define
+        $texts:
+          ja:
+            - - 日本各地の医療機関での健康診断・アンチエイジング医療やエステサロンにお客様をご紹介をさせていただきます。
+              - ・健康診断
+              - ・がん検査
+              - ・アンチエイジング医療
+              - ・美容医療
+              - ・エステ　等
+
+  - type: Separator
+
+  - type: Media Right
+    src: others/inbound-medical2.jpg
+    $alt:
+      ja: 医師との面談
+    $blks:
+      - type: Define
+        $texts:
+          ja:
+            - - ご紹介例
+              - ・宝石会社社長
+              - ・美容サロン経営会社の社長
+
+  - type: Icon Heading 2
+    icon: fa fa-thumbs-up
+    $text:
+      ja: 実績のご紹介
+
+  - type: Plain
+    $texts:
+      ja: 受け入れ終了後は新着情報のページで随時ご紹介しています。
+
+  - type: Icon Heading 3
+    icon: __
+    $text:
+      ja: ①女性企業家　日中企業交流
+
+  - type: Media Right
+    src: others/inbound-seminar3.jpg
+    $alt:
+      ja: 研修の様子
+    $blks:
+      - type: Define
+        $texts:
+          ja:
+            - - 団体
+              - 北京女性起業家コミュニティ
+            - - 交流テーマ
+              - 日中女性企業家交流
+            - - 人数
+              - 20人…コミュニティの会員で、中小企業の経営者
+            - - 日程
+              - 5泊6日
+            - - 内容
+              - 大阪商工会議所女性会への表敬訪問・交流会/女性経営者が経営する企業の訪問/1000年続く老舗の訪問、女将との交流/茶道や座禅など、日本伝統文化の体験　等
+
+  - type: Icon Heading 3
+    icon: __
+    $text:
+      ja: ②シルバー産業・農業ビジネス視察
+
+  - type: Media Right
+    src: others/inbound-seminar4.jpg
+    $alt:
+      ja: 研修の様子
+    $blks:
+      - type: Define
+        $texts:
+          ja:
+            - - 団体
+              - レジャー施設開発・運営の国有企業 経営幹部
+            - - 交流テーマ
+              - 日本のシルバー産業・農業レジャー施設の視察
+            - - 人数
+              - 10人
+            - - 日程
+              - 6泊7日
+            - - 内容
+              - 協会との交流会/介護施設見学/介護用品展示場/農業レジャー施設/都市農場　等

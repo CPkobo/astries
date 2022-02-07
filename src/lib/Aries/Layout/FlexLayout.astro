@@ -1,0 +1,25 @@
+---
+import { classNaming }  from "$scripts/_className"
+import BlockControl from "$lib/Aries/BlockControl.astro"
+let blk: FlexLayout<string, string[], string[][]>
+({ blk } = Astro.props)
+
+const presets = {
+  def: "is-flex is-flex-wrap-wrap is-justify-content-space-around is-align-items-stretch",
+};
+
+const cls = classNaming("columns", blk.classes, blk.preset, presets)
+---
+
+<div id={blk.id} class={cls}>
+  {blk.$blkss.map(blks => {
+    return (
+      <div class="column">
+        <BlockControl {blks} />
+      </div>
+    )
+  })}
+</div>
+
+<style lang="scss">
+</style>

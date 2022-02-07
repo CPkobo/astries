@@ -1,0 +1,48 @@
+name: OTHERS
+position: 4
+$heading:
+  ja: その他
+  zh: OTHERS
+  en: OTHERS
+root: /others
+data:
+  - name: edit
+    position: 1
+    href: /others/edit
+    img: gb-logo.png
+    $title:
+      ja: 編集・DTP
+    $summary:
+      ja: 株式会社ゴールデンブリッジの編集・ＤＴＰサービスの紹介です。翻訳成果物の録音・ナレーションや動画字幕、DTPなどご要望の形態に編集いたします。
+    includes:
+      - ja
+  - name: INBOUND
+    position: 2
+    href: /others/inbound
+    img: gb-logo.png
+    $title:
+      ja: インバウンド交流事業
+    $summary:
+      ja: 株式会社ゴールデンブリッジのインバウンド事業の紹介です
+    includes:
+      - ja
+  - name: Training
+    position: 3
+    href: /others/train
+    img: gb-logo.png
+    $title:
+      ja: 語学研修
+    $summary:
+      ja: ビジネスに使える中国語を、経験豊富な講師が丁寧に指導いたします。オンラインやカスタマイズなども自由
+    includes:
+      - ja
+  - name: copy right
+    position: 4
+    href: /others/copyright
+    img: gb-logo.png
+    $title:
+      ja: 著作権登録
+    $summary:
+      ja: 株式会社ゴールデンブリッジの著作権登録サービスの紹介です。中国進出を考える日本企業へ、知財の視点からサポートを提供いたします
+    includes:
+      - ja

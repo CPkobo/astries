@@ -1,0 +1,47 @@
+---
+import { classNaming }  from "$scripts/_className"
+import FetItem from "./FeatureItem.astro"
+let blk: FeaturesBlock<string, string[], string[][]>
+({ blk } = Astro.props)
+
+const presets = {
+  def: "",
+};
+
+const cls = classNaming("", blk.classes, blk.preset, presets)
+---
+
+<div id={blk.id}  class={cls}>
+  <div
+    class="is-flex is-flex-wrap-wrap is-justify-content-space-around is-align-items-stretch"
+  >
+    {blk.$items.map(itm => {
+      return (
+        <FetItem itm={itm} />
+      )
+    })}
+  </div>
+</div>
+
+<style lang="scss">
+  h4 {
+    border-bottom: dotted 2px teal;
+  }
+
+  div.feature-box {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 3rem;
+
+    &:hover {
+      background-color: green;
+      transition: 0.5s;
+    }
+    @media (min-width: 1024px) {
+      width: calc(100% - 2rem * 1);
+      max-width: calc(50% - 2rem * 2);
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+</style>

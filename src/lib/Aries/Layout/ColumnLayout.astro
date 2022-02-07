@@ -1,0 +1,25 @@
+---
+import { classNaming }  from "$scripts/_className"
+import BlockControl from "$lib/Aries/BlockControl.astro"
+let blk: ColumnLayout<string, string[], string[][]>
+({ blk } = Astro.props)
+
+const presets = {
+  def: "",
+};
+
+const cls = classNaming("columns", blk.classes, blk.preset, presets)
+---
+
+<div id={blk.id} class={cls}>
+  {blk.$blkss.map(blks => {
+    return (
+      <div class="column">
+        <BlockControl {blks} />
+      </div>
+    )
+  })}
+</div>
+
+<style lang="scss">
+</style>

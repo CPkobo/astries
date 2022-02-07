@@ -1,0 +1,48 @@
+name: Training
+position: 3
+includes:
+  - ja
+$title:
+  ja: 語学研修
+$description:
+  ja: ビジネスに使える中国語を、経験豊富な講師が丁寧に指導いたします
+$summary:
+  ja: ビジネスに使える中国語を、経験豊富な講師が丁寧に指導いたします。オンラインやカスタマイズなども自由
+href: /
+img: gb-logo.png
+contents:
+  - type: Icon Heading 2
+    icon: fa fa-pencil-square
+    $text:
+      ja: 多様なレッスン形態
+
+  - type: Media Right
+    src: others/train-kanshi.jpg
+    $alt:
+      ja: 語学研修・授業風景 その1
+    $blks:
+      - type: Define
+        $texts:
+          ja:
+            - - 一般開講クラス
+              - 常時開講しておりますので、気軽に始められます。
+            - - オーダーメイド研修
+              - お客様のニーズに合わせてアレンジいたします。
+
+  - type: Spacer
+    x: 0
+    y: 3
+
+  - type: Icon Heading 2
+    icon: fa fa-user-circle
+    $text:
+      ja: 豊富な実績と丁寧な指導
+
+  - type: Media Right
+    src: others/train-teaching.jpg
+    $alt:
+      ja: 語学研修・授業風景 その2
+    $blks:
+      - type: Plain
+        $texts:
+          ja: 現役の通訳としても活躍している、指導経験豊富な講師陣が授業を行います。

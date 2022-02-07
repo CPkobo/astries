@@ -1,0 +1,15 @@
+---
+import BlockControl from "$lib/Aries/BlockControl.astro"
+let row: SimpleBlock<string, string[], string[][]>[]
+({ row } = Astro.props)
+---
+
+<tr>
+  {row.map(blk => {
+    return (
+      <td>
+        <BlockControl blks={[blk]} />
+      </td>
+    )
+  })}
+</tr>

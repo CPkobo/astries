@@ -1,0 +1,90 @@
+name: Machine Translation
+position: 4
+includes:
+  - ja
+$title:
+  ja: 機械翻訳
+$description:
+  ja: 株式会社ゴールデンブリッジの機械翻訳の紹介です
+$summary:
+  ja: 株式会社ゴールデンブリッジの機械翻訳の紹介です
+href: /
+img: gb-logo.png
+contents:
+  - type: Icon Heading 2
+    icon: fa fa-cog
+    $text:
+      ja: 中国語と機械翻訳
+
+  - type: Plain
+    $texts:
+      ja:
+        - ニューラルネットワークによる機械学習や、ビッグデータといった言葉が駆け巡る現代。
+        - 機械翻訳の精度は、私たちプロから見ても、目を見張るものがあります。
+        - しかし一方で、機械翻訳にはまだ足りない部分があるのも事実。
+        - 私たちは機械翻訳のことを、仕事を取り合う競争相手としてではなく、お互いが長所を活かし、短所を補いあえるようなパートナーだと考えています。
+        - そしてそのためにもAIを積極的に導入・検証することで、「翻訳者のサポーターとしてのAI」という可能性に挑戦しています。
+
+  - type: Icon Heading 3
+    icon: fa fa-database
+    $text:
+      ja: 導入済みのエンジンについて
+
+  - type: Features
+    $items:
+      - icon: __
+        link: __
+        $title:
+          ja: AIKO SchLingual
+        $blks:
+          - type: Plain
+            $texts:
+              ja: 弊社と、医学・医薬品の英語翻訳会社アスカコーポレーション様と共同で開発した、医学特化型エンジン。日英中リレー機械翻訳という仕組みを活用し、特定分野では非常に高い精度を誇っています。
+          - type: Image
+            src: lang/scilingual.png
+            $alt:
+              ja: AIKO ロゴ
+            href: https://aismiley.co.jp/product/asca_aiko-scilingual/
+            target: _blank
+      - icon: __
+        link: __
+        $title:
+          ja: T-3MT
+        $blks:
+          - type: Plain
+            $texts:
+              ja: ロゼッタ様のカスタマイズ型翻訳エンジン。弊社では大型の翻訳プロジェクトで、翻訳 → 校正 → 学習 → 機械翻訳 というサイクルを構築し、工数やコストの削減に活用しています。
+          - type: Image
+            src: lang/t3mt_01.png
+            $alt:
+              ja: T-3MT ロゴ
+            href: https://www.rozetta.jp/lp/t3mt/
+            target: _blank
+      - icon: __
+        link: __
+        $title:
+          ja: Google 翻訳
+        $blks:
+          - type: Plain
+            $texts:
+              ja: ニューラル翻訳という手法を最も早くに打ち出した翻訳エンジンで、精度は他に劣ることもありますが、対応言語の多さが魅力的です。
+          - type: Image
+            src: lang/Google-Translate-Logo-1.png
+            $alt:
+              ja: Google Translate ロゴ
+            href: https://www.rozetta.jp/lp/t3mt/
+            target: _blank
+      - icon: __
+        link: __
+        $title:
+          ja: DeepL
+        $blks:
+          - type: Plain
+            $texts:
+              ja: 「Googleより分かりやすい」と一世を風靡したDeepLも導入。API経由でのバッチ処理などに活用しています。
+          - type: Image
+            src: lang/deepl.png
+            $alt:
+              ja: DeepL ロゴ
+            href: https://www.rozetta.jp/lp/t3mt/
+            target: _blank

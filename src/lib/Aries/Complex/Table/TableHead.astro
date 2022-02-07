@@ -1,0 +1,14 @@
+---
+let head: string[]
+({ head } = Astro.props)
+---
+
+<thead>
+  <tr>
+    {head.map(hc => {
+      return (
+        <th>head{hc}</th>
+      )
+    })}
+  </tr>
+</thead>

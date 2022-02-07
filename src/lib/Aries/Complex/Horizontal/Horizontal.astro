@@ -1,0 +1,33 @@
+---
+import { classNaming }  from "$scripts/_className"
+import HoriItem from "./HoriItem.astro"
+let blk: HorizontalBlock<string, string[], string[][]>
+({ blk } = Astro.props)
+
+const presets = {
+  def: "",
+};
+
+const cls = classNaming("", blk.classes, blk.preset, presets)
+
+const size = 
+  blk.$items.length < 3 ? "is-one-third"
+  : blk.$items.length < 5 ? "is-one-quater"
+  : "is-2"
+---
+
+<div id={blk.id} class={cls}>
+  <div class="columns">
+    {blk.$items.map(itm => {
+      return (
+        <HoriItem itm={itm} size={size} />
+      )
+    })}
+  </div>
+</div>
+
+<style lang="scss">
+  .horizontal-card {
+    background-color: rgba(220, 220, 220, 0.5);
+  }
+</style>

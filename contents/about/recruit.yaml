@@ -1,0 +1,38 @@
+name: recruit
+position: 5
+includes:
+  - ja
+$title:
+  ja: 採用・募集
+$description:
+  ja: 株式会社ゴールデンブリッジの登録翻訳者・社内スタッフ募集ページです。
+$summary:
+  ja: 株式会社ゴールデンブリッジの登録翻訳者・社内スタッフ募集ページです。
+href: /
+img: gb-logo.png
+contents:
+  - type: Icon Heading 2
+    icon: fa fa-square
+    $text:
+      ja: 翻訳者・通訳者募集
+
+  - type: Plain
+    $texts:
+      ja: 現在、弊社では以下の方を募集しております
+
+  - type: Icon Heading 3
+    icon: fa fa-square
+    $text:
+      ja: 通訳者
+
+  - type: Define
+    $texts:
+      ja:
+        - - 業務内容
+          - 同時通訳、ウィスパリング、逐次（会談、セミナー、視察、商談、アテンド等）、バイリンガルスタッフ、結婚式など司会通訳、バイリンガルＭＣ・司会業務
+        - - 募集言語
+          - 【アジア言語】
+          - 中国語、韓国語、広東語、台湾標準語、タイ語、ベトナム語、インドネシア語、ミャンマー語、マレーシア語、タガログ語、モンゴル語
+          - 【欧米言語】
+          - 英語、スペイン語、フランス語
+          - ※他言語についても歓迎いたします。

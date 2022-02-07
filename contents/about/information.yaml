@@ -1,0 +1,154 @@
+name: information
+position: 1
+includes:
+  - ja
+  - en
+$title:
+  ja: 会社情報
+  en: Company information
+$description:
+  ja: 株式会社ゴールデンブリッジの各種情報を掲載しています。
+$summary:
+  ja: 株式会社ゴールデンブリッジの各種情報を掲載しています。
+href: /
+img: gb-logo.png
+contents:
+  - type: Table
+    $trs:
+      - - type: Plain
+          $texts:
+            ja: 社名
+            en: Company Name
+        - type: Plain
+          $texts:
+            ja: 株式会社ゴールデンブリッジ
+
+      - - type: Plain
+          $texts:
+            ja: 代表
+        - type: Plain
+          $texts:
+            ja: 楊　金峰（代表取締役社長）
+
+      - - type: Plain
+          $texts:
+            ja: 資本金
+        - type: Plain
+          $texts:
+            ja: 1000万円
+
+      - - type: Plain
+          $texts:
+            ja: 事業内容
+        - type: List
+          $texts:
+            ja:
+              - 多言語通訳・翻訳
+              - インバウンド交流事業（日中ビジネス交流プログラム、医療美容ツアー）
+              - 有料職業紹介
+              - ソフトウェア開発
+              - その他上記に付随するサービス
+
+      - - type: Plain
+          $texts:
+            ja: 沿革
+        - type: List
+          $texts:
+            ja:
+              - 2002年 8月 合資会社ゴールデンブリッジ中文サービス　設立
+              - 2006年11月 株式会社に組織変更し「株式会社ゴールデンブリッジ」に改称。大阪市住之江区に事務所設立
+              - 2014年12月 現住所へ事務所移転
+
+      - - type: Plain
+          $texts:
+            ja: 大阪本社
+        - type: Define
+          $texts:
+            ja:
+              - - 【所在地】
+                - 〒550-0005　大阪市西区西本町1丁目7番7号CE西本町ビル801号室
+              - - 【連絡先】
+                - TEL　06-6543-6898
+                - FAX　06-7635-9508
+                - rans@goldenbridge2002.com
+
+      - - type: Plain
+          $texts:
+            ja: 加入団体
+        - type: List
+          $texts:
+            ja:
+              - 大阪商工会議所　（2004年8月）
+              - 一般社団法人 日中経済貿易センター　（2005年3月）
+              - 公益社団法人 関西経済連合会（乙種）　（2012年4月）
+              - 一般財団法人 日中経済協会　（2012年6月）
+              - 一般社団法人 日本中華総商会入会  （2013年6月）
+
+      - - type: Plain
+          $texts:
+            ja: 旅行業登録
+        - type: Plain
+          $texts:
+            ja: 大阪府知事登録旅行業　第3-2833号
+
+      - - type: Plain
+          $texts:
+            ja: 有料職業紹介事業許可
+        - type: Plain
+          $texts:
+            ja: 27-ユ-302506
+
+  - type: Spacer
+
+  - type: Icon Heading 2
+    icon: fa fa-square
+    $text:
+      ja: 育児休業についての行動計画
+
+  - type: Spacer
+    y: 4
+
+  - type: Heading 3
+    $text:
+      ja: 株式会社　ゴールデンブリッジ　行動計画
+
+  - type: Spacer
+
+  - type: Plain
+    $texts:
+      ja:
+        - 社員が仕事と子育てを両立させることができ、社員全員が働きやすい環境を作ることによって、すべての社員がその能力を十分に発揮できるようにするため、次のように行動計画を策定する。
+        - 1. 計画期間 2018年9月1日～2020年8月31日まで
+        - 2. 内容
+
+  - type: Plain
+    classes: is-size-5 has-text-weight-bold
+    $texts:
+      ja:
+        - 目標 1：
+        - 産前産後休業や育児休業、育児休業給付、育休中の社会保険料免除など制度の周知や情報提供を行う。
+
+  - type: Define
+    $texts:
+      ja:
+        - - ＜対策＞
+          - 平成30年 9月～　法に基づく諸制度の調査
+          - 平成30年 9月～　制度に関するパンフレットを作成し社員に配布
+
+  - type: Separator
+
+  - type: Plain
+    classes: is-size-5 has-text-weight-bold
+    $texts:
+      ja:
+        - 目標2：
+        - 時間外労働を短縮し、調和のとれたライフワークバンスの実現を目指す。
+
+  - type: Define
+    $texts:
+      ja:
+        - - ＜対策＞
+          - 時間外労働の適正化推進対策を実施
+          - 事業場毎の適正配置や業務内容、業務分担、シフト等の改善
+          - ノー残業デー設置に向けて、計画期間内導入の検討
+          - 平成30年 8月31日

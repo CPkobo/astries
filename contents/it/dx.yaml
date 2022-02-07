@@ -1,0 +1,60 @@
+name: digital transformation
+position: 3
+includes:
+  - ja
+$title:
+  ja: DX・テレワーク
+$description:
+  ja: 株式会社ゴールデンブリッジのデジタル・トランスフォーメーション（DX）と、テレワークの取り組みについて紹介しています。
+$summary:
+  ja: 株式会社ゴールデンブリッジのデジタル・トランスフォーメーション（DX）と、テレワークの取り組みについて紹介しています。
+href: /
+img: gb-logo.png
+contents:
+  - type: Icon Heading 2
+    icon: fa fa-certificate
+    $text:
+      ja: デジタル・トランスフォーメーション（DX）について
+
+  - type: Plain
+    $texts:
+      ja:
+        - 「働き方改革」が叫ばれる今日、業務の効率化は必須の課題となっています。
+        - 弊社では翻訳支援ツールの活用・開発実績を活かし、Officeマクロはもとより、PythonやPowerShellを使った自動化や、JavaScript（Electron）を使ったWebアプリを作成するなどして業務改善を続けています。
+
+  - type: Icon Heading 3
+    icon: fa fa-file-code-o
+    $text:
+      ja: 開発ツールの一例
+
+  - type: List
+    preset: circle
+    $texts:
+      ja:
+        - EC事業用 簡易在庫・注文管理システム（Excel VBA）
+        - メール一括送信ツール（Excel VBA）
+        - オンライン交流会用 マッチング希望フォーム（Web）
+        - 機械学習用 コーパス選別補助ツール（Python）
+        - MS Office用 用語集一括置換ツール（Excel VBA）
+        - 訳支援ツール用 用語集一括置換ツール（Python）
+        - MS Word 変更箇所の修正履歴化ツール（Word VBA）
+        - MS Word用 正規表現ベースの日本語校正ツール（Office.js + Electron）
+
+  - type: Plain
+    $texts:
+      ja:
+        - 翻訳関連のツールを開発していたことから、特にWord VBAのような情報の少ないものや、Pythonの多言語処理などが得意と言えます。
+        - 「こんなツール作れないか」「あんな処理を自動化したい」
+        - そういったご要望がありましたら、お気軽にご相談ください。
+
+  - type: Icon Heading 2
+    icon: fa fa-users
+    $text:
+      ja: テレワークについて
+
+  - type: Plain
+    $texts:
+      ja:
+        - 新型コロナウイルス感染症の日本での第一例が発見されて間もない2020年3月初めより、弊社では業務のテレワーク化を大いに進めてまいりました。
+        - 今では印章の必要な業務や、EC事業での発送といった一部業務を除き、大部分をフルリモートで実施しています。
+        - テレワークで問題視されがちなコミュニケーションの問題も、オープンソースのWeb会議システムである「Jitsi」や、すっかり有名になったZoomなどで常につながりを保ち、情報伝達ロスを最低限に抑えています。

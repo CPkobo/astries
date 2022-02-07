@@ -1,0 +1,69 @@
+name: onlineshop
+position: 1
+includes:
+  - ja
+$title:
+  ja: Online Shop
+$description:
+  ja: 株式会社ゴールデンブリッジのオンラインショップ（EC）事業についての紹介です
+$summary:
+  ja: 株式会社ゴールデンブリッジのオンラインショップ（EC）事業についての紹介です
+href: /
+img: ec/shopping-bag.jpg
+contents:
+  - type: Icon Heading 2
+    $text:
+      ja: YOU樂SHOP 楽天市場店
+
+  - type: Plain
+    $texts:
+      ja: ポストコロナ時代を見据え、人々の健康志向によるニーズを取り入れ、オーガニック、無添加、健康生活支援商品を提供するため、楽天市場にてオンラインショップ【YOU樂SHOP（ゆうらくショップ）】を立ち上げました。
+
+  - type: Image
+    src: ec/signboard.jpg
+    $alt:
+      ja: 店舗サインボード
+
+  - type: Link
+    href: https://www.rakuten.co.jp/yourakshop/
+    target: _blank
+    classes: has-text-centered
+    $text:
+      ja: ショップページへ
+
+  - type: Define
+    $texts:
+      ja:
+        - - ショップ名
+          - YOU樂SHOP 楽天市場店
+        - - コンセプト
+          - 「自然・健康・楽しい生活をサポート」
+        - - 商品構成
+          - 有機・自然食品、健康用品
+          - (今後はスマートライフ関連商品も展開)
+
+  - type: Gallary
+    $blks:
+      - type: Image
+        src: ec/rakuten/set_egoma110x2_amani110.png
+        $alt:
+          ja: エゴマ・アマニ油セット
+        preset: half
+
+      - type: Image
+        src: ec/rakuten/set_egoma140_amani140.png
+        $alt:
+          ja: エゴマ・アマニ油セット大
+        preset: half
+
+      - type: Image
+        src: ec/rakuten/inpackage.png
+        $alt:
+          ja: のど飴
+        preset: half
+
+      - type: Image
+        src: ec/rakuten/amani_spoon.png
+        $alt:
+          ja: アマニ油
+        preset: half
