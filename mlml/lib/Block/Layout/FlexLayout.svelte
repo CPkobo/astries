@@ -4,7 +4,7 @@
 
   export let dtime: number = 0;
 
-  export let blk: FlexLayout<string, string[], string[][]> = {
+  export let blk: FlexLayout<IsSingle> = {
     type: "FLEX",
     $blkss: [],
   };

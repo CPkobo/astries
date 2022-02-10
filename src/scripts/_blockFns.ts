@@ -75,8 +75,8 @@ export function normalizeHref(href: string | undefined | null): string {
   }
 }
 
-export function _rawHtml(blk: RawHTML<I18nText>, lang: string): RawHTML<string> | null {
-  const nblk: RawHTML<string> = {
+export function _rawHtml(blk: RawHTML<IsMulti>, lang: string): RawHTML<IsSingle> | null {
+  const nblk: RawHTML<IsSingle> = {
     type: blk.type,
     $html: convI18n2Str(blk.$html, lang)
   }
@@ -87,8 +87,8 @@ export function _rawHtml(blk: RawHTML<I18nText>, lang: string): RawHTML<string> 
   }
 }
 
-export function _plain(blk: PlainBlock<I18nText, I18nArray>, lang: string): PlainBlock<string, string[]> | null {
-  const nblk: PlainBlock<string, string[]> = {
+export function _plain(blk: PlainBlock<IsMulti>, lang: string): PlainBlock<IsSingle> | null {
+  const nblk: PlainBlock<IsSingle> = {
     ...blk,
     $texts: convI18ns2Strs(blk.$texts, lang),
   }
@@ -99,8 +99,8 @@ export function _plain(blk: PlainBlock<I18nText, I18nArray>, lang: string): Plai
   }
 }
 
-export function _link(blk: LinkBlock<I18nText>, lang: string): LinkBlock<string> | null {
-  const nblk: LinkBlock<string> = {
+export function _link(blk: LinkBlock<IsMulti>, lang: string): LinkBlock<IsSingle> | null {
+  const nblk: LinkBlock<IsSingle> = {
     ...blk,
     $text: convI18n2Str(blk.$text, lang),
     href: blk.href || "",
@@ -113,8 +113,8 @@ export function _link(blk: LinkBlock<I18nText>, lang: string): LinkBlock<string>
   }
 }
 
-export function _image(blk: ImageBlock<I18nText>, lang: string): ImageBlock<string> | null {
-  const nblk: ImageBlock<string> = {
+export function _image(blk: ImageBlock<IsMulti>, lang: string): ImageBlock<IsSingle> | null {
+  const nblk: ImageBlock<IsSingle> = {
     ...blk,
     src: normalizeSrc(blk.src),
     $alt: convI18n2Str(blk.$alt, lang),
@@ -128,8 +128,8 @@ export function _image(blk: ImageBlock<I18nText>, lang: string): ImageBlock<stri
   }
 }
 
-export function _hero(blk: HeroBlock<I18nText>, lang: string): HeroBlock<string> | null {
-  const nblk: HeroBlock<string> = {
+export function _hero(blk: HeroBlock<IsMulti>, lang: string): HeroBlock<IsSingle> | null {
+  const nblk: HeroBlock<IsSingle> = {
     ...blk,
     src: normalizeSrc(blk.src),
     $alt: convI18n2Str(blk.$alt, lang),
@@ -144,8 +144,8 @@ export function _hero(blk: HeroBlock<I18nText>, lang: string): HeroBlock<string>
   }
 }
 
-export function _subhero(blk: SubHeroBlock<I18nText>, lang: string): SubHeroBlock<string> | null {
-  const nblk: SubHeroBlock<string> = {
+export function _subhero(blk: SubHeroBlock<IsMulti>, lang: string): SubHeroBlock<IsSingle> | null {
+  const nblk: SubHeroBlock<IsSingle> = {
     ...blk,
     src: normalizeSrc(blk.src),
     $alt: convI18n2Str(blk.$alt, lang),
@@ -158,8 +158,8 @@ export function _subhero(blk: SubHeroBlock<I18nText>, lang: string): SubHeroBloc
   }
 }
 
-export function _subbar(blk: SubBarBlock<I18nText>, lang: string): SubBarBlock<string> | null {
-  const nblk: SubBarBlock<string> = {
+export function _subbar(blk: SubBarBlock<IsMulti>, lang: string): SubBarBlock<IsSingle> | null {
+  const nblk: SubBarBlock<IsSingle> = {
     ...blk,
     $title: convI18n2Str(blk.$title, lang),
   }
@@ -170,8 +170,8 @@ export function _subbar(blk: SubBarBlock<I18nText>, lang: string): SubBarBlock<s
   }
 }
 
-export function _heading(blk: HeadingBlock<I18nText>, lang: string): HeadingBlock<string> | null {
-  const nblk: HeadingBlock<string> = {
+export function _heading(blk: HeadingBlock<IsMulti>, lang: string): HeadingBlock<IsSingle> | null {
+  const nblk: HeadingBlock<IsSingle> = {
     ...blk,
     $text: convI18n2Str(blk.$text, lang)
   }
@@ -182,8 +182,8 @@ export function _heading(blk: HeadingBlock<I18nText>, lang: string): HeadingBloc
   }
 }
 
-export function _iconHeading(blk: IconHeadingBlock<I18nText>, lang: string): IconHeadingBlock<string> | null {
-  const nblk: IconHeadingBlock<string> = {
+export function _iconHeading(blk: IconHeadingBlock<IsMulti>, lang: string): IconHeadingBlock<IsSingle> | null {
+  const nblk: IconHeadingBlock<IsSingle> = {
     ...blk,
     icon: blk.icon === "__" ? "" : blk.icon || "",
     $text: convI18n2Str(blk.$text, lang)
@@ -195,8 +195,8 @@ export function _iconHeading(blk: IconHeadingBlock<I18nText>, lang: string): Ico
   }
 }
 
-export function _list(blk: ListBlock<I18nArray>, lang: string): ListBlock<string[]> | null {
-  const nblk: ListBlock<string[]> = {
+export function _list(blk: ListBlock<IsMulti>, lang: string): ListBlock<IsSingle> | null {
+  const nblk: ListBlock<IsSingle> = {
     ...blk,
     $texts: convI18ns2Strs(blk.$texts, lang),
   }
@@ -207,8 +207,8 @@ export function _list(blk: ListBlock<I18nArray>, lang: string): ListBlock<string
   }
 }
 
-export function _define(blk: DefineBlock<I18n2DArray>, lang: string): DefineBlock<string[][]> | null {
-  const nblk: DefineBlock<string[][]> = {
+export function _define(blk: DefineBlock<IsMulti>, lang: string): DefineBlock<IsSingle> | null {
+  const nblk: DefineBlock<IsSingle> = {
     ...blk,
     $texts: convI18ns2D2Strs(blk.$texts, lang)
   }
@@ -219,14 +219,14 @@ export function _define(blk: DefineBlock<I18n2DArray>, lang: string): DefineBloc
   }
 }
 
-export function _relatives(blk: RelativeBlock<I18nText>, lang: string): RelativeBlock<string> | null {
-  const nblk: RelativeBlock<string> = {
+export function _relatives(blk: RelativeBlock<IsMulti>, lang: string): RelativeBlock<IsSingle> | null {
+  const nblk: RelativeBlock<IsSingle> = {
     ...blk,
     $title: blk.$title ? convI18n2Str(blk.$title, lang) : "",
     $articles: []
   }
   blk.$articles.forEach(itm => {
-    const article: Article<string> = {
+    const article: Article<IsSingle> = {
       $title: convI18n2Str(itm.$title, lang),
       href: itm.href,
       src: normalizeSrc(itm.src),
@@ -252,8 +252,8 @@ export function _separator(blk: Separator): Separator {
   return blk
 }
 
-export function _media(blk: MediaTextBlock<I18nText, I18nArray, I18n2DArray>, lang: string): MediaTextBlock<string, string[], string[][]> | null {
-  const nblk: MediaTextBlock<string, string[], string[][]> = {
+export function _media(blk: MediaTextBlock<IsMulti>, lang: string): MediaTextBlock<IsSingle> | null {
+  const nblk: MediaTextBlock<IsSingle> = {
     ...blk,
     src: normalizeSrc(blk.src),
     $alt: convI18n2Str(blk.$alt, lang),
@@ -266,8 +266,8 @@ export function _media(blk: MediaTextBlock<I18nText, I18nArray, I18n2DArray>, la
   }
 }
 
-export function _gallary(blk: GallaryBlock<I18nText, I18nArray, I18n2DArray>, lang: string): GallaryBlock<string, string[], string[][]> | null {
-  const nblk: GallaryBlock<string, string[], string[][]> = {
+export function _gallary(blk: GallaryBlock<IsMulti>, lang: string): GallaryBlock<IsSingle> | null {
+  const nblk: GallaryBlock<IsSingle> = {
     ...blk,
     $blks: []
   }
@@ -286,34 +286,34 @@ export function _gallary(blk: GallaryBlock<I18nText, I18nArray, I18n2DArray>, la
   }
 }
 
-export function _features(blk: FeaturesBlock<I18nText, I18nArray, I18n2DArray>, lang: string): FeaturesBlock<string, string[], string[][]> {
-  const nblk: FeaturesBlock<string, string[], string[][]> = {
+export function _features(blk: FeaturesBlock<IsMulti>, lang: string): FeaturesBlock<IsSingle> {
+  const nblk: FeaturesBlock<IsSingle> = {
     ...blk,
     $items: []
   }
   return nblk
 }
 
-export function _horizontal(blk: HorizontalBlock<I18nText, I18nArray, I18n2DArray>, lang: string): HorizontalBlock<string, string[], string[][]> {
-  const nblk: HorizontalBlock<string, string[], string[][]> = {
+export function _horizontal(blk: HorizontalBlock<IsMulti>, lang: string): HorizontalBlock<IsSingle> {
+  const nblk: HorizontalBlock<IsSingle> = {
     ...blk,
     $items: []
   }
   return nblk
 }
 
-export function _flow(blk: FlowBlock<I18nText, I18nArray, I18n2DArray>, lang: string): FlowBlock<string, string[], string[][]> {
-  const nblk: FlowBlock<string, string[], string[][]> = {
+export function _flow(blk: FlowBlock<IsMulti>, lang: string): FlowBlock<IsSingle> {
+  const nblk: FlowBlock<IsSingle> = {
     ...blk,
     $items: []
   }
   return nblk
 }
 
-export function _table(blk: TableBlock<I18nText, I18nArray, I18n2DArray>, lang: string): TableBlock<string, string[], string[][]> {
+export function _table(blk: TableBlock<IsMulti>, lang: string): TableBlock<IsSingle> {
   const $th: string[] = []
-  const $trs: SimpleBlock<string, string[], string[][]>[][] = []
-  const nblk: TableBlock<string, string[], string[][]> = {
+  const $trs: SimpleBlock<IsSingle>[][] = []
+  const nblk: TableBlock<IsSingle> = {
     ...blk,
     $th,
     $trs

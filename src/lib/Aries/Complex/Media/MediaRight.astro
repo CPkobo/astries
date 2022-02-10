@@ -1,7 +1,7 @@
 ---
 import { classNaming }  from "$scripts/_className"
 import BlockControl from "$lib/Aries/BlockControl.astro"
-let blk: MediaTextBlock<string, string[], string[][]>
+let blk: MediaTextBlock<IsSingle>
 ({ blk } = Astro.props)
 
 const presets = {

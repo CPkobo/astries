@@ -1,4 +1,5 @@
 ---
+import MainHead from '$lib/MainHead.astro';
 // import BlkControl from "$lib/Block/BlockControl.svelte";
 import Plain from "$lib/Aries/Simple/Plain.astro"
 import List from "$lib/Aries/Simple/List.astro"
@@ -14,6 +15,7 @@ import Hero from "$lib/Aries/Simple/Hero/Hero.astro"
 import SubHero from "$lib/Aries/Simple/Hero/SubHero.astro"
 import SubBar from "$lib/Aries/Simple/Hero/SubBar.astro"
 import Relatives from "$lib/Aries/Simple/Relatives/Relatives.astro"
+
 
 // const blk: HeroBlock<string> = {
 //     type: 'Hero',
@@ -109,6 +111,11 @@ const rels: RelativeBlock<string> = {
 
 ---
 
+<html lang="en">
+	<head>
+		<MainHead title="Jeanine White: Personal Site" description="Jeanine White: Developer, Speaker, and Writer..." />
+    </head>
+<body>
 <Hero blk={hrb} />
 <SubHero blk={shrb} />
 <SubBar blk={sbb} />
@@ -129,3 +136,6 @@ const rels: RelativeBlock<string> = {
 <Ih4 blk={ih2} />
 
 <Relatives blk={rels} />
+
+</body>
+</html>

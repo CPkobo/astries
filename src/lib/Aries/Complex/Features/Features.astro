@@ -1,7 +1,7 @@
 ---
 import { classNaming }  from "$scripts/_className"
 import FetItem from "./FeatureItem.astro"
-let blk: FeaturesBlock<string, string[], string[][]>
+let blk: FeaturesBlock<IsSingle>
 ({ blk } = Astro.props)
 
 const presets = {

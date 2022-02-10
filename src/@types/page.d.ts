@@ -1,16 +1,16 @@
 // 各ページ
-declare interface PageContents<T extends string | I18nText, U extends string[] | I18nArray, S extends string[][] | I18n2DArray> {
+declare interface PageContents<T extends IsSingle | IsMulti> {
     name: string;
     position: number;
     href: string;
     breadCrumb?: BreadcrumbList[];
     jsonld?: any;
-    $title: T;
+    $title: IsStr<T>;
     img: string;
-    $description: T;
-    $summary: T;
+    $description: IsStr<T>;
+    $summary: IsStr<T>;
     includes: LangList[];
-    contents: AnyBlock<T, U, S>[];
+    contents: AnyBlock<T>[];
 }
 
 declare interface BreadcrumbList {
@@ -25,7 +25,7 @@ declare interface NavToOtherPage {
     href: string;
 }
 
-declare interface PageContentsWithNav extends PageContents<string, string[], string[][]> {
+declare interface PageContentsWithNav extends PageContents<IsSingle> {
     prev: NavToOtherPage;
     next: NavToOtherPage
     back: NavToOtherPage;

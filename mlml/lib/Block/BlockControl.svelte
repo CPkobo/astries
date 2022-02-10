@@ -33,7 +33,7 @@
   import Flexlayout from "./Layout/FlexLayout.svelte";
   import Columnlayout from "./Layout/ColumnLayout.svelte";
 
-  export let blks: AnyBlock<string, string[], string[][]>[];
+  export let blks: AnyBlock<IsSingle>[];
 
   const delay = 250;
 </script>

@@ -4,7 +4,7 @@
 
   export let dtime: number = 0;
 
-  export let blk: ColumnLayout<string, string[], string[][]> = {
+  export let blk: ColumnLayout<IsSingle> = {
     type: "COLUMN",
     $blkss: [],
   };

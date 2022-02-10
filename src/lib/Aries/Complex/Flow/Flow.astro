@@ -1,7 +1,7 @@
 ---
 import { classNaming }  from "$scripts/_className"
 import FlowItm from "./FlowItem.astro"
-let blk: FlowBlock<string, string[], string[][]>
+let blk: FlowBlock<IsSingle>
 ({ blk } = Astro.props)
 
 const presets = {

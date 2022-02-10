@@ -5,7 +5,7 @@
   export let dtime: number = 0;
 
   // export let caption: string = '';
-  export let blk: TableBlock<string, string[], string[][]> = {
+  export let blk: TableBlock<IsSingle> = {
     type: "Table",
     $th: [],
     $trs: [],

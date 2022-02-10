@@ -4,7 +4,7 @@
 
   export let dtime: number = 0;
 
-  export let blk: HorizontalBlock<string, string[], string[][]> = {
+  export let blk: HorizontalBlock<IsSingle> = {
     type: "Horizontal",
     $items: [],
   };

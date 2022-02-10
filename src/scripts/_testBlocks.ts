@@ -102,21 +102,21 @@ const rels: RelativeBlock<string> = {
     ]
 }
 
-const mediaR: MediaTextBlock<string, string[], string[][]> = {
+const mediaR: MediaTextBlock<IsSingle> = {
     type: "Media Right",
     src: "/pict/mv01.jpg",
     $alt: "pict",
     $blks: [plain, plain, list]
 }
 
-const mediaL: MediaTextBlock<string, string[], string[][]> = {
+const mediaL: MediaTextBlock<IsSingle> = {
     type: "Media Left",
     src: "/pict/mv01.jpg",
     $alt: "pict",
     $blks: [define, ih2, hd4]
 }
 
-const ftr: FeaturesBlock<string, string[], string[][]> = {
+const ftr: FeaturesBlock<IsSingle> = {
     type: "Features",
     $items: [
         {
@@ -132,7 +132,7 @@ const ftr: FeaturesBlock<string, string[], string[][]> = {
     ]
 }
 
-const flw: FlowBlock<string, string[], string[][]> = {
+const flw: FlowBlock<IsSingle> = {
     type: "Flow",
     $items: [
         {
@@ -144,12 +144,12 @@ const flw: FlowBlock<string, string[], string[][]> = {
     ]
 }
 
-const gal: GallaryBlock<string, string[], string[][]> = {
+const gal: GallaryBlock<IsSingle> = {
     type: "Gallary",
     $blks: [img, img, img, img]
 }
 
-const hor: HorizontalBlock<string, string[], string[][]> = {
+const hor: HorizontalBlock<IsSingle> = {
     type: "Horizontal",
     $items: [
         {
@@ -170,7 +170,7 @@ const hor: HorizontalBlock<string, string[], string[][]> = {
     ]
 }
 
-const tbl: TableBlock<string, string[], string[][]> = {
+const tbl: TableBlock<IsSingle> = {
     type: "Table",
     $th: [
         "h1", "h2", "h3"

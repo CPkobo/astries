@@ -4,7 +4,7 @@
 
   export let dtime: number = 0;
 
-  export let blk: MediaTextBlock<string, string[], string[][]> = {
+  export let blk: MediaTextBlock<IsSingle> = {
     type: "Media Right",
     // $texts: ["Media Right"],
     $blks: [],

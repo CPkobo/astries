@@ -1,6 +1,6 @@
 ```jsx
 {blks.map(blk => {
-    const switcher = (blk: AnyBlock<string, string[], string[][]>) => {
+    const switcher = (blk: AnyBlock<IsSingle>) => {
       switch (blk.type) {
         case "Heading 2":
           return (<Hd2 blk={blk} />)

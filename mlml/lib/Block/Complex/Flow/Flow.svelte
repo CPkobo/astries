@@ -2,7 +2,7 @@
   // export let caption: string = '';
   import BlockControl from "$lib/Block/BlockControl.svelte";
 
-  export let blk: FlowBlock<string, string[], string[][]> = {
+  export let blk: FlowBlock<IsSingle> = {
     type: "Flow",
     $items: [],
   };

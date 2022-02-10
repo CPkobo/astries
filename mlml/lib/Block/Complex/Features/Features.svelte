@@ -4,7 +4,7 @@
 
   export let dtime: number = 0;
 
-  export let blk: FeaturesBlock<string, string[], string[][]> = {
+  export let blk: FeaturesBlock<IsSingle> = {
     type: "Features",
     $items: [],
   };

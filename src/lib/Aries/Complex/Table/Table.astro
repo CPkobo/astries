@@ -2,7 +2,7 @@
 import { classNaming }  from "$scripts/_className"
 import TableHead from "./TableHead.astro"
 import TableRow from "./TableRow.astro"
-let blk: TableBlock<string, string[], string[][]>
+let blk: TableBlock<IsSingle>
 ({ blk } = Astro.props)
 
 const presets = {

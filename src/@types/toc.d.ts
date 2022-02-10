@@ -1,19 +1,19 @@
 // 目次
-declare interface SingleTOC<T extends string | I18nText> {
+declare interface SingleTOC<T extends IsSingle | IsMulti> {
   name: string;
   position: number;
-  $title: T;
+  $title: IsStr<T>;
   href: string;
   img: string;
-  $summary: T;
+  $summary: IsStr<T>;
   includes?: LangList[];
   children?: SingleTOC<T>[];
 }
 
-declare interface TOC<T extends string | I18nText> {
+declare interface TOC<T extends IsSingle | IsMulti> {
   name: string;
   position: number;
-  $heading: T;
+  $heading: IsStr<T>;
   root: string;
   data: SingleTOC<T>[];
 }

@@ -4,7 +4,7 @@
 
   export let dtime: number = 0;
 
-  export let blk: GallaryBlock<string, string[], string[][]> = {
+  export let blk: GallaryBlock<IsSingle> = {
     type: "Gallary",
     $blks: [],
   };

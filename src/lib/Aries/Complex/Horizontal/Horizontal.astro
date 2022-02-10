@@ -1,7 +1,7 @@
 ---
 import { classNaming }  from "$scripts/_className"
 import HoriItem from "./HoriItem.astro"
-let blk: HorizontalBlock<string, string[], string[][]>
+let blk: HorizontalBlock<IsSingle>
 ({ blk } = Astro.props)
 
 const presets = {

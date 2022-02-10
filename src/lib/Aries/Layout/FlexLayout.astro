@@ -1,7 +1,7 @@
 ---
 import { classNaming }  from "$scripts/_className"
 import BlockControl from "$lib/Aries/BlockControl.astro"
-let blk: FlexLayout<string, string[], string[][]>
+let blk: FlexLayout<IsSingle>
 ({ blk } = Astro.props)
 
 const presets = {
