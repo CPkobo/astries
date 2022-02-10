@@ -8,18 +8,21 @@
     ],
     "baseUrl": "./",
     "paths": {
-      "$lib": [
-        "src/lib"
+      "$src/*": [
+        "src/*"
+      ],
+      "$layouts/*": [
+        "src/layouts/*"
       ],
       "$lib/*": [
         "src/lib/*"
       ],
-      "$scripts": [
-        "src/scripts"
-      ],
       "$scripts/*": [
         "src/scripts/*"
       ],
+      "$styles/*": [
+        "src/styles/*"
+      ]
     }
   }
 }

@@ -1,0 +1,27 @@
+---
+import { classNaming }  from "$scripts/_className"
+import Image from "$lib/Blocks/Simple/Image.astro"
+let blk: GallaryBlock<IsSingle>
+({ blk } = Astro.props)
+
+const presets = {
+  def: "",
+};
+
+const cls = classNaming("", blk.classes, blk.preset, presets)
+---
+
+<div id={blk.id} class={cls}>
+  <div
+    class="is-flex is-flex-wrap-wrap is-justify-content-space-around is-align-items-stretch"
+  >
+    {blk.$blks.map(img => {
+      return (
+        <Image blk={img} />
+      )
+    })}
+  </div>
+</div>
+
+<style lang="scss">
+</style>

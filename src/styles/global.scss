@@ -9,29 +9,29 @@
 
 // $primary: red;
 
-@import "./variables.scss";
+@use "./colors" as c;
 
-@import "bulma/sass/utilities/_all";
-@import "bulma/sass/base/_all";
-@import "bulma/sass/elements/_all";
-@import "bulma/sass/form/_all";
-@import "bulma/sass/components/_all";
-@import "bulma/sass/grid/_all";
-@import "bulma/sass/helpers/_all";
-@import "bulma/sass/layout/_all";
+// @import "bulma/sass/utilities/_all";
+// @import "bulma/sass/base/_all";
+// @import "bulma/sass/elements/_all";
+// @import "bulma/sass/form/_all";
+// @import "bulma/sass/components/_all";
+// @import "bulma/sass/grid/_all";
+// @import "bulma/sass/helpers/_all";
+// @import "bulma/sass/layout/_all";
 
 
 // Tokens
 :root {
 	// (c)olor
-	--c-black: #05091e;
-	--c-blue: #46b4ff;
-	--c-gray: #90aab7;
-	--c-green: #9ef2cb;
-	--c-pink: #ffb8d9;
-	--c-orange: #ffb7a3;
-	--c-yellow: #ffdace;
-	--c-white: #fff;
+	--c-black: c.$black;
+	--c-blue: c.$blue;
+	--c-gray: c.$gray;
+	--c-green: c.$green;
+	--c-pink: c.$pink
+	--c-orange: c.$orange;
+	--c-yellow: c.$yellow;
+	--c-white: c.$white;
 
 	// (f)ont
 	--f-u18: 11.390625em;
@@ -145,6 +145,14 @@ $colors: 'black', 'blue', 'white';
 	.ml#{$i} {
 		margin-left: #{0.5 * $i}rem;
 	}
+	.mx#{$i} {
+		margin-right: #{0.5 * $i}rem;
+		margin-left: #{0.5 * $i}rem;
+	}
+	.my#{$i} {
+		margin-top: #{0.5 * $i}rem;
+		margin-bottom: #{0.5 * $i}rem;
+	}
 	.pa#{$i} {
 		padding: #{0.5 * $i}rem;
 	}
@@ -159,6 +167,14 @@ $colors: 'black', 'blue', 'white';
 	}
 	.pl#{$i} {
 		padding-left: #{0.5 * $i}rem;
+	}
+	.px#{$i} {
+		padding-right: #{0.5 * $i}rem;
+		padding-left: #{0.5 * $i}rem;
+	}
+	.py#{$i} {
+		padding-top: #{0.5 * $i}rem;
+		padding-bottom: #{0.5 * $i}rem;
 	}
 }
 

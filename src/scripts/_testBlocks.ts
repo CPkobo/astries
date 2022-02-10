@@ -1,67 +1,65 @@
-
-
-const plain: PlainBlock<string[]> = {
+const plain: PlainBlock<IsSingle> = {
     type: "Plain",
     $texts: ["akasatana"]
 }
 
-const list: ListBlock<string[]> = {
+const list: ListBlock<IsSingle> = {
     type: "List",
     $texts: ["a", "b", "c"]
 }
 
-const define: DefineBlock<string[][]> = {
+const define: DefineBlock<IsSingle> = {
     type: "Define",
     $texts: [["a", "b", "c"], ["d", "e"]]
 }
 
-const link: LinkBlock<string> = {
+const link: LinkBlock<IsSingle> = {
     type: "Link",
     $text: "Link",
     href: "/",
 }
 
-const img: ImageBlock<string> = {
+const img: ImageBlock<IsSingle> = {
     type: "Image",
     src: "/pict/mv01.jpg",
     $alt: "pict",
     href: "/"
 }
 
-const hd2: HeadingBlock<string> = {
+const hd2: HeadingBlock<IsSingle> = {
     type: "Heading 2",
     $text: "akasatana"
 }
 
-const hd3: HeadingBlock<string> = {
+const hd3: HeadingBlock<IsSingle> = {
     type: "Heading 3",
     $text: "akasatana"
 }
 
-const hd4: HeadingBlock<string> = {
+const hd4: HeadingBlock<IsSingle> = {
     type: "Heading 4",
     $text: "akasatana"
 }
 
-const ih2: IconHeadingBlock<string> = {
+const ih2: IconHeadingBlock<IsSingle> = {
     type: "Icon Heading 2",
     icon: "",
     $text: "akasatana"
 }
 
-const ih3: IconHeadingBlock<string> = {
+const ih3: IconHeadingBlock<IsSingle> = {
     type: "Icon Heading 2",
     icon: "",
     $text: "akasatana"
 }
 
-const ih4: IconHeadingBlock<string> = {
+const ih4: IconHeadingBlock<IsSingle> = {
     type: "Icon Heading 4",
     icon: "",
     $text: "akasatana"
 }
 
-const hero: HeroBlock<string> = {
+const hero: HeroBlock<IsSingle> = {
     type: "Hero",
     $title: "HERO",
     $subtitle: "Hero...",
@@ -69,19 +67,19 @@ const hero: HeroBlock<string> = {
     $alt: "hero"
 }
 
-const shero: SubHeroBlock<string> = {
+const shero: SubHeroBlock<IsSingle> = {
     type: "Sub Hero",
     $title: "HERO",
     src: "/pict/mv01.jpg",
     $alt: "hero"
 }
 
-const bar: SubBarBlock<string> = {
+const bar: SubBarBlock<IsSingle> = {
     type: "Sub Bar",
     $title: "HERO",
 }
 
-const rels: RelativeBlock<string> = {
+const rels: RelativeBlock<IsSingle> = {
     type: "Relatives",
     $title: "関連記事",
     $articles: [

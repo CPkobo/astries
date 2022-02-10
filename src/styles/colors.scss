@@ -1,0 +1,23 @@
+@use "./variables" as v;
+
+// BASE COLORS
+$primary: v.$primary;
+$primary-text: v.$primary-text;
+$primary-nega: v.$primary-nega;
+$primary-nega-text: v.$primary-nega-text;
+
+$secondary:v.$secondary;
+$secondary-text: v.$secondary-text;
+$secondary-nega: v.$secondary-nega;
+$secondary-nega-text: v.$secondary-nega-text;
+
+$accent: #AEFEFF;
+
+// FUNCTIONAL COLORS
+$bg-color: v.$bg-color;
+$bg-gradiation: v.$bg-gradiation;
+$disabled-color: v.$disabled-color;
+
+$heading-color: v.$heading-color;
+$text-color: v.$text-color;
+$link-color: v.$link-color;

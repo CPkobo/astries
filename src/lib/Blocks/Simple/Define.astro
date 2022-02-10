@@ -1,0 +1,26 @@
+---
+import { classNaming }  from "$scripts/_className"
+let blk: DefineBlock<IsSingle>
+({ blk } = Astro.props)
+
+const presets = {
+  def: "px-3",
+};
+
+const cls = classNaming("", blk.classes, blk.preset, presets)
+---
+
+<h1>this is define</h1>
+<dl id={blk.id} class={cls}>
+  {() => {
+    const dts = []
+    blk.$texts.forEach(ts => {
+      dts.push(<dt>{ts[0]}</dt>)
+      ts.slice(1).forEach(t => {
+        dts.push(<dd>{t}</dd>)
+      });
+    });
+    return dts
+    }
+  }
+</dl>

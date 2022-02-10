@@ -1,0 +1,30 @@
+---
+import { classNaming }  from "$scripts/_className"
+let blk: IconHeadingBlock<IsSingle>
+({ blk } = Astro.props)
+
+const presets = {
+  def: "title is-2 has-text-primary mt-2",
+};
+
+const cls = classNaming("", blk.classes, blk.preset, presets)
+---
+
+<h3 id={blk.id} class={cls}>
+  {
+    blk.icon !== ""
+      ? <span className="icon mx-3">
+          <i className={blk.icon} aria-hidden="true" />
+        </span>
+      : ""
+  }
+  {blk.$text}
+</h3>
+
+<style lang="scss">
+  @use "../../../../styles/colors.scss" as c;
+  h3 {
+    border-bottom: solid 2px c.$primary;
+    color: c.$primary-text
+  }
+</style>

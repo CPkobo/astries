@@ -1,5 +1,6 @@
 ---
-import BlockControl from "$lib/Aries/BlockControl.astro";
+import Base from "$layouts/BaseFluid.astro"
+import BlockControl from "$lib/Blocks/BlockControl.astro";
 
 import { eachBlock, arrayBlocks } from "$scripts/_testBlocks"
 
@@ -7,6 +8,13 @@ const {
     plain, list, define, link, hd2, hd3, hd4, ih2, ih3, ih4, hero, shero, bar, rels
 } = eachBlock
 
+const content = {
+    lang: "ja"
+}
+
 ---
 
-<BlockControl blks={arrayBlocks} />
+<Base content={content}>
+<p>3</p>
+    <BlockControl blks={arrayBlocks} />
+</Base>

@@ -1,0 +1,38 @@
+---
+import { classNaming }  from "$scripts/_className"
+import BlockControl from "$lib/Blocks/SImpleBlockControl.astro"
+let blk: MediaTextBlock<IsSingle>
+({ blk } = Astro.props)
+
+const presets = {
+  def: "",
+};
+
+const cls = classNaming("img-box", blk.classes, blk.preset, presets)
+---
+<div
+  id={blk.id}
+  class={cls}
+>
+  <div class="ml-2-desktop pr-5-desktop">
+    <BlockControl blks={blk.$blks} />
+  </div>
+  <img src={blk.src} alt={blk.$alt} class="pr-5-desktop" />
+</div>
+<div class="is-clearfix" />
+
+<style>
+  @media (min-width: 1024px) {
+    div.img-box {
+      display: flex;
+    }
+
+    div.img-box div {
+      flex-grow: 1;
+    }
+
+    div.img-box img {
+      flex-grow: 0;
+    }
+  }
+</style>

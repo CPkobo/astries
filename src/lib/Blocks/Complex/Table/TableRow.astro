@@ -1,0 +1,15 @@
+---
+import BlockControl from "$lib/Blocks/SimpleBlockControl.astro"
+let row: SimpleBlock<IsSingle>[]
+({ row } = Astro.props)
+---
+
+<tr>
+  {row.map(blk => {
+    return (
+      <td>
+        <BlockControl blks={[blk]} />
+      </td>
+    )
+  })}
+</tr>

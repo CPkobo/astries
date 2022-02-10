@@ -1,0 +1,16 @@
+---
+  import { classNaming }  from "$scripts/_className"
+let blk: HeadingBlock<IsSingle>
+({ blk } = Astro.props)
+
+const presets = {
+  def: "title is-3 my-4",
+  center: "title is-3 my-4 has-text-centered",
+};
+
+const cls = classNaming("", blk.classes, blk.preset, presets)
+---
+
+<h3 id={blk.id} class={cls}>
+  {blk.$text}
+</h3>
