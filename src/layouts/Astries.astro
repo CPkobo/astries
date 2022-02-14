@@ -1,0 +1,19 @@
+---
+import MainHead from '../lib/MainHead.astro';
+interface AstriesHead {
+  lang: LangList
+  title: string
+  description: string
+}
+let head: AstriesHead;
+({ head } = Astro.props);
+---
+
+<html lang={head.lang}>
+	<head>
+		<MainHead title={head.title} description={head.description} />
+	</head>
+	<body>
+    <slot />
+	</body>
+</html>

@@ -1,4 +1,5 @@
 import { readdirSync, readFileSync, existsSync } from "fs"
+import { join } from "path"
 import { load } from "js-yaml"
 import { handleConvI18n2Str, handleConvI18n2StrInMeta, handleConvI18n2StrToc } from "./_convHandler"
 
@@ -6,7 +7,7 @@ export async function getContents(dirs: string, path: string, lang: LangList): P
   // const dirs = paths.slice(0, paths.length - 1)
   // const path = paths[paths.length - 1]
 
-  const targetDir = dirs === "$" ? "contents" : `contents/${dirs}`
+  const targetDir = dirs === "$" ? "contents" : join("contents", dirs)
   if (!existsSync(targetDir)) {
     // フォルダが見つからなかったら404にする
     return null
@@ -16,7 +17,7 @@ export async function getContents(dirs: string, path: string, lang: LangList): P
     // ファイルが見つからなかったら404にする
     return null
   } else {
-    const $yml = load(readFileSync(`${targetDir}/${srcFile}`).toString()) as PageContents<I18nText, I18nArray, I18n2DArray>
+    const $yml = load(readFileSync(join(targetDir, srcFile)).toString()) as PageContents<IsMulti>
     const metas = handleConvI18n2StrInMeta($yml, lang)
     metas.href = path
     const contents = handleConvI18n2Str($yml.contents, lang)
@@ -111,7 +112,7 @@ export async function getContents(dirs: string, path: string, lang: LangList): P
   }
 }
 
-export async function getTOC(dirs: string, path: string, lang: LangList): Promise<TOC<string> | null> {
+export async function getTOC(dirs: string, path: string, lang: LangList): Promise<TOC<IsSingle> | null> {
   // const dirs = paths.slice(0, paths.length - 1)
   // const path = paths[paths.length - 1]
   const srcFile = readdirSync(`contents/${dirs}`).find(fileName => fileName.endsWith(`${path}.yaml`))
@@ -119,7 +120,7 @@ export async function getTOC(dirs: string, path: string, lang: LangList): Promis
     // ファイルが見つからなかったら404にする
     return null
   } else {
-    const $yml = load(readFileSync(`contents/${dirs}/${srcFile}`).toString()) as TOC<I18nText>
+    const $yml = load(readFileSync(`contents/${dirs}/${srcFile}`).toString()) as TOC<IsMulti>
     return handleConvI18n2StrToc($yml, lang)
   }
 }

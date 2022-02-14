@@ -1,7 +1,3 @@
-
-declare type LangList = "ja"|"zh"|"en"
-declare const DEF_LANG = "ja"
-
 declare type I18nText = {
   [key in LangList]?: string;
 }

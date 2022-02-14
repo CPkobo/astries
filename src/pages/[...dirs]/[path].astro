@@ -1,0 +1,31 @@
+---
+import { pagepaths } from "$scripts/navs.ts"
+import { getContents } from "$scripts/_i18n"
+import Base from "$layouts/Base.astro"
+import BlockControl from "$lib/Blocks/BlockControl.astro"
+
+export async function getStaticPaths() {
+   return pagepaths
+}
+
+const {dirs, path} = Astro.request.params
+const { contents } = await getContents(dirs, path, "ja")
+
+const head = {
+   lang: "ja",
+   title: "yes",
+   description: "hoge"
+}
+const { layout } = Astro.props
+---
+
+<Base head={head}>
+{() => {
+   if (layout === undefined || layout === "base") {
+      return (
+            <BlockControl blks={contents} />
+      )
+   }
+   return (<h1>{layout}</h1>)
+}}
+</Base>

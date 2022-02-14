@@ -9,8 +9,8 @@ import {
 } from "./_blockFns"
 
 // 多言語 → 単一言語 コンテンツへの変換
-export function handleConvI18n2StrToc($toc: TOC<I18nText>, lang: LangList): TOC<string> {
-  const toc: TOC<string> = {
+export function handleConvI18n2StrToc($toc: TOC<IsMulti>, lang: LangList): TOC<IsSingle> {
+  const toc: TOC<IsSingle> = {
     name: $toc.name,
     position: $toc.position,
     $heading: convI18n2Str($toc.$heading, lang),
@@ -44,8 +44,8 @@ export function handleConvI18n2StrToc($toc: TOC<I18nText>, lang: LangList): TOC<
 }
 
 export function handleConvI18n2StrInMeta(
-  $pg: Omit<PageContents<I18nText, I18nArray, I18n2DArray>, "contents"> | PageContents<I18nText, I18nArray, I18n2DArray>,
-  lang: LangList): Omit<PageContents<IsSIngle>, "contents"> {
+  $pg: Omit<PageContents<IsMulti>, "contents"> | PageContents<IsMulti>,
+  lang: LangList): Omit<PageContents<IsSingle>, "contents"> {
   const href = `${$pg.href}--${lang}`
   return {
     name: $pg.name,
@@ -61,8 +61,8 @@ export function handleConvI18n2StrInMeta(
 }
 
 export function handleConvI18n2Str(
-  $blks: AnyBlock<I18nText, I18nArray, I18n2DArray>[], lang: LangList): AnyBlock<IsSIngle>[] {
-  const strBlks: AnyBlock<IsSIngle>[] = []
+  $blks: AnyBlock<IsMulti>[], lang: LangList): AnyBlock<IsSingle>[] {
+  const strBlks: AnyBlock<IsSingle>[] = []
   if ($blks === undefined) {
     return strBlks
   }
@@ -107,7 +107,7 @@ export function handleConvI18n2Str(
 }
 
 export function convSimpleBlock(
-  blk: SimpleBlock<I18nText, I18nArray, I18n2DArray>, lang: string): SimpleBlock<IsSIngle> | null {
+  blk: SimpleBlock<IsMulti>, lang: string): SimpleBlock<IsSingle> | null {
   switch (blk.type) {
     case "RawHTML":
       return _rawHtml(blk, lang)
@@ -154,8 +154,8 @@ export function convSimpleBlock(
   }
 }
 
-export function batchConvSimpleBlocks(blks: SimpleBlock<I18nText, I18nArray, I18n2DArray>[], lang: string): SimpleBlock<IsSIngle>[] {
-  const nblks: SimpleBlock<IsSIngle>[] = []
+export function batchConvSimpleBlocks(blks: SimpleBlock<IsMulti>[], lang: string): SimpleBlock<IsSingle>[] {
+  const nblks: SimpleBlock<IsSingle>[] = []
   for (const blk of blks) {
     const nblk = convSimpleBlock(blk, lang)
     if (nblk !== null) {
@@ -165,7 +165,7 @@ export function batchConvSimpleBlocks(blks: SimpleBlock<I18nText, I18nArray, I18
   return nblks
 }
 
-export function convComplexBlock(blk: ComplexBlock<I18nText, I18nArray, I18n2DArray>, lang: string): ComplexBlock<IsSIngle> | null {
+export function convComplexBlock(blk: ComplexBlock<IsMulti>, lang: string): ComplexBlock<IsSingle> | null {
   switch (blk.type) {
     case 'Media Right':
     case 'Media Left': {
@@ -185,10 +185,10 @@ export function convComplexBlock(blk: ComplexBlock<I18nText, I18nArray, I18n2DAr
 
     case "Features": {
       if (blk.$items !== undefined) {
-        const pblk: FeaturesBlock<IsSIngle> = _features(blk, lang)
+        const pblk: FeaturesBlock<IsSingle> = _features(blk, lang)
         if (pblk !== null) {
           blk.$items.forEach(itm => {
-            const inItm: SimpleBlock<IsSIngle>[] = batchConvSimpleBlocks(itm.$blks, lang)
+            const inItm: SimpleBlock<IsSingle>[] = batchConvSimpleBlocks(itm.$blks, lang)
             if (inItm.length > 0) {
               pblk.$items.push({
                 icon: itm.icon === "__" ? "" : itm.icon || "",
@@ -208,10 +208,10 @@ export function convComplexBlock(blk: ComplexBlock<I18nText, I18nArray, I18n2DAr
 
     case "Horizontal": {
       if (blk.$items !== undefined) {
-        const pblk: HorizontalBlock<IsSIngle> = _horizontal(blk, lang)
+        const pblk: HorizontalBlock<IsSingle> = _horizontal(blk, lang)
         if (pblk !== null) {
           blk.$items.forEach(itm => {
-            const inItm: SimpleBlock<IsSIngle>[] = batchConvSimpleBlocks(itm.$blks, lang)
+            const inItm: SimpleBlock<IsSingle>[] = batchConvSimpleBlocks(itm.$blks, lang)
             if (inItm.length > 0) {
               pblk.$items.push({
                 img: normalizeSrc(itm.img),
@@ -231,10 +231,10 @@ export function convComplexBlock(blk: ComplexBlock<I18nText, I18nArray, I18n2DAr
 
     case "Flow": {
       if (blk.$items !== undefined) {
-        const pblk: FlowBlock<IsSIngle> = _flow(blk, lang)
+        const pblk: FlowBlock<IsSingle> = _flow(blk, lang)
         if (pblk !== null) {
           blk.$items.forEach(itm => {
-            const inItm: SimpleBlock<IsSIngle>[] = batchConvSimpleBlocks(itm.$blks, lang)
+            const inItm: SimpleBlock<IsSingle>[] = batchConvSimpleBlocks(itm.$blks, lang)
             if (inItm.length > 0) {
               pblk.$items.push({
                 $blks: inItm,
@@ -251,13 +251,13 @@ export function convComplexBlock(blk: ComplexBlock<I18nText, I18nArray, I18n2DAr
 
     case "Table": {
       if (blk.$trs !== undefined) {
-        const pblk: TableBlock<IsSIngle> = _table(blk, lang)
+        const pblk: TableBlock<IsSingle> = _table(blk, lang)
         if (pblk !== null) {
           if (blk.$th) {
             pblk.$th = convI18ns2Strs(blk.$th, lang)
           }
           blk.$trs.forEach(itm => {
-            const inItm: SimpleBlock<IsSIngle>[] = batchConvSimpleBlocks(itm, lang)
+            const inItm: SimpleBlock<IsSingle>[] = batchConvSimpleBlocks(itm, lang)
             if (inItm.length > 0) {
               pblk.$trs.push(inItm)
             }
@@ -275,8 +275,8 @@ export function convComplexBlock(blk: ComplexBlock<I18nText, I18nArray, I18n2DAr
   }
 }
 
-export function batchConvRealBlocks(blks: RealBlock<I18nText, I18nArray, I18n2DArray>[], lang: string): RealBlock<IsSIngle>[] {
-  const nblks: RealBlock<IsSIngle>[] = []
+export function batchConvRealBlocks(blks: RealBlock<IsMulti>[], lang: string): RealBlock<IsSingle>[] {
+  const nblks: RealBlock<IsSingle>[] = []
   for (const blk of blks) {
     switch (blk.type) {
       case 'Media Right':
@@ -305,31 +305,31 @@ export function batchConvRealBlocks(blks: RealBlock<I18nText, I18nArray, I18n2DA
   return nblks
 }
 
-export function convLayoutBlock(blk: LayoutBlock<I18nText, I18nArray, I18n2DArray>, lang: string): LayoutBlock<IsSIngle> | null {
+export function convLayoutBlock(blk: LayoutBlock<IsMulti>, lang: string): LayoutBlock<IsSingle> | null {
   switch (blk.type) {
     case 'FLEX': {
-      const nblkss: RealBlock<IsSIngle>[][] = []
+      const nblkss: RealBlock<IsSingle>[][] = []
       for (const $blks of blk.$blkss) {
-        const nblks: RealBlock<IsSIngle>[] = batchConvRealBlocks($blks, lang)
+        const nblks: RealBlock<IsSingle>[] = batchConvRealBlocks($blks, lang)
         if (nblks.length > 0) {
           nblkss.push(nblks)
         }
       }
-      const lblk: FlexLayout<IsSIngle> = {
+      const lblk: FlexLayout<IsSingle> = {
         ...blk,
         $blkss: nblkss
       }
       return lblk
     }
     case 'COLUMN': {
-      const nblkss: RealBlock<IsSIngle>[][] = []
+      const nblkss: RealBlock<IsSingle>[][] = []
       for (const $blks of blk.$blkss) {
-        const nblks: RealBlock<IsSIngle>[] = batchConvRealBlocks($blks, lang)
+        const nblks: RealBlock<IsSingle>[] = batchConvRealBlocks($blks, lang)
         if (nblks.length > 0) {
           nblkss.push(nblks)
         }
       }
-      const lblk: ColumnLayout<IsSIngle> = {
+      const lblk: ColumnLayout<IsSingle> = {
         ...blk,
         $blkss: nblkss
       }

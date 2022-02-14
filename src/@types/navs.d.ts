@@ -28,3 +28,16 @@ declare interface NavItem {
   link: string;
   items?: NavItem[];
 }
+
+declare interface StaticPath {
+  params: {
+    dirs: string
+    path: string
+  }
+  props?: PageProp
+}
+
+declare interface PageProp {
+  layout: "lp" | "base" | "fluid",
+  lang?: LangList
+}
