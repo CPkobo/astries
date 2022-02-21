@@ -1,0 +1,15 @@
+---
+const { title = "" } = Astro.props;
+---
+
+<h2 class="filled-text is-size-4 mb-4">{title}</h2>
+
+<style lang="scss">
+  @use "../../styles/colors.scss" as c;
+  h2.filled-text {
+    padding: 0.5em;
+    background-color: c.$primary-nega;
+    color: c.$primary-nega-text;
+  }
+</style>
+

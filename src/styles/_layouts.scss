@@ -1,0 +1,10 @@
+main.astries-base {
+	margin-left: auto;
+	margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media  (min-width: 1023px){
+        max-width: 1536px;
+        padding: 1rem;
+    }
+}

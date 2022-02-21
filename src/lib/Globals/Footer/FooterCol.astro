@@ -1,0 +1,16 @@
+---
+import Logo from "$lib/Util/Logo.astro"
+import Langsw from "./langsw.astro";
+let items: NavItem[]
+({items} = Astro.props)
+---
+
+<ul class="ml-1">
+  {items.map(item => {
+    return (
+      <li>
+        <a href={item.link}>{item.caption}</a>
+      </li>
+    )
+  })}
+</ul>

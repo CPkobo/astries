@@ -33,7 +33,7 @@ let blks: AnyBlock<IsSingle>[]
 ({ blks } = Astro.props)
 ---
 
-<div class="contents">
+<div class="contents px-5-desktop">
   {blks.map(blk => {
     switch (blk.type) {
       case "Heading 2":

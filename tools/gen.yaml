@@ -1,0 +1,66 @@
+name: string
+position: 2
+href: string
+$title:
+  ja: T
+img: string
+$description:
+  ja: T
+$summary:
+  ja: T
+includes:
+  - ja
+contents:
+  - type: Heading 2
+    $text:
+      ja: hoge
+  - type: Heading 3
+    $text:
+      ja: fuga
+  - type: Heading 4
+    $text:
+      ja: hohoho
+  - type: Separator
+  - type: Icon Heading 2
+    icon: __
+    $text:
+      ja: yessss
+  - type: Icon Heading 2
+    icon: fa fa-square
+    $text:
+      ja: noooo
+  - type: Icon Heading 3
+    icon: __
+    $text:
+      ja: dasfladfasldkfa
+  - type: Icon Heading 4
+    icon: __
+    $text:
+      ja: kladjfa
+  - type: Plain
+    $texts:
+      - ja: 皆大好き機械翻訳
+      - ja: だぜぃ
+  - type: Spacer
+  - type: Plain
+    $texts:
+      - ja: らんらん藍
+      - ja: だｆｓだｊｌ；ｋｊｆだｓｆ
+      - ja: ｄふぁｓｌｋｆじゃ；
+  - type: Link
+    $text:
+      ja: hoge
+    href: /about/info
+  - type: Image
+    $alt:
+      ja: adfas
+    src: /pict/afdasf.png
+  - type: List
+    $texts:
+      - ja: a
+      - ja: b
+      - ja: c
+  - type: Define
+    $texts:
+      - - ja: this
+        - ja: is a pen

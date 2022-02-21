@@ -11,7 +11,8 @@ $secondary-text: v.$secondary-text;
 $secondary-nega: v.$secondary-nega;
 $secondary-nega-text: v.$secondary-nega-text;
 
-$accent: #AEFEFF;
+$accent: v.$accent;
+$accent-nega-text: v.$accent-nega-text;
 
 // FUNCTIONAL COLORS
 $bg-color: v.$bg-color;
@@ -21,3 +22,14 @@ $disabled-color: v.$disabled-color;
 $heading-color: v.$heading-color;
 $text-color: v.$text-color;
 $link-color: v.$link-color;
+
+
+a:hover {
+    background-color: $accent;
+    color: $accent-nega-text;
+}
+
+::selection {
+	background-color: $accent;
+	color: $accent-nega-text;
+}

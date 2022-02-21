@@ -3,11 +3,12 @@ import Astries from './Astries.astro';
 import HeaderMenu from "$lib/Globals/Header/HeaderMenu.astro"
 import FooterMenu from "$lib/Globals/Footer/FooterMenu.astro"
 let head: AstriesHead;
-({ head } = Astro.props);
+let navigations: NavigationMenu[]
+({ head, navigations } = Astro.props);
 ---
 
 <Astries head={head}>
-  <HeaderMenu />
+  <HeaderMenu navigations={navigations}/>
     <slot/>
-  <FooterMenu />
+  <FooterMenu navigations={navigations}/>
 </Astries>

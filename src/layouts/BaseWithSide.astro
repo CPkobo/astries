@@ -1,0 +1,34 @@
+---
+import WithMenu from './WithMenu.astro';
+let head: AstriesHead;
+let navigations: NavigationMenu[]
+({ head, navigations } = Astro.props);
+---
+
+<WithMenu head={head} navigations={navigations}>
+  <main class="astries-base astries-base-side container">
+    <div class="columns">
+      <div id="astries-main-contents" class="column is-two-thirds">
+        <slot name="main"/>
+      </div>
+      <div id="astries-side-contents" class="column is-one-third is-hidden-mobile">
+        <slot name="side" />
+      </div>
+    </div>
+  </main>
+</WithMenu>
+
+<style lang="scss">
+  .astries-base-side {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #astries-main-contents {
+    max-width: 60rem;
+  }
+
+  #astries-side-contents {
+    max-width: 30rem;
+  }
+</style>

@@ -1,3 +1,10 @@
+// レイアウト
+declare interface AstriesHead {
+    lang: LangList
+    title: string
+    description: string
+}
+
 // 各ページ
 declare interface PageContents<T extends IsSingle | IsMulti> {
     name: string;

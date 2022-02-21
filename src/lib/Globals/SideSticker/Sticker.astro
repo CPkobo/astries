@@ -1,0 +1,46 @@
+---
+import Menu from "./Menu.astro";
+import Contact from "./Contact.astro";
+// import Posts from "../../Utils/posts.svelte";
+const {
+  hasMenu = true,
+  hasContact = true,
+  hasPosts = true
+} = Astro.props
+let menu: NavigationMenu
+({ menu } = Astro.props)
+---
+  
+<div class="stick-menu">
+  {() => {
+    if (hasMenu) {
+      return (<Menu menu={menu}/>)
+    }
+  }}
+
+  {() => {
+    if (hasContact) {
+      return (<Contact />)
+    }
+  }}
+
+  {() => {
+    if (hasPosts) {
+      return (<div>post</div>)
+      // return (<Posts />)
+    }
+  }}
+</div>
+
+<style lang="scss">
+  @use "../../../styles/colors" as c;
+  div.stick-menu {
+    background-color: white;
+    margin-top: 50px;
+    margin-right: 10%;
+    width: 20vw;
+    border: double 1px;
+    position: sticky;
+    top: 1.4rem;
+  }
+</style>

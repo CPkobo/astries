@@ -2,7 +2,11 @@
 import { pagepaths } from "$scripts/navs.ts"
 import { getContents } from "$scripts/_i18n"
 import Base from "$layouts/Base.astro"
+import BaseWithSide from "$layouts/BaseWithSide.astro"
 import BlockControl from "$lib/Blocks/BlockControl.astro"
+import Sticker from "$lib/Globals/SideSticker/Sticker.astro"
+
+import { navs } from "$src/_resources/navs"
 
 export async function getStaticPaths() {
    return pagepaths
@@ -19,13 +23,18 @@ const head = {
 const { layout } = Astro.props
 ---
 
-<Base head={head}>
-{() => {
-   if (layout === undefined || layout === "base") {
-      return (
-            <BlockControl blks={contents} />
-      )
-   }
-   return (<h1>{layout}</h1>)
-}}
-</Base>
+<BaseWithSide head={head} navigations={navs[head.lang]}>
+  <section slot="main">
+    {() => {
+      if (layout === undefined || layout === "base") {
+        return (
+          <BlockControl blks={contents} />
+        )
+      }
+      return (<h1>{layout}</h1>)
+    }}
+  </section>
+  <section slot="side">
+    <Sticker menu={navs[head.lang]} />
+  </section>
+</BaseWithSide>

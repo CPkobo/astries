@@ -1,10 +1,5 @@
 ---
-import MainHead from '../lib/MainHead.astro';
-interface AstriesHead {
-  lang: LangList
-  title: string
-  description: string
-}
+import MainHead from './MainHead.astro';
 let head: AstriesHead;
 ({ head } = Astro.props);
 ---
@@ -12,8 +7,9 @@ let head: AstriesHead;
 <html lang={head.lang}>
 	<head>
 		<MainHead title={head.title} description={head.description} />
+		<!-- <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet"> -->
 	</head>
-	<body>
+	<body class="astries-main">
     <slot />
 	</body>
 </html>

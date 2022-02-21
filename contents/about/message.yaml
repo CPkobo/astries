@@ -24,6 +24,8 @@ contents:
             - これからも経営環境が常に変化している中、進取の心を忘れず、進化・成長し、価値創造する組織であり続けたい。
             - 引き続き、ご支援のほど宜しくお願い申し上げます。
 
+      - type: Spacer
+
       - type: Image
         classes: has-text-centered
         src: about/yang_title.gif
