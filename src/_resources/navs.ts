@@ -3,7 +3,7 @@ export const navs: I18nNavMenu = {
   "ja": [
     {
       "category": "会社概要",
-      "root": "/about/toc",
+      "root": "/about",
       "items": [
         {
           "caption": "会社情報",
@@ -34,7 +34,7 @@ export const navs: I18nNavMenu = {
     },
     {
       "category": "翻訳・通訳",
-      "root": "/lang/toc",
+      "root": "/lang",
       "items": [
         {
           "caption": "翻訳",
@@ -76,7 +76,7 @@ export const navs: I18nNavMenu = {
     },
     {
       "category": "IT事業",
-      "root": "/it/toc",
+      "root": "/it",
       "items": [
         {
           "caption": "翻訳支援ツール",
@@ -97,7 +97,7 @@ export const navs: I18nNavMenu = {
     },
     {
       "category": "その他",
-      "root": "/others/toc",
+      "root": "/others",
       "items": [
         {
           "caption": "編集・DTP",
@@ -125,29 +125,29 @@ export const navs: I18nNavMenu = {
   "zh": [
     {
       "category": "ABOUT",
-      "root": "/about/toc",
+      "root": "/about",
       "items": []
     },
     {
       "category": "LANG",
-      "root": "/lang/toc",
+      "root": "/lang",
       "items": []
     },
     {
       "category": "IT",
-      "root": "/it/toc",
+      "root": "/it",
       "items": []
     },
     {
       "category": "OTHERS",
-      "root": "/others/toc",
+      "root": "/others",
       "items": []
     }
   ],
   "en": [
     {
       "category": "ABOUT",
-      "root": "/about/toc",
+      "root": "/about",
       "items": [
         {
           "caption": "Company information",
@@ -158,17 +158,17 @@ export const navs: I18nNavMenu = {
     },
     {
       "category": "LANG",
-      "root": "/lang/toc",
+      "root": "/lang",
       "items": []
     },
     {
       "category": "IT",
-      "root": "/it/toc",
+      "root": "/it",
       "items": []
     },
     {
       "category": "OTHERS",
-      "root": "/others/toc",
+      "root": "/others",
       "items": []
     }
   ]

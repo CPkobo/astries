@@ -35,16 +35,19 @@
 // Base
 body {
 	// font-family: 'Inter', 'system-ui', sans-serif;
-	font-size: 18px;
-	line-height: 2;
 	min-height: 100vh;
 	width: 100vw;
 }
 
-main {
-	width: 95%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+p {
+	font-size: 18px;
+	line-height: 2;
 }
+
+// main {
+// 	width: 95%;
+//     flex: 1;
+//     display: flex;
+//     flex-direction: column;
+//     box-sizing: border-box;
+// }

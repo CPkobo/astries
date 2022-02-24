@@ -5,6 +5,15 @@ declare interface AstriesHead {
     description: string
 }
 
+declare interface AstriesDirection {
+    head: AstriesHead
+    hasHeaderMenu: boolean
+    hasFooterMenu: boolean
+    hasSideMenu: boolean
+    pagetype: "LP" | "Base" | "Left-Right" | "Right-Left"
+    navigations: NavigationMenu[]
+}
+
 // 各ページ
 declare interface PageContents<T extends IsSingle | IsMulti> {
     name: string;

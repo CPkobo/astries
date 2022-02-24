@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "strict": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "baseUrl": "./src",
+    "paths": {},
+    "downlevelIteration": true,
+    "outDir": "./src/tools/js",
+    "resolveJsonModule": true,
+    "types": [
+      "node",
+      "jest"
+    ],
+    "lib": [
+      "DOM",
+      "esnext",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "./src/@types/*.d.ts",
+    "./src/tools/ts/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -7,7 +7,7 @@ export async function getContents(dirs: string, path: string, lang: LangList): P
   // const dirs = paths.slice(0, paths.length - 1)
   // const path = paths[paths.length - 1]
 
-  const targetDir = dirs === "$" ? "contents" : join("contents", dirs)
+  const targetDir = dirs === "/" ? "contents" : join("contents", dirs)
   if (!existsSync(targetDir)) {
     // フォルダが見つからなかったら404にする
     return null

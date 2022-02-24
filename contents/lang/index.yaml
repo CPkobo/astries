@@ -1,4 +1,58 @@
+name: LANG
 position: 1
-ja: 翻訳・通訳
-zh: LANG
-en: LANG
+$heading:
+  ja: 翻訳・通訳
+  zh: LANG
+  en: LANG
+root: /lang
+data:
+  - name: Translation
+    position: 1
+    href: /lang/translation
+    img: gb-logo.png
+    $title:
+      ja: 翻訳
+    $summary:
+      ja: 株式会社ゴールデンブリッジの翻訳サービスの紹介です
+    includes:
+      - ja
+  - name: Interpretation
+    position: 2
+    href: /lang/interpretation
+    img: gb-logo.png
+    $title:
+      ja: 通訳
+    $summary:
+      ja: 株式会社ゴールデンブリッジの通訳サービスについての紹介です
+    includes:
+      - ja
+  - name: online
+    position: 3
+    href: /lang/online
+    img: gb-logo.png
+    $title:
+      ja: オンライン通訳
+    $summary:
+      ja: 株式会社ゴールデンブリッジのオンライン通訳サービスについての紹介です
+    includes:
+      - ja
+  - name: Machine Translation
+    position: 4
+    href: /lang/mt
+    img: gb-logo.png
+    $title:
+      ja: 機械翻訳
+    $summary:
+      ja: 株式会社ゴールデンブリッジの機械翻訳の紹介です
+    includes:
+      - ja
+  - name: Past Works
+    position: 5
+    href: /lang/works
+    img: gb-logo.png
+    $title:
+      ja: 翻訳・通訳実績一覧
+    $summary:
+      ja: 株式会社ゴールデンブリッジの翻訳・通訳実績一覧です
+    includes:
+      - ja

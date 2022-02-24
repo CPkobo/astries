@@ -60,7 +60,7 @@ export class Sitemap {
         continue
       } else {
         const path = DirOperator.join(contents, inTop)
-        const yml = load(readFileSync(path).toString()) as PageContents<I18nText, I18nArray, I18n2DArray>
+        const yml = load(readFileSync(path).toString()) as PageContents<IsMulti>
         const stat = statSync(path)
         const mtime = this.getISODayStr(stat.mtime)
         this.xml.push(...this.getUrlStrs(root, inTop, mtime, yml.includes, true))
@@ -86,11 +86,11 @@ export class Sitemap {
         const stat = statSync(filepath)
         const mtime = this.getISODayStr(stat.mtime)
         if (file.endsWith("toc.yaml")) {
-          const yml = load(readFileSync(filepath).toString()) as TOC<I18nText>
+          const yml = load(readFileSync(filepath).toString()) as TOC<IsMulti>
           const langs = [...Object.keys(yml.$heading)]
           this.xml.push(...this.getUrlStrs(root, filepath, mtime, langs))
         } else {
-          const yml = load(readFileSync(filepath).toString()) as PageContents<I18nText, I18nArray, I18n2DArray>
+          const yml = load(readFileSync(filepath).toString()) as PageContents<IsMulti>
           this.xml.push(...this.getUrlStrs(root, filepath, mtime, yml.includes))
         }
       }

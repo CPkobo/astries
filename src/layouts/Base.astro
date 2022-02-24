@@ -1,11 +1,74 @@
 ---
-import WithMenu from './WithMenu.astro';
-let head: AstriesHead;
-({ head } = Astro.props);
+import Astries from './Astries.astro';
+import HeaderMenu from "$lib/Globals/Header/HeaderMenu.astro"
+import FooterMenu from "$lib/Globals/Footer/FooterMenu.astro"
+let direction: AstriesDirection;
+({ direction } = Astro.props);
+const mainClass = direction.pagetype === "Base"
+  ? "astries-base"
+  : direction.pagetype === "LP"
+    ? "astries-base-fluid"
+    : "astries-base"
 ---
 
-<WithMenu head={head}>
-  <main class="astries-base container">
-    <slot/>
+<Astries head={direction.head}>
+  {() => {
+      if (direction.hasHeaderMenu) {
+        return (<HeaderMenu navigations={direction.navigations}/>)
+      }
+      return (<header />)
+  }}
+  <main class={mainClass}>
+    {() => {
+      if (direction.pagetype === "Left-Right") {
+        return (
+          <div class="columns container">
+            <div id="astries-main-contents" class="column is-two-thirds">
+              <slot name="main"/>
+            </div>
+            <div id="astries-side-contents" class="column is-one-third is-hidden-mobile">
+              <slot name="side" />
+            </div>
+          </div>
+        )
+      }
+    }}
+    {() => {
+      if (direction.pagetype === "Right-Left") {
+        return (
+          <div class="columns container">
+            <div id="astries-side-contents" class="column is-one-third is-hidden-mobile">
+              <slot name="side" />
+            </div>
+            <div id="astries-main-contents" class="column is-two-thirds">
+              <slot name="main"/>
+            </div>
+          </div>
+        )
+      }
+    }}
+    {() => {
+      if (direction.pagetype === "LP") {
+        return (
+          <slot name="main"/>
+        )
+      }
+    }}
+    {() => {
+      if (direction.pagetype === "Base") {
+        return (
+          <div class="container">
+            <slot name="main"/>
+          </div>
+        )
+      }
+    }}
+    
   </main>
-</WithMenu>
+  {() => {
+      if (direction.hasFooterMenu) {
+        return (<FooterMenu navigations={direction.navigations}/>)
+      }
+      return (<footer />)
+    }}
+</Astries>

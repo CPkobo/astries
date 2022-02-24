@@ -83,7 +83,7 @@ export class TOCGenerator {
   /**
   * contents ディレクトリを走査し、各ディレクトリの toc ファイルを更新する
   * @param {string} dirs ディレクトリ名の配列
-  * @return {TOC<I18nText>} toc 多言語目次
+  * @return {TOC<IsMulti>} toc 多言語目次
   */
   genTOCinEachFolder(dir: string) {
     const thisdir = `${this.contentsDir}/${dir}`
@@ -98,7 +98,7 @@ export class TOCGenerator {
       // index、toc、templeta 以外に1ファイルしかなかった場合を分ける
       const notIndex = files[0] !== "index.yaml" ? files[0].replace(".yaml", "") : files[1].replace(".yaml", "")
       const root = files.length === 2 ? `/${dir}/${notIndex}` : `/${dir}`
-      const toc: TOC<I18nText> = {
+      const toc: TOC<IsMulti> = {
         name: dir.toUpperCase(),
         position: 0,
         $heading: {},
@@ -120,8 +120,8 @@ export class TOCGenerator {
             toc.position = index.position
           }
         } else {
-          const contents = load(readFileSync(`${thisdir}/${file}`).toString()) as PageContents<I18nText, I18nArray, I18n2DArray>
-          const singleTOC: SingleTOC<I18nText> = {
+          const contents = load(readFileSync(`${thisdir}/${file}`).toString()) as PageContents<IsMulti>
+          const singleTOC: SingleTOC<IsMulti> = {
             name: contents.name || "",
             position: Number(contents.position) || toc.data.length,
             href: `/${dir}/${file.replace(".yaml", "")}`,
@@ -153,11 +153,11 @@ export class TOCGenerator {
 
   /**
   * 目次オブジェクトからナビゲーションを作成する
-  * @param {Array<TOC<I18nText>>} toc 目次オブジェクト
+  * @param {Array<TOC<IsMulti>>} toc 目次オブジェクト
   * @param {Number} depth 入れ子の層数を指定。デフォルト=2
   * @returns {[ValidPaths, I18nNavMenu]} 多言語ナビゲーション
   */
-  createNavFromToc(tocs: TOC<I18nText>[], depth = 2): [Partial<ValidPaths>, Partial<I18nNavMenu>] {
+  createNavFromToc(tocs: TOC<IsMulti>[], depth = 2): [Partial<ValidPaths>, Partial<I18nNavMenu>] {
     /**
     * @type {ValidPaths} この関数が返す多言語ナビゲーション
     * LANG: string[] の形で、
@@ -228,15 +228,15 @@ export class TOCGenerator {
   }
 
   /**
-  * SingleTOC<I18nText>[] から NavItem[] をつくる
+  * SingleTOC<IsMulti>[] から NavItem[] をつくる
   * 場合によっては再起呼び出し
-  * @param {SingleTOC<I18nText>[]} stocs ページアイテムの配列
+  * @param {SingleTOC<IsMulti>[]} stocs ページアイテムの配列
   * @param {String::LangList} lang 取り出す言語
   * @param {Number} depth 入れ子の層数を指定。
   * @param {Number} crt 現在の再帰呼び出し数
   * @return {NavItem[]} 単言語ナビゲーション
   */
-  convToc2NavItems(stocs: SingleTOC<I18nText>[], lang: LangList, depth: number, crt: number): NavItem[] | null {
+  convToc2NavItems(stocs: SingleTOC<IsMulti>[], lang: LangList, depth: number, crt: number): NavItem[] | null {
     if (crt >= depth) {
       return null
     }

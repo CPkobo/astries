@@ -10,13 +10,11 @@ const presets = {
 ---
 
 <div class="feature-box">
-  <h4 class="has-text-primary is-size-4 pl-3">
+  <h4 class="is-size-4">
     <span class="icon is-large fa-2x mr-2">
-      <i class={itm.icon} aria-hidden="true" />
+      <i class={itm.icon} aria-hidden="true"></i>
     </span>
-    <span>
-      {itm.$title}
-    </span>
+    {itm.$title}
   </h4>
   <BlockControl blks={itm.$blks} />
 </div>
@@ -24,6 +22,7 @@ const presets = {
 <style lang="scss">
   h4 {
     border-bottom: dotted 2px teal;
+    line-height: 0;
   }
 
   div.feature-box {

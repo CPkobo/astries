@@ -10,8 +10,8 @@ export class Validator {
   public pictDir: string
   public filename: string
   public files: string[]
-  public yml: Partial<PageContents<I18nText, I18nArray, I18n2DArray>>
-  public blks: AnyBlock<I18nText, I18nArray, I18n2DArray>[]
+  public yml: Partial<PageContents<IsMulti>>
+  public blks: AnyBlock<IsMulti>[]
   public errors: string[]
   public alerts: string[]
   public errorFiles: string[]
@@ -51,14 +51,14 @@ export class Validator {
     this.filename = path
     this.files.push(path)
     this.blks = []
-    this.yml = load(readFileSync(path).toString()) as Partial<PageContents<I18nText, I18nArray, I18n2DArray>>
+    this.yml = load(readFileSync(path).toString()) as Partial<PageContents<IsMulti>>
   }
 
   readStr(str: string): void {
     this.filename = "__STR__"
     this.files.push("__STR__")
     this.yml = {}
-    this.blks = load(str) as AnyBlock<I18nText, I18nArray, I18n2DArray>[]
+    this.blks = load(str) as AnyBlock<IsMulti>[]
   }
 
   execValidate(): void {
@@ -177,7 +177,7 @@ export class Validator {
     }
   }
 
-  validateMetas(pg: Partial<PageContents<I18nText, I18nArray, I18n2DArray>>) {
+  validateMetas(pg: Partial<PageContents<IsMulti>>) {
     if (!pg.includes) {
       this.addError("missing 'includes'")
       this.inLangs = this.langs
@@ -265,7 +265,7 @@ export class Validator {
     }
   }
 
-  validateContents(blks: AnyBlock<I18nText, I18nArray, I18n2DArray>[]) {
+  validateContents(blks: AnyBlock<IsMulti>[]) {
     blks.forEach(blk => {
       switch (blk.type) {
         case "RawHTML":
@@ -306,7 +306,7 @@ export class Validator {
     })
   }
 
-  validateSimpleBlock(blk: SimpleBlock<I18nText, I18nArray, I18n2DArray>): void {
+  validateSimpleBlock(blk: SimpleBlock<IsMulti>): void {
     switch (blk.type) {
       case "RawHTML": {
         const [langOk, typeOk] = this.validateLangAndObj(blk.$html)
@@ -457,7 +457,7 @@ export class Validator {
     }
   }
 
-  validateComplexBlock(blk: ComplexBlock<I18nText, I18nArray, I18n2DArray>): void {
+  validateComplexBlock(blk: ComplexBlock<IsMulti>): void {
     switch (blk.type) {
       case 'Media Right':
       case 'Media Left': {
@@ -606,7 +606,7 @@ export class Validator {
     }
   }
 
-  validateLayoutBlock(blk: LayoutBlock<I18nText, I18nArray, I18n2DArray>): void {
+  validateLayoutBlock(blk: LayoutBlock<IsMulti>): void {
     switch (blk.type) {
       case "FLEX":
         if (!Array.isArray(blk.$blkss)) {

@@ -85,19 +85,37 @@ export const latest = readable<MinPostIndex[]>(null, (set) => { set(latestPosts)
       }
     }
     this.files.sort((a, b) => {
-      if (a.modified.getTime() > b.modified.getTime()) {
-        return -1
-      } else if (a.modified.getTime() < b.modified.getTime()) {
-        return 1
+      if (a.modified === undefined) {
+        if (b.modified === undefined) {
+          return 0
+        } else {
+          return -1
+        }
+      } else if (b.modified === undefined) {
+        if (a.modified === undefined) {
+          return 0
+        } else {
+          return 1
+        }
       } else {
-        return 0
+        if (a.modified.getTime() > b.modified.getTime()) {
+          return -1
+        } else if (a.modified.getTime() < b.modified.getTime()) {
+          return 1
+        } else {
+          return 0
+        }
       }
     })
   }
 
-  getISODayStr(time: string | Date): string {
-    const date = new Date(time)
-    return date.toISOString().split("T")[0]
+  getISODayStr(time: string | Date | undefined): string {
+    if (time === undefined) {
+      const date = new Date()
+      return date.toISOString().split("T")[0]
+    } else {
+      const date = new Date(time)
+      return date.toISOString().split("T")[0]
+    }
   }
-
 }
