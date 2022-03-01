@@ -22,12 +22,15 @@ const mainClass = direction.pagetype === "Base"
     {() => {
       if (direction.pagetype === "Left-Right") {
         return (
-          <div class="columns container">
-            <div id="astries-main-contents" class="column is-two-thirds">
-              <slot name="main"/>
-            </div>
-            <div id="astries-side-contents" class="column is-one-third is-hidden-mobile">
-              <slot name="side" />
+          <div class="container">
+            <slot name="top" />
+            <div class="columns">
+              <div id="astries-main-contents" class="column is-three-quarters">
+                <slot name="main"/>
+              </div>
+              <div id="astries-side-contents" class="column is-one-quarter is-hidden-mobile">
+                <slot name="side" />
+              </div>
             </div>
           </div>
         )
@@ -36,12 +39,14 @@ const mainClass = direction.pagetype === "Base"
     {() => {
       if (direction.pagetype === "Right-Left") {
         return (
-          <div class="columns container">
-            <div id="astries-side-contents" class="column is-one-third is-hidden-mobile">
-              <slot name="side" />
-            </div>
-            <div id="astries-main-contents" class="column is-two-thirds">
-              <slot name="main"/>
+          <div class="container">
+            <div class="columns">
+              <div id="astries-side-contents" class="column is-one-quarter is-hidden-mobile">
+                <slot name="side" />
+              </div>
+              <div id="astries-main-contents" class="column is-three-quarters">
+                <slot name="main"/>
+              </div>
             </div>
           </div>
         )

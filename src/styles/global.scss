@@ -1,5 +1,22 @@
 @use "./colors" as c;
 @use "./layouts" as l;
+@import "./overwrite";
+
+// Overwrite Bulma with Functional Colors
+// HEADER
+$navbar-background-color:c.$navbar-background-color;
+$navbar-dropdown-background-color:c.$navbar-background-color;
+$navbar-item-color: c.$navbar-item-color;
+
+// FOOTER
+$footer-background-color: c.$navbar-background-color;
+
+$navbar-height: 5rem;
+// $navbar-padding-vertical: 1rem;
+// $navbar-padding-horizontal: 5rem;
+
+// $navbar-item-hover-color: c.$navbar-item-hover-color;
+
 
 @import "bulma/sass/utilities/_all";
 @import "bulma/sass/base/_all";
@@ -9,6 +26,7 @@
 @import "bulma/sass/grid/_all";
 @import "bulma/sass/helpers/_all";
 @import "bulma/sass/layout/_all";
+
 
 // .wf-sawarabigothic { font-family: "Sawarabi Gothic"; }
 
@@ -37,12 +55,42 @@ body {
 	// font-family: 'Inter', 'system-ui', sans-serif;
 	min-height: 100vh;
 	width: 100vw;
+	background: linear-gradient(
+		330deg,
+		white 0%,
+		white 25%,
+		rgba(195, 255, 208, 0.5) 28%,
+		white 31%,
+		white 37%,
+		rgba(195, 255, 208, 0.5) 39%,
+		white 41%,
+		white
+	);
+	background-attachment: fixed;
 }
 
 p {
 	font-size: 18px;
 	line-height: 2;
 }
+
+a {
+	color: c.$secondary;
+}
+
+// dt {
+// 	font-size: larger;
+// 	font-weight: bold;
+// 	margin-bottom: 0.3rem;
+// }
+  
+// dt:nth-of-type(n+2) {
+// 	margin-top: 0.7rem;
+// }
+
+// dd {
+// 	margin-left: 0.7rem;
+// }
 
 // main {
 // 	width: 95%;

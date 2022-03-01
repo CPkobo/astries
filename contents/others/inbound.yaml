@@ -1,6 +1,6 @@
 name: INBOUND
 position: 2
-includes:
+langs:
   - ja
 $title:
   ja: インバウンド交流事業

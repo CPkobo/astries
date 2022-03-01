@@ -1,6 +1,6 @@
 name: Past Works
 position: 5
-includes:
+langs:
   - ja
 $title:
   ja: 翻訳・通訳実績一覧
@@ -17,7 +17,6 @@ contents:
       ja: 翻訳実績
 
   - type: Define
-    classes: ml-5
     $texts:
       ja:
         - - 製造業・自動車メーカー
@@ -108,7 +107,6 @@ contents:
       ja: 通訳実績
 
   - type: Define
-    classes: ml-5
     $texts:
       ja:
         - - 表敬
@@ -180,7 +178,7 @@ contents:
 
   - type: Icon Heading 2
     icon: __
-    $text: 
+    $text:
       ja: ナレーション
 
   - type: List

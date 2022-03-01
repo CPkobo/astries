@@ -10,8 +10,8 @@ class DirOperator {
     static _static = "static";
     static _pict = "pict";
     static _posts = ["posts"];
-    static _prof = ".init/profile.yaml";
-    static _tocyaml = "toc.yaml";
+    static _prof = "_init/profile.yaml";
+    static _indexyaml = "index.yaml";
     static join = (...paths) => {
         return (0, path_1.join)(...paths);
     };
@@ -109,12 +109,12 @@ class DirOperator {
             return [(0, path_1.join)(this.src, DirOperator._types), (0, path_1.join)(DirOperator._langts)];
         }
     }
-    getWriteTocPaths(path) {
+    getWriteIndexPaths(path) {
         if (this.out === "") {
-            return [(0, path_1.join)(this.root, this.contents, path), (0, path_1.join)(DirOperator._tocyaml)];
+            return [(0, path_1.join)(this.root, this.contents, path), (0, path_1.join)(DirOperator._indexyaml)];
         }
         else {
-            return [(0, path_1.join)(this.contents, path), (0, path_1.join)(DirOperator._tocyaml)];
+            return [(0, path_1.join)(this.contents, path), (0, path_1.join)(DirOperator._indexyaml)];
         }
     }
     writeFiles(writer) {

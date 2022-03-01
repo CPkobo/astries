@@ -1,6 +1,6 @@
 name: message
 position: 3
-includes:
+langs:
   - ja
 $title:
   ja: 社長あいさつ

@@ -8,7 +8,7 @@ $description:
   ja: T
 $summary:
   ja: T
-includes:
+langs:
   - ja
 contents:
   - type: Heading 2

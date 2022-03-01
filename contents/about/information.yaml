@@ -1,6 +1,6 @@
 name: information
 position: 1
-includes:
+langs:
   - ja
   - en
 $title:
@@ -70,7 +70,7 @@ contents:
               - - 【連絡先】
                 - TEL　06-6543-6898
                 - FAX　06-7635-9508
-                - rans@goldenbridge2002.com
+                - trans@goldenbridge2002.com
 
       - - type: Plain
           $texts:
@@ -151,4 +151,8 @@ contents:
           - 時間外労働の適正化推進対策を実施
           - 事業場毎の適正配置や業務内容、業務分担、シフト等の改善
           - ノー残業デー設置に向けて、計画期間内導入の検討
-          - 平成30年 8月31日
+
+  - type: Plain
+    $texts:
+      ja:
+        - 制定： 平成30年 8月31日

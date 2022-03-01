@@ -1,6 +1,6 @@
 name: Natural Language Processing
 position: 2
-includes:
+langs:
   - ja
 $title:
   ja: 自然言語処理

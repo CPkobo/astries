@@ -1,6 +1,6 @@
 name: cat
 position: 1
-includes:
+langs:
   - ja
 $title:
   ja: 翻訳支援ツール

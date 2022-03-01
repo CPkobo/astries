@@ -1,6 +1,6 @@
 name: copy right
 position: 4
-includes:
+langs:
   - ja
 $title:
   ja: 著作権登録

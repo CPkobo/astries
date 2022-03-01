@@ -1,6 +1,6 @@
 name: Interpretation
 position: 2
-includes:
+langs:
   - ja
 $title:
   ja: 通訳

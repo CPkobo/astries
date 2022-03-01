@@ -9,8 +9,16 @@ let items: NavItem[]
   {items.map(item => {
     return (
       <li>
-        <a href={item.link}>{item.caption}</a>
+        <a class="footer-link" href={item.link}>{item.caption}</a>
       </li>
     )
   })}
 </ul>
+
+<style lang="scss">
+@use "../../../styles/colors" as c;
+  a.footer-link {
+    font-size: 1rem;
+    color: c.$footer-text-color;
+  }
+</style>

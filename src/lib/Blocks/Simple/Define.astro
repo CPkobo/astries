@@ -10,16 +10,18 @@ const presets = {
 const cls = classNaming("", blk.classes, blk.preset, presets)
 ---
 
-<dl id={blk.id} class={cls}>
-  {() => {
-    const dts = []
-    blk.$texts.forEach(ts => {
-      dts.push(<dt>{ts[0]}</dt>)
-      ts.slice(1).forEach(t => {
-        dts.push(<dd>{t}</dd>)
+<div class="content">
+  <dl id={blk.id} class={cls}>
+    {() => {
+      const dts = []
+      blk.$texts.forEach(ts => {
+        dts.push(<dt>{ts[0]}</dt>)
+        ts.slice(1).forEach(t => {
+          dts.push(<dd>{t}</dd>)
+        });
       });
-    });
-    return dts
+      return dts
+      }
     }
-  }
-</dl>
+  </dl>
+</div>

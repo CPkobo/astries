@@ -11,6 +11,9 @@
       "$src/*": [
         "src/*"
       ],
+      "$envs/*": [
+        "src/_envs/*"
+      ],
       "$layouts/*": [
         "src/layouts/*"
       ],

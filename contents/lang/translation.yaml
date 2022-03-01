@@ -1,6 +1,6 @@
 name: Translation
 position: 1
-includes:
+langs:
   - ja
 $title:
   ja: 翻訳

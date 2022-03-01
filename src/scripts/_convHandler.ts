@@ -9,17 +9,18 @@ import {
 } from "./_blockFns"
 
 // 多言語 → 単一言語 コンテンツへの変換
-export function handleConvI18n2StrToc($toc: TOC<IsMulti>, lang: LangList): TOC<IsSingle> {
-  const toc: TOC<IsSingle> = {
+export function handleConvI18n2StrToc($toc: CategoryIndex<IsMulti>, lang: LangList): CategoryIndex<IsSingle> {
+  const toc: CategoryIndex<IsSingle> = {
     name: $toc.name,
     position: $toc.position,
     $heading: convI18n2Str($toc.$heading, lang),
     root: $toc.root,
     data: [],
+    langs: $toc.langs
   }
   if ($toc.data) {
     $toc.data.forEach(eachtoc => {
-      if (eachtoc.includes === undefined) {
+      if (eachtoc.langs === undefined) {
         toc.data.push({
           name: eachtoc.name,
           position: eachtoc.position,
@@ -27,8 +28,9 @@ export function handleConvI18n2StrToc($toc: TOC<IsMulti>, lang: LangList): TOC<I
           href: eachtoc.href,
           img: normalizeSrc(eachtoc.img),
           $summary: convI18n2Str(eachtoc.$summary, lang),
+          langs: eachtoc.langs,
         })
-      } else if (eachtoc.includes.includes(lang)) {
+      } else if (eachtoc.langs.includes(lang)) {
         toc.data.push({
           name: eachtoc.name,
           position: eachtoc.position,
@@ -36,6 +38,7 @@ export function handleConvI18n2StrToc($toc: TOC<IsMulti>, lang: LangList): TOC<I
           href: eachtoc.href,
           img: normalizeSrc(eachtoc.img),
           $summary: convI18n2Str(eachtoc.$summary, lang),
+          langs: eachtoc.langs
         })
       }
     });
@@ -56,7 +59,7 @@ export function handleConvI18n2StrInMeta(
     $summary: convI18n2Str($pg.$summary, lang),
     img: $pg.img,
     position: $pg.position,
-    includes: $pg.includes,
+    langs: $pg.langs,
   }
 }
 

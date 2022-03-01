@@ -1,0 +1,9 @@
+---
+export async function getStaticPaths() {
+   return [
+       {params: {dirs: "about"}},
+       {params: {dirs: "nyao"}}
+   ]
+}
+---
+<h1>this is index</h1>

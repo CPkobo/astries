@@ -1,6 +1,6 @@
 name: Machine Translation
 position: 4
-includes:
+langs:
   - ja
 $title:
   ja: 機械翻訳

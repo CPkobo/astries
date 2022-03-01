@@ -7,7 +7,7 @@ const {
   hasContact = true,
   hasPosts = true
 } = Astro.props
-let menu: NavigationMenu
+let menu: CategoryIndex<IsSingle>
 ({ menu } = Astro.props)
 ---
   
@@ -39,7 +39,7 @@ let menu: NavigationMenu
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
-    width: 20vw;
+    width: 90%;
     border: double 1px;
     position: sticky;
     top: 1.5rem;

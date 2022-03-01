@@ -8,16 +8,17 @@ const presets = {
   def: "",
 };
 
-const cls = classNaming("content img-box", blk.classes, blk.preset, presets)
+const cls = classNaming("img-box box", blk.classes, blk.preset, presets)
 ---
-<div
-  id={blk.id}
-  class={cls}
->
-  <div class="mr-2-desktop pl-5-desktop">
-    <BlockControl blks={blk.$blks} />
+<div id={blk.id} class={cls}>
+  <div class="columns">
+    <div class="column is-two-thirds mr-2-desktop pl-5-desktop">
+      <BlockControl blks={blk.$blks} />
+    </div>
+    <div class="column is-one-third has-text-centered">
+      <img src={blk.src} alt={blk.$alt} class="img-box-fig" />
+    </div>
   </div>
-  <img src={blk.src} alt={blk.$alt} />
 </div>
 
 <style>
@@ -36,8 +37,6 @@ const cls = classNaming("content img-box", blk.classes, blk.preset, presets)
   }
   div.img-box img {
     display:block;
-    width: 100%;
-    height: 100%;
     margin-left: auto;
     margin-right: auto;
   }

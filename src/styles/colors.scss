@@ -1,4 +1,5 @@
-@use "./variables" as v;
+// @use "./variables" as v;
+@use "../../contents/_init/variables" as v;
 
 // BASE COLORS
 $primary: v.$primary;
@@ -22,6 +23,17 @@ $disabled-color: v.$disabled-color;
 $heading-color: v.$heading-color;
 $text-color: v.$text-color;
 $link-color: v.$link-color;
+
+// HEADER
+$navbar-background-color: $primary-nega;
+$navbar-item-color: $primary-nega-text;
+$navbar-item-hover-color: orange;
+
+// FOOTER
+$footer-background-color: $primary-nega;
+$footer-text-color: $primary-nega-text;
+
+
 
 // SPECIAL COLORS
 a:hover {

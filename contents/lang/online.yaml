@@ -1,6 +1,6 @@
 name: online
 position: 3
-includes:
+langs:
   - ja
 $title:
   ja: オンライン通訳

@@ -25,7 +25,7 @@ declare interface PageContents<T extends IsSingle | IsMulti> {
     img: string;
     $description: IsStr<T>;
     $summary: IsStr<T>;
-    includes: LangList[];
+    langs: LangList[];
     contents: AnyBlock<T>[];
 }
 
@@ -47,6 +47,12 @@ declare interface PageContentsWithNav extends PageContents<IsSingle> {
     back: NavToOtherPage;
 }
 
+declare interface PageContentsWithCategory extends PageContents<IsSingle> {
+    category: CategoryIndex<IsSingle>
+}
+
+
+// Post Pages
 declare interface PostIndices {
     title: string;
     pages: PostIndex[];

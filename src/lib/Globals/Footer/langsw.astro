@@ -2,7 +2,6 @@
 import { LANGS, LANG_DISPS } from "$scripts/_env" 
 import Langlink from "./langlink.astro";
 const rootPath = Astro.request.url.pathname
-console.log(rootPath)
 const langsets = []
 for (const i in LANGS.slice(1)) {
   langsets.push(`${rootPath}--${LANGS[i]}`, LANG_DISPS[i])

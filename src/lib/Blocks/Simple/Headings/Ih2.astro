@@ -4,7 +4,7 @@ let blk: IconHeadingBlock<IsSingle>
 ({ blk } = Astro.props)
 
 const presets = {
-  def: "title is-2 mt-2",
+  def: "title is-2-desktop is-3-touch mt-2",
 };
 
 const cls = classNaming("", blk.classes, blk.preset, presets)
@@ -13,8 +13,8 @@ const cls = classNaming("", blk.classes, blk.preset, presets)
 <h2 id={blk.id} class={cls}>
   {
     blk.icon !== ""
-      ? <span className="icon mx-3">
-          <i className={blk.icon} aria-hidden="true" />
+      ? <span class="icon mx-3">
+          <i class={blk.icon} aria-hidden="true" />
         </span>
       : ""
   }

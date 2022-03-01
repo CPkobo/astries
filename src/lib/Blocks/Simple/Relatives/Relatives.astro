@@ -12,11 +12,11 @@ const title = blk.$title ? blk.$title : "Relating...";
 ---
 
 <div id={blk.id} class={cls}>
-  <h4>{title}</h4>
+  <h4 class="title is-5">{title}</h4>
   {blk.$articles.map(art => {
     return (
-      <div className="card article-box">
-      <img className="image" src={art.src} alt={art.$alt} />
+      <div class="box article-box">
+      <img class="image" src={art.src} alt={art.$alt} />
       <div>
         <h5>{art.$title}</h5>
         <p>{art.$description}</p>

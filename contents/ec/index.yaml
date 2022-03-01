@@ -2,6 +2,8 @@ name: EC
 position: 2
 $heading:
   ja: EC
+langs:
+  - ja
 root: /ec/ec
 data:
   - name: onlineshop
@@ -12,5 +14,3 @@ data:
       ja: Online Shop
     $summary:
       ja: 株式会社ゴールデンブリッジのオンラインショップ（EC）事業についての紹介です
-    includes:
-      - ja

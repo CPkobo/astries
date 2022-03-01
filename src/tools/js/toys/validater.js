@@ -176,22 +176,22 @@ class Validator {
         }
     }
     validateMetas(pg) {
-        if (!pg.includes) {
+        if (!pg.langs) {
             this.addError("missing 'includes'");
             this.inLangs = this.langs;
         }
         else {
-            if (!Array.isArray(pg.includes)) {
+            if (!Array.isArray(pg.langs)) {
                 this.addError("pg.includes should be a type of Array<Langs>");
                 this.inLangs = this.langs;
             }
-            else if (pg.includes.length === 0) {
+            else if (pg.langs.length === 0) {
                 this.addError("pg.includes is blank");
                 this.inLangs = this.langs;
             }
             else {
                 this.inLangs = [];
-                for (const lang of pg.includes) {
+                for (const lang of pg.langs) {
                     if (this.langs.includes(lang) === false) {
                         this.addError("pg.includes includeds invalid lang");
                     }

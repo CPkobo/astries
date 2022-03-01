@@ -8,48 +8,16 @@ const presets = {
   def: "",
 };
 
-const cls = classNaming("", blk.classes, blk.preset, presets)
+const cls = classNaming("content", blk.classes, blk.preset, presets)
 ---
 <div id={blk.id} class={cls}>
-  {blk.$items.map(itm => {
-    let order = 0
-    order++
-    return (
-      <FlowItm itm={itm} order={order} />
-    )
-  })}
+  {() => {
+    let order = 0;
+    return blk.$items.map(itm => {
+      order++
+      return (
+        <FlowItm itm={itm} order={order} last={order > blk.$items.length - 1}/>
+      )
+    })
+  }}
 </div>
-
-<style lang="scss">
-  div.flow-box {
-    display: flex;
-  }
-
-  div.flow-order {
-    width: 5rem;
-    padding: 1rem;
-    text-align: center;
-    vertical-align: middle;
-    background-color: teal;
-    color: teal;
-    flex-grow: 0;
-  }
-
-  div.flow-text {
-    width: 100%;
-    padding: 1rem;
-    flex-grow: 1;
-  }
-
-  div.triangle {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 26px 15px 0 15px;
-    border-color: teal transparent transparent transparent;
-  }
-</style>

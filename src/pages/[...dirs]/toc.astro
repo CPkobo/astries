@@ -1,0 +1,29 @@
+---
+import { navs, pagedirs } from "$src/_envs/navs"
+import { getTOC } from "$scripts/_i18n"
+import Base from "$layouts/Base.astro"
+import TocCardWrap from "$lib/Tocs/tocCardWrap.astro"
+
+export async function getStaticPaths() {
+   return pagedirs
+}
+const {dirs} = Astro.request.params
+const toc = await getTOC(dirs, "index", "ja")
+const direction: AstriesDirection = {
+	head: {
+		lang: 'ja',
+		title: "ASTRIES GB",
+		description: "The TOC page for Astries demo"
+	},
+	hasHeaderMenu: true,
+	hasFooterMenu: true,
+	hasSideMenu: false,
+	pagetype: 'LP',
+	navigations: navs.ja
+}
+---
+
+<Base direction={direction}>
+   <TocCardWrap toc={toc} slot="main" />
+</Base>
+

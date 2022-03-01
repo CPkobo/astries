@@ -1,6 +1,6 @@
 name: philosophy
 position: 2
-includes:
+langs:
   - ja
 $title:
   ja: 経営理念・社是
@@ -17,6 +17,7 @@ contents:
       ja: 経営理念
 
   - type: Image
+    classes: p-5
     $alt:
       ja: |-
         社員に信頼される会社である。

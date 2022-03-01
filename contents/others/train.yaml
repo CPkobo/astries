@@ -1,6 +1,6 @@
 name: Training
 position: 3
-includes:
+langs:
   - ja
 $title:
   ja: 語学研修

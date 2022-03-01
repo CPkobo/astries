@@ -12,8 +12,10 @@ const presets = {
 const cls = classNaming("", blk.classes, blk.preset, presets)
 ---
 
-<ul id={blk.id} class={cls}>
-  {blk.$texts.map((t) => (
-    <li>{t}</li>
-  ))}
-</ul>
+<div class="content">
+  <ul id={blk.id} class={cls}>
+    {blk.$texts.map((t) => (
+      <li>{t}</li>
+    ))}
+  </ul>
+</div>

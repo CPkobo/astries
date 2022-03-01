@@ -26,6 +26,7 @@
   },
   "include": [
     "./src/@types/*.d.ts",
+    "./src/_envs/*.d.ts",
     "./src/tools/ts/**/*.ts"
   ],
   "exclude": [

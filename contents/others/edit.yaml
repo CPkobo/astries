@@ -1,6 +1,6 @@
 name: edit
 position: 1
-includes:
+langs:
   - ja
 $title:
   ja: 編集・DTP

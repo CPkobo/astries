@@ -4,7 +4,11 @@ $heading:
   ja: 会社概要
   zh: ABOUT
   en: ABOUT
-root: /about
+langs:
+  - ja
+  - zh
+  - en
+root: /about/toc
 data:
   - name: information
     position: 1
@@ -15,9 +19,6 @@ data:
       en: Company information
     $summary:
       ja: 株式会社ゴールデンブリッジの各種情報を掲載しています。
-    includes:
-      - ja
-      - en
   - name: philosophy
     position: 2
     href: /about/philosophy
@@ -26,8 +27,6 @@ data:
       ja: 経営理念・社是
     $summary:
       ja: 株式会社ゴールデンブリッジの経営理念・社是についてご紹介します
-    includes:
-      - ja
   - name: message
     position: 3
     href: /about/message
@@ -36,8 +35,6 @@ data:
       ja: 社長あいさつ
     $summary:
       ja: 株式会社ゴールデンブリッジの社長 楊金峰よりご挨拶申し上げます
-    includes:
-      - ja
   - name: privacy policy
     position: 4
     href: /about/privacy
@@ -46,8 +43,6 @@ data:
       ja: プライバシーポリシー
     $summary:
       ja: 株式会社ゴールデンブリッジのプライバシーポリシーです
-    includes:
-      - ja
   - name: recruit
     position: 5
     href: /about/recruit
@@ -56,5 +51,3 @@ data:
       ja: 採用・募集
     $summary:
       ja: 株式会社ゴールデンブリッジの登録翻訳者・社内スタッフ募集ページです。
-    includes:
-      - ja

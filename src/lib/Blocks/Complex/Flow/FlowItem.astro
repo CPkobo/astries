@@ -2,10 +2,11 @@
 import BlockControl from "$lib/Blocks/SimpleBlockControl.astro"
 let itm: FlowItem<IsSingle>
 let order: number
-({ itm, order } = Astro.props)
+let last: boolean
+({ itm, order, last } = Astro.props)
 ---
-<div className="box">
-  <div className="flow-box">
+<div class="box">
+  <div class="flow-box">
     <div class="flow-order">
       <p class="is-size-4">{order}</p>
     </div>
@@ -14,8 +15,10 @@ let order: number
     </div>
   </div>
 </div>
+{ last ? "": <div class="triangle" />}
 
 <style lang="scss">
+  @use "../../../../styles/colors" as c;
   div.flow-box {
     display: flex;
   }
@@ -25,8 +28,8 @@ let order: number
     padding: 1rem;
     text-align: center;
     vertical-align: middle;
-    background-color: teal;
-    color: teal;
+    background-color: c.$primary-nega;
+    color: c.$primary-nega-text;
     flex-grow: 0;
   }
 
@@ -45,6 +48,6 @@ let order: number
     height: 0;
     border-style: solid;
     border-width: 26px 15px 0 15px;
-    border-color: teal transparent transparent transparent;
+    border-color: c.$primary transparent transparent transparent;
   }
 </style>

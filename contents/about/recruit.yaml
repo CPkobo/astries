@@ -1,6 +1,6 @@
 name: recruit
 position: 5
-includes:
+langs:
   - ja
 $title:
   ja: 採用・募集

@@ -4,7 +4,11 @@ $heading:
   ja: IT事業
   zh: IT
   en: IT
-root: /it
+langs:
+  - ja
+  - zh
+  - en
+root: /it/toc
 data:
   - name: cat
     position: 1
@@ -14,8 +18,6 @@ data:
       ja: 翻訳支援ツール
     $summary:
       ja: 株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています。
-    includes:
-      - ja
   - name: Natural Language Processing
     position: 2
     href: /it/nlp
@@ -24,8 +26,6 @@ data:
       ja: 自然言語処理
     $summary:
       ja: 株式会社ゴールデンブリッジの機械翻訳・自然言語処理について紹介しています。
-    includes:
-      - ja
   - name: digital transformation
     position: 3
     href: /it/dx
@@ -34,5 +34,3 @@ data:
       ja: DX・テレワーク
     $summary:
       ja: 株式会社ゴールデンブリッジのデジタル・トランスフォーメーション（DX）と、テレワークの取り組みについて紹介しています。
-    includes:
-      - ja

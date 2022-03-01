@@ -9,8 +9,8 @@ export class DirOperator {
   static _static = "static"
   static _pict = "pict"
   static _posts = ["posts"]
-  static _prof = ".init/profile.yaml"
-  static _tocyaml = "toc.yaml"
+  static _prof = "_init/profile.yaml"
+  static _indexyaml = "index.yaml"
 
   static join = (...paths: string[]): string => {
     return join(...paths)
@@ -127,11 +127,11 @@ export class DirOperator {
     }
   }
 
-  getWriteTocPaths(path: string): [string, string] {
+  getWriteIndexPaths(path: string): [string, string] {
     if (this.out === "") {
-      return [join(this.root, this.contents, path), join(DirOperator._tocyaml)]
+      return [join(this.root, this.contents, path), join(DirOperator._indexyaml)]
     } else {
-      return [join(this.contents, path), join(DirOperator._tocyaml)]
+      return [join(this.contents, path), join(DirOperator._indexyaml)]
     }
   }
 

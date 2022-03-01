@@ -34,10 +34,21 @@ declare interface StaticPath {
     dirs: string
     path: string
   }
-  props?: PageProp
+  props: PageProp
 }
 
+declare interface StaticDir {
+  params: {
+    dirs: string
+  },
+  props: PageProp
+}
+
+// declare type I18nStaticPaths = {
+//   [key in LangList]: StaticPath[];
+// }
+
 declare interface PageProp {
-  layout: "lp" | "base" | "fluid",
-  lang?: LangList
+  layout: "LP" | "Base" | "Fluid" | "TOC",
+  lang: LangList
 }

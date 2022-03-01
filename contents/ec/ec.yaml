@@ -1,6 +1,6 @@
 name: onlineshop
 position: 1
-includes:
+langs:
   - ja
 $title:
   ja: Online Shop

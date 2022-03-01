@@ -125,7 +125,7 @@ class TOCGenerator {
                         img: contents.img || "",
                         $title: contents.$title || this.blankI18n,
                         $summary: contents.$summary || this.blankI18n,
-                        includes: contents.includes
+                        langs: contents.includes
                     };
                     if (nameInDir.includes(singleTOC.name)) {
                         console.log(`The name ${singleTOC.name} is dupilicated in '${dir}'`);

@@ -5,16 +5,16 @@ import FilledBar from "$lib/Util/FilledBar.astro";
 ---
 
 <aside class="stick-contact has-text-centered pb-3">
-  <FilledBar title="いつでもご連絡ください" />
+  <FilledBar title="ご連絡はこちら" />
   <ul class="mb-4 list-contacts">
-    <li class="is-size-4-desktop is-size-6-touch">
+    <li class="is-size-5">
       <span class="icon mr-1">
-        <i class="fa fa-phone" aria-hidden="true" />
+        <i class="fa fa-phone" aria-hidden="true"></i>
       </span>{prof.Tel}
     </li>
-    <li class="is-size-4-desktop is-size-6-touch">
-      <span class="icon mr-1">
-        <i class="fa fa-envelope" aria-hidden="true" />
+    <li class="is-size-6">
+      <span class="mr-1">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
       </span>
       <a href={`mailto:${prof.Email}`}>{prof.Email}</a>
     </li>

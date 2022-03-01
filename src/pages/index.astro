@@ -1,7 +1,7 @@
 ---
 // Component Imports
 import Base from '$layouts/Base.astro';
-import { navs } from "$src/_resources/navs"
+import { navs } from "$src/_envs/navs"
 import { getContents } from "$scripts/_i18n"
 import BlockControl from "$lib/Blocks/BlockControl.astro"
 
@@ -17,11 +17,11 @@ const direction: AstriesDirection = {
 	pagetype: 'LP',
 	navigations: navs.ja
 }
-const { contents } = await getContents("/", "index", "ja")
+const page = await getContents("/", "index", "ja")
 ---
 
 <Base direction={direction}>
 	<section slot="main">
-    <BlockControl blks={contents} />
+    <BlockControl blks={page.contents} />
   </section>
 </Base>

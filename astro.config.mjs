@@ -12,6 +12,6 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
 	buildOptions: {
 		sitemap: true,
 		site: "https://example.com",
-		pageUrlFormat: "file"
+		// pageUrlFormat: "file"
 	}
 });
