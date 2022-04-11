@@ -32,9 +32,9 @@
       <div class="feature-box" on:click={() => move(itm.link)}>
         <h4 class="has-text-primary is-size-4 pl-3">
           {#if itm.icon !== ""}
-            <!-- <span class="icon is-large fa-2x mr-2">
+            <span class="icon is-large fa-2x mr-2">
               <i class={itm.icon} aria-hidden="true" />
-            </span> -->
+            </span>
           {/if}
           <span>
             {itm.$title}

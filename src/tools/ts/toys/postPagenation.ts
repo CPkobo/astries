@@ -16,7 +16,7 @@ export class PostPagenation {
     const writings: Writing[] = []
     this.execCrawlPosts(dirope.root, dirope.posts)
     const indices: Writing = {
-      dir: "./",
+      dir: "./posts",
       name: "indices.yaml",
       data: dump(this.files)
     }
@@ -29,15 +29,10 @@ export class PostPagenation {
       })
     }
     const data = `
-    import { readable } from 'svelte/store'
-
 export const latestPosts: MinPostIndex[] = ${JSON.stringify(minx, null, 2)}
-
-export const latest = readable<MinPostIndex[]>(null, (set) => { set(latestPosts) })
-
     `
     const latest: Writing = {
-      dir: "./",
+      dir: "./src/_env",
       name: "latest.ts",
       data
     }

@@ -29,12 +29,7 @@ class PostPagenation {
             });
         }
         const data = `
-    import { readable } from 'svelte/store'
-
 export const latestPosts: MinPostIndex[] = ${JSON.stringify(minx, null, 2)}
-
-export const latest = readable<MinPostIndex[]>(null, (set) => { set(latestPosts) })
-
     `;
         const latest = {
             dir: "./",

@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "tools:build": "npx tsc --build ./tools-tsconfig.json",
-    "tools:nav": "node ./src/tools/js/toybox.js --nav"
+    "tools:nav": "node ./src/tools/js/toybox.js --nav",
+    "tools:post": "node ./src/tools/js/toybox.js --post"
   },
   "devDependencies": {
     "@astrojs/renderer-svelte": "^0.3.1",

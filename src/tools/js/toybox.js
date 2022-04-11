@@ -101,8 +101,7 @@ else {
             tbx.writeFiles();
             break;
         }
-        case "-m":
-        case "--md":
+        case "--post":
             tbx.exportPagenation();
             tbx.writeFiles();
             break;
@@ -115,6 +114,7 @@ else {
             console.log("  -l, --lang:    Generate langconfig.ts");
             console.log("  -c, --check:   Check the yaml files in contents dir");
             console.log("  -n, --nav:     Generate index files and _resources/navs.ts");
+            console.log("  --post:        Generate posts pagenations");
             // console.log("  -m, --md:      Convert the designated md file into mlml yaml at tools/gen.yaml")
             console.log("  -h, --help:    Display help");
             break;
