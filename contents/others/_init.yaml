@@ -2,3 +2,5 @@ position: 4
 ja: その他
 zh: OTHERS
 en: OTHERS
+publishLangs:
+  - ja

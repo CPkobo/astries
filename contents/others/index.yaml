@@ -9,6 +9,7 @@ langs:
   - zh
   - en
 root: /others/toc
+pageType: LeftMain
 data:
   - name: edit
     position: 1

@@ -1,22 +1,6 @@
 @use "./colors" as c;
 @use "./layouts" as l;
-@import "./overwrite";
-
-// Overwrite Bulma with Functional Colors
-// HEADER
-$navbar-background-color:c.$navbar-background-color;
-$navbar-dropdown-background-color:c.$navbar-background-color;
-$navbar-item-color: c.$navbar-item-color;
-
-// FOOTER
-$footer-background-color: c.$navbar-background-color;
-
-$navbar-height: 5rem;
-// $navbar-padding-vertical: 1rem;
-// $navbar-padding-horizontal: 5rem;
-
-// $navbar-item-hover-color: c.$navbar-item-hover-color;
-
+@import "../../contents/_init/overwrite";
 
 @import "bulma/sass/utilities/_all";
 @import "bulma/sass/base/_all";

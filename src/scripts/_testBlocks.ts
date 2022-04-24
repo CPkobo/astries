@@ -1,3 +1,6 @@
+import type { AstriesConfig } from "../../contents/astries.config"
+import { config } from "../../contents/astries.config"
+
 const plain: PlainBlock<IsSingle> = {
     type: "Plain",
     $texts: ["akasatana"]
@@ -69,7 +72,7 @@ const hero: HeroBlock<IsSingle> = {
 
 const shero: SubHeroBlock<IsSingle> = {
     type: "Sub Hero",
-    $title: "HERO",
+    $title: "SUB HERO",
     src: "/pict/mv01.jpg",
     $alt: "hero"
 }
@@ -171,7 +174,7 @@ const hor: HorizontalBlock<IsSingle> = {
 const tbl: TableBlock<IsSingle> = {
     type: "Table",
     $th: [
-        "h1", "h2", "h3"
+        "h1?", "h2?", "h3?"
     ],
     $trs: [
         [

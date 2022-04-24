@@ -10,6 +10,7 @@ $summary:
   ja: 株式会社ゴールデンブリッジの機械翻訳・自然言語処理について紹介しています。
 href: /
 img: gb-logo.png
+pageType: LeftMain
 contents:
   - type: Icon Heading 2
     icon: fa fa-university

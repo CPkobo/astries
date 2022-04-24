@@ -1,8 +1,14 @@
 ---
-let item: NavItem;
+let item: SinglePageIndex<IsSingle>;
 ({item} = Astro.props)
 ---
 
-<a class="navbar-item is-size-4" href={item.link}
-  >{item.caption}</a
+<a class="navbar-item is-size-5" href={item.href}
+  >{item.$title}</a
 >
+
+<style lang="scss">
+  a.navbar-item {
+    text-decoration: none;
+  }
+</style>

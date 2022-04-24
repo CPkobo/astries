@@ -1,0 +1,24 @@
+---
+import TocCard from "./tocCard.astro";
+let toc: CategoryIndex<IsSingle>;
+({toc} = Astro.props);
+---
+
+<section class="section">
+  <h1 class="title is-1 has-text-centered">{toc.$heading}</h1>
+  <div
+    class="content is-flex is-flex-wrap-wrap is-justify-content-space-around is-align-items-stretch"
+  >
+  {toc.data.map(single => {
+    return (
+      <TocCard single={single} />
+    )
+  })}
+  </div>
+</section>
+
+<style>
+  /* div.card-index {
+    float: left;
+  } */
+</style>

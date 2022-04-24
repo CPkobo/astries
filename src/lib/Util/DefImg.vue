@@ -1,0 +1,3 @@
+<template>
+    <img src="/pict/mv01.jpg" alt="Default Image" />
+</template>

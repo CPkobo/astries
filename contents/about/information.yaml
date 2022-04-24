@@ -12,6 +12,7 @@ $summary:
   ja: 株式会社ゴールデンブリッジの各種情報を掲載しています。
 href: /
 img: gb-logo.png
+pageType: LeftMain
 contents:
   - type: Table
     $trs:

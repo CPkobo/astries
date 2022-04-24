@@ -9,6 +9,7 @@ langs:
   - zh
   - en
 root: /it/toc
+pageType: LeftMain
 data:
   - name: cat
     position: 1

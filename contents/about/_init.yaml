@@ -2,3 +2,5 @@ position: 0
 ja: 会社概要
 zh: ABOUT
 en: ABOUT
+publishLangs:
+  - ja

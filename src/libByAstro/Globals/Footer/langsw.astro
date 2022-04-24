@@ -1,0 +1,36 @@
+---
+import { LANGS, LANG_DISPS } from "$scripts/_env" 
+import Langlink from "./langlink.astro";
+const rootPath = Astro.request.url.pathname
+const langsets = []
+for (const i in LANGS.slice(1)) {
+  langsets.push(`${rootPath}--${LANGS[i]}`, LANG_DISPS[i])
+}
+---
+  
+<div class="navbar-item has-dropdown is-hoverable">
+  <p class="navbar-link is-size-6 is-arrowless  langswitch">
+    LANGUAGE: langname
+  </p>
+  <div class="navbar-dropdown">
+    <ul>
+      <li>
+        <Langlink href={rootPath} disp={LANG_DISPS[0]} />
+      </li>
+      {langsets.map(langset => {
+        return (
+          <li>
+            <Langlink href={langset[0]} disp={langset[1]} />
+          </li>
+        )
+      })}
+    </ul>
+  </div>
+</div>
+
+<style lang="scss">
+  p.langswitch {
+    border: 1px solid;
+    font-size: 0.7em;
+  }
+</style>

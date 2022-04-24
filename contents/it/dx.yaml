@@ -10,6 +10,7 @@ $summary:
   ja: 株式会社ゴールデンブリッジのデジタル・トランスフォーメーション（DX）と、テレワークの取り組みについて紹介しています。
 href: /
 img: gb-logo.png
+pageType: LeftMain
 contents:
   - type: Icon Heading 2
     icon: fa fa-certificate

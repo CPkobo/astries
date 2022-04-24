@@ -4,7 +4,7 @@ exports.PostPagenation = void 0;
 const tslib_1 = require("tslib");
 const fs_1 = require("fs");
 const js_yaml_1 = require("js-yaml");
-const front_matter_1 = (0, tslib_1.__importDefault)(require("front-matter"));
+const front_matter_1 = tslib_1.__importDefault(require("front-matter"));
 const marked_1 = require("marked");
 const dirOperator_1 = require("./dirOperator");
 class PostPagenation {
@@ -16,7 +16,7 @@ class PostPagenation {
         const writings = [];
         this.execCrawlPosts(dirope.root, dirope.posts);
         const indices = {
-            dir: "./",
+            dir: "./posts",
             name: "indices.yaml",
             data: (0, js_yaml_1.dump)(this.files)
         };
@@ -32,7 +32,7 @@ class PostPagenation {
 export const latestPosts: MinPostIndex[] = ${JSON.stringify(minx, null, 2)}
     `;
         const latest = {
-            dir: "./",
+            dir: "./src/_env",
             name: "latest.ts",
             data
         };

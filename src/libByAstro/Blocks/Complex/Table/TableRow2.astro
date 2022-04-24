@@ -4,12 +4,12 @@ let row: SimpleBlock<IsSingle>[]
 ({ row } = Astro.props)
 ---
 
-<tr>
-  {row.map(blk => {
-    return (
-      <td>
-        <BlockControl blks={[blk]} />
-      </td>
-    )
-  })}
-</tr>
+{() => {
+  return (     
+    <tr>
+      {row.map(rc => (
+        <td>{rc}</td>
+      ))}
+    </tr>
+  )
+}

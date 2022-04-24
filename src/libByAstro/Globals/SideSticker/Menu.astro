@@ -1,0 +1,53 @@
+---
+import { LANGS, LANG_DISPS } from "$scripts/_env" 
+import FilledBar from "$lib/Util/FilledBar.astro";
+
+let menu: CategoryIndex<IsSingle>
+({menu} = Astro.props)
+  // $: root = $page.path.split("/")[1];
+  // let menuroot: NavigationMenu = {
+  //   category: "",
+  //   root: "",
+  //   items: [],
+  // };
+  // $: {
+  //   const langmenu: NavigationMenu[] = $navs[$langset.crt];
+  //   for (const menu of langmenu) {
+  //     if (menu.root === `/${root}`) {
+  //       menuroot = menu;
+  //       break;
+  //     }
+  //   }
+  // }
+---
+
+
+<aside class="stick-menu has-text-centered pb-3">
+  <FilledBar title={menu.$heading} />
+  <ul class="menu-list is-size-3">
+    {() => {
+      if (menu.data) {
+        return (
+          menu.data.map(item => {
+            return (
+              <li>
+                <a class="menu-item is-size-6" href={item.href}>{item.$title}</a>
+              </li>)
+          })
+        )
+      }
+      return
+    }}
+  </ul>
+</aside>
+
+<style lang="scss">
+@use "../../../styles/colors" as c;
+  ul.menu-list li {
+    text-decoration: underline;
+  }
+  a.menu-item:hover {
+    background-color: c.$accent;
+    color: black;
+  }
+</style>

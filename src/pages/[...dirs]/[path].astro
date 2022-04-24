@@ -1,17 +1,17 @@
 ---
-import { navs, pagepaths } from "$src/_envs/navs.ts"
+import { navs, staticPaths } from "$src/_envs/paths"
 import { getContents } from "$scripts/_i18n"
 import Base from "$layouts/Base.astro"
-import BlockControl from "$lib/Blocks/BlockControl.astro"
+import BlockControl from "$lib/Blocks/BlockControl.vue"
 import Sticker from "$lib/Globals/SideSticker/Sticker.astro"
 import FilledBar from "$lib/Util/FilledBar.astro"
 import BreadCrumb from "$lib/Util/BreadCrumb/BreadCrumb.astro"
 
 export async function getStaticPaths() {
-   return pagepaths
+  return staticPaths
 }
 
-const {dirs, path} = Astro.request.params
+const {dirs, path} = Astro.params
 const page = await getContents(dirs, path, "ja")
 const direction: AstriesDirection = {
 	head: {
@@ -22,9 +22,10 @@ const direction: AstriesDirection = {
 	hasHeaderMenu: true,
 	hasFooterMenu: true,
 	hasSideMenu: true,
-	pagetype: 'Left-Right',
+	pagetype: 'LeftMain',
 	navigations: navs.ja
 }
+// console.log(page.contents)
 ---
 
 <Base direction={direction}>

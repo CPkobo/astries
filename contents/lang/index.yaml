@@ -9,6 +9,7 @@ langs:
   - zh
   - en
 root: /lang/toc
+pageType: LeftMain
 data:
   - name: Translation
     position: 1

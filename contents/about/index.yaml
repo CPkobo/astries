@@ -9,6 +9,7 @@ langs:
   - zh
   - en
 root: /about/toc
+pageType: LeftMain
 data:
   - name: information
     position: 1

@@ -10,7 +10,7 @@ declare interface AstriesDirection {
     hasHeaderMenu: boolean
     hasFooterMenu: boolean
     hasSideMenu: boolean
-    pagetype: "LP" | "Base" | "Left-Right" | "Right-Left"
+    pagetype: PageType
     navigations: NavigationMenu[]
 }
 
@@ -26,6 +26,7 @@ declare interface PageContents<T extends IsSingle | IsMulti> {
     $description: IsStr<T>;
     $summary: IsStr<T>;
     langs: LangList[];
+    pageType: PageType;
     contents: AnyBlock<T>[];
 }
 
@@ -47,9 +48,9 @@ declare interface PageContentsWithNav extends PageContents<IsSingle> {
     back: NavToOtherPage;
 }
 
-declare interface PageContentsWithCategory extends PageContents<IsSingle> {
-    category: CategoryIndex<IsSingle>
-}
+// declare interface PageContentsWithCategory extends PageContents<IsSingle> {
+//     category: CategoryIndex<IsSingle>
+// }
 
 
 // Post Pages

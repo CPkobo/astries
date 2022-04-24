@@ -10,6 +10,7 @@ $summary:
   ja: 株式会社ゴールデンブリッジの通訳サービスについての紹介です
 href: /
 img: gb-logo.png
+pageType: LeftMain
 contents:
   - type: Icon Heading 2
     icon: fa fa-spell-check

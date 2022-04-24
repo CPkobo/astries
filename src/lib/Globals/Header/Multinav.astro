@@ -4,9 +4,9 @@ let menu: NavigationMenu;
 ({menu} = Astro.props)
 ---
 
-<div class="navbar-item has-dropdown is-hoverable mx-4">
+<div class="navbar-item has-dropdown is-hoverable">
   <a
-    class="navbar-link is-arrowless is-size-3-desktop is-size-4-touch"
+    class="navbar-link is-arrowless is-size-4-desktop is-size-5-touch"
     href={menu.root}
   >
     {menu.category}
@@ -19,11 +19,7 @@ let menu: NavigationMenu;
 </div>
 
 <style lang="scss">
-nav#astries-header{
-  background-color: aqua;
-  .navbar-item {
-    color:brown;
+  a.navbar-link {
+    text-decoration: none;
   }
-}
-
 </style>

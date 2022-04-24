@@ -1,13 +1,13 @@
 ---
-import { navs, pagedirs } from "$src/_envs/navs"
+import { navs, staticDirs } from "$src/_envs/paths"
 import { getTOC } from "$scripts/_i18n"
 import Base from "$layouts/Base.astro"
 import TocCardWrap from "$lib/Tocs/tocCardWrap.astro"
 
 export async function getStaticPaths() {
-   return pagedirs
+   return staticDirs
 }
-const {dirs} = Astro.request.params
+const {dirs} = Astro.params
 const toc = await getTOC(dirs, "index", "ja")
 const direction: AstriesDirection = {
 	head: {

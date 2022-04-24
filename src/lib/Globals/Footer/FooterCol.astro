@@ -1,7 +1,7 @@
 ---
 import Logo from "$lib/Util/Logo.astro"
 import Langsw from "./langsw.astro";
-let items: NavItem[]
+let items: SinglePageIndex<IsSingle>[]
 ({items} = Astro.props)
 ---
 
@@ -9,7 +9,7 @@ let items: NavItem[]
   {items.map(item => {
     return (
       <li>
-        <a class="footer-link" href={item.link}>{item.caption}</a>
+        <a class="footer-link" href={item.href}>{item.$title}</a>
       </li>
     )
   })}
@@ -20,5 +20,7 @@ let items: NavItem[]
   a.footer-link {
     font-size: 1rem;
     color: c.$footer-text-color;
+    margin-left: 0.5rem;
+    text-decoration: none;
   }
 </style>

@@ -2,3 +2,5 @@ position: 3
 ja: IT事業
 zh: IT
 en: IT
+publishLangs:
+  - ja

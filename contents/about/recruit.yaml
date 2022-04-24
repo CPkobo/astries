@@ -10,6 +10,7 @@ $summary:
   ja: 株式会社ゴールデンブリッジの登録翻訳者・社内スタッフ募集ページです。
 href: /
 img: gb-logo.png
+pageType: LeftMain
 contents:
   - type: Icon Heading 2
     icon: fa fa-square

@@ -1,0 +1,24 @@
+// Overwrite Bulma with Functional Colors
+@use "./variables.scss" as v;
+
+// ----------
+// HEADER
+// ----------
+$navbar-background-color:v.$primary-nega;
+$navbar-dropdown-background-color:v.$primary-nega;
+$navbar-item-color: v.$primary-nega-text;
+
+$navbar-height: 1rem;
+$navbar-padding-vertical: 0rem;
+$navbar-padding-horizontal: 2rem;
+// $navbar-item-hover-color: v.$navbar-item-hover-color;
+
+// ----------
+// FOOTER
+// ----------
+$footer-background-color: v.$primary-nega;
+
+// ----------
+// Bread crumnb
+// ----------
+$breadcrumb-item-color: v.$secondary;

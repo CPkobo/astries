@@ -10,6 +10,7 @@ $summary:
   ja: 株式会社ゴールデンブリッジの翻訳・通訳実績一覧です
 href: /
 img: gb-logo.png
+pageType: LeftMain
 contents:
   - type: Icon Heading 2
     icon: fa fa-cog
