@@ -15,16 +15,16 @@ const cls = classNaming("hero", props.blk.classes, props.blk.preset, presets)
   <section :class="cls" id="hero" :style="`background-image: url(${blk.src});`">
     <div class="hero-body">
       <div class="top-title">
-        <h1 class="title is-size-1-desktop is-size-2-tablet is-size-3-mobile">{{ blk.$title }}</h1>
+        <h1 class="title is-size-1-desktop is-size-2-tablet is-size-3-mobile" v-html="blk.$title" />
         <h2
           class="subtitle mt-5 is-size-3-desktop is-size-4-tablet is-size-5-mobile"
-        >{{ blk.$subtitle }}</h2>
+          v-html="blk.$subtitle"
+        />
         <button v-if="blk.cta">cta</button>
       </div>
     </div>
   </section>
 </template>
-
 
 <style lang="scss">
 section#hero {

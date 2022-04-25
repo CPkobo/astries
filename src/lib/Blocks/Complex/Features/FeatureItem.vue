@@ -11,7 +11,7 @@ const props = defineProps<Props>();
     <a :href="itm.link">
       <h4 class="is-size-4 pl-3">
         <span v-if="itm.icon" class="icon is-large fa-2x mr-2">
-          <i class="{itm.icon}" aria-hidden="true"></i>
+          <i :class="itm.icon" aria-hidden="true"></i>
         </span>
         {{ itm.$title }}
       </h4>

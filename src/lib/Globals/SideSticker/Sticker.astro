@@ -1,13 +1,14 @@
 ---
 import Menu from "./Menu.astro";
 import Contact from "./Contact.astro";
+import Recent from "./Recent.astro"
 // import Posts from "../../Utils/posts.svelte";
 const {
   hasMenu = true,
   hasContact = true,
   hasPosts = true
 } = Astro.props
-let menu: CategoryIndex<IsSingle>
+let menu: NavigationMenu
 ({ menu } = Astro.props)
 ---
   
@@ -26,7 +27,7 @@ let menu: CategoryIndex<IsSingle>
 
   {() => {
     if (hasPosts) {
-      return (<div>post</div>)
+      return (<Recent />)
       // return (<Posts />)
     }
   }}

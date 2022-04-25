@@ -12,9 +12,9 @@ export default defineConfig({
 	// outDir: "./dist",
 	site: "https://example.com",
 	// base: ""
-	build: {
-		format: "file"
-	},
+	// build: {
+	// 	format: "file"
+	// },
 	server: {
 		port: 3000,
 		host: true,

@@ -1,5 +1,6 @@
 @use "./colors" as c;
 @use "./layouts" as l;
+@import "./builtin";
 @import "../../contents/_init/overwrite";
 
 @import "bulma/sass/utilities/_all";
@@ -13,7 +14,6 @@
 
 
 // .wf-sawarabigothic { font-family: "Sawarabi Gothic"; }
-
 
 :root {
 	--font-mono: "Fira Mono", monospace;

@@ -5,7 +5,7 @@ import { ProfGenerator } from "./toys/profGenerator.js"
 import { NavGenerator } from "./toys/navGenerator.js"
 import { Validator } from "./toys/validater.js"
 import { DirOperator } from "./toys/dirOperator.js";
-import { PostPagenation } from "./toys/postPagenation.js";
+import { PostPageGenerator } from "./toys/postPageGenerator.js";
 
 // ファイル書き出しのための型
 export type Writing = {
@@ -20,7 +20,8 @@ export type AstriesConfig = {
   navs?: Partial<I18nNavMenu>,
   staticDirs?: StaticDir[],
   staticPaths?: StaticPath[],
-  // posts: 
+  staticPosts?: StaticPost[],
+  staticPostPages?: StaticPostPagenate[],
 }
 
 type AstriesEnv = {
@@ -38,7 +39,7 @@ class ToolBox {
   public prof: ProfGenerator
   public nav: NavGenerator
   public val: Validator
-  public posts: PostPagenation
+  public posts: PostPageGenerator
   public dirs: DirOperator
   public writer: Array<Writing | null>
   public config: AstriesConfig
@@ -56,7 +57,7 @@ class ToolBox {
 
     this.nav = new NavGenerator(this.dirs, this.prof.prof)
     this.val = new Validator(this.dirs, this.prof.prof)
-    this.posts = new PostPagenation()
+    this.posts = new PostPageGenerator()
     // this.mlml = new MlMl()
 
     this.writer = []
@@ -86,6 +87,9 @@ class ToolBox {
     this.config.navs = navs
     this.config.staticDirs = dirs
     this.config.staticPaths = paths
+    const { pagenatePaths, postPaths, pages } = this.posts.execGenerator(this.dirs)
+    this.config.staticPosts = postPaths
+    this.config.staticPostPages = pagenatePaths
     const astriesConfig: Writing = {
       dir: this.dirs.contents,
       name: "astries.config.ts",
@@ -96,19 +100,29 @@ export type AstriesConfig = {
   navs?: Partial<I18nNavMenu>,
   staticDirs?: StaticDir[],
   staticPaths?: StaticPath[],
-  // posts: 
+  staticPosts?: StaticPost[],
+  staticPostPages?: StaticPostPagenate[],
 }
 
 export const config: AstriesConfig = ${JSON.stringify(this.config, null, 2)}
 `
     }
     this.writer.push(astriesConfig)
-    const envDaclare: Writing = {
+    const envDeclare: Writing = {
       dir: this.dirs.src + "/_envs",
       name: "env.d.ts",
       data: this.createEnvDeclare()
     }
-    this.writer.push(envDaclare)
+    this.writer.push(envDeclare)
+
+    const postIndice: Writing = {
+      dir: this.dirs.src + "/_envs",
+      name: "postIndice.ts",
+      data: `
+// Created by Astries Toybox
+export const indices: PostPagenation[] = ${JSON.stringify(pages, null, 2)}`
+    }
+    this.writer.push(postIndice)
   }
 
   createEnvDeclare(): string {
@@ -152,9 +166,9 @@ declare const SITE_NAME = "${this.prof.prof.SiteName}"
     this.writer.push(this.val.exportErrors())
   }
 
-  exportPagenation(): void {
-    this.writer.push(...this.posts.exportPageIndices(this.dirs))
-  }
+  // exportPagenation(): void {
+  //   this.writer.push(...this.posts.exportPageIndices(this.dirs))
+  // }
 
   writeFiles(): void {
     if (this.writer.length > 0) {
@@ -182,7 +196,7 @@ if (process.argv.length < 3) {
       tbx.exportLangConf()
       tbx.exportValidateLog()
       // tbx.exportToc()
-      tbx.exportPagenation()
+      // tbx.exportPagenation()
       tbx.writeFiles()
       break;
     }
@@ -215,7 +229,7 @@ if (process.argv.length < 3) {
     }
 
     case "--post":
-      tbx.exportPagenation()
+      // tbx.exportPagenation()
       tbx.writeFiles()
       break
 

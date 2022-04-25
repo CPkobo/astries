@@ -16,10 +16,10 @@ modified: 2021-12-13
 
 今後もこうした新しい形態の展示会にも、積極的に参画したいと願っています。
 
-![遼寧省開会式](../pict/posts/liaoning1.jpg)
+![遼寧省開会式](/pict/posts/liaoning1.jpg)
 
 遼寧省輸出展示会 開会式の様子
 
-![遼寧省開会式・テープカット](../pict/posts/liaoning2.jpg)
+![遼寧省開会式・テープカット](/pict/posts/liaoning2.jpg)
 
 遼寧省輸出展示会 テープカット

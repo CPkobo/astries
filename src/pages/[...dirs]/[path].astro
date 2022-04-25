@@ -4,7 +4,7 @@ import { getContents } from "$scripts/_i18n"
 import Base from "$layouts/Base.astro"
 import BlockControl from "$lib/Blocks/BlockControl.vue"
 import Sticker from "$lib/Globals/SideSticker/Sticker.astro"
-import FilledBar from "$lib/Util/FilledBar.astro"
+// import FilledBar from "$lib/Util/FilledBar.astro"
 import BreadCrumb from "$lib/Util/BreadCrumb/BreadCrumb.astro"
 
 export async function getStaticPaths() {
@@ -12,7 +12,10 @@ export async function getStaticPaths() {
 }
 
 const {dirs, path} = Astro.params
-const page = await getContents(dirs, path, "ja")
+const {lang, layout} = Astro.props
+const l = lang as LangList
+const lt = layout as PageType
+const page = await getContents(String(dirs), String(path), "ja")
 const direction: AstriesDirection = {
 	head: {
 		lang: 'ja',
@@ -22,10 +25,22 @@ const direction: AstriesDirection = {
 	hasHeaderMenu: true,
 	hasFooterMenu: true,
 	hasSideMenu: true,
-	pagetype: 'LeftMain',
-	navigations: navs.ja
+	pagetype: lt,
+	navigations: navs[lang]
 }
-// console.log(page.contents)
+let menu: NavigationMenu;
+const url = `/${dirs}/${path}`
+for (const nav of navs[l]) {
+  for (const item of nav.items) {
+    if (item.href === url) {
+      menu = nav
+      break
+    }
+  }
+  if (menu !== undefined) {
+    break;
+  }
+}
 ---
 
 <Base direction={direction}>
@@ -37,6 +52,6 @@ const direction: AstriesDirection = {
     <BlockControl blks={page.contents} />
   </section>
   <section slot="side" style="width: 100%; height: 100%">
-    <Sticker menu={page.category  } />
+    <Sticker menu={menu} />
   </section>
 </Base>

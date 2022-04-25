@@ -20,7 +20,7 @@ const cls = classNaming("", props.blk.classes, props.blk.preset, presets)
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 a {
   color: teal;
   text-decoration: underline;

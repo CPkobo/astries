@@ -54,7 +54,7 @@ declare interface PageContentsWithNav extends PageContents<IsSingle> {
 
 
 // Post Pages
-declare interface PostIndices {
+declare interface PostPagenation {
     title: string;
     pages: PostIndex[];
     num: number;
@@ -62,12 +62,7 @@ declare interface PostIndices {
     next: NavToOtherPage;
 }
 
-declare interface PostIndex extends PostInfo {
-    summary: string
-    href: string
-}
-
-declare type MinPostIndex = Pick<PostIndex, "title" | "href">
+// declare type MinPostIndex = Pick<PostIndex, "title" | "href">
 
 declare interface PostInfo {
     title: string
@@ -76,6 +71,11 @@ declare interface PostInfo {
     pubstr: string,
     modstr: string,
     image?: string
+}
+
+declare interface PostIndex extends PostInfo {
+    summary: string
+    href: string
 }
 
 declare interface PostPage {

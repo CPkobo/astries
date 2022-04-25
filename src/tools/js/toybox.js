@@ -7,7 +7,7 @@ const profGenerator_js_1 = require("./toys/profGenerator.js");
 const navGenerator_js_1 = require("./toys/navGenerator.js");
 const validater_js_1 = require("./toys/validater.js");
 const dirOperator_js_1 = require("./toys/dirOperator.js");
-const postPagenation_js_1 = require("./toys/postPagenation.js");
+const postPageGenerator_js_1 = require("./toys/postPageGenerator.js");
 class ToolBox {
     env;
     prof;
@@ -28,7 +28,7 @@ class ToolBox {
         this.prof.readProf(this.dirs);
         this.nav = new navGenerator_js_1.NavGenerator(this.dirs, this.prof.prof);
         this.val = new validater_js_1.Validator(this.dirs, this.prof.prof);
-        this.posts = new postPagenation_js_1.PostPagenation();
+        this.posts = new postPageGenerator_js_1.PostPageGenerator();
         // this.mlml = new MlMl()
         this.writer = [];
         this.config = {};
@@ -53,6 +53,9 @@ class ToolBox {
         this.config.navs = navs;
         this.config.staticDirs = dirs;
         this.config.staticPaths = paths;
+        const { pagenatePaths, postPaths, pages } = this.posts.execGenerator(this.dirs);
+        this.config.staticPosts = postPaths;
+        this.config.staticPostPages = pagenatePaths;
         const astriesConfig = {
             dir: this.dirs.contents,
             name: "astries.config.ts",
@@ -63,19 +66,28 @@ export type AstriesConfig = {
   navs?: Partial<I18nNavMenu>,
   staticDirs?: StaticDir[],
   staticPaths?: StaticPath[],
-  // posts: 
+  staticPosts?: StaticPost[],
+  staticPostPages?: StaticPostPagenate[],
 }
 
 export const config: AstriesConfig = ${JSON.stringify(this.config, null, 2)}
 `
         };
         this.writer.push(astriesConfig);
-        const envDaclare = {
+        const envDeclare = {
             dir: this.dirs.src + "/_envs",
             name: "env.d.ts",
             data: this.createEnvDeclare()
         };
-        this.writer.push(envDaclare);
+        this.writer.push(envDeclare);
+        const postIndice = {
+            dir: this.dirs.src + "/_envs",
+            name: "postIndice.ts",
+            data: `
+// Created by Astries Toybox
+export const indices: PostPagenation[] = ${JSON.stringify(pages, null, 2)}`
+        };
+        this.writer.push(postIndice);
     }
     createEnvDeclare() {
         const langList_ = [];
@@ -113,9 +125,9 @@ declare const SITE_NAME = "${this.prof.prof.SiteName}"
         this.val.execBatchValidate();
         this.writer.push(this.val.exportErrors());
     }
-    exportPagenation() {
-        this.writer.push(...this.posts.exportPageIndices(this.dirs));
-    }
+    // exportPagenation(): void {
+    //   this.writer.push(...this.posts.exportPageIndices(this.dirs))
+    // }
     writeFiles() {
         if (this.writer.length > 0) {
             this.dirs.writeFiles(this.writer);
@@ -142,7 +154,7 @@ else {
             tbx.exportLangConf();
             tbx.exportValidateLog();
             // tbx.exportToc()
-            tbx.exportPagenation();
+            // tbx.exportPagenation()
             tbx.writeFiles();
             break;
         }
@@ -170,7 +182,7 @@ else {
             break;
         }
         case "--post":
-            tbx.exportPagenation();
+            // tbx.exportPagenation()
             tbx.writeFiles();
             break;
         case "-h":

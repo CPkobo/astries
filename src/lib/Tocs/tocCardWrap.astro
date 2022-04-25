@@ -1,17 +1,17 @@
 ---
 import TocCard from "./tocCard.astro";
-let toc: CategoryIndex<IsSingle>;
+let toc: NavigationMenu;
 ({toc} = Astro.props);
 ---
 
 <section class="section">
-  <h1 class="title is-1 has-text-centered">{toc.$heading}</h1>
+  <h1 class="title is-1 has-text-centered">{toc.category}</h1>
   <div
     class="content is-flex is-flex-wrap-wrap is-justify-content-space-around is-align-items-stretch"
   >
-  {toc.data.map(single => {
+  {toc.items.map(item => {
     return (
-      <TocCard single={single} />
+      <TocCard item={item} />
     )
   })}
   </div>

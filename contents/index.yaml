@@ -27,6 +27,7 @@ contents:
       ja: ゴールデンブリッジの事業分野
   - type: Spacer
   - type: Features
+    classes: is-max-width-70 is-cetered
     $items:
       - icon: fa fa-pencil
         $title:

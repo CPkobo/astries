@@ -75,6 +75,23 @@ declare interface StaticDir {
   props: PageProp
 }
 
+declare interface StaticPost {
+  params: {
+    dirs: string
+    path: string
+  }
+  props: {
+    title: string
+  }
+}
+
+declare interface StaticPostPagenate {
+  params: {
+    dirs: string
+    pageNum: string
+  }
+}
+
 // declare type I18nStaticPaths = {
 //   [key in LangList]: StaticPath[];
 // }

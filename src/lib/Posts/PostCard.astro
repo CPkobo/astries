@@ -1,0 +1,44 @@
+---
+import DefImg from '../Util/DefImg.vue';
+import Pagenations from "./Pagenations.astro"
+
+let post: PostIndex;
+({post}=Astro.props)
+---
+<div class="box post-article-box">
+  {() => 
+    post.image
+      ? <figure><img class="image" src={post.image} alt={post.title} /></figure>
+      : <DefImg />
+  }
+  <div>
+    <h5><a href={post.href}>{post.title}</a></h5>
+      {() => {
+        const sums = post.summary.split("<br />")
+        sums[sums.length -1] += "…………"
+        return sums.map(sum => 
+          <p>{sum}</p>
+        )
+      }}
+    </div>
+</div>
+<style>
+  @media (min-width: 1024px) {
+    div.post-article-box {
+      display: flex;
+    }
+
+    div.post-article-box div {
+      flex-grow: 1;
+      padding: 1rem;
+    }
+
+    div.post-article-box figure {
+      flex-grow: 0;
+      min-width: 15%;
+      max-width: 30%;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+</style>

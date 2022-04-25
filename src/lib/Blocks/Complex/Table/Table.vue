@@ -12,7 +12,6 @@ const presets = {
 };
 
 const cls = classNaming("", props.blk.classes, props.blk.preset, presets)
-// console.log(blk)
 </script>
 
 <template>

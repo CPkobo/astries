@@ -9,40 +9,43 @@ import {
 } from "./_blockFns"
 
 // 多言語 → 単一言語 コンテンツへの変換
-export function handleConvI18n2StrToc($toc: CategoryIndex<IsMulti>, lang: LangList): CategoryIndex<IsSingle> {
-  const toc: CategoryIndex<IsSingle> = {
+export function handleConvI18n2StrToc($toc: SinglePageIndex<IsMulti>, lang: LangList): SinglePageIndex<IsSingle> {
+  const toc: SinglePageIndex<IsSingle> = {
     name: $toc.name,
     position: $toc.position,
-    $heading: convI18n2Str($toc.$heading, lang),
-    root: $toc.root,
+    $title: convI18n2Str($toc.$title, lang),
+    href: $toc.href,
+    img: $toc.img,
+    $summary: convI18n2Str($toc.$summary, lang),
+    langs: $toc.langs,
+    pageType: $toc.pageType,
     data: [],
-    langs: $toc.langs
   }
-  if ($toc.data) {
-    $toc.data.forEach(eachtoc => {
-      if (eachtoc.langs === undefined) {
-        toc.data.push({
-          name: eachtoc.name,
-          position: eachtoc.position,
-          $title: convI18n2Str(eachtoc.$title, lang),
-          href: eachtoc.href,
-          img: normalizeSrc(eachtoc.img),
-          $summary: convI18n2Str(eachtoc.$summary, lang),
-          langs: eachtoc.langs,
-        })
-      } else if (eachtoc.langs.includes(lang)) {
-        toc.data.push({
-          name: eachtoc.name,
-          position: eachtoc.position,
-          $title: convI18n2Str(eachtoc.$title, lang),
-          href: eachtoc.href,
-          img: normalizeSrc(eachtoc.img),
-          $summary: convI18n2Str(eachtoc.$summary, lang),
-          langs: eachtoc.langs
-        })
-      }
-    });
-  }
+  // if ($toc.data) {
+  //   $toc.data.forEach(eachtoc => {
+  //     if (eachtoc.langs === undefined) {
+  //       toc.data.push({
+  //         name: eachtoc.name,
+  //         position: eachtoc.position,
+  //         $title: convI18n2Str(eachtoc.$title, lang),
+  //         href: eachtoc.href,
+  //         img: normalizeSrc(eachtoc.img),
+  //         $summary: convI18n2Str(eachtoc.$summary, lang),
+  //         langs: eachtoc.langs,
+  //       })
+  //     } else if (eachtoc.langs.includes(lang)) {
+  //       toc.data.push({
+  //         name: eachtoc.name,
+  //         position: eachtoc.position,
+  //         $title: convI18n2Str(eachtoc.$title, lang),
+  //         href: eachtoc.href,
+  //         img: normalizeSrc(eachtoc.img),
+  //         $summary: convI18n2Str(eachtoc.$summary, lang),
+  //         langs: eachtoc.langs
+  //       })
+  //     }
+  //   });
+  // }
   return toc
 }
 
@@ -59,6 +62,7 @@ export function handleConvI18n2StrInMeta(
     $summary: convI18n2Str($pg.$summary, lang),
     img: $pg.img,
     position: $pg.position,
+    pageType: $pg.pageType,
     langs: $pg.langs,
   }
 }

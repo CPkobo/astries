@@ -1,0 +1,39 @@
+---
+import { staticPosts } from "../../../_envs/paths";
+import FilledBar from "$lib/Util/FilledBar.astro";
+---
+
+<aside class="stick-menu has-text-centered pb-3">
+  <FilledBar title={"投稿一覧"} />
+  <ul class="menu-list is-size-3">
+    {() => {
+      if (staticPosts.length > 0) {
+        return (
+          staticPosts.slice(0, 4).map(item => {
+            return (
+              <li>
+                <a
+                  class="menu-item is-size-6"
+                  href={"/posts/" + item.params.dirs + "/" + item.params.path}>
+                    {item.props.title}
+                  </a>
+              </li>)
+          })
+        )
+      }
+      return
+    }}
+  </ul>
+  <a href="/posts/post/page-1">投稿一覧へ</a>
+</aside>
+
+<style lang="scss">
+@use "../../../styles/colors" as c;
+  ul.menu-list li {
+    text-decoration: underline;
+  }
+  a.menu-item:hover {
+    background-color: c.$accent;
+    color: black;
+  }
+</style>
