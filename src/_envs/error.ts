@@ -18,7 +18,7 @@ export const errorPage: PageContentsWithNav = {
   $description: "Page Not Found",
   $summary: "Page Not Found",
   href: "/",
-  img: "gb-logo.png",
+  img: "gb-logo.svg",
   pageType: "LeftMain",
   contents: [
     {

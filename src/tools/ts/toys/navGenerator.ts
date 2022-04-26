@@ -302,7 +302,7 @@ export class NavGenerator {
         img: index.img,
         $summary: index.$summary[lang] || "",
         langs: index.langs,
-        pageType: "Base",
+        pageType: index.pageType,
         data: [],
       }
       if (index.data !== undefined) {

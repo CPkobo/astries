@@ -44,7 +44,7 @@ export const config: AstriesConfig = {
             "position": 1,
             "$title": "会社情報",
             "href": "/about/information",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジの各種情報を掲載しています。",
             "langs": [
               "ja",
@@ -58,7 +58,7 @@ export const config: AstriesConfig = {
             "position": 2,
             "$title": "経営理念・社是",
             "href": "/about/philosophy",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジの経営理念・社是についてご紹介します",
             "langs": [
               "ja"
@@ -71,7 +71,7 @@ export const config: AstriesConfig = {
             "position": 3,
             "$title": "社長あいさつ",
             "href": "/about/message",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジの社長 楊金峰よりご挨拶申し上げます",
             "langs": [
               "ja"
@@ -84,7 +84,7 @@ export const config: AstriesConfig = {
             "position": 4,
             "$title": "プライバシーポリシー",
             "href": "/about/privacy",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジのプライバシーポリシーです",
             "langs": [
               "ja"
@@ -97,7 +97,7 @@ export const config: AstriesConfig = {
             "position": 5,
             "$title": "採用・募集",
             "href": "/about/recruit",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジの登録翻訳者・社内スタッフ募集ページです。",
             "langs": [
               "ja"
@@ -116,7 +116,7 @@ export const config: AstriesConfig = {
             "position": 1,
             "$title": "翻訳",
             "href": "/lang/translation",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジの翻訳サービスの紹介です",
             "langs": [
               "ja"
@@ -129,7 +129,7 @@ export const config: AstriesConfig = {
             "position": 2,
             "$title": "通訳",
             "href": "/lang/interpretation",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジの通訳サービスについての紹介です",
             "langs": [
               "ja"
@@ -142,7 +142,7 @@ export const config: AstriesConfig = {
             "position": 3,
             "$title": "オンライン通訳",
             "href": "/lang/online",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジのオンライン通訳サービスについての紹介です",
             "langs": [
               "ja"
@@ -155,7 +155,7 @@ export const config: AstriesConfig = {
             "position": 4,
             "$title": "機械翻訳",
             "href": "/lang/mt",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジの機械翻訳の紹介です",
             "langs": [
               "ja"
@@ -168,7 +168,7 @@ export const config: AstriesConfig = {
             "position": 5,
             "$title": "翻訳・通訳実績一覧",
             "href": "/lang/works",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジの翻訳・通訳実績一覧です",
             "langs": [
               "ja"
@@ -206,7 +206,7 @@ export const config: AstriesConfig = {
             "position": 1,
             "$title": "翻訳支援ツール",
             "href": "/it/cat",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています。",
             "langs": [
               "ja"
@@ -219,7 +219,7 @@ export const config: AstriesConfig = {
             "position": 2,
             "$title": "自然言語処理",
             "href": "/it/nlp",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジの機械翻訳・自然言語処理について紹介しています。",
             "langs": [
               "ja"
@@ -232,7 +232,7 @@ export const config: AstriesConfig = {
             "position": 3,
             "$title": "DX・テレワーク",
             "href": "/it/dx",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジのデジタル・トランスフォーメーション（DX）と、テレワークの取り組みについて紹介しています。",
             "langs": [
               "ja"
@@ -251,7 +251,7 @@ export const config: AstriesConfig = {
             "position": 1,
             "$title": "編集・DTP",
             "href": "/others/edit",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジの編集・ＤＴＰサービスの紹介です。翻訳成果物の録音・ナレーションや動画字幕、DTPなどご要望の形態に編集いたします。",
             "langs": [
               "ja"
@@ -264,7 +264,7 @@ export const config: AstriesConfig = {
             "position": 2,
             "$title": "インバウンド交流事業",
             "href": "/others/inbound",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジのインバウンド事業の紹介です",
             "langs": [
               "ja"
@@ -277,7 +277,7 @@ export const config: AstriesConfig = {
             "position": 3,
             "$title": "語学研修",
             "href": "/others/train",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "ビジネスに使える中国語を、経験豊富な講師が丁寧に指導いたします。オンラインやカスタマイズなども自由",
             "langs": [
               "ja"
@@ -290,7 +290,7 @@ export const config: AstriesConfig = {
             "position": 4,
             "$title": "著作権登録",
             "href": "/others/copyright",
-            "img": "gb-logo.png",
+            "img": "gb-logo.svg",
             "$summary": "株式会社ゴールデンブリッジの著作権登録サービスの紹介です。中国進出を考える日本企業へ、知財の視点からサポートを提供いたします",
             "langs": [
               "ja"

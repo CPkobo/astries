@@ -14,7 +14,7 @@ data:
   - name: edit
     position: 1
     href: /others/edit
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 編集・DTP
     $summary:
@@ -22,7 +22,7 @@ data:
   - name: INBOUND
     position: 2
     href: /others/inbound
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: インバウンド交流事業
     $summary:
@@ -30,7 +30,7 @@ data:
   - name: Training
     position: 3
     href: /others/train
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 語学研修
     $summary:
@@ -38,7 +38,7 @@ data:
   - name: copy right
     position: 4
     href: /others/copyright
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 著作権登録
     $summary:

@@ -9,7 +9,7 @@ $description:
 $summary:
   ja: 株式会社ゴールデンブリッジの編集・ＤＴＰサービスの紹介です。翻訳成果物の録音・ナレーションや動画字幕、DTPなどご要望の形態に編集いたします。
 href: /
-img: gb-logo.png
+img: gb-logo.svg
 pageType: LeftMain
 contents:
   - type: Icon Heading 2

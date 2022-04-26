@@ -9,11 +9,11 @@ $description:
 $summary:
   ja: 株式会社ゴールデンブリッジの公式Webサイトです。
 href: /
-img: gb-logo.png
+img: gb-logo.svg
 pageType: LP
 contents:
   - type: Hero
-    src: banner-2.jpg
+    src: /sys/defaultimg.jpg
     $alt:
       ja: ゴールデンブリッジ トップ画像
     $title:

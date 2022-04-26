@@ -16,6 +16,7 @@ const {lang, layout} = Astro.props
 const l = lang as LangList
 const lt = layout as PageType
 const page = await getContents(String(dirs), String(path), "ja")
+console.log(lt)
 const direction: AstriesDirection = {
 	head: {
 		lang: 'ja',

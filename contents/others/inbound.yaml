@@ -9,7 +9,7 @@ $description:
 $summary:
   ja: 株式会社ゴールデンブリッジのインバウンド事業の紹介です
 href: /
-img: gb-logo.png
+img: gb-logo.svg
 pageType: LeftMain
 contents:
   - type: Plain

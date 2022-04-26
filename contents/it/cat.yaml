@@ -9,7 +9,7 @@ $description:
 $summary:
   ja: 株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています。
 href: /
-img: gb-logo.png
+img: gb-logo.svg
 pageType: LeftMain
 contents:
   - type: Icon Heading 2

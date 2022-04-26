@@ -14,7 +14,7 @@ data:
   - name: Translation
     position: 1
     href: /lang/translation
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 翻訳
     $summary:
@@ -22,7 +22,7 @@ data:
   - name: Interpretation
     position: 2
     href: /lang/interpretation
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 通訳
     $summary:
@@ -30,7 +30,7 @@ data:
   - name: online
     position: 3
     href: /lang/online
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: オンライン通訳
     $summary:
@@ -38,7 +38,7 @@ data:
   - name: Machine Translation
     position: 4
     href: /lang/mt
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 機械翻訳
     $summary:
@@ -46,7 +46,7 @@ data:
   - name: Past Works
     position: 5
     href: /lang/works
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 翻訳・通訳実績一覧
     $summary:

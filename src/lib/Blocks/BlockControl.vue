@@ -40,7 +40,7 @@ const presets = {
 </script>
 
 <template>
-  <div class="contents px-5-desktop" v-for="blk, blkx in blks" :key="'blk_' + blkx">
+  <div class="contents px-5-desktop" v-for="blk in blks">
     <Plain v-if="blk.type === 'Plain'" :blk="blk" />
     <List v-else-if="blk.type === 'List'" :blk="blk" />
     <Define v-else-if="blk.type === 'Define'" :blk="blk" />

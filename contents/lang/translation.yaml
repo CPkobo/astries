@@ -9,7 +9,7 @@ $description:
 $summary:
   ja: 株式会社ゴールデンブリッジの翻訳サービスの紹介です
 href: /
-img: gb-logo.png
+img: gb-logo.svg
 pageType: LeftMain
 contents:
   - type: Icon Heading 2

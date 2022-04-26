@@ -14,7 +14,7 @@ data:
   - name: information
     position: 1
     href: /about/information
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 会社情報
       en: Company information
@@ -23,7 +23,7 @@ data:
   - name: philosophy
     position: 2
     href: /about/philosophy
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 経営理念・社是
     $summary:
@@ -31,7 +31,7 @@ data:
   - name: message
     position: 3
     href: /about/message
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 社長あいさつ
     $summary:
@@ -39,7 +39,7 @@ data:
   - name: privacy policy
     position: 4
     href: /about/privacy
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: プライバシーポリシー
     $summary:
@@ -47,7 +47,7 @@ data:
   - name: recruit
     position: 5
     href: /about/recruit
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 採用・募集
     $summary:

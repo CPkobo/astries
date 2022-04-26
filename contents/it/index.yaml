@@ -14,7 +14,7 @@ data:
   - name: cat
     position: 1
     href: /it/cat
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 翻訳支援ツール
     $summary:
@@ -22,7 +22,7 @@ data:
   - name: Natural Language Processing
     position: 2
     href: /it/nlp
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: 自然言語処理
     $summary:
@@ -30,7 +30,7 @@ data:
   - name: digital transformation
     position: 3
     href: /it/dx
-    img: gb-logo.png
+    img: gb-logo.svg
     $title:
       ja: DX・テレワーク
     $summary:
