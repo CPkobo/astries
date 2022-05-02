@@ -21,6 +21,7 @@ const title = props.blk.$title ? props.blk.$title : "Relating...";
         <div>
           <h5>{{ art.$title }}</h5>
           <p>{{ art.$description }}</p>
+          <a class="ml-3" :href="art.href">詳細へ</a>
         </div>
       </div>
     </template>

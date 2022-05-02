@@ -15,10 +15,12 @@ const cls = classNaming("content", props.blk.classes, props.blk.preset, presets)
 
 <template>
   <div :id="blk.id" :class="cls">
-    <div class="box" v-for="itm, ox in blk.$items.slice(0, blk.$items.length -1)">
-      <FlowItem :itm="itm" :order="ox + 1" />
+    <div v-for="itm, ox in blk.$items.slice(0, blk.$items.length -1)">
+      <div class="box">
+        <FlowItem :itm="itm" :order="ox + 1" />
+      </div>
+      <div class="triangle" />
     </div>
-    <div class="triangle" />
     <div class="box">
       <FlowItem :itm="blk.$items[blk.$items.length - 1]" :order="blk.$items.length" />
     </div>

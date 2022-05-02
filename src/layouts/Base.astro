@@ -2,6 +2,7 @@
 import Astries from './Astries.astro';
 import HeaderMenu from "$lib/Globals/Header/HeaderMenu.astro"
 import FooterMenu from "$lib/Globals/Footer/FooterMenu.astro"
+import BottomMenu from '$lib/Globals/Bottom/BottomMenu.astro';
 let direction: AstriesDirection;
 ({ direction } = Astro.props);
 const mainClass = direction.pagetype === "Base"
@@ -72,7 +73,12 @@ const mainClass = direction.pagetype === "Base"
   </main>
   {() => {
       if (direction.hasFooterMenu) {
-        return (<FooterMenu navigations={direction.navigations}/>)
+        return (
+          <>
+            <FooterMenu navigations={direction.navigations}/>
+            <BottomMenu navigations={direction.navigations}/>
+          </>
+        )
       }
       return (<footer />)
     }}

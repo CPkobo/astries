@@ -1,0 +1,32 @@
+---
+// Component Imports
+import Base from '$layouts/Base.astro';
+import { navs } from "$src/_envs/paths"
+import BottomMenu from '../lib/Globals/Bottom/BottomMenu.astro';
+
+const direction: AstriesDirection = {
+	head: {
+		lang: 'ja',
+		title: 'test',
+		description: `test test test`
+	},
+	hasHeaderMenu: true,
+	hasFooterMenu: true,
+	hasSideMenu: true,
+	pagetype: 'LP',
+	navigations: navs.ja
+}
+---
+
+<Base direction={direction}>
+  <section slot="main">
+    <p>this is main section</p>
+    <BottomMenu navigations={navs.ja}/>
+  </section>
+</Base>
+
+<style>
+  .a-in-button {
+    color: white;
+  }
+</style>

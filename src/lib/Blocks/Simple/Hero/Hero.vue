@@ -20,7 +20,7 @@ const cls = classNaming("hero", props.blk.classes, props.blk.preset, presets)
           class="subtitle mt-5 is-size-3-desktop is-size-4-tablet is-size-5-mobile"
           v-html="blk.$subtitle"
         />
-        <button v-if="blk.cta">cta</button>
+        <!-- <button v-if="blk.cta">cta</button> -->
       </div>
     </div>
   </section>

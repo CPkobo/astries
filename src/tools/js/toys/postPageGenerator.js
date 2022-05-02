@@ -17,18 +17,18 @@ class PostPageGenerator {
         this.pagenatePaths = [];
         this.postPaths = [];
         this.pages = [{
-                title: "ニュースリリース",
-                pages: [],
-                num: 1,
-                prev: {
-                    title: "前のページへ",
-                    href: ""
-                },
-                next: {
-                    title: "次のページへ",
-                    href: "page-2"
-                },
-            }];
+            title: "ニュースリリース",
+            pages: [],
+            num: 1,
+            prev: {
+                title: "前のページへ",
+                href: ""
+            },
+            next: {
+                title: "次のページへ",
+                href: "page-2"
+            },
+        }];
     }
     execGenerator(dirope) {
         this.setPageInfos(dirope);

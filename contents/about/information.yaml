@@ -2,7 +2,6 @@ name: information
 position: 1
 langs:
   - ja
-  - en
 $title:
   ja: 会社情報
   en: Company information
@@ -11,7 +10,7 @@ $description:
 $summary:
   ja: 株式会社ゴールデンブリッジの各種情報を掲載しています。
 href: /
-img: gb-logo.svg
+img: about/toc-information.jpg
 pageType: LeftMain
 contents:
   - type: Table

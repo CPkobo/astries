@@ -5,11 +5,11 @@ langs:
 $title:
   ja: 翻訳支援ツール
 $description:
-  ja: 株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています。
+  ja: 株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています
 $summary:
-  ja: 株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています。
+  ja: 株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています
 href: /
-img: gb-logo.svg
+img: it/toc/catovis-logo.svg
 pageType: LeftMain
 contents:
   - type: Icon Heading 2

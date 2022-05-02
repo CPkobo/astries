@@ -9,7 +9,7 @@ $description:
 $summary:
   ja: 株式会社ゴールデンブリッジの通訳サービスについての紹介です
 href: /
-img: gb-logo.svg
+img: lang/toc/interpretation.jpg
 pageType: LeftMain
 contents:
   - type: Icon Heading 2
@@ -96,7 +96,7 @@ contents:
         $articles:
           - $title:
               ja: オンライン通訳について
-            src: banner-1.jpg
+            src: lang/toc/online.jpg
             $alt:
               ja: オンライン通訳について
             $description:

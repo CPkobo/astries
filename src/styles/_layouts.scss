@@ -7,11 +7,17 @@ main.astries-base {
         max-width: 1536px;
         padding: 1rem;
     }
-
+    @media(max-width: 768px) {
+        padding-bottom: 3.5rem;
+    }
 }
 
 main.astries-base-fluid {
     margin-left: auto;
 	margin-right: auto;
     width: 100vw;
+    @media(max-width: 768px) {
+        padding-bottom: 3.5rem;
+    }
+
 }

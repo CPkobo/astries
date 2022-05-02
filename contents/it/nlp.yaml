@@ -5,11 +5,11 @@ langs:
 $title:
   ja: 自然言語処理
 $description:
-  ja: 株式会社ゴールデンブリッジの機械翻訳・自然言語処理について紹介しています。
+  ja: 株式会社ゴールデンブリッジの機械翻訳・自然言語処理について紹介しています
 $summary:
-  ja: 株式会社ゴールデンブリッジの機械翻訳・自然言語処理について紹介しています。
+  ja: 株式会社ゴールデンブリッジの機械翻訳・自然言語処理について紹介しています
 href: /
-img: gb-logo.svg
+img: it/toc/nlp.jpg
 pageType: LeftMain
 contents:
   - type: Icon Heading 2
@@ -44,7 +44,7 @@ contents:
     $articles:
       - $title:
           ja: 機械翻訳について
-        src: banner-1.jpg
+        src: lang/toc/mt.png
         $alt:
           ja: 機械翻訳について
         $description:

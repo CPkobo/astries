@@ -200,6 +200,7 @@ class NavGenerator {
         // フォルダ内にindex以外に1つしかファイルがない場合、直接アクセスできるようにする
         if (dirtop.data.length === 1) {
             dirtop.href = dirtop.data[0].href;
+            dirtop.pageType = dirtop.data[0].pageType;
         }
         else {
             // 複数のファイルがある場合は、position順に並び替え

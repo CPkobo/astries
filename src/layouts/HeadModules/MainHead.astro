@@ -9,7 +9,25 @@ const { title = 'Astries Demo', description = 'Astries Demo Site' } = Astro.prop
 <title>{title}</title>
 
 <link rel="icon" type="image/x-icon" href="/pict/sys/favicon64.ico" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43120147-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-43120147-1');
+	</script>
+
+	<!-- BowNow -->
+	<script id="_bownow_ts">
+		var _bownow_ts = document.createElement('script');
+		_bownow_ts.charset = 'utf-8';
+		_bownow_ts.src = 'https://contents.bownow.jp/js/UTC_937514b9fab93e16cf47/trace.js';
+		document.getElementsByTagName('head')[0].appendChild(_bownow_ts);
+	</script>
+
 <!-- <link rel="stylesheet" type="text/css" /> -->
 <!-- <link rel="preconnect" href="https://fonts.gstatic.com" /> -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet" />
+<!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet" /> -->
 <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous"> -->

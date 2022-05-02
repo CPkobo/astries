@@ -19,7 +19,7 @@ data:
       ja: 会社情報
       en: Company information
     $summary:
-      ja: 株式会社ゴールデンブリッジの各種情報を掲載しています。
+      ja: 株式会社ゴールデンブリッジの各種情報を掲載しています
   - name: philosophy
     position: 2
     href: /about/philosophy

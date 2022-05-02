@@ -1,5 +1,6 @@
 ---
 import { navs, staticDirs } from "$src/_envs/paths"
+import { profile } from "$src/_envs/profile"
 import { getNavmenu } from "$scripts/_i18n"
 import Base from "$layouts/Base.astro"
 import TocCardWrap from "$lib/Tocs/tocCardWrap.astro"
@@ -12,8 +13,8 @@ const navmenu = await getNavmenu(String(dirs), "toc", "ja")
 const direction: AstriesDirection = {
 	head: {
 		lang: 'ja',
-		title: "ASTRIES GB",
-		description: "The TOC page for Astries demo"
+		title: profile.SiteName,
+		description: `${profile.SiteName} | ${navmenu.category}`
 	},
 	hasHeaderMenu: true,
 	hasFooterMenu: true,

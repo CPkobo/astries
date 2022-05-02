@@ -1,6 +1,5 @@
 ---
 import DefImg from '../Util/DefImg.vue';
-import Pagenations from "./Pagenations.astro"
 
 let post: PostIndex;
 ({post}=Astro.props)
@@ -12,7 +11,7 @@ let post: PostIndex;
       : <DefImg />
   }
   <div>
-    <h5><a href={post.href}>{post.title}</a></h5>
+    <h5><a href={`/posts/post/${post.href}`}>{post.title}</a></h5>
       {() => {
         const sums = post.summary.split("<br />")
         // sums[sums.length -1] += "…………"

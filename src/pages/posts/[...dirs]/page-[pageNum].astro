@@ -1,6 +1,7 @@
 ---
 import { indices } from '../../../_envs/postIndice'
 import { navs, staticPostPages } from "$src/_envs/paths"
+import { profile } from "$src/_envs/profile"
 import Base from "$layouts/Base.astro"
 import Sticker from "$lib/Globals/SideSticker/Sticker.astro"
 import FilledBar from "$lib/Util/FilledBar.astro"
@@ -14,16 +15,16 @@ export async function getStaticPaths() {
 const {dirs, pageNum} = Astro.params
 let posts: PostPagenation;
 for (const indice of indices) {
-    if (indice.num == pageNum) {
-      posts = indice
-      break
-    }
+  if (indice.num == pageNum) {
+    posts = indice
+    break
+  }
 }
 const direction: AstriesDirection = {
 	head: {
 		lang: 'ja',
-		title: "ASTRIES GB",
-		description: "The Landing page for Astries demo"
+		title: `${profile.SiteName} | Page ${pageNum}`,
+		description: `${profile.SiteName} | Page ${pageNum}`,
 	},
 	hasHeaderMenu: true,
 	hasFooterMenu: true,

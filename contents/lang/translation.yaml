@@ -9,7 +9,7 @@ $description:
 $summary:
   ja: 株式会社ゴールデンブリッジの翻訳サービスの紹介です
 href: /
-img: gb-logo.svg
+img: lang/toc/translation.jpg
 pageType: LeftMain
 contents:
   - type: Icon Heading 2
@@ -214,7 +214,7 @@ contents:
     $articles:
       - $title:
           ja: 機械翻訳について
-        src: banner-1.jpg
+        src: lang/toc/mt.png
         $alt:
           ja: 機械翻訳について
         $description:
