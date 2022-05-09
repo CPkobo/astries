@@ -14,11 +14,11 @@ pageType: LeftMain
 contents:
   - type: Icon Heading 2
     $text:
-      ja: YOU樂SHOP 楽天市場店
+      ja: 健康・美容・自然 YOU 樂 SHOP 楽天市場店
 
   - type: Plain
     $texts:
-      ja: ポストコロナ時代を見据え、人々の健康志向によるニーズを取り入れ、オーガニック、無添加、健康生活支援商品を提供するため、楽天市場にてオンラインショップ【YOU樂SHOP（ゆうらくショップ）】を立ち上げました。
+      ja: ポストコロナ時代を見据え、人々の健康志向によるニーズを取り入れ、楽天市場にて健康・美容・自然をテーマにした オンラインショップ【YOU樂SHOP（ゆうらくショップ）】を立ち上げました。
 
   - type: Image
     src: ec/signboard.jpg
@@ -44,6 +44,7 @@ contents:
           - (今後はスマートライフ関連商品も展開)
 
   - type: Gallary
+    classes: my-5
     $blks:
       - type: Image
         src: ec/rakuten/set_egoma110x2_amani110.png
@@ -52,10 +53,16 @@ contents:
         preset: half
 
       - type: Image
-        src: ec/rakuten/set_egoma140_amani140.png
+        src: ec/rakuten/squalene.png
         $alt:
-          ja: エゴマ・アマニ油セット大
+          ja: スクワランオイル
         preset: half
+
+      # - type: Image
+      #   src: ec/rakuten/set_egoma140_amani140.png
+      #   $alt:
+      #     ja: エゴマ・アマニ油セット大
+      #   preset: half
 
       - type: Image
         src: ec/rakuten/inpackage.png
@@ -64,7 +71,13 @@ contents:
         preset: half
 
       - type: Image
-        src: ec/rakuten/amani_spoon.png
+        src: ec/rakuten/soap.png
         $alt:
-          ja: アマニ油
+          ja: 天然バラの香り石けん
         preset: half
+
+      # - type: Image
+      #   src: ec/rakuten/amani_spoon.png
+      #   $alt:
+      #     ja: アマニ油
+      #   preset: half

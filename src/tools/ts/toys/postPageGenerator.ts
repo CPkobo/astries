@@ -61,6 +61,7 @@ export class PostPageGenerator {
       this.pages = this.pages.slice(0, this.pages.length - 1);
     }
     this.pages[this.pages.length - 1].next.href = ""
+    this.pagenatePaths = this.pagenatePaths.slice(0, this.pagenatePaths.length - 1)
   }
 
   private execCrawlPosts(root: string, posts: string[]): void {

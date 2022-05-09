@@ -17,18 +17,18 @@ class PostPageGenerator {
         this.pagenatePaths = [];
         this.postPaths = [];
         this.pages = [{
-            title: "ニュースリリース",
-            pages: [],
-            num: 1,
-            prev: {
-                title: "前のページへ",
-                href: ""
-            },
-            next: {
-                title: "次のページへ",
-                href: "page-2"
-            },
-        }];
+                title: "ニュースリリース",
+                pages: [],
+                num: 1,
+                prev: {
+                    title: "前のページへ",
+                    href: ""
+                },
+                next: {
+                    title: "次のページへ",
+                    href: "page-2"
+                },
+            }];
     }
     execGenerator(dirope) {
         this.setPageInfos(dirope);
@@ -56,6 +56,7 @@ class PostPageGenerator {
             this.pages = this.pages.slice(0, this.pages.length - 1);
         }
         this.pages[this.pages.length - 1].next.href = "";
+        this.pagenatePaths = this.pagenatePaths.slice(0, this.pagenatePaths.length - 1);
     }
     execCrawlPosts(root, posts) {
         const imgstr = new RegExp("\\!\\[.*\\]\\((.*)\\)");

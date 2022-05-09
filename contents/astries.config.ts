@@ -536,6 +536,33 @@ export const config: AstriesConfig = {
     {
       "params": {
         "dirs": "post",
+        "path": "20220126"
+      },
+      "props": {
+        "title": "漢方のど飴　オンラインショップの一番人気商品"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20220110"
+      },
+      "props": {
+        "title": "第1回AIKO ウェビナー：中国語編 医学・医薬特化型AI翻訳エンジンの 実力と使い方"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20220101"
+      },
+      "props": {
+        "title": "新年あけましておめでとうございます。"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
         "path": "liaoning-export-2021"
       },
       "props": {
@@ -550,6 +577,51 @@ export const config: AstriesConfig = {
       "props": {
         "title": "医薬特化型AI 翻訳エンジン AIKO SciLingualをリリースしました"
       }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20211108"
+      },
+      "props": {
+        "title": "AI翻訳　MTセミナーのご案内"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20210819"
+      },
+      "props": {
+        "title": "「日中翻訳におけるＡＩ技術の応用」 オンラインセミナーのご案内"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20210530"
+      },
+      "props": {
+        "title": "楽天「YOU樂SHOP」開店"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20210304"
+      },
+      "props": {
+        "title": "【イベント通知】3月7日15時～「未来へつなげ、震災で結ばれた若き絆」中日青年オンライン交流会"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20210101"
+      },
+      "props": {
+        "title": "★新年のご挨拶★"
+      }
     }
   ],
   "staticPostPages": [
@@ -557,6 +629,12 @@ export const config: AstriesConfig = {
       "params": {
         "dirs": "post",
         "pageNum": "1"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "pageNum": "2"
       }
     }
   ]

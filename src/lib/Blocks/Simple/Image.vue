@@ -30,7 +30,7 @@ const cls = classNaming("", props.blk.classes, props.blk.preset, presets)
 <style lang="scss">
 div.half-view {
   @media (min-width: 1023px) {
-    max-width: 27vw;
+    max-width: 23vw;
   }
 }
 </style>
