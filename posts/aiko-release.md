@@ -2,6 +2,7 @@
 title: 医薬特化型AI 翻訳エンジン AIKO SciLingualをリリースしました
 published: 2021-12-01
 modified: 2021-12-01
+summary: 医薬特化型AI 翻訳エンジン AIKO SciLingualのリリースに関するお知らせです
 ---
 
 このたび、医学・医薬品の英語翻訳会社・[アスカコーポレーション様](https://www.asca-co.com)と共同で医学特化型エンジン **AIKO SciLingual** を開発いたしました。

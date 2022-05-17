@@ -3,6 +3,7 @@ title: Webサイトをリニューアルしました
 published: 2022-04-28
 modified: 2022-04-28
 image: /pict/posts/2022/renewal.jpg
+summary: Webサイトリニューアルのお知らせです
 ---
 
 今年2022年に、弊社は創立20周年を迎えます。

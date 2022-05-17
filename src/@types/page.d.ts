@@ -1,17 +1,17 @@
 // レイアウト
 declare interface AstriesHead {
-    lang: LangList
-    title: string
-    description: string
+    lang: LangList;
+    title: string;
+    description: string;
 }
 
 declare interface AstriesDirection {
-    head: AstriesHead
-    hasHeaderMenu: boolean
-    hasFooterMenu: boolean
-    hasSideMenu: boolean
-    pagetype: PageType
-    navigations: NavigationMenu[]
+    head: AstriesHead;
+    hasHeaderMenu: boolean;
+    hasFooterMenu: boolean;
+    hasSideMenu: boolean;
+    pagetype: PageType;
+    navigations: NavigationMenu[];
 }
 
 // 各ページ
@@ -65,20 +65,21 @@ declare interface PostPagenation {
 // declare type MinPostIndex = Pick<PostIndex, "title" | "href">
 
 declare interface PostInfo {
-    title: string
-    published?: Date,
-    modified?: Date,
-    pubstr: string,
-    modstr: string,
-    image?: string
+    title: string;
+    published?: Date;
+    modified?: Date;
+    pubstr: string;
+    modstr: string;
+    image?: string;
+    summary?: string;
 }
 
 declare interface PostIndex extends PostInfo {
-    summary: string
-    href: string
+    summary: string;
+    href: string;
 }
 
 declare interface PostPage {
-    meta: PostInfo
-    body: string
+    meta: PostInfo;
+    body: string;
 }

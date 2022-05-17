@@ -527,6 +527,24 @@ export const config: AstriesConfig = {
     {
       "params": {
         "dirs": "post",
+        "path": "amani-shopinfo"
+      },
+      "props": {
+        "title": "アマニ油の再入荷（5月20日）について"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "introduce-voov"
+      },
+      "props": {
+        "title": "WEB会議ツール「VooV Meeting」日本語版のダウンロード・インストールの仕方"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
         "path": "website-renewal-notice"
       },
       "props": {
@@ -602,7 +620,7 @@ export const config: AstriesConfig = {
         "path": "20210530"
       },
       "props": {
-        "title": "楽天「YOU樂SHOP」開店"
+        "title": "楽天「YOU樂SHOP」（ゆうらくしょっぷ）開店"
       }
     },
     {

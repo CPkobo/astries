@@ -15,12 +15,12 @@ export async function getStaticPaths() {
 
 const {dirs, path} = Astro.params
 const post = await getPostContents(String(dirs), String(path), "ja")
-const content = fm(post)
+const content = fm<PostInfo>(post)
 const direction: AstriesDirection = {
 	head: {
 		lang: 'ja',
-		title: `${profile.SiteName} | ${content.attributes.title}`,
-		description: "The Landing page for Astries demo"
+		title: `${content.attributes.title} | ${profile.SiteName}`,
+		description: content.attributes.summary
 	},
 	hasHeaderMenu: true,
 	hasFooterMenu: true,
@@ -33,7 +33,7 @@ const direction: AstriesDirection = {
 ---
 
 <Base direction={direction}>
-  <section slot="top">
+  <section slot="top" class="my-5">
     <FilledBar title={content.attributes.title} />
   </section>
   <section slot="main" class="content">

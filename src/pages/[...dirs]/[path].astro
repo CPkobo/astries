@@ -20,8 +20,8 @@ const page = await getContents(String(dirs), String(path), "ja")
 const direction: AstriesDirection = {
 	head: {
 		lang: 'ja',
-		title: profile.SiteName,
-		description: `${profile.SiteName} | ${page.$title}`
+		title: `${profile.SiteName} | ${page.$title}`,
+		description: page.$description
 	},
 	hasHeaderMenu: true,
 	hasFooterMenu: true,

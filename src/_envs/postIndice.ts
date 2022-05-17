@@ -5,13 +5,33 @@ export const indices: PostPagenation[] = [
     "title": "ニュースリリース",
     "pages": [
       {
+        "title": "アマニ油の再入荷（5月20日）について",
+        "published": "2022-05-17T00:00:00.000Z",
+        "modified": "2022-05-17T00:00:00.000Z",
+        "pubstr": "2022-05-17",
+        "modstr": "2022-05-17",
+        "image": "/pict/ec/rakuten/amani_spoon.png",
+        "summary": "アマニ油の再入荷についてお知らせです",
+        "href": "amani-shopinfo"
+      },
+      {
+        "title": "WEB会議ツール「VooV Meeting」日本語版のダウンロード・インストールの仕方",
+        "published": "2022-05-16T00:00:00.000Z",
+        "modified": "2022-05-16T00:00:00.000Z",
+        "pubstr": "2022-05-16",
+        "modstr": "2022-05-16",
+        "image": "/pict/posts/2022/voov/Voov4.png",
+        "summary": "中国で開発されている「騰訊会議（テンセント・ミーティング）」　の日本語版を使用するための手順を紹介いたします。",
+        "href": "introduce-voov"
+      },
+      {
         "title": "Webサイトをリニューアルしました",
         "published": "2022-04-28T00:00:00.000Z",
         "modified": "2022-04-28T00:00:00.000Z",
         "pubstr": "2022-04-28",
         "modstr": "2022-04-28",
         "image": "/pict/posts/2022/renewal.jpg",
-        "summary": "思い返せば以前のサイトを作成したのも2012年前後……<br />この10年間でインターネットを取り巻く環境は大きく様変わりしました。当時はスマートフォンでコーポレートサイトを閲覧する日が来るとは思いもしませんでした。<br /><br /><br /><br />弊社はこれに翻訳会社ならではの視点を生かし、Yamlファイルを用いた多言語対応ファイル読み込み機能を追加することで、多言語サイトジェネ",
+        "summary": "Webサイトリニューアルのお知らせです",
         "href": "website-renewal-notice"
       },
       {
@@ -21,7 +41,7 @@ export const indices: PostPagenation[] = [
         "pubstr": "2022-01-26",
         "modstr": "2022-01-26",
         "image": "/pict/posts/2022/0126.png",
-        "summary": "",
+        "summary": "健康・美容・自然 YOU樂SHOP 楽天市場店 における人気商品の紹介です",
         "href": "20220126"
       },
       {
@@ -30,7 +50,7 @@ export const indices: PostPagenation[] = [
         "modified": "2022-01-10T00:00:00.000Z",
         "pubstr": "2022-01-10",
         "modstr": "2022-01-10",
-        "summary": "",
+        "summary": "弊社スタッフが講師を務める「医学・医薬特化型AI翻訳エンジンの実力と使い方」 オンラインセミナーについて、ご案内いたします",
         "href": "20220110"
       },
       {
@@ -40,7 +60,7 @@ export const indices: PostPagenation[] = [
         "pubstr": "2022-01-01",
         "modstr": "2022-01-01",
         "image": "/pict/posts/2022/0101.png",
-        "summary": "",
+        "summary": "弊社代表より新年のご挨拶を申し上げます",
         "href": "20220101"
       },
       {
@@ -50,7 +70,7 @@ export const indices: PostPagenation[] = [
         "pubstr": "2021-12-13",
         "modstr": "2021-12-13",
         "image": "/pict/posts/2022/liaoning1.jpg",
-        "summary": "新型コロナウイルスによる入国規制を受け、輸出展示会も以前のように対面で実施できなくなった昨今。<br />本展示会は、会場こそ準備していますが遼寧省の企業の方はほとんど来日しておらず、代わりにブースごとにiPadと受付兼通訳を配置してオンラインでの商談形式で行われました。<br />開会式ももちろんオンラインです。<br />日本では中国駐大阪総領事館の薛剣総領事、中国では遼寧省副省長などが参加さ",
+        "summary": "遼寧省輸出展示会（2021年12月13日～15日）について、ご紹介いたします",
         "href": "liaoning-export-2021"
       },
       {
@@ -60,7 +80,7 @@ export const indices: PostPagenation[] = [
         "pubstr": "2021-12-01",
         "modstr": "2021-12-01",
         "image": "/pict/lang/scilingual.png",
-        "summary": "しかし、大量の資料や論文を翻訳するのに、人間の力だけでは時間が足りないことも多々あります。<br />これまでは人海戦術に頼った対応をしていましたが、このたび英語をキーとして日本語⇔英語と中国語⇔英語のエンジンをリレーさせることで、専門性の高い翻訳を得ることに成功しました。<br /><br />ここで使用しているエンジンは日本語⇔英語、中国語⇔英語ともに医学・医薬品に特化させたもの（ドメイン・ア",
+        "summary": "医薬特化型AI 翻訳エンジン AIKO SciLingualのリリースに関するお知らせです",
         "href": "aiko-release"
       },
       {
@@ -69,27 +89,8 @@ export const indices: PostPagenation[] = [
         "modified": "2021-11-08T00:00:00.000Z",
         "pubstr": "2021-11-08",
         "modstr": "2021-11-08",
-        "summary": "[ご参加登録はこちら]<br />(",
+        "summary": "弊社スタッフが講師を務める「医薬特化型の日中リレーAI翻訳で中国でのビジネスをサポート」 オンラインセミナーについて、ご案内いたします",
         "href": "20211108"
-      },
-      {
-        "title": "「日中翻訳におけるＡＩ技術の応用」 オンラインセミナーのご案内",
-        "published": "2021-08-19T00:00:00.000Z",
-        "modified": "2021-08-19T00:00:00.000Z",
-        "pubstr": "2021-08-19",
-        "modstr": "2021-08-19",
-        "summary": "",
-        "href": "20210819"
-      },
-      {
-        "title": "楽天「YOU樂SHOP」開店",
-        "published": "2021-05-30T00:00:00.000Z",
-        "modified": "2021-05-30T00:00:00.000Z",
-        "pubstr": "2021-05-30",
-        "modstr": "2021-05-30",
-        "image": "/pict/posts/2021/0530-01.png",
-        "summary": "有機JASえごま油X1、アマニ油X1、パンプキンシード油X1 110g 三本ギフトセット　4,536円（税込み。送料込み）<br /><br />有機JASえごま油X2、アマニ油X1 140ｇ<br />三本ギフトセット　5,400円（税込み。送料込み）",
-        "href": "20210530"
       }
     ],
     "num": 1,
@@ -99,12 +100,31 @@ export const indices: PostPagenation[] = [
     },
     "next": {
       "title": "次のページへ",
-      "href": "page-2"
+      "href": "/posts/post/page-2"
     }
   },
   {
     "title": "ニュースリリース",
     "pages": [
+      {
+        "title": "「日中翻訳におけるＡＩ技術の応用」 オンラインセミナーのご案内",
+        "published": "2021-08-19T00:00:00.000Z",
+        "modified": "2021-08-19T00:00:00.000Z",
+        "pubstr": "2021-08-19",
+        "modstr": "2021-08-19",
+        "summary": "弊社スタッフが講師を務める「日中翻訳におけるＡＩ技術の応用」 オンラインセミナーについて、ご案内いたします",
+        "href": "20210819"
+      },
+      {
+        "title": "楽天「YOU樂SHOP」（ゆうらくしょっぷ）開店",
+        "published": "2021-05-30T00:00:00.000Z",
+        "modified": "2021-05-30T00:00:00.000Z",
+        "pubstr": "2021-05-30",
+        "modstr": "2021-05-30",
+        "image": "/pict/posts/2021/0530-01.png",
+        "summary": "楽天市場にYOU樂SHOPを開店しました。えごま油・アマニ油など 有機・自然食品、健康用品を販売しています。",
+        "href": "20210530"
+      },
       {
         "title": "【イベント通知】3月7日15時～「未来へつなげ、震災で結ばれた若き絆」中日青年オンライン交流会",
         "published": "2021-03-04T00:00:00.000Z",
@@ -112,23 +132,9 @@ export const indices: PostPagenation[] = [
         "pubstr": "2021-03-04",
         "modstr": "2021-03-04",
         "image": "/pict/posts/2021/0304.jpg",
-        "summary": "1 日本語配信<br />題名：「未来へつなげ、震災で結ばれた若き絆」中日青年オンライン交流会<br />リンク：<br />2，中国語配信<br />題名：“3·11地震“十周年 中日青年线上交流会<br />リンク：",
+        "summary": "「未来へつなげ、震災で結ばれた若き絆」中日青年オンライン交流会の配信についてご紹介いたします",
         "href": "20210304"
-      }
-    ],
-    "num": 1,
-    "prev": {
-      "title": "前のページへ",
-      "href": "pages/page-0"
-    },
-    "next": {
-      "title": "次のページへ",
-      "href": "post/page-2"
-    }
-  },
-  {
-    "title": "ニュースリリース",
-    "pages": [
+      },
       {
         "title": "★新年のご挨拶★",
         "published": "2021-01-01T00:00:00.000Z",
@@ -136,14 +142,14 @@ export const indices: PostPagenation[] = [
         "pubstr": "2021-01-01",
         "modstr": "2021-01-01",
         "image": "/pict/posts/2021/0101.jpg",
-        "summary": "",
+        "summary": "弊社代表より新年のご挨拶を申し上げます",
         "href": "20210101"
       }
     ],
     "num": 2,
     "prev": {
       "title": "前のページへ",
-      "href": "pages/page-1"
+      "href": "/posts/post/page-1"
     },
     "next": {
       "title": "次のページへ",

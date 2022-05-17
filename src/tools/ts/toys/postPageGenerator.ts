@@ -1,9 +1,9 @@
-import { readdirSync, readFileSync, statSync } from "fs"
-import { dump } from "js-yaml"
-import fm from "front-matter"
-import { marked } from "marked"
-// import { Writing } from "../toybox"
-import { DirOperator } from "./dirOperator"
+import { readdirSync, readFileSync, statSync } from 'fs'
+// import { dump } from 'js-yaml'
+import fm from 'front-matter'
+import { marked } from 'marked'
+// import { Writing } from '../toybox'
+import { DirOperator } from './dirOperator'
 
 export class PostPageGenerator {
   public posts: PostIndex[]
@@ -16,16 +16,16 @@ export class PostPageGenerator {
     this.pagenatePaths = []
     this.postPaths = []
     this.pages = [{
-      title: "ニュースリリース",
+      title: 'ニュースリリース',
       pages: [],
       num: 1,
       prev: {
-        title: "前のページへ",
-        href: ""
+        title: '前のページへ',
+        href: ''
       },
       next: {
-        title: "次のページへ",
-        href: "page-2"
+        title: '次のページへ',
+        href: '/posts/post/page-2'
       },
     }]
   }
@@ -53,6 +53,7 @@ export class PostPageGenerator {
       count++
       if (count > 10) {
         this.addPagenateInfo()
+        count = 1
       }
       this.addPageInfo(post)
     }
@@ -60,30 +61,32 @@ export class PostPageGenerator {
     if (this.pages[this.pages.length - 1].pages.length === 0) {
       this.pages = this.pages.slice(0, this.pages.length - 1);
     }
-    this.pages[this.pages.length - 1].next.href = ""
-    this.pagenatePaths = this.pagenatePaths.slice(0, this.pagenatePaths.length - 1)
+    this.pages[this.pages.length - 1].next.href = ''
+    // this.pagenatePaths = this.pagenatePaths.slice(0, this.pagenatePaths.length - 1)
   }
 
   private execCrawlPosts(root: string, posts: string[]): void {
-    const imgstr = new RegExp("\\!\\[.*\\]\\((.*)\\)");
-    const tagstr = new RegExp("\\<.*\\>", "g")
-    const lfstr = new RegExp("\\n", "g")
-    const crstr = new RegExp("\\r", "g")
+    const imgstr = new RegExp('\\!\\[.*\\]\\((.*)\\)');
+    const tagstr = new RegExp('\\<.*\\>', 'g')
+    const lfstr = new RegExp('\\n', 'g')
+    const crstr = new RegExp('\\r', 'g')
     for (const post of posts) {
       const target = DirOperator.join(root, post)
       const files = readdirSync(target).filter(val => {
-        return val.endsWith(".md")
+        return val.endsWith('.md')
       })
       for (const file of files) {
         const path = DirOperator.join(target, file)
         const stat = statSync(path)
         const contents = fm<PostInfo>(readFileSync(path).toString())
-        const summary = marked(contents.body)
-          .replace(tagstr, "")
-          .trim()
-          .replace(crstr, "")
-          .replace(lfstr, "<br />")
-          .substring(0, 200)
+        const summary = contents.attributes.summary
+          ? contents.attributes.summary
+          : marked(contents.body)
+            .replace(tagstr, '')
+            .trim()
+            .replace(crstr, '')
+            .replace(lfstr, '\n')
+            .substring(0, 100)
         const index: PostIndex = {
           title: contents.attributes.title,
           published: contents.attributes.published,
@@ -92,7 +95,7 @@ export class PostPageGenerator {
           modstr: this.getISODayStr(contents.attributes.modified),
           image: contents.attributes.image,
           summary,
-          href: file.replace(".md", "")
+          href: file.replace('.md', '')
         }
         if (index.image === undefined) {
           const m = contents.body.match(imgstr)
@@ -129,24 +132,24 @@ export class PostPageGenerator {
   }
 
   private addPagenateInfo(isEnded = false) {
-    const last = this.pages.length
+    const last = this.pages.length + 1
     this.pages.push({
-      title: "ニュースリリース",
+      title: 'ニュースリリース',
       pages: [],
       num: last,
       prev: {
-        title: "前のページへ",
-        href: `pages/page-${last - 1}`
+        title: '前のページへ',
+        href: `/posts/post/page-${last - 1}`
       },
       next: {
-        title: isEnded ? "" : "次のページへ",
-        href: isEnded ? "" : `post/page-${last + 1}`
+        title: isEnded ? '' : '次のページへ',
+        href: isEnded ? '' : `/posts/post/page-${last + 1}`
       },
     })
     this.pagenatePaths.push({
       params: {
-        dirs: "post",
-        pageNum: String(last)
+        dirs: 'post',
+        pageNum: String(last - 1)
       },
     })
   }
@@ -154,7 +157,7 @@ export class PostPageGenerator {
   private addPageInfo(post: PostIndex) {
     this.postPaths.push({
       params: {
-        dirs: "post",
+        dirs: 'post',
         path: post.href
       },
       props: {
@@ -168,10 +171,10 @@ export class PostPageGenerator {
   private getISODayStr(time: string | Date | undefined): string {
     if (time === undefined) {
       const date = new Date()
-      return date.toISOString().split("T")[0]
+      return date.toISOString().split('T')[0]
     } else {
       const date = new Date(time)
-      return date.toISOString().split("T")[0]
+      return date.toISOString().split('T')[0]
     }
   }
 }
