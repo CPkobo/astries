@@ -13,6 +13,7 @@ img: gb-logo.svg
 pageType: LP
 contents:
   - type: Hero
+    # src: /sys/background.svg
     src: /sys/defaultimg.jpg
     $alt:
       ja: ゴールデンブリッジ トップ画像
@@ -45,6 +46,14 @@ contents:
             $texts:
               ja: 中国語通訳の専門会社だからこそ、お客様のニーズにあわせた正確で分かりやすい通訳を提供。中国語のプロがお客様のコミュニケーションをサポートいたします。
         link: /lang/interpretation
+      - icon: fa fa-plane
+        $title:
+          ja: インバウンド・交流
+        $blks:
+          - type: Plain
+            $texts:
+              ja: 通訳・翻訳事業の基盤を持つ弊社だからこそ提供できる、企業間の深い日中交流プログラムを提案します。
+        link: /others/inbound
       - icon: fa fa-shopping-cart
         $title:
           ja: EC事業

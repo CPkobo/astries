@@ -1,50 +1,59 @@
 ---
-import { indices } from '../../../_envs/postIndice'
-import { navs, staticPostPages } from "$src/_envs/paths"
-import { profile } from "$src/_envs/profile"
-import Base from "$layouts/Base.astro"
-import Sticker from "$lib/Globals/SideSticker/Sticker.astro"
-import FilledBar from "$lib/Util/FilledBar.astro"
-import PostCard from '../../../lib/Posts/PostCard.astro'
-import Pagenations from '../../../lib/Posts/Pagenations.astro'
+  import { indices } from '../../../_envs/postIndice'
+  import { navs, staticPostPages } from "$src/_envs/paths"
+  import { profile } from "$src/_envs/profile"
+  import Base from "$layouts/Base.astro"
+  import Sticker from "$lib/Globals/SideSticker/Sticker.astro"
+  import FilledBar from "$lib/Util/FilledBar.astro"
+  import PostCard from '../../../lib/Posts/PostCard.astro'
+  import Pagenations from '../../../lib/Posts/Pagenations.astro'
 
-export async function getStaticPaths() {
-  return staticPostPages
-}
-
-const {dirs, pageNum} = Astro.params
-let posts: PostPagenation;
-for (const indice of indices) {
-  if (indice.num == pageNum) {
-    posts = indice
-    break
+  export async function getStaticPaths() {
+    return staticPostPages
   }
-}
-const direction: AstriesDirection = {
-	head: {
-		lang: 'ja',
-		title: `${profile.SiteName} | Page ${pageNum}`,
-		description: `${profile.SiteName} | Page ${pageNum}`,
-	},
-	hasHeaderMenu: true,
-	hasFooterMenu: true,
-	hasSideMenu: true,
-	pagetype: 'LeftMain',
-	navigations: navs.ja
-}
+
+  const { dirs, pageNum } = Astro.params
+  let posts: PostPagenation;
+  for (const indice of indices) {
+    if (indice.num == pageNum) {
+      posts = indice
+      break
+    }
+  }
+  const direction: AstriesDirection = {
+    head: {
+      lang: 'ja',
+      title: `${profile.SiteName} | Page ${pageNum}`,
+      description: `${profile.SiteName} | Page ${pageNum}`,
+      ogp: {
+        url: `${profile.url}/posts/${dirs}/page-${pageNum}`,
+        type: 'blog',
+        title: `posts page ${pageNum}`,
+        description: `posts page ${pageNum}`,
+        name: `posts page ${pageNum}`,
+        img: `${profile.url}/pict/sys/defaultimg.jpg`
+      }
+    },
+    hasHeaderMenu: true,
+    hasFooterMenu: true,
+    hasSideMenu: true,
+    pagetype: 'LeftMain',
+    navigations: navs.ja
+  }
 ---
 
 <Base direction={direction}>
-  <section slot="top" class="my-5">
-    <FilledBar title={posts.title} />
-  </section>
-  <section slot="main" class="content">
-    {posts.pages.map(page => {
-      return (<PostCard post={page} />)
-    })}
-    <Pagenations pages={posts} />
-  </section>
-  <section slot="side" style="width: 100%; height: 100%">
-    <Sticker hasMenu={false} />
-  </section>
+<section slot="top" class="my-5">
+  <FilledBar title={posts.title} />
+</section>
+<section slot="main" class="content">
+  {posts.pages.map(page => {
+  return (
+  <PostCard post={page} />)
+  })}
+  <Pagenations pages={posts} />
+</section>
+<section slot="side" style="width: 100%; height: 100%">
+  <Sticker hasMenu={false} />
+</section>
 </Base>

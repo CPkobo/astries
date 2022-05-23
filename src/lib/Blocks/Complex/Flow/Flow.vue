@@ -30,7 +30,7 @@ const cls = classNaming("content", props.blk.classes, props.blk.preset, presets)
 <style lang="scss" scoped>
 @use "../../../../styles/colors" as c;
 div.triangle {
-  margin-top: 0.5rem;
+  // margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   margin-left: auto;
   margin-right: auto;

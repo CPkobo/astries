@@ -2,23 +2,93 @@
 @use "./variables.scss" as v;
 
 // ----------
+// GLOBAL VARIABLES
+// ----------
+// $scheme-main: hsl(0, 0%, 100%);
+// $background: hsl(0, 0%, 96%);
+// $text: hsl(0, 0%, 29%);
+// $text-strong: hsl(0, 0%, 21%);
+// $link: hsl(229, 53%, 53%);
+// $link-hover: hsl(0, 0%, 21%);
+// $border-hover: hsl(0, 0%, 71%);
+// $scheme-main-bis: hsl(0, 0%, 98%);
+// $scheme-invert: hsl(0, 0%, 4%);
+// $desktop: 960px + (2 * $gap);
+
+
+// ----------
 // HEADER
 // ----------
 $navbar-background-color:v.$primary-nega;
-$navbar-dropdown-background-color:v.$primary-nega;
+// $navbar-box-shadow-size: 0 2px 0 0;
+// $navbar-box-shadow-color: $background;
+// $navbar-height: 3.25rem;
+// $navbar-padding-vertical: 1rem;
+// $navbar-padding-horizontal: 2rem;
+// $navbar-z: 30;
+// $navbar-fixed-z: 30;
 $navbar-item-color: v.$primary-nega-text;
+// $navbar-item-hover-color: $link;
+// $navbar-item-hover-background-color: $scheme-main-bis;
+// $navbar-item-active-color: $scheme-invert;
+// $navbar-item-active-background-color: transparent;
+// $navbar-item-img-max-height: 1.75rem;
+// $navbar-burger-color: $navbar-item-color;
+// $navbar-tab-hover-background-color: transparent;
+// $navbar-tab-hover-border-bottom-color: $link;
+// $navbar-tab-active-color: $link;
+// $navbar-tab-active-background-color: transparent;
+// $navbar-tab-active-border-bottom-color: $link;
+// $navbar-tab-active-border-bottom-style: solid;
+// $navbar-tab-active-border-bottom-width: 3px;
+$navbar-dropdown-background-color:v.$primary-nega;
+// $navbar-dropdown-border-top: 2px solid $border;
+// $navbar-dropdown-offset: -4px;
+// $navbar-dropdown-arrow: $link;
+// $navbar-dropdown-radius: 6px;
+// $navbar-dropdown-z: 20;
+// $navbar-dropdown-boxed-radius: 6px;
+// $navbar-dropdown-boxed-shadow: 0 8px 8px bulmaRgba($scheme-invert, 0.1), 0 0 0 1px bulmaRgba($scheme-invert, 0.1);
+// $navbar-dropdown-item-hover-color: $scheme-invert;
+// $navbar-dropdown-item-hover-background-color: $background;
+// $navbar-dropdown-item-active-color: $link;
+// $navbar-dropdown-item-active-background-color: $background;
+// $navbar-divider-background-color: $background;
+// $navbar-divider-height: 2px;
+// $navbar-bottom-box-shadow-size: 0 -2px 0 0;
+// $navbar-breakpoint: $desktop;
 
-$navbar-height: 1rem;
-$navbar-padding-vertical: 0rem;
-$navbar-padding-horizontal: 2rem;
-// $navbar-item-hover-color: v.$navbar-item-hover-color;
 
 // ----------
 // FOOTER
 // ----------
 $footer-background-color: v.$primary-nega;
+// $footer-color: false;
+// $footer-padding: 3rem 1.5rem 6rem;
+
+// ----------
+// HERO
+// ----------
+$hero-body-padding: 3rem 1.5rem;
+$hero-body-padding-tablet: 3rem 3rem;
+$hero-body-padding-small: 1.5rem;
+$hero-body-padding-medium: 9rem 4.5rem;
+$hero-body-padding-large: 18rem 6rem;
+
+// ----------
+// SECTION
+// ----------
+// $section-padding: 3rem 1.5rem;
+// $section-padding-desktop: 3rem 3rem;
+// $section-padding-medium: 9rem 4.5rem;
+// $section-padding-large: 18rem 6rem;
 
 // ----------
 // Bread crumnb
 // ----------
 $breadcrumb-item-color: v.$secondary;
+// $breadcrumb-item-hover-color: $link-hover;
+// $breadcrumb-item-active-color: $text-strong;
+// $breadcrumb-item-padding-vertical: 0;
+// $breadcrumb-item-padding-horizontal: 0.75em;
+// $breadcrumb-item-separator-color: $border-hover;

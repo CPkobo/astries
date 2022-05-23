@@ -3,6 +3,7 @@ declare interface AstriesHead {
     lang: LangList;
     title: string;
     description: string;
+    ogp: AstriesOGP;
 }
 
 declare interface AstriesDirection {
@@ -12,6 +13,15 @@ declare interface AstriesDirection {
     hasSideMenu: boolean;
     pagetype: PageType;
     navigations: NavigationMenu[];
+}
+
+declare interface AstriesOGP {
+    url: string;
+    type: 'website' | 'blog' | 'article' | 'product';
+    title: string;
+    description: string;
+    name: string;
+    img: string;
 }
 
 // 各ページ

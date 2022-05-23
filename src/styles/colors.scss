@@ -6,6 +6,7 @@ $primary: v.$primary;
 $primary-text: v.$primary-text;
 $primary-nega: v.$primary-nega;
 $primary-nega-text: v.$primary-nega-text;
+$primary-nega-transparent: v.$primary-nega-transparent;
 
 $secondary:v.$secondary;
 $secondary-text: v.$secondary-text;
@@ -27,7 +28,6 @@ $link-color: v.$link-color;
 // HEADER
 $navbar-background-color: $primary-nega;
 $navbar-item-color: $primary-nega-text;
-$navbar-item-hover-color: orange;
 
 // FOOTER
 $footer-background-color: $primary-nega;
@@ -44,4 +44,17 @@ a:hover {
 ::selection {
 	background-color: $accent;
 	color: $accent-nega-text;
+}
+
+.astries-gradient-animation {
+    background-image: linear-gradient(90deg, white 0%, white 50%, $primary-nega-transparent 50%, $primary-nega-transparent 100%);
+    background-size: 200% 100%;
+}
+
+.astries-gradient-animation:hover {
+    transition: 0.1s;
+    background-position-x: -100%;
+    @media  (min-width: 1023px){
+        transform: scale(1.1, 1.1);
+    }
 }

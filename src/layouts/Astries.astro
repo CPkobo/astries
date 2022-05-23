@@ -1,16 +1,20 @@
 ---
-import MainHead from './HeadModules/MainHead.astro';
-let head: AstriesHead;
-({ head } = Astro.props);
+	import MainHead from './HeadModules/MainHead.astro';
+	let head: AstriesHead;
+	({ head } = Astro.props);
 ---
 
 <html lang={head.lang}>
-	<head>
-		<MainHead title={head.title} description={head.description} />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
-		<link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
-	</head>
-	<body class="astries-main">
-    <slot />
-	</body>
+
+<head>
+	<MainHead head={head} />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
+		integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
+</head>
+
+<body class="astries-main">
+	<slot />
+</body>
+
 </html>

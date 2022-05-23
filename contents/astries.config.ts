@@ -527,6 +527,15 @@ export const config: AstriesConfig = {
     {
       "params": {
         "dirs": "post",
+        "path": "20220519"
+      },
+      "props": {
+        "title": "ニュースで話題のあの人、中国語でなんて言うの？"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
         "path": "amani-shopinfo"
       },
       "props": {
@@ -554,6 +563,15 @@ export const config: AstriesConfig = {
     {
       "params": {
         "dirs": "post",
+        "path": "20220302"
+      },
+      "props": {
+        "title": "近畿経産局「はなやかKANSAI魅力アップ事例集」に取り上げられました"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
         "path": "20220126"
       },
       "props": {
@@ -576,6 +594,24 @@ export const config: AstriesConfig = {
       },
       "props": {
         "title": "新年あけましておめでとうございます。"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20201209"
+      },
+      "props": {
+        "title": "【無事終了】第二回オンライン勉強会＆第一回ZOOM同通体験会"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20201225"
+      },
+      "props": {
+        "title": "【無事終了】第二回オンライン勉強会＆第一回ZOOM同通体験会"
       }
     },
     {
@@ -635,10 +671,64 @@ export const config: AstriesConfig = {
     {
       "params": {
         "dirs": "post",
+        "path": "20200603"
+      },
+      "props": {
+        "title": "オンライン、遠隔同時/逐次通訳承ります！"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20200805"
+      },
+      "props": {
+        "title": "対話山東 日本・山東産業協力交流会がオンラインで開催"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
         "path": "20210101"
       },
       "props": {
         "title": "★新年のご挨拶★"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20200901"
+      },
+      "props": {
+        "title": "事務所に遠隔同通センター設置！オンライン国際会議をサポート"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20200305"
+      },
+      "props": {
+        "title": "守る、生き残る、共存共栄"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20200203"
+      },
+      "props": {
+        "title": "ITソリューション部　設立のお知らせ"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20190105"
+      },
+      "props": {
+        "title": "エベレストの山旅に行ってきました"
       }
     }
   ],
@@ -653,6 +743,12 @@ export const config: AstriesConfig = {
       "params": {
         "dirs": "post",
         "pageNum": "2"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "pageNum": "3"
       }
     }
   ]

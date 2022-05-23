@@ -30,8 +30,8 @@ import Flexlayout from "./Layout/FlexLayout.vue";
 import Columnlayout from "./Layout/ColumnLayout.vue";
 
 interface Props {
-  // blks: AnyBlock<IsSingle>[]
-  blks: Array<SimpleBlock<IsSingle> | ComplexBlock<IsSingle> | LayoutBlock<IsSingle>>
+  blks: AnyBlock<IsSingle>[]
+  // blks: Array<SimpleBlock<IsSingle> | ComplexBlock<IsSingle> | LayoutBlock<IsSingle>>
 }
 const props = defineProps<Props>();
 const presets = {
@@ -40,7 +40,7 @@ const presets = {
 </script>
 
 <template>
-  <div class="contents px-5-desktop" v-for="blk in blks">
+  <div class="block px-5-desktop" v-for="blk in blks">
     <Plain v-if="blk.type === 'Plain'" :blk="blk" />
     <List v-else-if="blk.type === 'List'" :blk="blk" />
     <Define v-else-if="blk.type === 'Define'" :blk="blk" />
