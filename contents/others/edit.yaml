@@ -5,10 +5,9 @@ langs:
 $title:
   ja: 編集・DTP
 $description:
-  ja: 株式会社ゴールデンブリッジの編集・ＤＴＰサービスの紹介です
+  ja: 翻訳した中国語をカタログやポスター、字幕などに落とし込みたい場合も、経験豊富なスタッフが対応いたします。Adobe Illustrator / InDesign をはじめ、動画字幕のSRTファイルやナレーション（音声ファイル）の作成も可能です。また、MSDS・GHSラベルのローカライズも対応いたします。
 $summary:
   ja: 株式会社ゴールデンブリッジの編集・ＤＴＰサービスの紹介です。翻訳成果物の録音・ナレーションや動画字幕、DTPなどご要望の形態に編集いたします。
-href: /
 img: others/toc/edit.jpg
 pageType: LeftMain
 contents:
@@ -44,7 +43,9 @@ contents:
     $blks:
       - type: Plain
         $texts:
-          ja: 翻訳にとどまらず、現地法規に対応したリライトや、レイアウト作成なども承っています。
+          ja:
+            - 国際的に規格の決まっている、化学物質輸送用の安全データシートや、一緒に必要なラベル（GHSラベル）なども対応可能です。
+            - 翻訳にとどまらず、現地法規に対応したリライトや、レイアウト作成も承っています。
 
   - type: Icon Heading 3
     icon: fa fa-comment

@@ -1,10 +1,6 @@
 // グローバルナビゲーション
 // ヘッダー、フッター、サイドメニューを生成するもと
 
-// declare type ValidPaths = {
-//   [key in LangList]: string[];
-// }
-
 // ロケール名をキーに、NavigationMenuの配列を値に持つ
 declare type I18nNavMenu = {
   [key in LangList]: NavigationMenu[]
@@ -18,6 +14,8 @@ declare type I18nNavMenu = {
 declare interface NavigationMenu {
   category: string;
   root: string;
+  // path: string;
+  // fullpath: stirng;
   items?: SinglePageIndex<IsSingle>[];
 }
 
@@ -26,29 +24,15 @@ declare interface SinglePageIndex<T extends IsSingle | IsMulti> {
   name: string;
   position: number;
   $title: IsStr<T>;
-  href: string;
+  // href: string;
+  path: string;
+  fullpath: string;
   img: string;
   $summary: IsStr<T>;
   langs: string[];
   pageType: PageType;
   data: SinglePageIndex<T>[];
 }
-
-// グローバルナビゲーションのサブカテゴリごとのオブジェクト
-// declare interface NavItem {
-//   caption: string;
-//   link: string;
-//   items?: NavItem[];
-// }
-
-// declare interface CategoryIndex<T extends IsSingle | IsMulti> {
-//   name: string;
-//   position: number;
-//   $heading: IsStr<T>;
-//   langs: string[];
-//   root: string;
-//   data: SinglePageIndex<T>[];
-// }
 
 // contents内各フォルダ直下のindex.yaml
 declare type HeadingInInit = {
@@ -91,10 +75,6 @@ declare interface StaticPostPagenate {
     pageNum: string
   }
 }
-
-// declare type I18nStaticPaths = {
-//   [key in LangList]: StaticPath[];
-// }
 
 declare interface PageProp {
   layout: PageType,

@@ -1,43 +1,44 @@
 ---
-import DefaultImage from "$lib/Util/DefImg.vue"
-let item: SinglePageIndex<IsSingle>;
-({item} = Astro.props);
+  import DefaultImage from "$lib/Util/DefImg.vue"
+  let item: SinglePageIndex<IsSingle>;
+  ({ item } = Astro.props);
 ---
 
-<div
-  class="card toc-card my-3 is-pulled-left astries-gradient-animation"
->
-  <a href={item.href}>
-  <div class="card-image">
-    <figure class="image is-16by9">
-      {(item.img !== "" && item.img !== "/")
+<div class="card toc-card my-3 is-pulled-left astries-gradient-animation">
+  <a href={item.fullpath}>
+    <div class="card-image">
+      <figure class="image is-16by9">
+        {(item.img !== "" && item.img !== "/")
         ? item.img.startsWith("http")
-          ? <img src={item.img} alt={item.$summary} />
-          : <img src={'/pict/' + item.img} alt={item.$summary} />
-        : <DefaultImage />
-      }
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media-content px-3">
-      <p class="title is-4">{item.$title}</p>
+        ? <img src={item.img} alt={item.$summary} />
+        : <img src={'/pict/' + item.img} alt={item.$summary} />
+        :
+        <DefaultImage />
+        }
+      </figure>
     </div>
-  </div>
-  <div class="content p-5">
-    <p class="is-size-5">{item.$summary}</p>
-  </div>
+    <div class="card-content">
+      <div class="media-content px-3">
+        <p class="title is-4">{item.$title}</p>
+      </div>
+    </div>
+    <div class="content p-5">
+      <p class="is-size-5">{item.$summary}</p>
+    </div>
   </a>
 </div>
 
 <style lang="scss">
-@use "../../styles/colors" as c;
+  @use "../../styles/colors" as c;
+
   div.toc-card {
     a {
       color: c.$text-color;
     }
+
     &:hover {
       background-color: c.$accent;
-      color: c.$accent-nega-text; 
+      color: c.$accent-nega-text;
       // border-bottom: solid 3px teal;
       transition: 0.5s;
       // filter: drop-shadow(1px 1px 1px green);

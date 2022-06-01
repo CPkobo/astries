@@ -6,10 +6,9 @@ $title:
   ja: 会社情報
   en: Company information
 $description:
-  ja: 株式会社ゴールデンブリッジの各種情報を掲載しています。
+  ja: 株式会社ゴールデンブリッジの各種情報を掲載しています。インバウンド事業に取り組むうえでの旅行業登録や有料職業紹介、加盟団体や育児休業に向けた取り組みなども紹介しています。
 $summary:
-  ja: 株式会社ゴールデンブリッジの各種情報を掲載しています。
-href: /
+  ja: 株式会社ゴールデンブリッジの各種情報を掲載しています
 img: about/toc-information.jpg
 pageType: LeftMain
 contents:

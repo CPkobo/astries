@@ -1,19 +1,17 @@
 ---
-import Eachnav from "./eachnav.astro";
-let menu: NavigationMenu;
-({menu} = Astro.props)
+  import Eachnav from "./eachnav.astro";
+  let menu: NavigationMenu;
+  ({ menu } = Astro.props)
 ---
 
 <div class="navbar-item has-dropdown is-hoverable">
-  <a
-    class="navbar-link is-arrowless is-size-4-desktop is-size-5-touch"
-    href={menu.root}
-  >
+  <a class="navbar-link is-arrowless is-size-4-desktop is-size-5-touch" href={menu.root}>
     {menu.category}
   </a>
   <div class="navbar-dropdown">
     {menu.items.map(item => {
-      return (<Eachnav {item} />)
+    return (
+    <Eachnav {item} />)
     })}
   </div>
 </div>

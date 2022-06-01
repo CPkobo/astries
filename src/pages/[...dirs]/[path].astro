@@ -5,7 +5,7 @@
   import Base from "$layouts/Base.astro"
   import BlockControl from "$lib/Blocks/BlockControl.vue"
   import Sticker from "$lib/Globals/SideSticker/Sticker.astro"
-  // import FilledBar from "$lib/Util/FilledBar.astro"
+  import TitleBar from "$lib/Util/TitleBar.astro"
   import BreadCrumb from "$lib/Util/BreadCrumb/BreadCrumb.astro"
 
   export async function getStaticPaths() {
@@ -20,10 +20,10 @@
   const direction: AstriesDirection = {
     head: {
       lang: 'ja',
-      title: `${profile.SiteName} | ${page.$title}`,
+      title: `${page.$title} | ${profile.SiteName}`,
       description: page.$description,
       ogp: {
-        url: `${profile.url}/${page.href}`,
+        url: `${profile.url}/${page.fullpath}`,
         type: 'website',
         title: page.$title,
         description: page.$description,
@@ -47,7 +47,7 @@
   const url = `/${dirs}/${path}`
   for (const nav of navs[l]) {
     for (const item of nav.items) {
-      if (item.href === url) {
+      if (item.fullpath === url) {
         menu = nav
         break
       }
@@ -56,12 +56,14 @@
       break;
     }
   }
+  // console.log(page)
 ---
 
 <Base direction={direction}>
 <scetion slot="top">
   <!-- <FilledBar title={page.$title} /> -->
   <BreadCrumb breadCrumb={page.breadCrumb} />
+  <TitleBar title={page.$title} />
 </scetion>
 <section slot="main">
   <BlockControl blks={page.contents} />

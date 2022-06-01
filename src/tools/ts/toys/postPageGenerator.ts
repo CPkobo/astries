@@ -1,8 +1,6 @@
 import { readdirSync, readFileSync, statSync } from 'fs'
-// import { dump } from 'js-yaml'
 import fm from 'front-matter'
 import { marked } from 'marked'
-// import { Writing } from '../toybox'
 import { DirOperator } from './dirOperator'
 
 export class PostPageGenerator {
@@ -44,9 +42,6 @@ export class PostPageGenerator {
   }
 
   private setPageInfos(dirope: DirOperator): void {
-    // const writings: Writing[] = []
-    // const posts: StaticPath[] = []
-    // const pages: StaticPath[] = []
     this.execCrawlPosts(dirope.root, dirope.posts)
     let count = 1
     for (const post of this.posts) {
@@ -62,7 +57,6 @@ export class PostPageGenerator {
       this.pages = this.pages.slice(0, this.pages.length - 1);
     }
     this.pages[this.pages.length - 1].next.href = ''
-    // this.pagenatePaths = this.pagenatePaths.slice(0, this.pagenatePaths.length - 1)
   }
 
   private execCrawlPosts(root: string, posts: string[]): void {

@@ -37,7 +37,7 @@ class NavGenerator {
         this.srcDir = srcDir;
     }
     /**
-    * contents ディレクトリを走査し、各ディレクトリの index ファイルを更新する
+    * 起点となる関数。contents ディレクトリを走査し、各ディレクトリの index ファイルを更新する
     * @param {DirOperator} dirope contentsフォルダの場所を格納しているオブジェクト
     * @return {Object} result 各ディレクトリの状態を返す
     * @return {Partial<I18nNavMenu>} result.navs
@@ -47,43 +47,17 @@ class NavGenerator {
     execGenerator(dirope) {
         this.hasGened = true;
         const indices = [];
-        const onlyIndexDir = [];
-        const dirs = [];
+        // const onlyIndexDir: string[] = []
         // contentsDir にあるディレクトリを再帰的に配列にする
-        dirs.push(...this.getDirListRecursive(this.contentsDir));
-        // const dirs = readdirSync(this.contentsDir).filter(val => {
-        //   return val.endsWith(".yaml") === false
-        //     && !(val.startsWith("_") || val.startsWith("."))
-        // })
-        // const inTops = readdirSync(this.contentsDir).filter(val => {
-        //   return val.endsWith(".yaml")
-        //     && !(val.startsWith("_") || val.startsWith("."))
-        // })
+        const targetDirs = this.getDirListRecursive(this.contentsDir);
         // 各ディレクトリのインデックスを作成する
-        for (const dir of dirs) {
-            // 各ディレクトリのindex.yaml、その他のファイル、_ で始まるファイルのパスをそれぞれ配列に
-            const { index, files, specials } = this.getFileNamesInEachFolder(dir);
-            // フォルダがAstriesの要件を満たしていない場合、スキップ
-            if (specials.includes("_init.yaml") === false) {
-                continue;
+        targetDirs.forEach(dir => {
+            const singleIndex = this.createIndiceInDir(dir);
+            if (singleIndex !== null) {
+                indices.push(singleIndex);
             }
-            else if (files.length === 0) {
-                if (index !== "") {
-                    // フォルダ内にIndexしかないファイルは別扱い
-                    onlyIndexDir.push(dir);
-                }
-                continue;
-            }
-            const dirIndex = this.generateIndex(dir, files);
-            // const data = dump(dirIndex)
-            // const [dir_, name] = dirope.getWriteIndexPaths(dir)
-            // writings.push({
-            //   dir: dir_,
-            //   name,
-            //   data
-            // })
-            indices.push(dirIndex);
-        }
+        });
+        // インデックスをポジション順にソート
         indices.sort((a, b) => {
             if (a.position > b.position) {
                 return 1;
@@ -93,18 +67,15 @@ class NavGenerator {
             }
             return 0;
         });
-        return this.createNavFromIndices(indices);
-        // this.stDirs = stdirs
-        // this.stPaths = stpaths
-        // this.navs = navs
-        // return {
-        //   navs,
-        //   dirs: stdirs,
-        //   paths: stpaths
-        // }
-        // const navsdata = this.writeNavTS(stdirs, stpaths, navs)
-        // return [...writings, ...navsdata]
+        const { navs, dirs, paths } = this.createNavFromIndices(indices);
+        return { navs, dirs, paths };
     }
+    /**
+    * contentsDir にあるディレクトリを再帰的な配列にする
+    * @param {string} dir contentsフォルダの場所
+    * @param {string} subdir 再帰的に検索する際のサブディレクトリ。デフォルトは空白
+    * @return {Array<string>} ディレクトリ名のリスト。サブディレクトリ以下は、親ディレクトリも含む文字列
+    */
     getDirListRecursive(dir, subdir = "") {
         const dirList = (0, fs_1.readdirSync)(dirOperator_1.DirOperator.join(dir, subdir), {
             withFileTypes: true,
@@ -116,6 +87,32 @@ class NavGenerator {
             dirs.push(...this.getDirListRecursive(dir, child));
         });
         return dirs;
+    }
+    /**
+    * 特定のディレクトリにあるyamlファイルから多言語目次を作成する
+    * @param {string} dir 対象のディレクトリ
+    * @return {SinglePageIndex<IsMulti>} multiIndex 多言語目次
+    */
+    createIndiceInDir(dir) {
+        // 各ディレクトリのindex.yaml、その他のファイル、_ で始まるファイルのパスをそれぞれ配列に
+        const { index, files, specials } = this.getFileNamesInEachFolder(dir);
+        // フォルダがAstriesの要件を満たしていない場合、スキップ
+        if (specials.includes("_init.yaml") === false) {
+            return null;
+        }
+        else if (files.length === 0) {
+            // if (index !== "") {
+            //   // フォルダ内にIndexしかないファイルは別扱い
+            //   onlyIndexDir.push(dir)
+            // }
+            // continue
+            return null;
+        }
+        else {
+            const multiIndex = this.generateIndex(dir, files);
+            return multiIndex;
+        }
+        return null;
     }
     /**
     * contents ディレクトリの特定のフォルダを走査し、indexファイルと通常ファイル、特殊ファイルに分ける
@@ -158,7 +155,9 @@ class NavGenerator {
             position: init.position | 0,
             $title: {},
             $summary: {},
-            href: `/${dir}/toc`,
+            // href: `/${dir}/toc`,
+            path: 'toc',
+            fullpath: `/${dir}/toc`,
             img: init.img || '',
             langs: [],
             pageType: 'Base',
@@ -183,7 +182,9 @@ class NavGenerator {
             const singleIndex = {
                 name: contents.name || file.replace(".yaml", ""),
                 position: Number(contents.position) || dirtop.data.length || 0,
-                href: `/${dir}/${file.replace(".yaml", "")}`,
+                // href: `/${dir}/${file.replace(".yaml", "")}`,
+                path: file.replace(".yaml", ""),
+                fullpath: `/${dir}/${file.replace(".yaml", "")}`,
                 img: contents.img || "",
                 $title: contents.$title || this.blankI18n,
                 $summary: contents.$summary || this.blankI18n,
@@ -199,7 +200,9 @@ class NavGenerator {
         });
         // フォルダ内にindex以外に1つしかファイルがない場合、直接アクセスできるようにする
         if (dirtop.data.length === 1) {
-            dirtop.href = dirtop.data[0].href;
+            // dirtop.href = dirtop.data[0].href
+            dirtop.fullpath = dirtop.data[0].fullpath;
+            dirtop.path = dirtop.data[0].path;
             dirtop.pageType = dirtop.data[0].pageType;
         }
         else {
@@ -237,21 +240,24 @@ class NavGenerator {
                 }
                 const navmenu = {
                     category: index.$title[lang] || "",
-                    root: index.href,
+                    // root: index.href,
+                    root: index.fullpath,
                     items: [],
                 };
                 // Pageが複数ある場合はTOCに飛ばす
                 if (index.data.length > 1) {
-                    singleLangDir.push(this.createStaticDir(index.href, lang));
+                    singleLangDir.push(this.createStaticDir(index.fullpath, lang));
+                    // singleLangDir.push(this.createStaticDir(index.href, lang))
                 }
                 else {
-                    singleLangPath.push(this.createStaticPath(index.href, lang, index.pageType));
+                    // singleLangPath.push(this.createStaticPath(index.href, lang, index.pageType))
+                    singleLangPath.push(this.createStaticPath(index.fullpath, lang, index.pageType));
                 }
-                if (!dupliPaths.includes(index.href)) {
-                    dupliPaths.push(index.href);
+                if (!dupliPaths.includes(index.fullpath)) {
+                    dupliPaths.push(index.fullpath);
                 }
                 if (index.data.length > 1) {
-                    navmenu.root = index.href;
+                    navmenu.root = index.fullpath;
                 }
                 for (const datum of index.data) {
                     // datum の方は SingleTOC
@@ -264,8 +270,8 @@ class NavGenerator {
                     }
                     else {
                         const navitem = this.convMulti2Single(datum, lang);
-                        if (!dupliPaths.includes(navitem.href)) {
-                            singleLangPath.push(this.createStaticPath(navitem.href, lang, navitem.pageType));
+                        if (!dupliPaths.includes(navitem.fullpath)) {
+                            singleLangPath.push(this.createStaticPath(navitem.fullpath, lang, navitem.pageType));
                         }
                         if (navmenu.items === undefined) {
                             navmenu.items = [navitem];
@@ -294,7 +300,9 @@ class NavGenerator {
                 name: index.name,
                 position: index.position,
                 $title: index.$title[lang] || "",
-                href: index.href,
+                path: index.path,
+                fullpath: index.fullpath,
+                // href: index.href,
                 img: index.img,
                 $summary: index.$summary[lang] || "",
                 langs: index.langs,
@@ -314,7 +322,9 @@ class NavGenerator {
             name: index.name,
             position: index.position,
             $title: index.$title[lang] || "",
-            href: index.href,
+            // href: index.href,
+            path: index.path,
+            fullpath: index.fullpath,
             img: index.img,
             $summary: index.$summary[lang] || "",
             langs: index.langs,
@@ -328,46 +338,6 @@ class NavGenerator {
         }
         return singleIndex;
     }
-    /**
-    * SingleTOC<IsMulti>[] から NavItem[] をつくる
-    * 場合によっては再起呼び出し
-    * @param {SinglePageIndex<IsMulti>[]} stocs ページアイテムの配列
-    * @param {String::LangList} lang 取り出す言語
-    * @param {Number} depth 入れ子の層数を指定。
-    * @param {Number} crt 現在の再帰呼び出し数
-    * @return {NavItem[]} 単言語ナビゲーション
-    */
-    // convToc2NavItems(stocs: SinglePageIndex<IsMulti>[], lang: LangList, depth: number, crt: number): NavItem[] | null {
-    //   if (crt >= depth) {
-    //     return null
-    //   }
-    //   /**
-    //   * @type {NavItem[]} 単言語ナビゲーション
-    //   */
-    //   const navs: NavItem[] = []
-    //   for (const stoc of stocs) {
-    //     // 対応言語のタイトルがない場合、ナビゲーションに含めない
-    //     if (!stoc.$title[lang]) {
-    //       continue
-    //     } else {
-    //       /**
-    //       * @type {NavItem} 単一ページ・単一言語に対応したナビゲーション項目
-    //       */
-    //       const nav_: NavItem = {
-    //         caption: stoc.$title[lang] || "",
-    //         link: stoc.href,
-    //       }
-    //       if (stoc.children) {
-    //         const items = this.convToc2NavItems(stoc.children, lang, depth, crt++)
-    //         if (items !== null && items.length > 0) {
-    //           nav_.items = items
-    //         }
-    //       }
-    //       navs.push(nav_)
-    //     }
-    //   }
-    //   return navs
-    // }
     /**
     * stores に navigations.ts を書きだす
     * @param {ValidPaths} stpaths 言語ごとの有効なパスの配列

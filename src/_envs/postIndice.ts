@@ -5,6 +5,16 @@ export const indices: PostPagenation[] = [
     "title": "ニュースリリース",
     "pages": [
       {
+        "title": "積善の家は余慶有り",
+        "published": "2022-05-28T00:00:00.000Z",
+        "modified": "2022-05-28T00:00:00.000Z",
+        "pubstr": "2022-05-28",
+        "modstr": "2022-05-28",
+        "image": "/pict/posts/2022/sanpo/3.jpg",
+        "summary": "三方よし研究所の会員総会に参加しました",
+        "href": "sanpo-yoshi"
+      },
+      {
         "title": "ニュースで話題のあの人、中国語でなんて言うの？",
         "published": "2022-05-19T00:00:00.000Z",
         "modified": "2022-05-19T00:00:00.000Z",
@@ -81,16 +91,6 @@ export const indices: PostPagenation[] = [
         "image": "/pict/posts/2022/0101.png",
         "summary": "弊社代表より新年のご挨拶を申し上げます",
         "href": "20220101"
-      },
-      {
-        "title": "【無事終了】第二回オンライン勉強会＆第一回ZOOM同通体験会",
-        "published": "2021-12-25T00:00:00.000Z",
-        "modified": "2021-12-25T00:00:00.000Z",
-        "pubstr": "2021-12-25",
-        "modstr": "2021-12-25",
-        "image": "/pict/posts/2020/1209/0.png",
-        "summary": "12月23日（水）に、第二回オンライン勉強会＆第一回ZOOM同通体験会を行い、無事終了いたしました♪",
-        "href": "20201209"
       }
     ],
     "num": 1,
@@ -106,6 +106,16 @@ export const indices: PostPagenation[] = [
   {
     "title": "ニュースリリース",
     "pages": [
+      {
+        "title": "【無事終了】第二回オンライン勉強会＆第一回ZOOM同通体験会",
+        "published": "2021-12-25T00:00:00.000Z",
+        "modified": "2021-12-25T00:00:00.000Z",
+        "pubstr": "2021-12-25",
+        "modstr": "2021-12-25",
+        "image": "/pict/posts/2020/1209/0.png",
+        "summary": "12月23日（水）に、第二回オンライン勉強会＆第一回ZOOM同通体験会を行い、無事終了いたしました♪",
+        "href": "20201209"
+      },
       {
         "title": "【無事終了】第二回オンライン勉強会＆第一回ZOOM同通体験会",
         "published": "2021-12-25T00:00:00.000Z",
@@ -193,16 +203,6 @@ export const indices: PostPagenation[] = [
         "image": "/pict/posts/2020/0805/0.png",
         "summary": "オンライン開催となった対話山東 日本・山東産業協力交流会について紹介します",
         "href": "20200805"
-      },
-      {
-        "title": "★新年のご挨拶★",
-        "published": "2021-01-01T00:00:00.000Z",
-        "modified": "2021-01-01T00:00:00.000Z",
-        "pubstr": "2021-01-01",
-        "modstr": "2021-01-01",
-        "image": "/pict/posts/2021/0101.jpg",
-        "summary": "弊社代表より新年のご挨拶を申し上げます",
-        "href": "20210101"
       }
     ],
     "num": 2,
@@ -218,6 +218,16 @@ export const indices: PostPagenation[] = [
   {
     "title": "ニュースリリース",
     "pages": [
+      {
+        "title": "★新年のご挨拶★",
+        "published": "2021-01-01T00:00:00.000Z",
+        "modified": "2021-01-01T00:00:00.000Z",
+        "pubstr": "2021-01-01",
+        "modstr": "2021-01-01",
+        "image": "/pict/posts/2021/0101.jpg",
+        "summary": "弊社代表より新年のご挨拶を申し上げます",
+        "href": "20210101"
+      },
       {
         "title": "事務所に遠隔同通センター設置！オンライン国際会議をサポート",
         "published": "2020-09-01T00:00:00.000Z",

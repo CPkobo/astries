@@ -14,48 +14,26 @@ export function handleConvI18n2StrToc($toc: SinglePageIndex<IsMulti>, lang: Lang
     name: $toc.name,
     position: $toc.position,
     $title: convI18n2Str($toc.$title, lang),
-    href: $toc.href,
+    // href: $toc.href,
+    path: $toc.path,
+    fullpath: $toc.fullpath,
     img: $toc.img,
     $summary: convI18n2Str($toc.$summary, lang),
     langs: $toc.langs,
     pageType: $toc.pageType,
     data: [],
   }
-  // if ($toc.data) {
-  //   $toc.data.forEach(eachtoc => {
-  //     if (eachtoc.langs === undefined) {
-  //       toc.data.push({
-  //         name: eachtoc.name,
-  //         position: eachtoc.position,
-  //         $title: convI18n2Str(eachtoc.$title, lang),
-  //         href: eachtoc.href,
-  //         img: normalizeSrc(eachtoc.img),
-  //         $summary: convI18n2Str(eachtoc.$summary, lang),
-  //         langs: eachtoc.langs,
-  //       })
-  //     } else if (eachtoc.langs.includes(lang)) {
-  //       toc.data.push({
-  //         name: eachtoc.name,
-  //         position: eachtoc.position,
-  //         $title: convI18n2Str(eachtoc.$title, lang),
-  //         href: eachtoc.href,
-  //         img: normalizeSrc(eachtoc.img),
-  //         $summary: convI18n2Str(eachtoc.$summary, lang),
-  //         langs: eachtoc.langs
-  //       })
-  //     }
-  //   });
-  // }
   return toc
 }
 
 export function handleConvI18n2StrInMeta(
-  $pg: Omit<PageContents<IsMulti>, "contents"> | PageContents<IsMulti>,
-  lang: LangList): Omit<PageContents<IsSingle>, "contents"> {
-  const href = `${$pg.href}--${lang}`
+  $pg: Omit<PageContentsInYaml<IsMulti>, "contents"> | PageContentsInYaml<IsMulti>,
+  dir: string, path: string, lang: LangList, deflang: string): Omit<PageContents<IsSingle>, "contents"> {
+  const pathWithLang = lang === deflang ? path : `${path}--${lang}`
   return {
     name: $pg.name,
-    href,
+    path: pathWithLang,
+    fullpath: `${dir}/${path}`,
     jsonld: $pg.jsonld,
     $title: convI18n2Str($pg.$title, lang),
     $description: convI18n2Str($pg.$description, lang),

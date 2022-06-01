@@ -3,10 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PostPageGenerator = void 0;
 const tslib_1 = require("tslib");
 const fs_1 = require("fs");
-// import { dump } from 'js-yaml'
 const front_matter_1 = tslib_1.__importDefault(require("front-matter"));
 const marked_1 = require("marked");
-// import { Writing } from '../toybox'
 const dirOperator_1 = require("./dirOperator");
 class PostPageGenerator {
     posts;
@@ -40,9 +38,6 @@ class PostPageGenerator {
         };
     }
     setPageInfos(dirope) {
-        // const writings: Writing[] = []
-        // const posts: StaticPath[] = []
-        // const pages: StaticPath[] = []
         this.execCrawlPosts(dirope.root, dirope.posts);
         let count = 1;
         for (const post of this.posts) {
@@ -58,7 +53,6 @@ class PostPageGenerator {
             this.pages = this.pages.slice(0, this.pages.length - 1);
         }
         this.pages[this.pages.length - 1].next.href = '';
-        // this.pagenatePaths = this.pagenatePaths.slice(0, this.pagenatePaths.length - 1)
     }
     execCrawlPosts(root, posts) {
         const imgstr = new RegExp('\\!\\[.*\\]\\((.*)\\)');

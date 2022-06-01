@@ -43,9 +43,10 @@ export const config: AstriesConfig = {
             "name": "information",
             "position": 1,
             "$title": "会社情報",
-            "href": "/about/information",
+            "path": "information",
+            "fullpath": "/about/information",
             "img": "about/toc-information.jpg",
-            "$summary": "株式会社ゴールデンブリッジの各種情報を掲載しています。",
+            "$summary": "株式会社ゴールデンブリッジの各種情報を掲載しています",
             "langs": [
               "ja"
             ],
@@ -56,7 +57,8 @@ export const config: AstriesConfig = {
             "name": "philosophy",
             "position": 2,
             "$title": "経営理念・社是",
-            "href": "/about/philosophy",
+            "path": "philosophy",
+            "fullpath": "/about/philosophy",
             "img": "about/toc-philosophy.jpg",
             "$summary": "株式会社ゴールデンブリッジの経営理念・社是についてご紹介します",
             "langs": [
@@ -69,7 +71,8 @@ export const config: AstriesConfig = {
             "name": "message",
             "position": 3,
             "$title": "社長あいさつ",
-            "href": "/about/message",
+            "path": "message",
+            "fullpath": "/about/message",
             "img": "about/toc-message.jpg",
             "$summary": "株式会社ゴールデンブリッジの社長 楊金峰よりご挨拶申し上げます",
             "langs": [
@@ -82,9 +85,10 @@ export const config: AstriesConfig = {
             "name": "privacy policy",
             "position": 4,
             "$title": "プライバシーポリシー",
-            "href": "/about/privacy",
+            "path": "privacy",
+            "fullpath": "/about/privacy",
             "img": "about/toc-privacy.jpg",
-            "$summary": "株式会社ゴールデンブリッジのプライバシーポリシーです",
+            "$summary": "株式会社ゴールデンブリッジのプライバシーポリシーです。",
             "langs": [
               "ja"
             ],
@@ -95,7 +99,8 @@ export const config: AstriesConfig = {
             "name": "recruit",
             "position": 5,
             "$title": "採用・募集",
-            "href": "/about/recruit",
+            "path": "recruit",
+            "fullpath": "/about/recruit",
             "img": "about/toc-recruit.jpg",
             "$summary": "株式会社ゴールデンブリッジの登録翻訳者・社内スタッフ募集ページです。",
             "langs": [
@@ -114,7 +119,8 @@ export const config: AstriesConfig = {
             "name": "Translation",
             "position": 1,
             "$title": "翻訳",
-            "href": "/lang/translation",
+            "path": "translation",
+            "fullpath": "/lang/translation",
             "img": "lang/toc/translation.jpg",
             "$summary": "株式会社ゴールデンブリッジの翻訳サービスの紹介です",
             "langs": [
@@ -127,7 +133,8 @@ export const config: AstriesConfig = {
             "name": "Interpretation",
             "position": 2,
             "$title": "通訳",
-            "href": "/lang/interpretation",
+            "path": "interpretation",
+            "fullpath": "/lang/interpretation",
             "img": "lang/toc/interpretation.jpg",
             "$summary": "株式会社ゴールデンブリッジの通訳サービスについての紹介です",
             "langs": [
@@ -140,7 +147,8 @@ export const config: AstriesConfig = {
             "name": "online",
             "position": 3,
             "$title": "オンライン通訳",
-            "href": "/lang/online",
+            "path": "online",
+            "fullpath": "/lang/online",
             "img": "lang/toc/online.jpg",
             "$summary": "株式会社ゴールデンブリッジのオンライン通訳サービスについての紹介です",
             "langs": [
@@ -153,7 +161,8 @@ export const config: AstriesConfig = {
             "name": "Machine Translation",
             "position": 4,
             "$title": "機械翻訳",
-            "href": "/lang/mt",
+            "path": "mt",
+            "fullpath": "/lang/mt",
             "img": "lang/toc/mt.png",
             "$summary": "株式会社ゴールデンブリッジの機械翻訳の紹介です",
             "langs": [
@@ -166,7 +175,8 @@ export const config: AstriesConfig = {
             "name": "Past Works",
             "position": 5,
             "$title": "翻訳・通訳実績一覧",
-            "href": "/lang/works",
+            "path": "works",
+            "fullpath": "/lang/works",
             "img": "lang/toc/works.jpg",
             "$summary": "株式会社ゴールデンブリッジの翻訳・通訳実績一覧です",
             "langs": [
@@ -185,9 +195,10 @@ export const config: AstriesConfig = {
             "name": "onlineshop",
             "position": 1,
             "$title": "Online Shop",
-            "href": "/ec/ec",
+            "path": "ec",
+            "fullpath": "/ec/ec",
             "img": "ec/shopping-bag.jpg",
-            "$summary": "株式会社ゴールデンブリッジのオンラインショップ（EC）事業についての紹介です",
+            "$summary": "株式会社ゴールデンブリッジのオンラインショップ（EC）事業について紹介します",
             "langs": [
               "ja"
             ],
@@ -204,7 +215,8 @@ export const config: AstriesConfig = {
             "name": "cat",
             "position": 1,
             "$title": "翻訳支援ツール",
-            "href": "/it/cat",
+            "path": "cat",
+            "fullpath": "/it/cat",
             "img": "it/toc/catovis-logo.svg",
             "$summary": "株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています",
             "langs": [
@@ -217,7 +229,8 @@ export const config: AstriesConfig = {
             "name": "Natural Language Processing",
             "position": 2,
             "$title": "自然言語処理",
-            "href": "/it/nlp",
+            "path": "nlp",
+            "fullpath": "/it/nlp",
             "img": "it/toc/nlp.jpg",
             "$summary": "株式会社ゴールデンブリッジの機械翻訳・自然言語処理について紹介しています",
             "langs": [
@@ -230,7 +243,8 @@ export const config: AstriesConfig = {
             "name": "digital transformation",
             "position": 3,
             "$title": "DX・テレワーク",
-            "href": "/it/dx",
+            "path": "dx",
+            "fullpath": "/it/dx",
             "img": "it/toc/dx.jpg",
             "$summary": "株式会社ゴールデンブリッジのデジタル・トランスフォーメーション（DX）と、テレワークの取り組みについて紹介しています",
             "langs": [
@@ -249,7 +263,8 @@ export const config: AstriesConfig = {
             "name": "edit",
             "position": 1,
             "$title": "編集・DTP",
-            "href": "/others/edit",
+            "path": "edit",
+            "fullpath": "/others/edit",
             "img": "others/toc/edit.jpg",
             "$summary": "株式会社ゴールデンブリッジの編集・ＤＴＰサービスの紹介です。翻訳成果物の録音・ナレーションや動画字幕、DTPなどご要望の形態に編集いたします。",
             "langs": [
@@ -262,7 +277,8 @@ export const config: AstriesConfig = {
             "name": "INBOUND",
             "position": 2,
             "$title": "インバウンド交流事業",
-            "href": "/others/inbound",
+            "path": "inbound",
+            "fullpath": "/others/inbound",
             "img": "others/toc/inbound.jpg",
             "$summary": "株式会社ゴールデンブリッジのインバウンド事業の紹介です",
             "langs": [
@@ -275,9 +291,10 @@ export const config: AstriesConfig = {
             "name": "Training",
             "position": 3,
             "$title": "語学研修",
-            "href": "/others/train",
+            "path": "train",
+            "fullpath": "/others/train",
             "img": "others/toc/train.jpg",
-            "$summary": "ビジネスに使える中国語を、経験豊富な講師が丁寧に指導いたします。オンラインやカスタマイズなども自由",
+            "$summary": "ビジネスに使える中国語を、経験豊富な講師が丁寧に指導いたします。オンラインやカスタマイズなども自由自在",
             "langs": [
               "ja"
             ],
@@ -288,7 +305,8 @@ export const config: AstriesConfig = {
             "name": "copy right",
             "position": 4,
             "$title": "著作権登録",
-            "href": "/others/copyright",
+            "path": "copyright",
+            "fullpath": "/others/copyright",
             "img": "others/toc/copyright.jpg",
             "$summary": "株式会社ゴールデンブリッジの著作権登録サービスの紹介です。中国進出を考える日本企業へ、知財の視点からサポートを提供いたします",
             "langs": [
@@ -524,6 +542,15 @@ export const config: AstriesConfig = {
     }
   ],
   "staticPosts": [
+    {
+      "params": {
+        "dirs": "post",
+        "path": "sanpo-yoshi"
+      },
+      "props": {
+        "title": "積善の家は余慶有り"
+      }
+    },
     {
       "params": {
         "dirs": "post",
