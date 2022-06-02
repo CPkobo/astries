@@ -11,12 +11,12 @@ $summary:
 img: about/toc-philosophy.jpg
 pageType: LeftMain
 contents:
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-square
     $text:
       ja: 経営理念
 
-  - type: Image
+  - type: image
     classes: p-5
     $alt:
       ja: |-
@@ -26,36 +26,36 @@ contents:
         事業活動を通じて平和と社会発展に貢献する。
     src: about/philosophy1.png
 
-  - type: Spacer
+  - type: spacer
     y: 2
 
-  - type: Separator
+  - type: separator
 
-  - type: Spacer
+  - type: spacer
     y: 2
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-square
     $text:
       ja: 社是
 
-  - type: Image
+  - type: image
     $alt:
       ja: 先義後利
     src: about/philosophy2.jpg
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 中国の古典「四書」のひとつである『孟子』の言葉。
         - この言葉の指すとおり、ビジネスにおいては利益を追求するだけではなく、まず「道義」を重視しなければならないと考えています。
 
-  - type: Image
+  - type: image
     $alt:
       ja: 順理則裕（理にしたがえば、すなわち裕かなり）
     src: about/philosophy3.jpg
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 中国宋代の朱子学者、程頤（ていい）の言葉で、「理にしたがえば、すなわち裕かなり」と読み下します。

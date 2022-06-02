@@ -108,6 +108,20 @@ export const config: AstriesConfig = {
             ],
             "pageType": "LeftMain",
             "data": []
+          },
+          {
+            "name": "faq",
+            "position": 6,
+            "$title": "よくある質問",
+            "path": "faq",
+            "fullpath": "/about/faq",
+            "img": "about/toc-information.jpg",
+            "$summary": "翻訳・通訳などについてよくある質問をまとめました",
+            "langs": [
+              "ja"
+            ],
+            "pageType": "LeftMain",
+            "data": []
           }
         ]
       },
@@ -412,6 +426,16 @@ export const config: AstriesConfig = {
     },
     {
       "params": {
+        "dirs": "about",
+        "path": "faq"
+      },
+      "props": {
+        "lang": "ja",
+        "layout": "LeftMain"
+      }
+    },
+    {
+      "params": {
         "dirs": "lang",
         "path": "translation"
       },
@@ -545,10 +569,19 @@ export const config: AstriesConfig = {
     {
       "params": {
         "dirs": "post",
+        "path": "2022-interpreter-cource"
+      },
+      "props": {
+        "title": "【受講生募集】短期集中！オンライン・教室ハイブリッド型通訳養成講座　日⇔中　中級コース"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
         "path": "sanpo-yoshi"
       },
       "props": {
-        "title": "積善の家は余慶有り"
+        "title": "【三方よし研究所】積善の家には必ず余慶あり"
       }
     },
     {

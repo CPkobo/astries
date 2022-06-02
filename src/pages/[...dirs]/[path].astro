@@ -1,6 +1,6 @@
 ---
-  import { navs, staticPaths } from "$src/_envs/paths"
-  import { profile } from "$src/_envs/profile"
+  import { navs, staticPaths } from "$envs/paths"
+  import { profile } from "$envs/profile"
   import { getContents } from "$scripts/_i18n"
   import Base from "$layouts/Base.astro"
   import BlockControl from "$lib/Blocks/BlockControl.vue"
@@ -22,6 +22,7 @@
       lang: 'ja',
       title: `${page.$title} | ${profile.SiteName}`,
       description: page.$description,
+      jsonld: page.jsonld,
       ogp: {
         url: `${profile.url}/${page.fullpath}`,
         type: 'website',
@@ -41,8 +42,9 @@
     hasFooterMenu: true,
     hasSideMenu: true,
     pagetype: lt,
-    navigations: navs[lang]
+    navigations: navs[lang],
   }
+
   let menu: NavigationMenu;
   const url = `/${dirs}/${path}`
   for (const nav of navs[l]) {

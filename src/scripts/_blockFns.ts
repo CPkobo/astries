@@ -272,7 +272,7 @@ export function _gallary(blk: GallaryBlock<IsMulti>, lang: string): GallaryBlock
     $blks: []
   }
   for (const $blk of blk.$blks) {
-    if ($blk.type === "Image") {
+    if ($blk.type === "image") {
       const iblk = _image($blk, lang)
       if (iblk !== null) {
         nblk.$blks.push(iblk)
@@ -312,11 +312,20 @@ export function _flow(blk: FlowBlock<IsMulti>, lang: string): FlowBlock<IsSingle
 
 export function _table(blk: TableBlock<IsMulti>, lang: string): TableBlock<IsSingle> {
   const $th: string[] = []
-  const $trs: SimpleBlock<IsSingle>[][] = []
+  const $trs: ChildBlock<IsSingle>[][] = []
   const nblk: TableBlock<IsSingle> = {
     ...blk,
     $th,
     $trs
+  }
+  return nblk
+}
+
+export function _faq(blk: FaqBlock<IsMulti>, lang: string): FaqBlock<IsSingle> {
+  const $qas: QuestionAndAnser<IsSingle>[] = []
+  const nblk: FaqBlock<IsSingle> = {
+    ...blk,
+    $qas,
   }
   return nblk
 }

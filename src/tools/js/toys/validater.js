@@ -268,19 +268,19 @@ class Validator {
     validateContents(blks) {
         blks.forEach(blk => {
             switch (blk.type) {
-                case "RawHTML":
-                case "Plain":
+                case "rawHTML":
+                case "plain":
                 case "Link":
-                case "Image":
-                case "Heading 2":
-                case "Heading 3":
-                case "Heading 4":
-                case "Icon Heading 2":
-                case "Icon Heading 3":
-                case "Icon Heading 4":
-                case "List":
-                case "Define":
-                case "Relatives":
+                case "image":
+                case "heading 2":
+                case "heading 3":
+                case "heading 4":
+                case "icon heading 2":
+                case "icon heading 3":
+                case "icon heading 4":
+                case "list":
+                case "define":
+                case "relatives":
                 case "Spacer":
                 case "Separator":
                     this.validateSimpleBlock(blk);
@@ -304,17 +304,17 @@ class Validator {
     }
     validateSimpleBlock(blk) {
         switch (blk.type) {
-            case "RawHTML": {
+            case "rawHTML": {
                 const [langOk, typeOk] = this.validateLangAndObj(blk.$html);
                 if (!langOk) {
-                    this.addError("$RawHTML includes invalid lang key");
+                    this.addError("$rawHTML includes invalid lang key");
                 }
                 if (!typeOk) {
-                    this.addError("the value of $RawHTML is incorrect type");
+                    this.addError("the value of $rawHTML is incorrect type");
                 }
                 break;
             }
-            case "Plain": {
+            case "plain": {
                 const [langOk, typeOk] = this.validateLangAndObj(blk.$texts, "string or array");
                 if (!langOk) {
                     this.addError("Plain.$texts includes invalid lang key");
@@ -337,7 +337,7 @@ class Validator {
                 }
                 break;
             }
-            case "Image": {
+            case "image": {
                 const [langOk, typeOk] = this.validateLangAndObj(blk.$alt);
                 if (!langOk) {
                     this.addError("Image.$alt includes invalid lang key");
@@ -362,9 +362,9 @@ class Validator {
                 }
                 break;
             }
-            case "Heading 2":
-            case "Heading 3":
-            case "Heading 4": {
+            case "heading 2":
+            case "heading 3":
+            case "heading 4": {
                 const [langOk, typeOk] = this.validateLangAndObj(blk.$text);
                 if (!langOk) {
                     this.addError("Heading.$text includes invalid lang key");
@@ -374,22 +374,22 @@ class Validator {
                 }
                 break;
             }
-            case "Icon Heading 2":
-            case "Icon Heading 3":
-            case "Icon Heading 4": {
+            case "icon heading 2":
+            case "icon heading 3":
+            case "icon heading 4": {
                 const [langOk, typeOk] = this.validateLangAndObj(blk.$text);
                 if (!langOk) {
-                    this.addError("Icon Heading.$text includes invalid lang key");
+                    this.addError("icon heading.$text includes invalid lang key");
                 }
                 if (!typeOk) {
-                    this.addError("the value of $Icon Heading.$text is incorrect type");
+                    this.addError("the value of $icon heading.$text is incorrect type");
                 }
                 if (!blk.icon) {
-                    this.addError("missing Icon Heading.icon", false);
+                    this.addError("missing icon heading.icon", false);
                 }
                 break;
             }
-            case "List": {
+            case "list": {
                 const [langOk, typeOk] = this.validateLangAndObj(blk.$texts, "array");
                 if (!langOk) {
                     this.addError("List.$texts includes invalid lang key");
@@ -399,7 +399,7 @@ class Validator {
                 }
                 break;
             }
-            case "Define": {
+            case "define": {
                 const [langOk, typeOk] = this.validateLangAndObj(blk.$texts, "array");
                 if (!langOk) {
                     this.addError("Define.$texts includes invalid lang key");
@@ -409,7 +409,7 @@ class Validator {
                 }
                 break;
             }
-            case "Relatives": {
+            case "relatives": {
                 if (!Array.isArray(blk.$articles)) {
                     this.addError("Relatives.$articles in yaml should be a type of 'Array<Article>'");
                 }

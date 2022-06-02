@@ -1,7 +1,9 @@
 ---
   import MainHead from './HeadModules/MainHead.astro';
+  import JsonLD from './HeadModules/JsonLD.astro'
   let head: AstriesHead;
   ({ head } = Astro.props);
+  const jd = head.jsonld
 ---
 
 <html lang={head.lang}>
@@ -15,6 +17,7 @@
 
 <body class="astries-main">
   <slot />
+  <JsonLD jsonld={head.jsonld} />
 </body>
 
 </html>

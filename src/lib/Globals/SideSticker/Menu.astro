@@ -1,36 +1,36 @@
 ---
-import { LANGS, LANG_DISPS } from "$scripts/_env" 
-import FilledBar from "$lib/Util/FilledBar.astro";
+  import FilledBar from "$lib/Util/FilledBar.astro";
 
-let menu: NavigationMenu
-({menu} = Astro.props)
+  let menu: NavigationMenu
+  ({ menu } = Astro.props)
 ---
-
 
 <aside class="stick-menu has-text-centered pb-3">
   <FilledBar title={menu.category} />
   <ul class="menu-list is-size-3">
     {() => {
-      if (menu.items) {
-        return (
-          menu.items.map(item => {
-            return (
-              <li>
-                <a class="menu-item is-size-6" href={item.href}>{item.$title}</a>
-              </li>)
-          })
-        )
-      }
-      return
+    if (menu.items) {
+    return (
+    menu.items.map(item => {
+    return (
+    <li>
+      <a class="menu-item is-size-6" href={item.fullpath}>{item.$title}</a>
+    </li>)
+    })
+    )
+    }
+    return
     }}
   </ul>
 </aside>
 
 <style lang="scss">
-@use "../../../styles/colors" as c;
+  @use "../../../styles/colors" as c;
+
   ul.menu-list li {
     text-decoration: underline;
   }
+
   a.menu-item:hover {
     background-color: c.$accent;
     color: black;

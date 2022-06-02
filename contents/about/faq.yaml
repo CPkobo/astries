@@ -1,0 +1,462 @@
+name: faq
+position: 6
+langs:
+  - ja
+$title:
+  ja: よくある質問
+$description:
+  ja: 翻訳・通訳などについてよくある質問をまとめました。
+$summary:
+  ja: 翻訳・通訳などについてよくある質問をまとめました
+img: about/toc-information.jpg
+pageType: LeftMain
+useJsonLd: faq
+contents:
+  - type: heading 2
+    $text: 翻訳について
+  - type: Faq
+    isForJsonLd: true
+    $qas:
+      - slag: translation-specialities
+        $q:
+          - type: plain
+            $texts:
+              ja: 専門分野の翻訳にも対応できますか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - はい、対応可能です。
+                - これまで自動車や化学品などの製造業、医薬品の添付文書や申請資料、ブロックチェーンなどの最新技術の論文など多数手がけております。
+                - またゲームや漫画のような、サブカルチャーも翻訳可能です。
+          - type: link
+            $text: 詳細は実績ページをご覧ください
+            href: /lang/works
+
+      - slag: translation-langs
+        $q:
+          - type: plain
+            $texts:
+              ja: 対応可能な言語は？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 中国語については、中国大陸本土で標準言語として使われる簡体字中国語（マンダリン／北京語／普通話）はもちろん、香港向けの繁体字（華語）や台湾向け繁体字（国語）での翻訳も可能です。
+                - また、各種方言（広東語・上海語・閩南語）についても、ご相談いただければ弊社の登録翻訳者のなかから、対応可能な者を探すことができます。
+                - 中国語以外では英語や韓国語をはじめとする、アジア諸語（タイ語／ベトナム語／インドネシア語／ミャンマー語）などにも対応可能な翻訳者が登録しています。
+                - 日本語関係の翻訳がメインではありますが、英語から中国語、英語から韓国語などの翻訳も対応可能です。
+
+      - slag: translation-pricing
+        $q:
+          - type: plain
+            $texts:
+              ja: 翻訳にかかる料金は？
+        $a:
+          - type: plain
+            $texts:
+              ja: 日本語・中国語間の翻訳料金の目安は次のとおりです。※単位は原文1文字あたり
+          - type: define
+            $texts:
+              ja:
+                - - 日本語 → 中国語
+                  - 医薬・医学・特許分野：13.5円～
+                  - 広告宣伝資物：12.5円～
+                  - 契約書・技術資料：10円～
+                  - その他、一般文書：9円～
+          - type: define
+            $texts:
+              ja:
+                - - 日本語 → 中国語
+                  - 医薬・医学・特許分野：21円～
+                  - 広告宣伝資物：19.5円～
+                  - 契約書・技術資料：16円～
+                  - その他、一般文書：14円～
+          - type: plain
+            $texts:
+              ja: 上記はあくまで目安の料金です。また、上書きの出来ない画像やDTPなどの編集作業については、別途料金が必要です。
+
+      - slag: translation-cancel
+        $q:
+          - type: plain
+            $texts:
+              ja: 翻訳のキャンセル料は？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 見積もりのみ・ご発注前であれば、キャンセル料はかかりません。
+                - 翻訳の着手後に途中でキャンセルされた場合は、キャンセル時点までに翻訳が終わっていた部分の文字数に応じた料金を申し受けます。
+
+      - slag: translation-inquiring
+        $q:
+          - type: plain
+            $texts:
+              ja: 翻訳の見積もりにはどれくらいの時間がかかりますか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - MS WordやExcelのような電子ファイルであれば、通常当日～翌営業日までにお見積もりが可能です。
+                - Webサイトや手書きの原稿、スキャンした原稿などは文字数を数えるのに3～5営業日ほどかかる場合もございます。
+
+      - slag: translation-counting
+        $q:
+          - type: plain
+            $texts:
+              ja: 文字数や単語数はどのようにカウントするのですか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 文字数がそれほど多くない場合（5万字未満）は、MS Wordの文字数カウント機能を使用しています。
+                - ご注意いただきたいのが、Wordで開いた際に左下に表示されるのは単語数であり、日本語や中国語の場合、その部分をクリックした際に表示される「文字数（スペースを含めない）」である点です。
+                - 文字数が非常に多い場合やファイルが多数に渡る場合、似た文言が何度も繰り返される場合は、SDL TradosやMemsourceといったCATツールを使って文字数をカウントします。
+
+      - slag: translation-naitive
+        $q:
+          - type: plain
+            $texts:
+              ja: ネイティブによる校閲はお願いできますか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 弊社の翻訳は基本的に、最初の翻訳を「訳出言語の母語話者」が行い、次の工程で「原文言語の母語話者」がチェックをするようにしております。
+                - その後、チェックでの修正箇所は再度、母語話者による確認が入りますので、いわゆる「ネイティブチェック」を含んだ状態で納品しております。
+          - type: link
+            $text:
+              ja: 詳しくは「翻訳発注～納品までの流れ」もご覧ください。
+            href: /lang/translation#translation-flow
+
+      # - slag: translation-leadtime
+      #   $q:
+      #     - type: plain
+      #       $texts:
+      #         ja: 翻訳にかかる時間は？特急でお願いしたいのですが……
+      #   $a:
+      #     - type: plain
+      #       $texts:
+      #         ja:
+      #           - 通常では
+      #           - Webサイトや手書きの原稿、スキャンした原稿などは文字数を数えるのに3～5営業日ほどかかる場合もございます。
+
+      - slag: translation-works-medical
+        $q:
+          - type: plain
+            $texts:
+              ja: 医療・医薬翻訳の実績を知りたい
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 中国の医薬品市場の大きさもあり、医薬品・医療機器関連の翻訳は多数のお問い合わせをいただいております。
+                - CTDやDMFを毎年数件程度は翻訳しているほか、臨床試験のプロトコルや添付文書などは非常に多くの翻訳実績があります。
+                - また、弊社は医学専門のAI翻訳エンジン AIKO SciLingual の開発にも携わっていたり、副作用の翻訳にMedDRAを活用していたりといった取り組みをしております。
+                - さらに登録翻訳者の中には、中国のCROでの実務経験がある者もおり、翻訳以外のことについても、安心してお問い合わせいただければと思います。
+
+          - type: relatives
+            $articles:
+              - $title:
+                  ja: 翻訳実績について
+                src: lang/toc/works.jpg
+                $alt:
+                  ja: 翻訳実績について
+                $description:
+                  ja: 株式会社ゴールデンブリッジの翻訳実績です
+                href: /lang/mt
+
+              - $title:
+                  ja: 機械翻訳について
+                src: lang/toc/mt.png
+                $alt:
+                  ja: 機械翻訳について
+                $description:
+                  ja: 株式会社ゴールデンブリッジの機械翻訳の取り組みです
+                href: /lang/mt
+
+              - $title:
+                  ja: 医薬特化型AI 翻訳エンジン AIKO SciLingualをリリースしました
+                src: /lang/scilingual.png
+                $alt:
+                  ja: 医薬特化型AI 翻訳エンジン AIKO SciLingualのリリースに関するお知らせです
+                $description:
+                  ja: 医薬特化型AI 翻訳エンジン AIKO SciLingualのリリースに関するお知らせです
+                href: /posts/post/aiko-release
+
+      - slag: translation-certification
+        $q:
+          - type: plain
+            $texts:
+              ja: 翻訳証明書の発行は？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 法務関連の資料などでは、ご依頼に応じて翻訳証明書を発行いたします。
+                - 発行には文書 1点あたり、1000円（税別）の発行手数料をいただいております。
+          - type: heading 4
+            $text:
+              ja: 過去の対応事例
+          - type: list
+            $texts:
+              ja:
+                - 婚姻関係証明書
+                - 戸籍謄本
+                - 登記簿謄本（履歴事項全部証明書）
+                - 成績証明書・卒業証書・在学証明書
+                - 無犯罪証明
+
+      - slag: translation-dictation
+        $q:
+          - type: plain
+            $texts:
+              ja: テープ起こしや文字起こしは依頼できますか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 日本語でも中国語でも対応可能です。
+                - 料金は 7500円／15分（税別）～となりますが、音質や内容の専門性などに応じて上下することがございます。
+
+      - slag: translation-subtitle
+        $q:
+          - type: plain
+            $texts:
+              ja: YouTubeなどのビデオに字幕はつけられますか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 動画編集についても、数多くの対応経験があり、字幕ももちろん対応可能です。
+                - YouTubeなどでシンプルな字幕作成はもちろん、テロップの作成やSRTファイルの作成もしております。
+
+      - slag: translation-research
+        $q:
+          - type: plain
+            $texts:
+              ja: 海外市場調査、インターネット市場調査をお願いしたい
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - インターネットで通常公開されている外国語の内容などを調査・翻訳してレポートを作成することができます。
+                - また、中国のものであれば、一部の論文や雑誌等の購入や有料サービスも含めて調査できることがあります。
+                - 詳細はお気軽にお問い合わせください。
+
+      - slag: translation-cat
+        $q:
+          - type: plain
+            $texts:
+              ja: TRADOSやMemsourceなどのCATツールは使用できますか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - もちろん可能です。
+                - 弊社にはIT部門が設置されており、こうした業界標準のCATツールの導入を進めているほか、独自のツール開発や既存CATツールのさらなる効率化にも挑んでおります。
+
+          - type: relatives
+            $articles:
+              - $title:
+                  ja: 翻訳支援ツール
+                src: it/toc/catovis-logo.svg
+                $alt:
+                  ja: 株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています
+                $description:
+                  ja: 株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています
+                href: /it/cat
+
+      - slag: translation-sns
+        $q:
+          - type: plain
+            $texts:
+              ja: 微博（ウェイボ／Weibo）や小紅書（RED）といった中国SNSで発信したいのですが……
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 弊社でアカウント開設や翻訳～発信をお手伝いすることも出来ます。
+                - 詳細はお気軽にお問い合わせください。
+
+      - slag: translation-mtpe
+        $q:
+          - type: plain
+            $texts:
+              ja: 機械翻訳をしたものを校正してほしい（ポストエディット）
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 機械翻訳のポストエディットについてもご相談いただければ対応可能です。
+                - 翻訳エンジンについても、お客様でご準備がない場合、内容を見て弊社で選定することも可能です。
+
+      - slag: translation-frequent-langs
+        $q:
+          - type: plain
+            $texts:
+              ja: 何語の翻訳が一番多いですか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 弊社が中国語を専門としている翻訳会社であることから、現時点（2022年6月）では日本語から中国語の翻訳が一番多く、次に中国語から日本語となっています。
+                - 3番目以降は日→韓や英→中、タイ語やベトナム語と続いています。
+                - 最近は東南アジアの言語についての問い合わせも増加傾向にあり、弊社でも対応力の拡充を行っています。
+
+  - type: heading 2
+    $text: 通訳について
+  - type: Faq
+    isForJsonLd: true
+    $qas:
+      - slag: interpretation-specialities
+        $q:
+          - type: plain
+            $texts:
+              ja: 専門分野の通訳にも対応できますか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 医療・医薬、医療機器、金融・銀行、VR、ゲーム、観光、不動産契約、工場生産現場でのシステム導入、展示会アテンド、エネルギー・環境、監査、テレビ番組の街頭インタビュー、海外アーティスト来日時の通訳など、幅広い通訳実績がございます。
+
+      - slag: interpretation-langs
+        $q:
+          - type: plain
+            $texts:
+              ja: 通訳の対応言語は？中国語の方言にも対応できる？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 中国語や英語、その他多言語など対応可能です。方言が強い場合、内容により相談の上で手配いたします。
+
+      - slag: interpretation-pricing
+        $q:
+          - type: plain
+            $texts:
+              ja: 通訳にかかる料金は？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 通訳の料金は内容に応じて大まかにS~Cのランクに分かれており、それぞれに拘束時間が4時間以内の半日と、8時間以内の全日、延長料金があります。
+
+      - slag: interpretation-pricing
+        $q:
+          - type: plain
+            $texts:
+              ja: 通訳のキャンセル料は？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 通訳のキャンセル涼は以下のとおり定めています。
+          - type: list
+            $texts:
+              ja:
+                - ①4-7営業日前　 ：通訳見積金額の30％
+                - ②2-3営業日前　 ：通訳見積金額の50％
+                - ③業務前日・当日：通訳見積金額の100％
+
+      - slag: interpretation-dispatch
+        $q:
+          - type: plain
+            $texts:
+              ja: 地方への通訳手配は可能ですか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 可能です。その場合移動拘束費、宿泊を伴う場合は宿泊費・宿泊手当が別途かかります。
+
+      - slag: interpretation-at-mainland
+        $q:
+          - type: plain
+            $texts:
+              ja: 中国大陸現地での通訳は可能ですか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 北京、天津、四川、江蘇、上海、浙江、福建、広東等の主要都市で可能です。
+
+      - slag: interpretation-online
+        $q:
+          - type: plain
+            $texts:
+              ja: オンラインでの通訳（逐次・同時）は可能ですか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 対応可能です。
+                - 当社では新型コロナウイルス流行の最初期からオンライン通訳を取り入れて参りました。
+                - 詳しくは下記のページもご参照ください。
+
+          - type: relatives
+            $articles:
+              - $title:
+                  ja: オンライン通訳について
+                src: lang/toc/online.jpg
+                $alt:
+                  ja: オンライン通訳について
+                $description:
+                  ja: 株式会社ゴールデンブリッジのオンライン通訳サービスについての紹介です
+                href: /lang/online
+
+      - slag: interpretation-mc
+        $q:
+          - type: plain
+            $texts:
+              ja: 結婚式の司会は可能ですか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 言語によりますが対応可能です。詳細は各言語の通訳者と相談となります。
+
+      - slag: interpretation-triple
+        $q:
+          - type: plain
+            $texts:
+              ja: 日・中・英の3言語の通訳はお願いできますか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 対応可能です。ただし対応可能な通訳者はかなり少ないため、余裕を持ってご相談ください。
+
+      - slag: interpretation-taiwan
+        $q:
+          - type: plain
+            $texts:
+              ja: 中国語は中国語でも、台湾人の通訳を指定したい。
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 対応可能です。ただし対応可能な通訳者はかなり少ないため、余裕を持ってご相談ください。
+
+      - slag: interpretation-long-term
+        $q:
+          - type: plain
+            $texts:
+              ja: 1か月を超える長期期間の通訳案件も可能ですか？
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 通訳者との相談にはなりますが、対応した経験もあります（最長約 3年）
+
+      - slag: interpretation-meeting
+        $q:
+          - type: plain
+            $texts:
+              ja: 事前に通訳者と打ち合わせしたいのですが……
+        $a:
+          - type: plain
+            $texts:
+              ja:
+                - 通訳の当日であれば、拘束時間の範囲内で対応可能です。
+                - 別の日を指定しての打ち合わせの場合、別途費用がかかります。

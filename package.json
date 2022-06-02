@@ -3,14 +3,17 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "node ./src/tools/js/toybox.js && astro dev",
+    "serve": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node ./src/tools/js/postprocess.js",
+    "rebuild": "node ./src/tools/js/toybox.js && astro build && node ./src/tools/js/postprocess.js",
     "preview": "astro preview",
     "tools:start": "node ./src/tools/js/toybox.js",
     "tools:build": "npx tsc --build ./tools-tsconfig.json",
     "tools:nav": "node ./src/tools/js/toybox.js --nav",
-    "tools:post": "node ./src/tools/js/toybox.js --post"
+    "tools:post": "node ./src/tools/js/toybox.js --post",
+    "tools:process": "node ./src/tools/js/postprocess.js"
   },
   "devDependencies": {
     "@astrojs/preact": "^0.1.1",
@@ -23,6 +26,7 @@
     "@types/js-yaml": "^4.0.5",
     "@types/marked": "^4.0.2",
     "astro": "^1.0.0-beta.17",
+    "glob": "^8.0.3",
     "js-yaml": "^4.1.0",
     "marked": "^4.0.12",
     "react-dom": "^18.0.0",

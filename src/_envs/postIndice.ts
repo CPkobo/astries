@@ -5,13 +5,23 @@ export const indices: PostPagenation[] = [
     "title": "ニュースリリース",
     "pages": [
       {
-        "title": "積善の家は余慶有り",
+        "title": "【受講生募集】短期集中！オンライン・教室ハイブリッド型通訳養成講座　日⇔中　中級コース",
+        "published": "2022-06-01T00:00:00.000Z",
+        "modified": "2022-06-01T00:00:00.000Z",
+        "pubstr": "2022-06-01",
+        "modstr": "2022-06-01",
+        "image": "/pict/posts/2022/interpreter-cource/0.png",
+        "summary": "短期集中！オンライン・教室ハイブリッド型通訳養成講座　日⇔中　中級コースを開講します",
+        "href": "2022-interpreter-cource"
+      },
+      {
+        "title": "【三方よし研究所】積善の家には必ず余慶あり",
         "published": "2022-05-28T00:00:00.000Z",
         "modified": "2022-05-28T00:00:00.000Z",
         "pubstr": "2022-05-28",
         "modstr": "2022-05-28",
-        "image": "/pict/posts/2022/sanpo/3.jpg",
-        "summary": "三方よし研究所の会員総会に参加しました",
+        "image": "/pict/posts/2022/sanpo/0.png",
+        "summary": "特別非営利活動法人三方よし研究所の会員総会に参加しました。",
         "href": "sanpo-yoshi"
       },
       {
@@ -81,16 +91,6 @@ export const indices: PostPagenation[] = [
         "modstr": "2022-01-10",
         "summary": "弊社スタッフが講師を務める「医学・医薬特化型AI翻訳エンジンの実力と使い方」 オンラインセミナーについて、ご案内いたします",
         "href": "20220110"
-      },
-      {
-        "title": "新年あけましておめでとうございます。",
-        "published": "2022-01-01T00:00:00.000Z",
-        "modified": "2022-01-01T00:00:00.000Z",
-        "pubstr": "2022-01-01",
-        "modstr": "2022-01-01",
-        "image": "/pict/posts/2022/0101.png",
-        "summary": "弊社代表より新年のご挨拶を申し上げます",
-        "href": "20220101"
       }
     ],
     "num": 1,
@@ -106,6 +106,16 @@ export const indices: PostPagenation[] = [
   {
     "title": "ニュースリリース",
     "pages": [
+      {
+        "title": "新年あけましておめでとうございます。",
+        "published": "2022-01-01T00:00:00.000Z",
+        "modified": "2022-01-01T00:00:00.000Z",
+        "pubstr": "2022-01-01",
+        "modstr": "2022-01-01",
+        "image": "/pict/posts/2022/0101.png",
+        "summary": "弊社代表より新年のご挨拶を申し上げます",
+        "href": "20220101"
+      },
       {
         "title": "【無事終了】第二回オンライン勉強会＆第一回ZOOM同通体験会",
         "published": "2021-12-25T00:00:00.000Z",
@@ -193,16 +203,6 @@ export const indices: PostPagenation[] = [
         "image": "/pict/posts/2020/0605/2-online.jpeg",
         "summary": "オンライン、遠隔同時/逐次通訳承ります！",
         "href": "20200603"
-      },
-      {
-        "title": "対話山東 日本・山東産業協力交流会がオンラインで開催",
-        "published": "2021-01-01T00:00:00.000Z",
-        "modified": "2021-01-01T00:00:00.000Z",
-        "pubstr": "2021-01-01",
-        "modstr": "2021-01-01",
-        "image": "/pict/posts/2020/0805/0.png",
-        "summary": "オンライン開催となった対話山東 日本・山東産業協力交流会について紹介します",
-        "href": "20200805"
       }
     ],
     "num": 2,
@@ -218,6 +218,16 @@ export const indices: PostPagenation[] = [
   {
     "title": "ニュースリリース",
     "pages": [
+      {
+        "title": "対話山東 日本・山東産業協力交流会がオンラインで開催",
+        "published": "2021-01-01T00:00:00.000Z",
+        "modified": "2021-01-01T00:00:00.000Z",
+        "pubstr": "2021-01-01",
+        "modstr": "2021-01-01",
+        "image": "/pict/posts/2020/0805/0.png",
+        "summary": "オンライン開催となった対話山東 日本・山東産業協力交流会について紹介します",
+        "href": "20200805"
+      },
       {
         "title": "★新年のご挨拶★",
         "published": "2021-01-01T00:00:00.000Z",

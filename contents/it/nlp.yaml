@@ -11,12 +11,12 @@ $summary:
 img: it/toc/nlp.jpg
 pageType: LeftMain
 contents:
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-university
     $text:
       ja: 自然言語処理と中国語
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 自然言語処理は、特に Transoformer や Self-Attention など、AI技術の革新がもっとも目覚ましい分野の一つです。
@@ -26,12 +26,12 @@ contents:
         - このように日本語の言語処理を行う上で、隣国である中国の技術に目を向けることは大きな意味があります。
         - 弊社では、社内スタッフが中国語をそのまま読めるという強味を活かし、中国の最新の言語処理技術も日夜学び、吸収しています。
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-file-text
     $text:
       ja: パラレルコーパスの構築
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 機械翻訳エンジンのカスタマイズに欠かせないパラレルコーパス（多言語対訳表）ですが、中国語に対応しているものはそこまで多くありません。
@@ -39,7 +39,7 @@ contents:
         - 弊社では、自然言語処理の実践と、日本語・中国語に対する感度を活かしながら、高度なコーパスづくりと各種翻訳エンジンのカスタマイズやアダプテーションに尽力しています。
         - 中国語の自然言語処理がご入用の際は、いつでもお気軽にお問い合わせください。
 
-  - type: Relatives
+  - type: relatives
     $articles:
       - $title:
           ja: 機械翻訳について

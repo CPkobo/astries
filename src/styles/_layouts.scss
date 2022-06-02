@@ -1,3 +1,5 @@
+@use "../../contents/_init/variables" as v;
+
 main.astries-base {
 	margin-left: auto;
 	margin-right: auto;
@@ -19,4 +21,8 @@ main.astries-base-fluid {
   @media(max-width: 768px) {
     padding-bottom: 3.5rem;
   }
+}
+
+.astries-lang-select-zh {
+  font-family: v.$font-zh;
 }

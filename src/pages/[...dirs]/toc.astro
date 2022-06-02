@@ -1,6 +1,6 @@
 ---
-  import { navs, staticDirs } from "$src/_envs/paths"
-  import { profile } from "$src/_envs/profile"
+  import { navs, staticDirs } from "$envs/paths"
+  import { profile } from "$envs/profile"
   import { getNavmenu } from "$scripts/_i18n"
   import Base from "$layouts/Base.astro"
   import TocCardWrap from "$lib/Tocs/tocCardWrap.astro"
@@ -15,6 +15,7 @@
       lang: 'ja',
       title: `${navmenu.category} | ${profile.SiteName}`,
       description: `${navmenu.category} | ${profile.SiteName}`,
+      // jsonld: undefined,
       ogp: {
         url: `${profile.url}/${navmenu.root}`,
         type: 'website',
@@ -28,7 +29,7 @@
     hasFooterMenu: true,
     hasSideMenu: false,
     pagetype: 'LP',
-    navigations: navs.ja
+    navigations: navs.ja,
   }
 ---
 

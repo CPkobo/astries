@@ -11,12 +11,12 @@ $summary:
 img: lang/toc/interpretation.jpg
 pageType: LeftMain
 contents:
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-spell-check
     $text:
       ja: 通訳サービスの特徴
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: __
     $text:
       ja: ① 信頼・安心の通訳
@@ -26,19 +26,19 @@ contents:
     $alt:
       ja: 同時通訳 稼働中
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - 弊社は中国語専門の通訳・翻訳会社として、2002年に当時中国語翻訳・通訳者だった代表が創業。関西を中心に20年近く通訳サービスを提供してまいりました。
             - 今では英語通訳や韓国語通訳でも長年の実績があり、経験豊富な通訳者を多数有しております。
             - お客様のご要望にあわせ最適な通訳者を推薦いたします。
 
-      - type: Link
+      - type: link
         $text:
           ja: 実績一覧
         href: /lang/works
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: __
     $text:
       ja: ② サポート体制
@@ -48,7 +48,7 @@ contents:
     $alt:
       ja: スタッフ集合写真
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - お問い合わせから業務終了まで、経験豊富なコーディネーターが大阪・東京から丁寧にサポートいたします。
@@ -57,7 +57,7 @@ contents:
             - 中国側との事前連絡などはバイリンガルのコーディネーターが対応いたします。
             - 日本語と中国語（簡体字、繁体字）はもちろん、英語⇔中国語や韓国語、タイ語など東南アジア諸語の通訳もお任せください。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: __
     $text:
       ja: ③ 世界に広がるネットワーク
@@ -67,14 +67,14 @@ contents:
     $alt:
       ja: 広がるネットワーク
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - 中国本土や香港・台湾、韓国で現地の日本語通訳も手配可能です。
             - 北京、上海、蘇州、杭州、成都、広州や深センといった大都市はもちろん、地方都市や方言対応につきましてもご相談ください。
             - 現地とスピーディーな調整が可能で、工場監査や商談通訳等、当日の集合から解散まで一貫したサービスをご提供いたします。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: __
     $text:
       ja: ④ その他の言語サービス
@@ -84,14 +84,14 @@ contents:
     $alt:
       ja: 様々なサービス
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - 国際会議・セミナーや商談・視察などでの通訳のほか、電話通訳、会議・結婚式その他イベントでのバイリンガル司会等の多言語サービスも提供しております。
             - 同時通訳の機材レンタル、ブース設営や会議内容のテープ起こしもおまかせください。
             - さらには新型コロナウイルス蔓延にあわせ、いち早くオンライン通訳も導入しています。
 
-      - type: Relatives
+      - type: relatives
         $articles:
           - $title:
               ja: オンライン通訳について
@@ -102,12 +102,12 @@ contents:
               ja: (株)ゴールデンブリッジのオンライン通訳について紹介します
             href: /lang/online
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-thumbs-up
     $text:
       ja: こんなときはぜひ弊社にご相談ください！
 
-  - type: List
+  - type: list
     preset: circle
     $texts:
       ja:
@@ -124,70 +124,70 @@ contents:
         - 結婚式のバイリンガル司会
         - VIP通訳
 
-  - type: Plain
+  - type: plain
     $texts:
       ja: 経験豊富なスタッフがきめ細かくサポートいたします！
 
-  - type: Spacer
+  - type: spacer
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     $text:
       ja: 通訳発注～納品までの流れ
 
   - type: Flow
     $items:
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: お問い合わせ
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - まずはお気軽にお問い合わせください。（電話・FAX・メールなど）
-          - type: Link
+          - type: link
             $text:
               ja: お問い合わせはこちら
             href: /
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: ヒアリング・お見積もり
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 日時、場所、会議の内容と形態、スピーカーの人数等を確認し、担当者が最適な通訳形態・レベルを判断します。
                 - その後、お見積もり書を発行いたします。
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: ご発注
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 正式にご発注いただきましたら、通訳者を確保致します。
                 - レベルの高い通訳ほど、直前のスケジュール確保が難しくなりますので、早めの発注をお願いいたします。
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: 資料・内容確認
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - より正確な通訳を行えるよう、資料の提供にご協力をお願いいたします。必要な資料については、担当者よりご連絡させていただきます。
-          - type: Define
+          - type: define
             $texts:
               ja:
                 - - ※資料の一例：
                   - 出席者名簿、スピーチ資料、配布資料、背景など
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: 通訳者との打合せ（当日）
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 通訳の必要な時間の30分～1時間前に、通訳者との打合せの時間を設けていただきます。（※必要に応じて）
@@ -195,18 +195,18 @@ contents:
                 - 複数名の通訳者が必要な場合、業務の円滑化を図るため、コーディネーターも同行することがございます。
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: 当日・通訳業務
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 通訳サービスをご提供いたします。
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: フィードバック
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 業務終了後、率直な御意見をお聞かせください。今後の通訳サービスに反映させていただきます。

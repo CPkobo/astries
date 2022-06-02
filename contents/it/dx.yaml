@@ -11,23 +11,23 @@ $summary:
 img: it/toc/dx.jpg
 pageType: LeftMain
 contents:
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-certificate
     $text:
       ja: デジタル・トランスフォーメーション（DX）について
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 「働き方改革」が叫ばれる今日、業務の効率化は必須の課題となっています。
         - 弊社では翻訳支援ツールの活用・開発実績を活かし、Officeマクロはもとより、PythonやPowerShellを使った自動化や、JavaScript（Electron）を使ったWebアプリを作成するなどして業務改善を続けています。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-file-code-o
     $text:
       ja: 開発ツールの一例
 
-  - type: List
+  - type: list
     preset: circle
     $texts:
       ja:
@@ -40,19 +40,19 @@ contents:
         - MS Word 変更箇所の修正履歴化ツール（Word VBA）
         - MS Word用 正規表現ベースの日本語校正ツール（Office.js + Electron）
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 翻訳関連のツールを開発していたことから、特にWord VBAのような情報の少ないものや、Pythonの多言語処理などが得意と言えます。
         - 「こんなツール作れないか」「あんな処理を自動化したい」
         - そういったご要望がありましたら、お気軽にご相談ください。
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-users
     $text:
       ja: テレワークについて
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 新型コロナウイルス感染症の日本での第一例が発見されて間もない2020年3月初めより、弊社では業務のテレワーク化を大いに進めてまいりました。

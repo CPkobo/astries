@@ -11,27 +11,27 @@ $summary:
 img: ec/shopping-bag.jpg
 pageType: LeftMain
 contents:
-  - type: Icon Heading 2
+  - type: icon heading 2
     $text:
       ja: 健康・美容・自然 YOU樂SHOP 楽天市場店
 
-  - type: Plain
+  - type: plain
     $texts:
       ja: ポストコロナ時代を見据え、人々の健康志向によるニーズを取り入れ、楽天市場にて健康・美容・自然をテーマにした オンラインショップ【YOU樂SHOP（ゆうらくショップ）】を立ち上げました。
 
-  - type: Image
+  - type: image
     src: ec/signboard.jpg
     $alt:
       ja: 店舗サインボード
 
-  - type: Link
+  - type: link
     href: https://www.rakuten.co.jp/yourakshop/
     target: _blank
     classes: has-text-centered
     $text:
       ja: ショップページへ
 
-  - type: Define
+  - type: define
     $texts:
       ja:
         - - ショップ名
@@ -45,37 +45,37 @@ contents:
   - type: Gallary
     classes: my-5
     $blks:
-      - type: Image
+      - type: image
         src: ec/rakuten/set_egoma110x2_amani110.png
         $alt:
           ja: エゴマ・アマニ油セット
         preset: half
 
-      - type: Image
+      - type: image
         src: ec/rakuten/squalene.png
         $alt:
           ja: スクワランオイル
         preset: half
 
-      # - type: Image
+      # - type: image
       #   src: ec/rakuten/set_egoma140_amani140.png
       #   $alt:
       #     ja: エゴマ・アマニ油セット大
       #   preset: half
 
-      - type: Image
+      - type: image
         src: ec/rakuten/inpackage.png
         $alt:
           ja: のど飴
         preset: half
 
-      - type: Image
+      - type: image
         src: ec/rakuten/soap.png
         $alt:
           ja: 天然バラの香り石けん
         preset: half
 
-      # - type: Image
+      # - type: image
       #   src: ec/rakuten/amani_spoon.png
       #   $alt:
       #     ja: アマニ油

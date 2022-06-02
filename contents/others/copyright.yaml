@@ -11,18 +11,18 @@ $summary:
 img: others/toc/copyright.jpg
 pageType: LeftMain
 contents:
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 中国でビジネスを展開するにあたり、障壁となりうる知的財産権。
         - 特許の出願だけでなく、実用新案や意匠、商標の出願から、紛争対策、模倣品対策まで、中国トップクラスの専門家とともにお客様をサポートいたします。
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-search
     $text:
       ja: 知財関連コンサルティング
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-university
     $text:
       ja: 特許出願サポート
@@ -32,13 +32,13 @@ contents:
     $alt:
       ja: 特許サポート
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - 中国国内での特許出願をサポート。実用新案、意匠出願もお任せください。
             - 中国への直接出願のほか、すでに取得済みの特許の移行手続き等もご相談ください。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-globe
     $text:
       ja: 商標関連サポート
@@ -48,14 +48,14 @@ contents:
     $alt:
       ja: 商標サポート
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - 中国、香港、マカオなどでの商標登録手続きをサポートいたします。
             - 商品の中国語名についても、ご提案可能です。
             - 中国での商標調査や、冒認商標対策についてもお気軽にご相談ください。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-balance-scale
     $text:
       ja: 模倣品・海賊版対策
@@ -65,13 +65,13 @@ contents:
     $alt:
       ja: 模倣品調査
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - 模倣品や海賊版にお困りの際はぜひご相談ください。
             - 中国の知財専門家とともに、お客様の権利保護をお手伝いします。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-bookmark
     $text:
       ja: 著作権の登録
@@ -81,18 +81,18 @@ contents:
     $alt:
       ja: 著作権登録作業
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - 中国での著作権登録をサポート。
             - マニュアルやソフトウェアなども登録することで、著作権取引や紛争の解決をよりスムーズに行うことができます。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-thumbs-up
     $text:
       ja: こんなときはぜひ弊社にご相談ください！
 
-  - type: List
+  - type: list
     preset: circle
     $texts:
       ja:
@@ -103,6 +103,6 @@ contents:
         - 新人研修の一環として、中国語レッスンを取り入れたい。
         - 専用の教材を作って指導してほしい。
 
-  - type: Plain
+  - type: plain
     $texts:
       ja: 経験豊富なスタッフがきめ細かくサポートいたします！

@@ -11,41 +11,41 @@ $summary:
 img: it/toc/catovis-logo.svg
 pageType: LeftMain
 contents:
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-desktop
     $text:
       ja: 翻訳支援ツールの活用
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 製造現場の作業手順書や医薬品の申請文書（CTD）など、数万～数十万文字にも及ぶ文書を効率的に翻訳するには、翻訳支援ツール（CATツール）が必要不可欠です。
         - 翻訳援ツールを上手く活用することで、複数の翻訳者で作業にあたった際に出る用語や言葉遣いの揺れを最小限に抑えつつ、繰り返し出現する文言のコストを低く見積もることができます。
         - 弊社では主に SDL Trados と Memsource を利用し、品質向上とコスト削減に取り組んでいます。
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-code-fork
     $text:
       ja: 独自翻訳支援ツール 「CATOVIS」 の開発
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 弊社では、上記の市販ツールのほか、独自の翻訳支援ツールである「CATOVIS」の開発も進めています。
         - これは、小～中規模の原稿を効率的に翻訳するためのもので、基本的な繰り返し・類似文言の処理や、機械による数字・用語のダブルチェック機能をMS Word上で実現したものです。
         - メインユーザーはまだ社内スタッフや一部の登録翻訳者に限られていますが、β版として無償配布していますので、ぜひ一度、手に取ってみてください。
 
-  - type: Link
+  - type: link
     $text:
       ja: CATOVIS マニュアルページ
     href: https://man.catovis.com
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-exchange
     $text:
       ja: テキスト抽出～対訳作成
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 「翻訳」という仕事は、実のところ「翻訳をしてさぁ終わり」、というものではありません。
@@ -53,23 +53,23 @@ contents:
         - そのためにMS Officeのファイル（docx/xlsx/pptxなど）及びCATツールの標準フォーマットである Xliff/TMX/TBX からのテキスト抽出や、対訳作成などに便利なツールの開発にも取り組んでいます。
         - これらのツールの一部は、翻訳以外の業界の方にも使ってもらえるよう、Webアプリとして広く公開しています。
 
-  - type: Link
+  - type: link
     $text:
       ja: CATOVIS Office
     href: https://office.catovis.com
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - また、Webアプリとして使える部分はMITライセンスでオープンソース化しています。
         - よりよい多言語化社会のため、微力ながら貢献をしていきたいと願っています。
 
-  - type: Link
+  - type: link
     $text:
       ja: CATOVIS Office (Github)
     href: https://github.com/CPkobo/office
 
-  - type: Link
+  - type: link
     $text:
       ja: CATOVIS Office CLI (Github)
     href: https://github.com/CPkobo/catovis-office-cli

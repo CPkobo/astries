@@ -11,7 +11,7 @@ $summary:
 img: others/toc/edit.jpg
 pageType: LeftMain
 contents:
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-edit
     $text:
       ja: ナレーション・ポスター・Webサイトなど
@@ -21,17 +21,17 @@ contents:
     $alt:
       ja: 代替テキスト
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - 中国向けの各種販促ツールを制作いたします！
             - デザイン面でも、中国向けの新規デザインや日本語版からの再構成など、お客様の様々なご要望にも対応いたします。
 
-  - type: Spacer
+  - type: spacer
     x: 0
     y: 3
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-flask
     $text:
       ja: MSDS・GHSラベル作成
@@ -41,18 +41,18 @@ contents:
     $alt:
       ja: 代替テキスト
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - 国際的に規格の決まっている、化学物質輸送用の安全データシートや、一緒に必要なラベル（GHSラベル）なども対応可能です。
             - 翻訳にとどまらず、現地法規に対応したリライトや、レイアウト作成も承っています。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-comment
     $text:
       ja: こんなときはぜひ弊社にご相談ください！
 
-  - type: List
+  - type: list
     preset: circle
     $texts:
       ja:
@@ -60,73 +60,73 @@ contents:
         - 中国人に好まれるパンフレットを作りたい
         - 中国向けMSDSなど現地法規に対応したリライトが必要
 
-  - type: Plain
+  - type: plain
     $texts:
       ja: 経験豊富なスタッフがきめ細かくサポートいたします！
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-thumbs-up
     $text:
       ja: 主な制作物
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-microphone
     $text:
       ja: ナレーション
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 中国での展示会、社員教育など様々な場面で外国語の音声ツールを作成される企業はますます増えています。
         - 弊社は、企業・商品PR用DVD、中国人観光客向けアナウンスなど、ナレーション録音でも多くの実績があります。ナレーション録音の際にはぜひ弊社にご相談ください！
 
-  - type: Link
+  - type: link
     href: /lang/works
     $text:
       ja: 主な実績
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-file-photo-o
     $text:
       ja: パンフレット
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 各種DTPソフトウェアを完備。中国語フォントも豊富に取り揃えており、販促ツールの制作を強力にサポートいたします。
         - また、日本語版を中国向けに再デザインをしたいなど、お客様のご要望をお聞かせください。中国人デザイナーと協力し、アピール力のあるデザインを作成いたします！
 
-  - type: Link
+  - type: link
     href: /lang/works
     $text:
       ja: 主な実績
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-laptop
     $text:
       ja: Webサイト制作
 
-  - type: Plain
+  - type: plain
     $texts:
       ja: ウェブサイトの制作においても、中国語への翻訳だけでなく、英語・韓国語への翻訳、デザイン面やシステム面など幅広いニーズにお応えいたします。
 
-  - type: Link
+  - type: link
     href: /lang/works
     $text:
       ja: 主な実績
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-archive
     $text:
       ja: MSDS・GHSラベル作成
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 化学物質規制の強化を受け、中国に製品を輸出する際にも現地法規に対応した様々な資料が必要です。
         - 弊社は現地の協力会社を通じて、MSDSやGHSラベルなどの作成も行っております。それ以外にもお困りのことがありましたら、お気軽にご相談ください。
 
-  - type: Link
+  - type: link
     href: /lang/works
     $text:
       ja: 主な実績

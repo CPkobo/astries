@@ -1,11 +1,10 @@
 import { readdirSync, readFileSync, existsSync } from "fs"
-import { profile } from "../_envs/profile"
-import { navs } from "../_envs/paths"
+import { profile } from "$envs/profile"
+import { navs } from "$envs/paths"
 import { join } from "path"
 import { load } from "js-yaml"
 import { handleConvI18n2Str, handleConvI18n2StrInMeta, handleConvI18n2StrToc } from "./_convHandler"
 import { errorNav, errorPage } from "$envs/error"
-import { prof } from "./_env"
 
 /**
  * 
@@ -29,9 +28,21 @@ export async function getContents(dirs: string, path: string, lang: LangList): P
     const metas = handleConvI18n2StrInMeta($yml, dirs, path, lang, profile.deflang)
     const contents = handleConvI18n2Str($yml.contents, lang)
     const navmenu = await getNavmenu(dirs, "toc", lang)
-    console.log(navmenu)
     const breadCrumb = createBreadcrumb(navmenu, metas.$title, metas.fullpath)
     metas.breadCrumb = breadCrumb
+    const jsonLdBreadCrumnb: JsonLdBreadCrumnb = {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadCrumb
+    }
+    if (metas.jsonld === undefined) {
+      metas.jsonld = [jsonLdBreadCrumnb]
+    } else {
+      metas.jsonld.push(jsonLdBreadCrumnb)
+    }
+    if ($yml.useJsonLd === 'faq') {
+      metas.jsonld.push(createFaqJsonLd(contents))
+    }
     return { ...metas, contents }
   }
 }
@@ -50,6 +61,57 @@ export async function getNavmenu(dirs: string, path: string, lang: LangList): Pr
     }
   }
   return errorNav
+}
+
+function createFaqJsonLd(contents: AnyBlock<IsSingle>[]): JsonLdFaq {
+  const faq: JsonLdFaq = {
+    "@context": "http://schema.org",
+    "@type": "FAQPage",
+    mainEntity: []
+  }
+  for (const blk of contents) {
+    if (blk.type !== 'Faq') {
+      continue
+    } else if (!blk.isForJsonLd) {
+      continue
+    } else {
+      for (const qa of blk.$qas) {
+        const qts: string[] = []
+        const acceptedAnswer: FaqAnswer[] = []
+        for (const q of qa.$q) {
+          if (q.type === 'plain') {
+            if (typeof q.$texts === 'string') {
+              qts.push(q.$texts)
+            } else {
+              qts.push(...q.$texts)
+            }
+          }
+        }
+        for (const a of qa.$a) {
+          const ats: string[] = []
+          if (a.type === 'plain' || a.type === 'list') {
+            if (typeof a.$texts === 'string') {
+              ats.push(a.$texts)
+            } else {
+              ats.push(...a.$texts)
+            }
+          }
+          if (ats.length > 0) {
+            acceptedAnswer.push({
+              "@type": "Answer",
+              text: ats.join(' ')
+            })
+          }
+        }
+        faq.mainEntity.push({
+          "@type": "Question",
+          name: qts.join(' '),
+          acceptedAnswer,
+        })
+      }
+    }
+  }
+  return faq
 }
 
 function createBreadcrumb(navmenu: NavigationMenu, title: string, href: string): BreadcrumbList[] {
@@ -77,18 +139,19 @@ function createBreadcrumb(navmenu: NavigationMenu, title: string, href: string):
         "@type": "ListItem",
         position,
         name: navmenu.category,
-        item: navmenu.root,
+        item: `${profile.url}/${navmenu.root}`,
       })
       position++
       breadCrumb.push({
         "@type": "ListItem",
         position,
         name: title,
-        item: navmenu.root.replace("/toc", "") + "/" + href,
+        item: `${profile.url}/${href}`,
       })
       position++
     }
   }
+  // console.log(breadCrumb)
   return breadCrumb
 }
 

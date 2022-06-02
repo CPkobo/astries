@@ -11,12 +11,12 @@ $summary:
 img: lang/toc/works.jpg
 pageType: LeftMain
 contents:
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-cog
     $text:
       ja: 翻訳実績
 
-  - type: Define
+  - type: define
     $texts:
       ja:
         - - 製造業・自動車メーカー
@@ -106,12 +106,12 @@ contents:
           - 動物の飼育方法に関する資料
           - パンダの飼育・繁殖に関する研究報告
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-cog
     $text:
       ja: 通訳実績
 
-  - type: Define
+  - type: define
     $texts:
       ja:
         - - 表敬
@@ -165,12 +165,12 @@ contents:
           - 中国現地メディアによるインタビュー
           - 日本街頭インタビュー　中国語・英語通訳
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-cog
     $text:
       ja: DTP
 
-  - type: List
+  - type: list
     classes: ml-5
     $texts:
       ja:
@@ -181,12 +181,12 @@ contents:
         - 産業機器メーカー 設計図面 CAD
         - 関西経済連合会　パンフレット (Illustrator)
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: __
     $text:
       ja: ナレーション
 
-  - type: List
+  - type: list
     classes: ml-5
     $texts:
       ja:

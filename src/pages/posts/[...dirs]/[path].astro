@@ -1,9 +1,9 @@
 ---
   import fm from "front-matter"
   import { Markdown } from 'astro/components';
-  import { indices } from '../../../_envs/postIndice'
-  import { navs, staticPosts } from "$src/_envs/paths"
-  import { profile } from "$src/_envs/profile"
+  import { indices } from '$envs/postIndice'
+  import { navs, staticPosts } from "$envs/paths"
+  import { profile } from "$envs/profile"
   import { getPostContents } from "$scripts/_i18n"
   import Base from "$layouts/Base.astro"
   import Sticker from "$lib/Globals/SideSticker/Sticker.astro"
@@ -44,11 +44,26 @@
     }
   }
 
+  const JsonLdArticle: JsonLdArticle = {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    headline: content.attributes.title,
+    description: content.attributes.summary,
+    author: {
+      "@type": "Organization",
+      "name": profile.OrganizationName,
+    },
+    image: [img],
+    datePublished: content.attributes.pubstr,
+    dateModified: content.attributes.modstr
+  }
+
   const direction: AstriesDirection = {
     head: {
       lang: 'ja',
       title: `${content.attributes.title} | ${profile.SiteName}`,
       description: content.attributes.summary,
+      jsonld: [JsonLdArticle],
       ogp: {
         url: `${profile.url}/${dirs}/${path}`,
         type: 'article',
@@ -62,7 +77,7 @@
     hasFooterMenu: true,
     hasSideMenu: true,
     pagetype: 'LeftMain',
-    navigations: navs.ja
+    navigations: navs.ja,
   }
 ---
 

@@ -1,21 +1,21 @@
-// const Langs = import("./langconfig").LANGS
+// const Langs = import('./langconfig').LANGS
 
 // コンテンツのブロック単位
 declare type BlockType =
-  'RawHTML' | 'Plain' | 'Link' | 'Image' |
-  'Hero' | 'Sub Hero' | 'Sub Bar' |
-  'Heading 2' | 'Heading 3' | 'Heading 4' |
-  'Icon Heading 2' | 'Icon Heading 3' | 'Icon Heading 4' |
-  'List' | 'Define' |
-  'Relatives' |
-  'Spacer' | 'Separator' |
-  'Media Right' | 'Media Left' | "Gallary" |
+  '_' | 'rawHTML' | 'plain' | 'link' | 'image' |
+  'hero' | 'sub hero' | 'sub bar' |
+  'heading 2' | 'heading 3' | 'heading 4' |
+  'icon heading 2' | 'icon heading 3' | 'icon heading 4' |
+  'list' | 'define' |
+  'relatives' |
+  'spacer' | 'separator' |
+  'Media Right' | 'Media Left' | 'Gallary' |
   'Features' | 'Horizontal' | 'Flow' |
-  'Table' |
-  "FLEX" | "COLUMN"
+  'Table' | 'Faq' |
+  'FLEX' | 'COLUMN'
 
-declare type SimpleBlock<T extends IsSingle | IsMulti> =
-  RawHTML<T> | PlainBlock<T> | LinkBlock<T> | ImageBlock<T> |
+declare type ChildBlock<T extends IsSingle | IsMulti> =
+  NonBlock | RawHTML<T> | PlainBlock<T> | LinkBlock<T> | ImageBlock<T> |
   HeroBlock<T> | SubHeroBlock<T> | SubBarBlock<T> |
   HeadingBlock<T> | IconHeadingBlock<T> |
   ListBlock<T> | DefineBlock<T> |
@@ -23,18 +23,18 @@ declare type SimpleBlock<T extends IsSingle | IsMulti> =
   Spacer | Separator
 
 
-declare type ComplexBlock<T extends IsSingle | IsMulti> =
+declare type ParentBlock<T extends IsSingle | IsMulti> =
   MediaTextBlock<T> | GallaryBlock<T> |
   FeaturesBlock<T> | FlowBlock<T> | HorizontalBlock<T> |
-  TableBlock<T>
+  TableBlock<T> | FaqBlock<T>
 
-declare type RealBlock<T extends IsSingle | IsMulti> = SimpleBlock<T> | ComplexBlock<T>
+declare type RealBlock<T extends IsSingle | IsMulti> = ChildBlock<T> | ParentBlock<T>
 
-declare type LayoutBlock<T extends IsSingle | IsMulti> =
+declare type AncestorBlock<T extends IsSingle | IsMulti> =
   FlexLayout<T> | ColumnLayout<T>
 
 
-declare type AnyBlock<T extends IsSingle | IsMulti> = RealBlock<T> | LayoutBlock<T>
+declare type AnyBlock<T extends IsSingle | IsMulti> = RealBlock<T> | AncestorBlock<T>
 
 declare interface BaseBlock {
   type: BlockType
@@ -44,35 +44,39 @@ declare interface BaseBlock {
   name?: string
 }
 
-// Simple Blocks
+// Child Blocks
+declare interface NonBlock extends BaseBlock {
+  type: '_'
+}
+
 declare interface RawHTML<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: 'RawHTML',
+  type: 'rawHTML',
   $html: IsStr<T>
 }
 
 declare interface PlainBlock<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: 'Plain';
+  type: 'plain';
   $texts: IsStrArray<T>;
 }
 
 declare interface LinkBlock<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: 'Link';
+  type: 'link';
   $text: IsStr<T>;
   href: string;
-  target?: "_self" | "_blank"
+  target?: '_self' | '_blank'
   anchor?: string;
 }
 
 declare interface ImageBlock<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: 'Image';
+  type: 'image';
   src: string;
   $alt: IsStr<T>;
   href?: string;
-  target?: "_self" | "_blank"
+  target?: '_self' | '_blank'
 }
 
 declare interface HeroBlock<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: "Hero";
+  type: 'hero';
   src: string;
   $alt: IsStr<T>;
   $title: IsStr<T>;
@@ -81,41 +85,41 @@ declare interface HeroBlock<T extends IsSingle | IsMulti> extends BaseBlock {
 }
 
 declare interface SubHeroBlock<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: "Sub Hero";
+  type: 'sub hero';
   src: string;
   $alt: IsStr<T>;
   $title: IsStr<T>;
 }
 
 declare interface SubBarBlock<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: "Sub Bar";
+  type: 'sub bar';
   $title: IsStr<T>;
 }
 
 
 declare interface HeadingBlock<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: 'Heading 2' | 'Heading 3' | 'Heading 4';
+  type: 'heading 2' | 'heading 3' | 'heading 4';
   $text: IsStr<T>
 }
 
 declare interface IconHeadingBlock<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: 'Icon Heading 2' | 'Icon Heading 3' | 'Icon Heading 4';
+  type: 'icon heading 2' | 'icon heading 3' | 'icon heading 4';
   $text: IsStr<T>;
   icon: string;
 }
 
 declare interface ListBlock<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: 'List';
+  type: 'list';
   $texts: IsStrArray<T>;
 }
 
 declare interface DefineBlock<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: 'Define';
+  type: 'define';
   $texts: IsStr2DArray<T>;
 }
 
 declare interface RelativeBlock<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: 'Relatives';
+  type: 'relatives';
   $title?: IsStr<T>;
   $articles: Article<T>[];
 }
@@ -129,26 +133,26 @@ declare interface Article<T extends IsSingle | IsMulti> {
 }
 
 declare interface Spacer extends BaseBlock {
-  type: 'Spacer';
+  type: 'spacer';
   x?: number;
   y?: number;
 }
 
 declare interface Separator extends BaseBlock {
-  type: 'Separator';
+  type: 'separator';
 }
 
-// Complex Blocs
+// Parent Blocs
 declare interface MediaTextBlock<T extends IsSingle | IsMulti> extends BaseBlock {
   type: 'Media Right' | 'Media Left';
   // $texts: T[];
-  $blks: SimpleBlock<T>[];
+  $blks: ChildBlock<T>[];
   src: string;
   $alt: IsStr<T>;
 }
 
 declare interface GallaryBlock<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: "Gallary"
+  type: 'Gallary'
   $blks: ImageBlock<T>[];
 }
 
@@ -161,7 +165,7 @@ declare interface FeaturesBlock<T extends IsSingle | IsMulti> extends BaseBlock 
 declare interface FeaturesItem<T extends IsSingle | IsMulti> {
   icon: string;
   $title: IsStr<T>;
-  $blks: SimpleBlock<T>[]
+  $blks: ChildBlock<T>[]
   link?: string;
 }
 
@@ -174,7 +178,7 @@ declare interface HorizontalBlock<T extends IsSingle | IsMulti> extends BaseBloc
 declare interface HorizontalItem<T extends IsSingle | IsMulti> {
   img: string;
   $title: IsStr<T>;
-  $blks: SimpleBlock<T>[]
+  $blks: ChildBlock<T>[]
   link?: string;
 }
 
@@ -182,26 +186,39 @@ declare interface HorizontalItem<T extends IsSingle | IsMulti> {
 declare interface FlowBlock<T extends IsSingle | IsMulti> extends BaseBlock {
   type: 'Flow';
   $items: FlowItem<T>[];
+  isForJsonLd?: boolean;
 }
 
 declare interface FlowItem<T extends IsSingle | IsMulti> {
-  $blks: SimpleBlock<T>[]
+  $blks: ChildBlock<T>[]
 }
 
 declare interface TableBlock<T extends IsSingle | IsMulti> extends BaseBlock {
   type: 'Table';
   $th?: IsStrArray<T>;
-  $trs: SimpleBlock<T>[][];
+  $trs: ChildBlock<T>[][];
 }
 
-// レイアウト専門
+declare interface FaqBlock<T extends IsSingle | IsMulti> extends BaseBlock {
+  type: 'Faq';
+  $qas: QuestionAndAnser<T>[]
+  isForJsonLd?: boolean
+}
+
+declare interface QuestionAndAnser<T extends IsSingle | IsMulti> {
+  $q: ChildBlock<T>[];
+  $a: ChildBlock<T>[];
+  slag?: string;
+}
+
+// Ancestor
 declare interface FlexLayout<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: "FLEX";
+  type: 'FLEX';
   $blkss: RealBlock<T>[][];
 }
 
 declare interface ColumnLayout<T extends IsSingle | IsMulti> extends BaseBlock {
-  type: "COLUMN";
+  type: 'COLUMN';
   $blkss: RealBlock<T>[][];
 }
 

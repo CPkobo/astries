@@ -177,7 +177,7 @@ export class Validator {
     }
   }
 
-  validateMetas(pg: Partial<PageContents<IsMulti>>) {
+  validateMetas(pg: Partial<PageContentsInYaml<IsMulti>>) {
     if (!pg.langs) {
       this.addError("missing 'includes'")
       this.inLangs = this.langs
@@ -210,10 +210,6 @@ export class Validator {
       if (typeof pg.position !== "number") {
         this.addError("position should be a type of 'number'")
       }
-    }
-
-    if (!pg.href) {
-      this.addError("missing 'href'")
     }
 
     if (!pg.$title) {
@@ -268,21 +264,21 @@ export class Validator {
   validateContents(blks: AnyBlock<IsMulti>[]) {
     blks.forEach(blk => {
       switch (blk.type) {
-        case "RawHTML":
-        case "Plain":
-        case "Link":
-        case "Image":
-        case "Heading 2":
-        case "Heading 3":
-        case "Heading 4":
-        case "Icon Heading 2":
-        case "Icon Heading 3":
-        case "Icon Heading 4":
-        case "List":
-        case "Define":
-        case "Relatives":
-        case "Spacer":
-        case "Separator":
+        case "rawHTML":
+        case "plain":
+        case "link":
+        case "image":
+        case "heading 2":
+        case "heading 3":
+        case "heading 4":
+        case "icon heading 2":
+        case "icon heading 3":
+        case "icon heading 4":
+        case "list":
+        case "define":
+        case "relatives":
+        case "spacer":
+        case "separator":
           this.validateSimpleBlock(blk)
           break
 
@@ -306,20 +302,20 @@ export class Validator {
     })
   }
 
-  validateSimpleBlock(blk: SimpleBlock<IsMulti>): void {
+  validateSimpleBlock(blk: ChildBlock<IsMulti>): void {
     switch (blk.type) {
-      case "RawHTML": {
+      case "rawHTML": {
         const [langOk, typeOk] = this.validateLangAndObj(blk.$html)
         if (!langOk) {
-          this.addError("$RawHTML includes invalid lang key")
+          this.addError("$rawHTML includes invalid lang key")
         }
         if (!typeOk) {
-          this.addError("the value of $RawHTML is incorrect type")
+          this.addError("the value of $rawHTML is incorrect type")
         }
         break;
       }
 
-      case "Plain": {
+      case "plain": {
         const [langOk, typeOk] = this.validateLangAndObj(blk.$texts, "string or array")
         if (!langOk) {
           this.addError("Plain.$texts includes invalid lang key")
@@ -330,7 +326,7 @@ export class Validator {
         break;
       }
 
-      case "Link": {
+      case "link": {
         const [langOk, typeOk] = this.validateLangAndObj(blk.$text)
         if (!langOk) {
           this.addError("Link.$text includes invalid lang key")
@@ -344,7 +340,7 @@ export class Validator {
         break;
       }
 
-      case "Image": {
+      case "image": {
         const [langOk, typeOk] = this.validateLangAndObj(blk.$alt)
         if (!langOk) {
           this.addError("Image.$alt includes invalid lang key")
@@ -370,9 +366,9 @@ export class Validator {
         break;
       }
 
-      case "Heading 2":
-      case "Heading 3":
-      case "Heading 4": {
+      case "heading 2":
+      case "heading 3":
+      case "heading 4": {
         const [langOk, typeOk] = this.validateLangAndObj(blk.$text)
         if (!langOk) {
           this.addError("Heading.$text includes invalid lang key")
@@ -383,23 +379,23 @@ export class Validator {
         break;
       }
 
-      case "Icon Heading 2":
-      case "Icon Heading 3":
-      case "Icon Heading 4": {
+      case "icon heading 2":
+      case "icon heading 3":
+      case "icon heading 4": {
         const [langOk, typeOk] = this.validateLangAndObj(blk.$text)
         if (!langOk) {
-          this.addError("Icon Heading.$text includes invalid lang key")
+          this.addError("icon heading.$text includes invalid lang key")
         }
         if (!typeOk) {
-          this.addError("the value of $Icon Heading.$text is incorrect type")
+          this.addError("the value of $icon heading.$text is incorrect type")
         }
         if (!blk.icon) {
-          this.addError("missing Icon Heading.icon", false)
+          this.addError("missing icon heading.icon", false)
         }
         break;
       }
 
-      case "List": {
+      case "list": {
         const [langOk, typeOk] = this.validateLangAndObj(blk.$texts, "array")
         if (!langOk) {
           this.addError("List.$texts includes invalid lang key")
@@ -410,7 +406,7 @@ export class Validator {
         break;
       }
 
-      case "Define": {
+      case "define": {
         const [langOk, typeOk] = this.validateLangAndObj(blk.$texts, "array")
         if (!langOk) {
           this.addError("Define.$texts includes invalid lang key")
@@ -421,7 +417,7 @@ export class Validator {
         break;
       }
 
-      case "Relatives": {
+      case "relatives": {
         if (!Array.isArray(blk.$articles)) {
           this.addError("Relatives.$articles in yaml should be a type of 'Array<Article>'")
         } else {
@@ -445,10 +441,10 @@ export class Validator {
         break;
       }
 
-      case "Spacer":
+      case "spacer":
         break;
 
-      case "Separator":
+      case "separator":
         break;
 
       default:
@@ -457,7 +453,7 @@ export class Validator {
     }
   }
 
-  validateComplexBlock(blk: ComplexBlock<IsMulti>): void {
+  validateComplexBlock(blk: ParentBlock<IsMulti>): void {
     switch (blk.type) {
       case 'Media Right':
       case 'Media Left': {
@@ -494,7 +490,7 @@ export class Validator {
           this.addError("Media.$blks should be a type of 'Array<SimpleBlock>'")
         } else {
           for (const subblk of blk.$blks) {
-            if (subblk.type !== "Image") {
+            if (subblk.type !== "image") {
               this.addError("Gallary Block can only include ImageBlock")
             } else {
               this.validateSimpleBlock(subblk)
@@ -606,7 +602,7 @@ export class Validator {
     }
   }
 
-  validateLayoutBlock(blk: LayoutBlock<IsMulti>): void {
+  validateLayoutBlock(blk: AncestorBlock<IsMulti>): void {
     switch (blk.type) {
       case "FLEX":
         if (!Array.isArray(blk.$blkss)) {

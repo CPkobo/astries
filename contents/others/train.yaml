@@ -11,7 +11,7 @@ $summary:
 img: others/toc/train.jpg
 pageType: LeftMain
 contents:
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-pencil-square
     $text:
       ja: 多様なレッスン形態
@@ -21,7 +21,7 @@ contents:
     $alt:
       ja: 語学研修・授業風景 その1
     $blks:
-      - type: Define
+      - type: define
         $texts:
           ja:
             - - 一般開講クラス
@@ -29,11 +29,11 @@ contents:
             - - オーダーメイド研修
               - お客様のニーズに合わせてアレンジいたします。
 
-  - type: Spacer
+  - type: spacer
     x: 0
     y: 3
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-user-circle
     $text:
       ja: 豊富な実績と丁寧な指導
@@ -43,6 +43,6 @@ contents:
     $alt:
       ja: 語学研修・授業風景 その2
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja: 現役の通訳としても活躍している、指導経験豊富な講師陣が授業を行います。

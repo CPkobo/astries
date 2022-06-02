@@ -1,0 +1,13 @@
+---
+  import { defaultJsonLd } from "$envs/profile"
+  let jsonld: JsonLdData[] | undefined;
+  ({ jsonld =[] } = Astro.props);
+  const data = JSON.stringify([defaultJsonLd, ...jsonld])
+
+---
+
+{() => {
+const scrTag = `
+<!--JSONLD <script type="application/ld+json">${data}</script> JSONLD-->`
+return scrTag
+}}

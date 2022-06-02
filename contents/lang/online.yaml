@@ -11,18 +11,18 @@ $summary:
 img: lang/toc/online.jpg
 pageType: LeftMain
 contents:
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 新型コロナウイルスの蔓延で、人々の移動が阻まれる中、オンライン会議が注目のスターに。時間、距離、場所の制約を超えていつでも、どこでも最高の交流の場を実現できます。
         - 2020年以来、様々な形式によるオンライン会議の企画・運営・技術サポート、オンライン同時通訳、オンライン逐次通訳を年間数十回を行い豊富な実績とノウハウを積み重ねてきました。
 
-  - type: Heading 4
+  - type: heading 4
     classes: ml-3
     $text:
       ja: 対応可能なプラットフォーム
 
-  - type: List
+  - type: list
     classes: ml-5
     $texts:
       ja:
@@ -32,12 +32,12 @@ contents:
         - Google Meet
         - Skype
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 他のWeb会議システムを使用される場合でも、柔軟に対応いたします。
 
-  - type: Icon Heading 2
+  - type: icon heading 2
     $text:
       ja: オンライン通訳の形態と特徴
 
@@ -47,7 +47,7 @@ contents:
         $title:
           ja: 逐次通訳
         $blks:
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 最もシンプルな形態で、どのようなプラットフォームでも対応可能です。
@@ -56,7 +56,7 @@ contents:
         $title:
           ja: 同時通訳
         $blks:
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 大規模な国際会議やセミナーでよく見られる通訳形態です。発言とほぼ同時に通訳が聞けるため、逐次通訳と比べて時間の節約になります。
@@ -68,7 +68,7 @@ contents:
         $title:
           ja: ハイブリッド会議
         $blks:
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 会議・セミナーの会場を用意しつつ、同時にオンラインでも発言したり、内容を配信したりする形態です。
@@ -79,7 +79,7 @@ contents:
         $title:
           ja: 事前収録
         $blks:
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - セミナーなどで、各スピーカーの発言内容をすべて動画として保存しておき、当日にオンラインで配信する形態です。

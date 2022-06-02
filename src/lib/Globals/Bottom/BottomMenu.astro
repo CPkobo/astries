@@ -1,139 +1,142 @@
 ---
-// import { navs } from "$src/_envs/paths"
-let navigations: NavigationMenu[]
-({navigations} = Astro.props)
+  let navigations: NavigationMenu[]
+  ({ navigations } = Astro.props)
 ---
 
 <ul class="bottom-menu">
-<!-- アイコン1つ目　トップへ -->
+  <!-- アイコン1つ目　トップへ -->
   <li>
-      <a class="Menu-Bottom-btn" href="/">
+    <a class="Menu-Bottom-btn" href="/">
       <i class="fa fa-home"></i></a>
   </li>
 
-<!-- アイコン2つ目 カテゴリの2階層目を表示 -->
+  <!-- アイコン2つ目 カテゴリの2階層目を表示 -->
   <li class="menu-width-max">
     <a href="#"><i class="fa fa-bars"></i></a>
-<!-- 2階層目のメニュー-->
-      <ul class="menu-second-level">
-        {navigations.map(bnav => 
-            <li><a href={bnav.root}>{bnav.category}</a></li>
-        )}
-        <!-- <li><a href="表示させたいページのアドレス2">タイトル2</a></li>
+    <!-- 2階層目のメニュー-->
+    <ul class="menu-second-level">
+      {navigations.map(bnav =>
+      <li><a href={bnav.root}>{bnav.category}</a></li>
+      )}
+      <!-- <li><a href="表示させたいページのアドレス2">タイトル2</a></li>
         <li><a href="表示させたいページのアドレス3">タイトル3</a></li>
         <li><a href="表示させたいページのアドレス4">タイトル4</a></li> -->
-      </ul>
-    </li>
+    </ul>
+  </li>
 
-<!-- アイコン3つ目 投稿一覧へ -->
-    <li>
-      <a class="Menu-Bottom-btn" href="/posts/post/page-1">
+  <!-- アイコン3つ目 投稿一覧へ -->
+  <li>
+    <a class="Menu-Bottom-btn" href="/posts/post/page-1">
       <i class="fa fa-hand-o-up"></i></a>
-    </li>
+  </li>
 
-<!-- アイコン4つ目 問い合わせ -->
-    <li>
-      <a href="/forms/contact-ja" target="_blank">
+  <!-- アイコン4つ目 問い合わせ -->
+  <li>
+    <a href="/forms/contact-ja" target="_blank">
       <i class="fa fa-comment-o"></i></a>
-    </li>
+  </li>
 
-<!-- アイコン5つ目 言語 -->
-    <li>
-      <a href="/">
+  <!-- アイコン5つ目 言語 -->
+  <li>
+    <a href="/">
       <i class="fa fa-language"></i></a>
-    </li>  
+  </li>
 </ul>
 
 <style>
-/*==　smartphone　bottom menu　==
+  /*==　smartphone　bottom menu　==
 Customized by SimpleLifeNavi ,Dec 11,2021 updated
 Based on "https://www.bambi.pro/entry/navigation-bottom-smartphone"
 */
-.mini-text{font-size:9px;}/*文字の大きさ*/
-
-ul.bottom-menu {
-  position: fixed ;
-  left:0;
-  bottom:0;
-  width: 100%;
-  height:3rem;
-  margin:0;
-  padding:0;
-  /* background-color:rgba(22, 136, 73, 0.8); */
-  z-index:30;
-  padding-bottom:env(safe-area-inset-bottom);
-}
-
-ul.bottom-menu li {
-  float:left;
-  width:20%;
-  background-color: rgba(22, 136, 73, 0.8);
-  list-style-type:none;
-  text-align:center;
-  font-size:22px;
-}
-    
-.bottom-menu li a {
-  display: block;
-  color:white;
-  padding-top:10px;
-  padding-bottom:5px;
-  line-height:10px;
-  text-decoration:none;
-}
-
-.bottom-menu li a:hover {
-  color:lightgray;
-}
-
-/* === 展開メニュー === */
-ul.menu-second-level {
-  visibility: hidden;
-  opacity: 0;
-  z-index:1;
-}
-
-ul.menu-second-level li a{
-  border-top:1px dotted white;
-  font-size:12px;
-  line-height:24px;
-}
-
-.menu-second-level li a:hover {
-  height:100%;
-  transition: 1.0s;
-  background: lavender;
-}
-
-li.menu-width-max ul.menu-second-level {
-  position: absolute ;
-  bottom: 45px;
-  transition: 0.5s;
-  left: 0;
-  box-sizing: border-box;
-  width: 100%;
-  padding:0;
-}
-
-li.menu-width-max:hover ul.menu-second-level {
-  bottom: 45px;
-  visibility: visible;
-  opacity: 1;
-}
-
-li.menu-width-max ul.menu-second-level li {
-  float: left;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  border: none;
-}
-
-/* ボトムメニューを表示しない指示 */
-@media(orientation:landscape),
-@media(min-width: 768px) {
-  .bottom-menu{
-    display:none;
+  .mini-text {
+    font-size: 9px;
   }
-}
+
+  /*文字の大きさ*/
+
+  ul.bottom-menu {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    margin: 0;
+    padding: 0;
+    /* background-color:rgba(22, 136, 73, 0.8); */
+    z-index: 30;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  ul.bottom-menu li {
+    float: left;
+    width: 20%;
+    background-color: rgba(22, 136, 73, 0.8);
+    list-style-type: none;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .bottom-menu li a {
+    display: block;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    line-height: 10px;
+    text-decoration: none;
+  }
+
+  .bottom-menu li a:hover {
+    color: lightgray;
+  }
+
+  /* === 展開メニュー === */
+  ul.menu-second-level {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  ul.menu-second-level li a {
+    border-top: 1px dotted white;
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  .menu-second-level li a:hover {
+    height: 100%;
+    transition: 1.0s;
+    background: lavender;
+  }
+
+  li.menu-width-max ul.menu-second-level {
+    position: absolute;
+    bottom: 45px;
+    transition: 0.5s;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0;
+  }
+
+  li.menu-width-max:hover ul.menu-second-level {
+    bottom: 45px;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  li.menu-width-max ul.menu-second-level li {
+    float: left;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: none;
+  }
+
+  /* ボトムメニューを表示しない指示 */
+  @media(orientation:landscape),
+  @media(min-width: 768px) {
+    .bottom-menu {
+      display: none;
+    }
+  }
 </style>

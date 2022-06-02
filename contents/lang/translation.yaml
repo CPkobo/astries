@@ -11,12 +11,12 @@ $summary:
 img: lang/toc/translation.jpg
 pageType: LeftMain
 contents:
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-spell-check
     $text:
       ja: 翻訳サービスの特徴
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: __
     $text:
       ja: ① スピーディで丁寧な対応
@@ -26,13 +26,13 @@ contents:
     $alt:
       ja: 翻訳作業中
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - 弊社はスタッフ全員が中国語のプロですので、お客様の様々なご要望に対してスピーディな対応が可能です。
             - お見積り段階から納品まで担当者が一貫して責任を持ち、お客様からのご質問等にも丁寧に対応いたします。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: __
     $text:
       ja: ② 多用な分野に対応
@@ -42,14 +42,14 @@ contents:
     $alt:
       ja: 翻訳用辞書
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - 翻訳者の専門分野は多岐にわたりますので、お客様の原稿に合わせて最適な翻訳者・チェッカーを割り当て、高品質な翻訳を提供します。
             - 日本語と中国語（簡体字、繁体字）はもちろん、英語⇔中国語翻訳にもおまかせください。
             - 中国語のほか英語、韓国語、タイ語など東南アジア諸語の翻訳も対応可能です。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: __
     $text:
       ja: ③ 多様な形式での翻訳＋制作
@@ -59,18 +59,18 @@ contents:
     $alt:
       ja: 製作物事例
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - ウェブサイトの作成、印刷物のDTP・デザイン、ナレーション録音、会議のテープ起こしなど、翻訳に付随するサービスまで一貫して提供することができます。
             - 翻訳支援ツールを積極的に活用、効率的でスピーディーな翻訳が可能です。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-thumbs-up
     $text:
       ja: こんなときはぜひ弊社にご相談ください！
 
-  - type: List
+  - type: list
     preset: circle
     $texts:
       ja:
@@ -81,64 +81,65 @@ contents:
         - 新人研修の一環として、中国語レッスンを取り入れたい。
         - 専用の教材を作って指導してほしい。
 
-  - type: Plain
+  - type: plain
     $texts:
       ja: 経験豊富なスタッフがきめ細かくサポートいたします！
 
-  - type: Spacer
+  - type: spacer
 
-  - type: Icon Heading 2
+  - type: icon heading 2
+    id: translation-flow
     $text:
       ja: 翻訳発注～納品までの流れ
 
   - type: Flow
     $items:
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: お問い合わせ
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - まずはお気軽にお問い合わせください。（電話・FAX・メールなど）
-          - type: Link
+          - type: link
             $text:
               ja: お問い合わせはこちら
             href: /
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: ヒアリング・お見積もり
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - お問い合わせ内容に基づき、担当者より詳細を確認後、お見積もり書を作成いたします。
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: サンプル翻訳
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 初回のお客様については、無料でサンプル翻訳をご提供できます。
                 - 翻訳の必要な原稿から200文字程度を指定いただき、弊社の翻訳品質をご確認いただきます。（通常1～2営業日必要となります）
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: ご発注
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 正式にご発注いただきましたら、納期を確認し作業を開始致します。
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: 翻訳
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 翻訳者による一次翻訳を行います。内容に基づいて最適な翻訳者が対応致します。
@@ -148,10 +149,10 @@ contents:
                 - が翻訳します。
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: クロスチェック
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 翻訳に抜けがないか、誤字・誤訳等がないかを逐一チェック致します。
@@ -161,55 +162,55 @@ contents:
                 - がチェックを行います。
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: プルーフリード
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - チェック後の訳文をネイティブが再読し、より良い表現にブラッシュアップします。
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: 編集（オプション）
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - DTPなど特別な編集が必要な場合は、お客様ご指定のフォーマットに編集いたします。
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: 反訳（オプション）
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - お客様のご要望に応じて、完成した訳文を別の翻訳者が元の言語に翻訳しなおす「反訳」を行います。校正とは異なる立場から訳文を読むことで、訳文の正確性や他意の有無などを確認できます。
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: 納品
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - 最後に、お客様ご指定の仕様通りになっていることを確認し、納品致します。
 
       - $blks:
-          - type: Heading 4
+          - type: heading 4
             $text:
               ja: フィードバック、検収
-          - type: Plain
+          - type: plain
             $texts:
               ja:
                 - お客様側でご確認いただきました後、ご不明な点や疑問点などがございましたらお問い合わせください。
 
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 担当者が丁寧に対応いたします。また原文の変更につきましても、微量の場合はサービスにて対応いたしますので、どうぞお気軽にご相談ください。
 
-  - type: Relatives
+  - type: relatives
     $articles:
       - $title:
           ja: 機械翻訳について

@@ -16,7 +16,7 @@ contents:
     $alt:
       ja: 代表バストショット
     $blks:
-      - type: Plain
+      - type: plain
         $texts:
           ja:
             - 日本と中国―その交流の歴史は世界のどこ国よりも長く深いと言えます。日本と中国の交流、ひいては世界の平和に貢献することを使命として、株式会社ゴールデンブリッジは、 日中のコミュニケーションの架け橋として、翻訳・通訳をメインに事業を展開しています。
@@ -24,9 +24,9 @@ contents:
             - これからも経営環境が常に変化している中、進取の心を忘れず、進化・成長し、価値創造する組織であり続けたい。
             - 引き続き、ご支援のほど宜しくお願い申し上げます。
 
-      - type: Spacer
+      - type: spacer
 
-      - type: Image
+      - type: image
         classes: has-text-centered
         src: about/yang_title.gif
         $alt:

@@ -5,7 +5,7 @@ import {
   _hero, _subhero, _subbar,
   _heading, _iconHeading, _list, _define, _relatives,
   _spacer, _separator,
-  _media, _gallary, _features, _horizontal, _flow, _table
+  _media, _gallary, _features, _horizontal, _flow, _table, _faq
 } from "./_blockFns"
 
 // 多言語 → 単一言語 コンテンツへの変換
@@ -60,8 +60,9 @@ export function handleConvI18n2Str(
       case "Features":
       case "Horizontal":
       case "Flow":
-      case "Table": {
-        const nblk = convComplexBlock(blk, lang)
+      case "Table":
+      case 'Faq': {
+        const nblk = convParentBlock(blk, lang)
         if (nblk !== null) {
           strBlks.push(nblk)
         }
@@ -71,7 +72,7 @@ export function handleConvI18n2Str(
       // Layout
       case "FLEX":
       case "COLUMN": {
-        const nblk = convLayoutBlock(blk, lang)
+        const nblk = convAncestorBlock(blk, lang)
         if (nblk !== null) {
           strBlks.push(nblk)
         }
@@ -80,7 +81,7 @@ export function handleConvI18n2Str(
 
       // Simple Blocks or the others
       default: {
-        const nblk = convSimpleBlock(blk, lang)
+        const nblk = convChildBlock(blk, lang)
         if (nblk !== null) {
           strBlks.push(nblk)
         }
@@ -91,72 +92,84 @@ export function handleConvI18n2Str(
   return strBlks
 }
 
-export function convSimpleBlock(
-  blk: SimpleBlock<IsMulti>, lang: string): SimpleBlock<IsSingle> | null {
+export function convChildBlock(
+  blk: ChildBlock<IsMulti>, lang: string): ChildBlock<IsSingle> {
+
+  if (blk === undefined || blk === null) {
+    return { type: '_' }
+  }
   switch (blk.type) {
-    case "RawHTML":
+    case '_':
+      return blk
+
+    case "rawHTML":
       return _rawHtml(blk, lang)
 
-    case "Plain":
+    case "plain":
       return _plain(blk, lang)
 
-    case "Link":
+    case "link":
       return _link(blk, lang)
 
-    case "Image":
+    case "image":
       return _image(blk, lang)
 
-    case "Hero":
+    case "hero":
       return _hero(blk, lang)
 
-    case "Sub Hero":
+    case "sub hero":
       return _subhero(blk, lang)
 
-    case "Sub Bar":
+    case "sub bar":
       return _subbar(blk, lang)
 
-    case "Heading 2":
-    case "Heading 3":
-    case "Heading 4":
+    case "heading 2":
+    case "heading 3":
+    case "heading 4":
       return _heading(blk, lang)
 
-    case "Icon Heading 2":
-    case "Icon Heading 3":
-    case "Icon Heading 4":
+    case "icon heading 2":
+    case "icon heading 3":
+    case "icon heading 4":
       return _iconHeading(blk, lang)
 
-    case "List":
+    case "list":
       return _list(blk, lang)
 
-    case "Define":
+    case "define":
       return _define(blk, lang)
 
-    case "Relatives":
+    case "relatives":
       return _relatives(blk, lang)
 
     default:
-      return null
+      return { type: '_' }
   }
 }
 
-export function batchConvSimpleBlocks(blks: SimpleBlock<IsMulti>[], lang: string): SimpleBlock<IsSingle>[] {
-  const nblks: SimpleBlock<IsSingle>[] = []
-  for (const blk of blks) {
-    const nblk = convSimpleBlock(blk, lang)
-    if (nblk !== null) {
-      nblks.push(nblk)
+export function batchConvChildBlocks(blks: ChildBlock<IsMulti>[], lang: string): ChildBlock<IsSingle>[] {
+  const nblks: ChildBlock<IsSingle>[] = []
+  if (blks === undefined || blks === null) {
+    return [{ type: '_' }]
+  } else {
+    for (const blk of blks) {
+      const nblk = convChildBlock(blk, lang)
+      if (nblk !== null) {
+        nblks.push(nblk)
+      }
     }
+    return nblks
   }
-  return nblks
+
 }
 
-export function convComplexBlock(blk: ComplexBlock<IsMulti>, lang: string): ComplexBlock<IsSingle> | null {
+export function convParentBlock(blk: ParentBlock<IsMulti>, lang: string): ParentBlock<IsSingle> | null {
   switch (blk.type) {
     case 'Media Right':
     case 'Media Left': {
       const pblk = _media(blk, lang)
       if (pblk !== null) {
-        const $blks = batchConvSimpleBlocks(blk.$blks, lang)
+        const $blks = batchConvChildBlocks(blk.$blks, lang)
         if ($blks.length > 0) {
           pblk.$blks = $blks
           return pblk
@@ -173,7 +186,7 @@ export function convComplexBlock(blk: ComplexBlock<IsMulti>, lang: string): Comp
         const pblk: FeaturesBlock<IsSingle> = _features(blk, lang)
         if (pblk !== null) {
           blk.$items.forEach(itm => {
-            const inItm: SimpleBlock<IsSingle>[] = batchConvSimpleBlocks(itm.$blks, lang)
+            const inItm: ChildBlock<IsSingle>[] = batchConvChildBlocks(itm.$blks, lang)
             if (inItm.length > 0) {
               pblk.$items.push({
                 icon: itm.icon === "__" ? "" : itm.icon || "",
@@ -196,7 +209,7 @@ export function convComplexBlock(blk: ComplexBlock<IsMulti>, lang: string): Comp
         const pblk: HorizontalBlock<IsSingle> = _horizontal(blk, lang)
         if (pblk !== null) {
           blk.$items.forEach(itm => {
-            const inItm: SimpleBlock<IsSingle>[] = batchConvSimpleBlocks(itm.$blks, lang)
+            const inItm: ChildBlock<IsSingle>[] = batchConvChildBlocks(itm.$blks, lang)
             if (inItm.length > 0) {
               pblk.$items.push({
                 img: normalizeSrc(itm.img),
@@ -219,7 +232,7 @@ export function convComplexBlock(blk: ComplexBlock<IsMulti>, lang: string): Comp
         const pblk: FlowBlock<IsSingle> = _flow(blk, lang)
         if (pblk !== null) {
           blk.$items.forEach(itm => {
-            const inItm: SimpleBlock<IsSingle>[] = batchConvSimpleBlocks(itm.$blks, lang)
+            const inItm: ChildBlock<IsSingle>[] = batchConvChildBlocks(itm.$blks, lang)
             if (inItm.length > 0) {
               pblk.$items.push({
                 $blks: inItm,
@@ -242,7 +255,7 @@ export function convComplexBlock(blk: ComplexBlock<IsMulti>, lang: string): Comp
             pblk.$th = convI18ns2Strs(blk.$th, lang)
           }
           blk.$trs.forEach(itm => {
-            const inItm: SimpleBlock<IsSingle>[] = batchConvSimpleBlocks(itm, lang)
+            const inItm: ChildBlock<IsSingle>[] = batchConvChildBlocks(itm, lang)
             if (inItm.length > 0) {
               pblk.$trs.push(inItm)
             }
@@ -250,6 +263,21 @@ export function convComplexBlock(blk: ComplexBlock<IsMulti>, lang: string): Comp
           if (pblk.$trs.length > 0) {
             return pblk
           }
+        }
+      }
+      return null
+    }
+
+    case 'Faq': {
+      const pblk = _faq(blk, lang)
+      if (pblk !== null) {
+        blk.$qas.forEach($qa => {
+          const $q = batchConvChildBlocks($qa.$q, lang)
+          const $a = batchConvChildBlocks($qa.$a, lang)
+          pblk.$qas.push({ $q, $a, slag: $qa.slag })
+        })
+        if (pblk.$qas.length > 0) {
+          return pblk
         }
       }
       return null
@@ -270,8 +298,9 @@ export function batchConvRealBlocks(blks: RealBlock<IsMulti>[], lang: string): R
       case "Features":
       case "Horizontal":
       case "Flow":
-      case "Table": {
-        const nblk = convComplexBlock(blk, lang)
+      case "Table":
+      case 'Faq': {
+        const nblk = convParentBlock(blk, lang)
         if (nblk !== null) {
           nblks.push(nblk)
         }
@@ -279,7 +308,7 @@ export function batchConvRealBlocks(blks: RealBlock<IsMulti>[], lang: string): R
       }
 
       default: {
-        const nblk = convSimpleBlock(blk, lang)
+        const nblk = convChildBlock(blk, lang)
         if (nblk !== null) {
           nblks.push(nblk)
         }
@@ -290,7 +319,7 @@ export function batchConvRealBlocks(blks: RealBlock<IsMulti>[], lang: string): R
   return nblks
 }
 
-export function convLayoutBlock(blk: LayoutBlock<IsMulti>, lang: string): LayoutBlock<IsSingle> | null {
+export function convAncestorBlock(blk: AncestorBlock<IsMulti>, lang: string): AncestorBlock<IsSingle> | null {
   switch (blk.type) {
     case 'FLEX': {
       const nblkss: RealBlock<IsSingle>[][] = []

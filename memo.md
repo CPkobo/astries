@@ -2,13 +2,13 @@
 {blks.map(blk => {
     const switcher = (blk: AnyBlock<IsSingle>) => {
       switch (blk.type) {
-        case "Heading 2":
+        case "heading 2":
           return (<Hd2 blk={blk} />)
           
-        case "Heading 3":
+        case "heading 3":
           return (<Hd3 blk={blk} />)
           
-        case "Heading 4":
+        case "heading 4":
           return (<Hd4 blk={blk} />)
           
 
@@ -43,7 +43,7 @@
         case  "Separator":
           return (<Separator blk={blk} />)
           
-        case  "RawHTML":
+        case  "rawHTML":
           
         case  "Relatives":
           return (<Relatives blk={blk} />)

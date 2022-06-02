@@ -11,27 +11,27 @@ $summary:
 img: about/toc-privacy.jpg
 pageType: LeftMain
 contents:
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: __
     $text:
       ja: はじめに
-  - type: Spacer
-  - type: Plain
+  - type: spacer
+  - type: plain
     $texts:
       ja:
         - 株式会社ゴールデンブリッジ（以下「当社」）は、 翻訳、通訳、語学研修、各種ビジネスサポート等の事業を営むにあたり、お客様、受講生、講師、翻訳者、通訳者、社員等の個人情報をお預かりしております。
         - 当社は、お客様に更なる信頼性と安心感をご提供するために、以下の方針を掲げ、個人情報の保護に細心の注意を払い取り組みます。
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: __
     $text:
       ja: １．個人情報の収集および利用目的について
-  - type: Plain
+  - type: plain
     $texts:
       ja:
         - 当社では個人情報を取得する場合、利用目的を明確にした上で、適正かつ公正な手段によって行ないます。
         - ［利用目的］個人情報を以下の業務遂行・目的のために取得いたします。
 
-  - type: List
+  - type: list
     preset: circle
     $texts:
       ja:
@@ -41,24 +41,24 @@ contents:
         - 採用選考、連絡のため
         - 人事、総務などの雇用管理のため
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: __
     $text:
       ja: ２．個人情報の安全管理・保管
 
-  - type: Plain
+  - type: plain
     $texts:
       ja: 当社は、ご提供いただいた個人情報を正確にデータ処理し、当社が保有する個人情報の安全性を確保するため、適切な保護・安全対策を実施し、個人情報の紛失、破壊、改ざん、漏えいの防止に努めます。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: __
     $text:
       ja: ３．個人情報の提供
 
-  - type: Plain
+  - type: plain
     $texts:
       ja: 個人情報について、ご本人の同意を得ずに当社が第三者に提供することは、以下の場合を除き、原則いたしません。
-  - type: List
+  - type: list
     preset: circle
     $texts:
       ja:
@@ -68,25 +68,25 @@ contents:
         - お客様または弊社の権利の確保のために必要であると弊社が判断した場合
         - 業務遂行に必要な限度で個人情報の取扱いを委託する場合
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: __
     $text:
       ja: ４．個人情報の開示･利用停止・消去について
 
-  - type: Plain
+  - type: plain
     $texts:
       ja: 個人情報の情報主体であるご本人が自己の個人情報について、開示、訂正、利用停止、消去等の要求をなされた場合は、適切な方法により、ご本人であることの確認を経た上で、法令または業務上拒否することが認められた場合を除き速やかに対応致します。
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: __
     $text:
       ja: ５．個人情報保護方針の改定
 
-  - type: Plain
+  - type: plain
     $texts:
       ja: 当社では、社会情勢の変化、技術の進歩、諸環境の変化等に応じ、事前の予告なくプライバシーポリシーを変更することがあります。
 
-  - type: Plain
+  - type: plain
     classes: has-text-right
     $texts:
       ja:

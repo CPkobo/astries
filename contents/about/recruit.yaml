@@ -11,21 +11,21 @@ $summary:
 img: about/toc-recruit.jpg
 pageType: LeftMain
 contents:
-  - type: Icon Heading 2
+  - type: icon heading 2
     icon: fa fa-square
     $text:
       ja: 翻訳者・通訳者募集
 
-  - type: Plain
+  - type: plain
     $texts:
       ja: 現在、弊社では以下の方を募集しております
 
-  - type: Icon Heading 3
+  - type: icon heading 3
     icon: fa fa-square
     $text:
       ja: 通訳者
 
-  - type: Define
+  - type: define
     $texts:
       ja:
         - - 業務内容

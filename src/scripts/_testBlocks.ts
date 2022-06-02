@@ -45,19 +45,19 @@ const hd4: HeadingBlock<IsSingle> = {
 }
 
 const ih2: IconHeadingBlock<IsSingle> = {
-    type: "Icon Heading 2",
+    type: "icon heading 2",
     icon: "",
     $text: "akasatana"
 }
 
 const ih3: IconHeadingBlock<IsSingle> = {
-    type: "Icon Heading 2",
+    type: "icon heading 2",
     icon: "",
     $text: "akasatana"
 }
 
 const ih4: IconHeadingBlock<IsSingle> = {
-    type: "Icon Heading 4",
+    type: "icon heading 4",
     icon: "",
     $text: "akasatana"
 }

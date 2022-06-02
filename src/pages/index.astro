@@ -1,9 +1,8 @@
 ---
   // Component Imports
   import Base from '$layouts/Base.astro';
-  import { prof } from "$scripts/_env"
-  import { navs } from "$src/_envs/paths"
-  import { profile } from "$src/_envs/profile"
+  import { navs } from "$envs/paths"
+  import { profile } from "$envs/profile"
   import { getContents } from "$scripts/_i18n"
   import BlockControl from "$lib/Blocks/BlockControl.vue"
   import Recent from "$lib/Globals/SideSticker/Recent.astro"
@@ -15,8 +14,9 @@
       lang: 'ja',
       title: profile.SiteName,
       description: page.$description,
+      // jsonld: undefined,
       ogp: {
-        url: `${profile.url}/${page.href}`,
+        url: `${profile.url}`,
         type: 'website',
         title: page.$title,
         description: page.$description,
@@ -34,7 +34,7 @@
     hasFooterMenu: true,
     hasSideMenu: true,
     pagetype: 'LP',
-    navigations: navs.ja
+    navigations: navs.ja,
   }
 
 ---
@@ -52,13 +52,13 @@
         <li class="is-size-4">
           <span class="icon mr-1">
             <i class="fa fa-phone" aria-hidden="true"></i>
-          </span>{prof.Tel}
+          </span>{profile.Tel}
         </li>
         <li class="is-size-4">
           <span class="mr-1">
             <i class="fa fa-envelope" aria-hidden="true"></i>
           </span>
-          <a href={`mailto:${prof.Email}`}>{prof.Email}</a>
+          <a href={`mailto:${profile.Email}`}>{profile.Email}</a>
         </li>
       </ul>
     </div>
