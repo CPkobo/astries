@@ -17,7 +17,9 @@ const title = props.blk.$title ? props.blk.$title : "Relating...";
     <h4 class="title is-5">{{ title }}</h4>
     <template v-for="art in blk.$articles">
       <div class="box article-box">
-        <img class="image" :src="art.src" :alt="art.$alt" />
+        <figure>
+          <img class="image" :src="art.src" :alt="art.$alt" />
+        </figure>
         <div>
           <h5>{{ art.$title }}</h5>
           <p>{{ art.$description }}</p>
@@ -39,9 +41,12 @@ const title = props.blk.$title ? props.blk.$title : "Relating...";
     padding: 1rem;
   }
 
-  div.article-box img {
+  div.article-box figure {
     flex-grow: 0;
     max-width: 30%;
+    /* height: auto; */
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
 </style>

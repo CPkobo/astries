@@ -1,0 +1,58 @@
+name: Training
+position: 3
+langs:
+  - ja
+$title:
+  ja: 語学研修
+  zh: 语言培训
+$description:
+  ja: >-
+    ビジネスに使える中国語を、経験豊富な講師が丁寧に指導いたします。オンラインやカスタマイズなども自由自在。入門・初級から翻訳や通訳レベルの訓練まで、何でもご相談ください。
+  zh: 经验丰富的教师将认真指导你学习商务用的中文。在线课程和定制课程也可以免费获得。从入门和初级水平到翻译和口译水平的培训，请联系我们。
+$summary:
+  ja: ビジネスに使える中国語を、経験豊富な講師が丁寧に指導いたします。オンラインやカスタマイズなども自由自在
+  zh: 经验丰富的教师将认真指导你学习商务用的中文。灵活的在线和定制的选项。
+img: others/toc/train.jpg
+pageType: LeftMain
+contents:
+  - type: icon heading 2
+    icon: fa fa-pencil-square
+    $text:
+      ja: 多様なレッスン形態
+      zh: 多种多样的课程形式
+  - type: Media Right
+    src: others/train-kanshi.jpg
+    $alt:
+      ja: 語学研修・授業風景 その1
+      zh: 语言培训和课程 第一部分
+    $blks:
+      - type: define
+        $texts:
+          ja:
+            - - 一般開講クラス
+              - 常時開講しておりますので、気軽に始められます。
+            - - オーダーメイド研修
+              - お客様のニーズに合わせてアレンジいたします。
+          zh:
+            - - 一般开课
+              - 一直在开课，所以很容易上手。
+            - - 量身定制的培训
+              - 根据你的需要安排。
+  - type: spacer
+    x: 0
+    'y': 3
+  - type: icon heading 2
+    icon: fa fa-user-circle
+    $text:
+      ja: 豊富な実績と丁寧な指導
+      zh: 丰富的经验和精心的指导
+  - type: Media Right
+    src: others/train-teaching.jpg
+    $alt:
+      ja: 語学研修・授業風景 その2
+      zh: 语言培训和课程 第二部分
+    $blks:
+      - type: plain
+        $texts:
+          ja: 現役の通訳としても活躍している、指導経験豊富な講師陣が授業を行います。
+          zh: 课堂上的老师也是活跃的口译员，他们有着丰富的教学经验。

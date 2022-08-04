@@ -8,6 +8,7 @@ const navGenerator_js_1 = require("./toys/navGenerator.js");
 const validater_js_1 = require("./toys/validater.js");
 const dirOperator_js_1 = require("./toys/dirOperator.js");
 const postPageGenerator_js_1 = require("./toys/postPageGenerator.js");
+const mtHandler_js_1 = require("./toys/mtHandler.js");
 class ToolBox {
     env;
     prof;
@@ -17,6 +18,7 @@ class ToolBox {
     dirs;
     writer;
     config;
+    mt;
     constructor(envPath) {
         this.env = JSON.parse((0, fs_1.readFileSync)(envPath).toString());
         this.dirs = new dirOperator_js_1.DirOperator();
@@ -30,6 +32,7 @@ class ToolBox {
         this.val = new validater_js_1.Validator(this.dirs, this.prof.prof);
         this.posts = new postPageGenerator_js_1.PostPageGenerator();
         // this.mlml = new MlMl()
+        this.mt = new mtHandler_js_1.MtHandler();
         this.writer = [];
         this.config = {};
     }
@@ -133,6 +136,8 @@ declare const SITE_NAME = "${this.prof.prof.SiteName}"
             this.dirs.writeFiles(this.writer);
         }
     }
+    getMachineTranslations() {
+    }
 }
 const ENV_PATH = "./astries.env.json";
 if (process.argv.length < 3) {
@@ -180,6 +185,10 @@ else {
             // tbx.exportToc()
             tbx.writeFiles();
             break;
+        }
+        case '-m':
+        case '--mt': {
+            tbx.mt.exec();
         }
         case "--post":
             // tbx.exportPagenation()

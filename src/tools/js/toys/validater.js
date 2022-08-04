@@ -212,9 +212,6 @@ class Validator {
                 this.addError("position should be a type of 'number'");
             }
         }
-        if (!pg.href) {
-            this.addError("missing 'href'");
-        }
         if (!pg.$title) {
             this.addError("missing '$title'");
         }
@@ -270,7 +267,7 @@ class Validator {
             switch (blk.type) {
                 case "rawHTML":
                 case "plain":
-                case "Link":
+                case "link":
                 case "image":
                 case "heading 2":
                 case "heading 3":
@@ -281,8 +278,8 @@ class Validator {
                 case "list":
                 case "define":
                 case "relatives":
-                case "Spacer":
-                case "Separator":
+                case "spacer":
+                case "separator":
                     this.validateSimpleBlock(blk);
                     break;
                 case 'Media Right':
@@ -324,7 +321,7 @@ class Validator {
                 }
                 break;
             }
-            case "Link": {
+            case "link": {
                 const [langOk, typeOk] = this.validateLangAndObj(blk.$text);
                 if (!langOk) {
                     this.addError("Link.$text includes invalid lang key");
@@ -434,9 +431,9 @@ class Validator {
                 }
                 break;
             }
-            case "Spacer":
+            case "spacer":
                 break;
-            case "Separator":
+            case "separator":
                 break;
             default:
                 this.addError(`including invalid block type ${blk.type} `);
@@ -484,7 +481,7 @@ class Validator {
                 }
                 else {
                     for (const subblk of blk.$blks) {
-                        if (subblk.type !== "Image") {
+                        if (subblk.type !== "image") {
                             this.addError("Gallary Block can only include ImageBlock");
                         }
                         else {

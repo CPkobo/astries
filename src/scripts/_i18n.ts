@@ -95,6 +95,8 @@ function createFaqJsonLd(contents: AnyBlock<IsSingle>[]): JsonLdFaq {
             } else {
               ats.push(...a.$texts)
             }
+          } else if (a.type === 'markdown') {
+            ats.push(a.$md)
           }
           if (ats.length > 0) {
             acceptedAnswer.push({

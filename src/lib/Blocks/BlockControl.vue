@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // import BlkControl from "$lib/Block/BlockControl.vue";
 import Plain from "$lib/Blocks/Child/Plain.vue"
+import Md from "$lib/Blocks/Child/Md.vue"
 import List from "$lib/Blocks/Child/List.vue"
 import Define from "$lib/Blocks/Child/Define.vue"
 import Link from "$lib/Blocks/Child/Link.vue"
@@ -26,6 +27,7 @@ import Horizontal from "$lib/Blocks/Parent/Horizontal/Horizontal.vue";
 import Flow from "$lib/Blocks/Parent/Flow/Flow.vue";
 import Table from "$lib/Blocks/Parent/Table/Table.vue";
 import Faq from '$lib/Blocks/Parent/Faq/Faq.vue'
+import Slide from '$lib/Blocks/Parent/Slide.vue'
 
 import Flexlayout from "$lib/Blocks/Ancestor/FlexLayout.vue";
 import Columnlayout from "$lib/Blocks/Ancestor/ColumnLayout.vue";
@@ -42,6 +44,7 @@ const presets = {
 <template>
   <div class="block px-5-desktop" v-for="blk in blks">
     <Plain v-if="blk.type === 'plain'" :blk="blk" />
+    <Md v-else-if="blk.type === 'markdown'" :blk="blk" />
     <List v-else-if="blk.type === 'list'" :blk="blk" />
     <Define v-else-if="blk.type === 'define'" :blk="blk" />
     <Link v-else-if="blk.type === 'link'" :blk="blk" />
@@ -66,6 +69,7 @@ const presets = {
     <Flow v-else-if="blk.type === 'Flow'" :blk="blk" />
     <Table v-else-if="blk.type === 'Table'" :blk="blk" />
     <Faq v-else-if="blk.type === 'Faq'" :blk="blk" />
+    <Slide v-else-if="blk.type === 'Slide'" :blk="blk" />
     <Flexlayout v-else-if="blk.type === 'FLEX'" :blk="blk" />
     <Columnlayout v-else-if="blk.type === 'COLUMN'" :blk="blk" />
     <div v-else-if="blk.type === '_'"></div>

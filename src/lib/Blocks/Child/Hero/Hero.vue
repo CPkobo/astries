@@ -16,10 +16,7 @@ const cls = classNaming("hero", props.blk.classes, props.blk.preset, presets)
     <div class="hero-body">
       <div class="top-title">
         <h1 class="title is-size-1-desktop is-size-2-tablet is-size-3-mobile" v-html="blk.$title" />
-        <h2
-          class="subtitle mt-5 is-size-3-desktop is-size-4-tablet is-size-5-mobile"
-          v-html="blk.$subtitle"
-        />
+        <h2 class="subtitle mt-5 is-size-3-desktop is-size-4-tablet is-size-5-mobile" v-html="blk.$subtitle" />
         <!-- <button v-if="blk.cta">cta</button> -->
       </div>
     </div>
@@ -45,6 +42,7 @@ section#hero {
 
   div.hero-body {
     min-width: 100vw;
+
     @media (min-width: 1024px) {
       min-width: 80vw;
     }

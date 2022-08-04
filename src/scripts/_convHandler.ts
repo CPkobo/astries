@@ -1,11 +1,11 @@
 import {
   convI18n2Str, convI18ns2Strs, convI18ns2D2Strs,
   normalizeSrc,
-  _rawHtml, _plain, _link, _image,
+  _rawHtml, _plain, _markdown, _link, _image,
   _hero, _subhero, _subbar,
   _heading, _iconHeading, _list, _define, _relatives,
   _spacer, _separator,
-  _media, _gallary, _features, _horizontal, _flow, _table, _faq
+  _media, _gallary, _features, _horizontal, _flow, _table, _faq, _slide
 } from "./_blockFns"
 
 // 多言語 → 単一言語 コンテンツへの変換
@@ -61,7 +61,8 @@ export function handleConvI18n2Str(
       case "Horizontal":
       case "Flow":
       case "Table":
-      case 'Faq': {
+      case 'Faq':
+      case "Slide": {
         const nblk = convParentBlock(blk, lang)
         if (nblk !== null) {
           strBlks.push(nblk)
@@ -108,6 +109,9 @@ export function convChildBlock(
     case "plain":
       return _plain(blk, lang)
 
+    case 'markdown':
+      return _markdown(blk, lang)
+
     case "link":
       return _link(blk, lang)
 
@@ -141,6 +145,12 @@ export function convChildBlock(
 
     case "relatives":
       return _relatives(blk, lang)
+
+    case "separator":
+      return _separator(blk)
+
+    case "spacer":
+      return _spacer(blk)
 
     default:
       return { type: '_' }
@@ -283,6 +293,9 @@ export function convParentBlock(blk: ParentBlock<IsMulti>, lang: string): Parent
       return null
     }
 
+    case "Slide":
+      return _slide(blk, lang)
+
     default:
       return null
   }
@@ -299,7 +312,8 @@ export function batchConvRealBlocks(blks: RealBlock<IsMulti>[], lang: string): R
       case "Horizontal":
       case "Flow":
       case "Table":
-      case 'Faq': {
+      case 'Faq':
+      case "Slide": {
         const nblk = convParentBlock(blk, lang)
         if (nblk !== null) {
           nblks.push(nblk)

@@ -12,17 +12,23 @@ const props = defineProps<Props>();
   <div :class="size">
     <div class="card horizontal-card mx-2">
       <div class="card-image">
-        <figure class="image is-4by4">
+        <a v-if="itm.link" :href="itm.link">
+          <figure class="image is-4by4">
+            <img v-if="itm.img" :src="itm.img" :alt="itm.$title" />
+            <DefImg v-else />
+          </figure>
+        </a>
+        <figure v-else class="image is-4by4">
           <img v-if="itm.img" :src="itm.img" :alt="itm.$title" />
           <DefImg v-else />
         </figure>
       </div>
-      <div class="card-content">
+      <div class="card-content has-text-centered" v-if="itm.$title !== ''">
         <div class="media-content px-3">
           <a v-if="itm.link" :href="itm.link">
-            <p class="title is-4">{{ itm.$title }}</p>
+            <p class="is-5-desktop is-6-mobile">{{ itm.$title }}</p>
           </a>
-          <p v-else class="title is-4">{{ itm.$title }}</p>
+          <p v-else class="is-5-desktop is-6-mobile">{{ itm.$title }}</p>
         </div>
       </div>
       <div class="content">

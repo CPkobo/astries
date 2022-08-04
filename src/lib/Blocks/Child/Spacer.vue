@@ -13,4 +13,7 @@ const my =
 const cls = classNaming("", props.blk.classes, props.blk.preset, null)
 </script>
 
-<div :id="props.blk.id" :class="`${mx} ${my} ${props.blk.classes}`" />
+<template>
+  <div :id="props.blk.id" :class="`${mx} ${my} ${cls}`">&nbsp;
+  </div>
+</template>

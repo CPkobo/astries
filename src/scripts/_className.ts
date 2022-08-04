@@ -12,7 +12,11 @@ export function classNaming(
       clss.push(classes)
     }
   } else {
-    clss.push(presets.def)
+    if (presets) {
+      if (presets.def) {
+        clss.push(presets.def)
+      }
+    }
     clss.push(classes)
   }
   return clss.filter(val => { return val }).join(" ")

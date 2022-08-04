@@ -1,0 +1,97 @@
+name: cat
+position: 1
+langs:
+  - ja
+$title:
+  ja: 翻訳支援ツール
+  zh: 翻译支持工具
+$description:
+  ja: >-
+    株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています。翻訳にもデジタル化が求められる時代だからこそ、業界の最先端にキャッチアップできるよう自社開発も続けています。
+  zh: 本节介绍了金桥公司使用的翻译支持工具（CAT工具）和我们独立开发的工具。在这个翻译也需要数字化的时代，我们继续开发自己的工具，以跟上行业的最新发展。
+$summary:
+  ja: 株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています
+  zh: 介绍金桥公司使用的翻译支持工具（CAT工具）和我们自己的专有工具。
+img: it/toc/catovis-logo.svg
+pageType: LeftMain
+contents:
+  - type: icon heading 2
+    icon: fa fa-desktop
+    $text:
+      ja: 翻訳支援ツールの活用
+      zh: 使用翻译支持工具
+  - type: plain
+    $texts:
+      ja:
+        - >-
+          製造現場の作業手順書や医薬品の申請文書（CTD）など、数万～数十万文字にも及ぶ文書を効率的に翻訳するには、翻訳支援ツール（CATツール）が必要不可欠です。
+        - >-
+          翻訳援ツールを上手く活用することで、複数の翻訳者で作業にあたった際に出る用語や言葉遣いの揺れを最小限に抑えつつ、繰り返し出現する文言のコストを低く見積もることができます。
+        - 弊社では主に SDL Trados と Memsource を利用し、品質向上とコスト削減に取り組んでいます。
+      zh:
+        - 翻译辅助工具（CAT工具）对于高效翻译生产现场操作规程和药物申请文件（CTD）等文件至关重要，这些文件可能多达数万或数十万字符。
+        - 使用CAT工具可以最大限度地减少与多个译员合作时可能出现的术语和措辞波动，同时将重复性短语的成本降到最低。
+        - 我们主要使用SDL Trados和Memsource来提高质量和降低成本。
+  - type: icon heading 2
+    icon: fa fa-code-fork
+    $text:
+      ja: 独自翻訳支援ツール 「CATOVIS」 の開発
+      zh: 开发专有的CATOVIS翻译支持工具。
+  - type: plain
+    $texts:
+      ja:
+        - 弊社では、上記の市販ツールのほか、独自の翻訳支援ツールである「CATOVIS」の開発も進めています。
+        - >-
+          これは、小～中規模の原稿を効率的に翻訳するためのもので、基本的な繰り返し・類似文言の処理や、機械による数字・用語のダブルチェック機能をMS
+          Word上で実現したものです。
+        - メインユーザーはまだ社内スタッフや一部の登録翻訳者に限られていますが、β版として無償配布していますので、ぜひ一度、手に取ってみてください。
+  - type: link
+    $text:
+      ja: CATOVIS マニュアルページ
+      zh: CATOVIS手册页
+    href: https://man.catovis.com
+  - type: icon heading 2
+    icon: fa fa-exchange
+    $text:
+      ja: テキスト抽出～対訳作成
+      zh: 文本提取 - 双语准备
+  - type: plain
+    $texts:
+      ja:
+        - 「翻訳」という仕事は、実のところ「翻訳をしてさぁ終わり」、というものではありません。
+        - >-
+          素早く文字数を数えたり、対訳を作成して次に備えたり、翻訳～チェック～校正といった工程間の差分を確認したり……、こうした作業も全体の品質を向上させるために必要になってきます。
+        - >-
+          そのためにMS Officeのファイル（docx/xlsx/pptxなど）及びCATツールの標準フォーマットである
+          Xliff/TMX/TBX からのテキスト抽出や、対訳作成などに便利なツールの開発にも取り組んでいます。
+        - これらのツールの一部は、翻訳以外の業界の方にも使ってもらえるよう、Webアプリとして広く公開しています。
+      zh:
+        - 翻译不是一个你只做翻译就完事的工作。
+        - 有必要快速统计字数，为下一步的双语翻译做准备，并检查翻译、检查和校对过程中的差异（......），以提高工作的整体质量。
+        - >-
+          为此，我们还在开发有用的工具，用于从MS
+          Office文件（docx/xlsx/ppptx等）和Xliff/TMX/TBX（标准CAT工具格式）中提取文本，并用于创建双语译文。
+        - 其中一些工具作为网络应用程序被广泛使用，因此它们可以被翻译以外的行业的人使用。
+  - type: link
+    $text:
+      ja: CATOVIS Office
+      zh: CATOVIS办公室。
+    href: https://office.catovis.com
+  - type: plain
+    $texts:
+      ja:
+        - また、Webアプリとして使える部分はMITライセンスでオープンソース化しています。
+        - よりよい多言語化社会のため、微力ながら貢献をしていきたいと願っています。
+      zh:
+        - 此外，可作为网络应用的部分在MIT许可下开放源代码。
+        - 我们希望能对一个更好的多语言社会做出一点贡献。
+  - type: link
+    $text:
+      ja: CATOVIS Office (Github)
+      zh: CATOVIS Office (Github)
+    href: https://github.com/CPkobo/office
+  - type: link
+    $text:
+      ja: CATOVIS Office CLI (Github)
+      zh: CATOVIS Office CLI (Github)
+    href: https://github.com/CPkobo/catovis-office-cli

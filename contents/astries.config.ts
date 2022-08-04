@@ -11,7 +11,7 @@ export type AstriesConfig = {
 
 export const config: AstriesConfig = {
   "profile": {
-    "SiteName": "株式会社ゴールデンブリッジ 公式Webサイト",
+    "SiteName": "中国語翻訳・通訳・インバウンド　株式会社ゴールデンブリッジ",
     "OrganizationName": "株式会社ゴールデンブリッジ",
     "Tel": "06-6543-6898",
     "Fax": "06-7635-9508",
@@ -566,6 +566,15 @@ export const config: AstriesConfig = {
     }
   ],
   "staticPosts": [
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20220616rsi-report"
+      },
+      "props": {
+        "title": "【同時通訳レポート】日中国交正常化50周年イベントにて"
+      }
+    },
     {
       "params": {
         "dirs": "post",

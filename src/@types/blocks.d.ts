@@ -2,7 +2,7 @@
 
 // コンテンツのブロック単位
 declare type BlockType =
-  '_' | 'rawHTML' | 'plain' | 'link' | 'image' |
+  '_' | 'rawHTML' | 'plain' | 'markdown' | 'link' | 'image' |
   'hero' | 'sub hero' | 'sub bar' |
   'heading 2' | 'heading 3' | 'heading 4' |
   'icon heading 2' | 'icon heading 3' | 'icon heading 4' |
@@ -11,11 +11,11 @@ declare type BlockType =
   'spacer' | 'separator' |
   'Media Right' | 'Media Left' | 'Gallary' |
   'Features' | 'Horizontal' | 'Flow' |
-  'Table' | 'Faq' |
+  'Table' | 'Faq' | 'Slide' |
   'FLEX' | 'COLUMN'
 
 declare type ChildBlock<T extends IsSingle | IsMulti> =
-  NonBlock | RawHTML<T> | PlainBlock<T> | LinkBlock<T> | ImageBlock<T> |
+  NonBlock | RawHTML<T> | PlainBlock<T> | MarkdownBlock<T> | LinkBlock<T> | ImageBlock<T> |
   HeroBlock<T> | SubHeroBlock<T> | SubBarBlock<T> |
   HeadingBlock<T> | IconHeadingBlock<T> |
   ListBlock<T> | DefineBlock<T> |
@@ -26,7 +26,7 @@ declare type ChildBlock<T extends IsSingle | IsMulti> =
 declare type ParentBlock<T extends IsSingle | IsMulti> =
   MediaTextBlock<T> | GallaryBlock<T> |
   FeaturesBlock<T> | FlowBlock<T> | HorizontalBlock<T> |
-  TableBlock<T> | FaqBlock<T>
+  TableBlock<T> | FaqBlock<T> | SlideHero<T>
 
 declare type RealBlock<T extends IsSingle | IsMulti> = ChildBlock<T> | ParentBlock<T>
 
@@ -52,6 +52,11 @@ declare interface NonBlock extends BaseBlock {
 declare interface RawHTML<T extends IsSingle | IsMulti> extends BaseBlock {
   type: 'rawHTML',
   $html: IsStr<T>
+}
+
+declare interface MarkdownBlock<T extends IsSingle | IsMulti> extends BaseBlock {
+  type: 'markdown',
+  $md: IsStr<T>
 }
 
 declare interface PlainBlock<T extends IsSingle | IsMulti> extends BaseBlock {
@@ -95,7 +100,6 @@ declare interface SubBarBlock<T extends IsSingle | IsMulti> extends BaseBlock {
   type: 'sub bar';
   $title: IsStr<T>;
 }
-
 
 declare interface HeadingBlock<T extends IsSingle | IsMulti> extends BaseBlock {
   type: 'heading 2' | 'heading 3' | 'heading 4';
@@ -209,6 +213,11 @@ declare interface QuestionAndAnser<T extends IsSingle | IsMulti> {
   $q: ChildBlock<T>[];
   $a: ChildBlock<T>[];
   slag?: string;
+}
+
+declare interface SlideHero<T extends IsSingle | IsMulti> extends BaseBlock {
+  type: 'Slide';
+  $blks: HeroBlock<T>[]
 }
 
 // Ancestor

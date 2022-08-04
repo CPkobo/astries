@@ -1,3 +1,5 @@
+import { marked } from 'marked'
+
 export function convI18n2Str(i18nt: I18nText | string, lang: string, fallback = true): string {
   if (typeof i18nt === "string") {
     return i18nt
@@ -93,6 +95,18 @@ export function _plain(blk: PlainBlock<IsMulti>, lang: string): PlainBlock<IsSin
     $texts: convI18ns2Strs(blk.$texts, lang),
   }
   if (nblk.$texts.length > 0) {
+    return nblk
+  } else {
+    return null
+  }
+}
+
+export function _markdown(blk: MarkdownBlock<IsMulti>, lang: string): MarkdownBlock<IsSingle> | null {
+  const nblk: MarkdownBlock<IsSingle> = {
+    ...blk,
+    $md: marked(convI18n2Str(blk.$md, lang).replace(/\\#/, '#'))
+  }
+  if (nblk.$md.length > 0) {
     return nblk
   } else {
     return null
@@ -328,4 +342,22 @@ export function _faq(blk: FaqBlock<IsMulti>, lang: string): FaqBlock<IsSingle> {
     $qas,
   }
   return nblk
+}
+
+export function _slide(blk: SlideHero<IsMulti>, lang: string): SlideHero<IsSingle> | null {
+  const nblk: SlideHero<IsSingle> = {
+    ...blk,
+    $blks: []
+  }
+  for (const $blk of blk.$blks) {
+    const hblk = _hero($blk, lang)
+    if (hblk !== null) {
+      nblk.$blks.push(hblk)
+    }
+  }
+  if (nblk.$blks.length > 0) {
+    return nblk
+  } else {
+    return null
+  }
 }

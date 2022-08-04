@@ -1,0 +1,73 @@
+name: philosophy
+position: 2
+langs:
+  - ja
+$title:
+  ja: 経営理念・社是
+  zh: 管理理念和公司政策
+$description:
+  ja: 株式会社ゴールデンブリッジの経営理念・社是についてご紹介します
+  zh: 介绍金桥公司的管理理念和公司政策。
+$summary:
+  ja: 株式会社ゴールデンブリッジの経営理念・社是についてご紹介します
+  zh: 介绍金桥公司的管理理念和公司政策。
+img: about/toc-philosophy.jpg
+pageType: LeftMain
+contents:
+  - type: icon heading 2
+    icon: fa fa-square
+    $text:
+      ja: 経営理念
+      zh: 管理理念
+  - type: image
+    classes: p-5
+    $alt:
+      ja: |-
+        社員に信頼される会社である。
+        お客様に信頼される会社である。
+        社会に信頼される会社である。
+        事業活動を通じて平和と社会発展に貢献する。
+      zh: |-
+        一个被员工信任的公司。
+        一个被客户信任的公司。
+        一个被社会信任的公司。
+        通过我们的商业活动为和平和社会发展做出贡献。
+    src: about/philosophy1.png
+  - type: spacer
+    'y': 2
+  - type: separator
+  - type: spacer
+    'y': 2
+  - type: icon heading 2
+    icon: fa fa-square
+    $text:
+      ja: 社是
+      zh: 公司政策
+  - type: image
+    $alt:
+      ja: 先義後利
+      zh: 在第一种情况下寻求做某事，但在第二种情况下做它
+    src: about/philosophy2.jpg
+  - type: plain
+    $texts:
+      ja:
+        - 中国の古典「四書」のひとつである『孟子』の言葉。
+        - この言葉の指すとおり、ビジネスにおいては利益を追求するだけではなく、まず「道義」を重視しなければならないと考えています。
+      zh:
+        - 孟子的话，四书之一，中国的经典。
+        - 正如这句话所指，我们认为，在商业中，我们不仅要追求利润，而且必须首先强调'道德'。
+  - type: image
+    $alt:
+      ja: 順理則裕（理にしたがえば、すなわち裕かなり）
+      zh: '''按照理智，也就是富有''。'
+    src: about/philosophy3.jpg
+  - type: plain
+    $texts:
+      ja:
+        - 中国宋代の朱子学者、程頤（ていい）の言葉で、「理にしたがえば、すなわち裕かなり」と読み下します。
+        - 道理に順って生きることが繁栄につながるということです。
+        - 2024年から発行される新一万円札の顔「渋沢栄一」氏も重視したというこの考えを大切にしたいと考えています。
+      zh:
+        - 用中国宋代朱熹的学者程颐的话来说，就是："遵循理性，你就会富有"。
+        - 这意味着，按照理性生活会导致繁荣。
+        - 我们要重视这个想法，从2024年开始发行的新一万日元纸币的票面人物涩泽荣一也强调了这一点。

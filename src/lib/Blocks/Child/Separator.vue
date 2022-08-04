@@ -7,6 +7,7 @@ interface Props {
 const props = defineProps<Props>();
 const cls = classNaming("", props.blk.classes, props.blk.preset, null)
 </script>
+
 <template>
   <hr />
 </template>

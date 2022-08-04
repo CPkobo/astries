@@ -1,0 +1,119 @@
+name: Machine Translation
+position: 4
+langs:
+  - ja
+$title:
+  ja: 機械翻訳
+  zh: 机器翻译
+$description:
+  ja: >-
+    ニューラルネットワークによる機械学習や、ビッグデータといった言葉が駆け巡る現代。機械翻訳の精度は、私たちプロから見ても、目を見張るものがあります。しかし一方で、機械翻訳にはまだ足りない部分があるのも事実。私たちは機械翻訳のことを、仕事を取り合う競争相手としてではなく、お互いが長所を活かし、短所を補いあえるようなパートナーだと考え、「翻訳者のサポーターとしてのAI」という可能性に挑戦しています。
+  zh: >-
+    今天，诸如带有神经网络的机器学习和大数据等术语比比皆是。机器翻译的准确性，即使从我们的专业角度来看，也是非常惊人的。然而，另一方面，机器翻译在某些方面也确实还存在不足。我们认为机器翻译不是工作的竞争者，而是可以利用彼此的长处，弥补彼此的短处的伙伴，并对
+    "人工智能作为翻译的支持者 "的可能性提出挑战。
+$summary:
+  ja: 株式会社ゴールデンブリッジの機械翻訳の紹介です
+  zh: 金桥公司的机器翻译介绍。
+img: lang/toc/mt.png
+pageType: LeftMain
+contents:
+  - type: icon heading 2
+    icon: fa fa-cog
+    $text:
+      ja: 中国語と機械翻訳
+      zh: 中文和机器翻译
+  - type: plain
+    $texts:
+      ja:
+        - ニューラルネットワークによる機械学習や、ビッグデータといった言葉が駆け巡る現代。
+        - 機械翻訳の精度は、私たちプロから見ても、目を見張るものがあります。
+        - しかし一方で、機械翻訳にはまだ足りない部分があるのも事実。
+        - ましてや中国語は、英語と比べると精度も情報も大きく不足しています。
+        - 私たちは機械翻訳のことを、仕事を取り合う競争相手としてではなく、お互いが長所を活かし、短所を補いあえるようなパートナーだと考えています。
+        - そしてそのためにもAIを積極的に導入・検証することで、「翻訳者のサポーターとしてのAI」という可能性に挑戦しています。
+      zh:
+        - 今天，诸如带有神经网络的机器学习和大数据等术语比比皆是。
+        - 机器翻译的准确性，即使从我们的专业角度来看，也是非常惊人的。
+        - 然而，另一方面，机器翻译在某些方面也确实还存在不足。
+        - 例如，与英语相比，中文缺乏大量的准确性和信息。
+        - 我们不把机器翻译看作是工作的竞争，而是看作是合作伙伴，我们可以利用对方的优势，弥补对方的弱点。
+        - 为此，我们通过积极引进和测试人工智能，挑战 "人工智能是翻译的支持者 "的可能性。
+  - type: icon heading 3
+    icon: fa fa-database
+    $text:
+      ja: 導入済みのエンジンについて
+      zh: 关于已经安装的发动机
+  - type: Features
+    $items:
+      - icon: __
+        link: __
+        $title:
+          ja: AIKO SchLingual
+          zh: AIKO SchLingual
+        $blks:
+          - type: plain
+            $texts:
+              ja: >-
+                弊社と、医学・医薬品の英語翻訳会社アスカコーポレーション様と共同で開発した、医学特化型エンジン。日英中リレー機械翻訳という仕組みを活用し、特定分野では非常に高い精度を誇っています。
+              zh: >-
+                由我们公司和ASKA公司共同开发的医疗专用引擎，ASKA公司是一家医疗和医药产品的英文翻译公司。它利用一种称为日英汉中继机器翻译的机制，在特定领域拥有极高的准确性。
+          - type: image
+            src: lang/scilingual.png
+            $alt:
+              ja: AIKO ロゴ
+              zh: AIKO标志
+            href: https://aismiley.co.jp/product/asca_aiko-scilingual/
+            target: _blank
+      - icon: __
+        link: __
+        $title:
+          ja: T-3MT
+          zh: T-3MT
+        $blks:
+          - type: plain
+            $texts:
+              ja: >-
+                ロゼッタ様のカスタマイズ型翻訳エンジン。弊社では大型の翻訳プロジェクトで、翻訳 → 校正 → 学習 → 機械翻訳
+                というサイクルを構築し、工数やコストの削減に活用しています。
+              zh: Rosetta的定制翻译引擎。我们已经为大型翻译项目建立了一个翻译→校对→学习→机器翻译的循环，以减少工时和成本。
+          - type: image
+            src: lang/t3mt_01.png
+            $alt:
+              ja: T-3MT ロゴ
+              zh: T-3MT标志
+            href: https://www.rozetta.jp/lp/t3mt/
+            target: _blank
+      - icon: __
+        link: __
+        $title:
+          ja: Google 翻訳
+          zh: 谷歌翻译
+        $blks:
+          - type: plain
+            $texts:
+              ja: ニューラル翻訳という手法を最も早くに打ち出した翻訳エンジンで、精度は他に劣ることもありますが、対応言語の多さが魅力的です。
+              zh: 它是最早推出神经翻译方法的翻译引擎，虽然其准确性有时不如其他引擎，但其支持的语言数量很有吸引力。
+          - type: image
+            src: lang/Google-Translate-Logo-1.png
+            $alt:
+              ja: Google Translate ロゴ
+              zh: 谷歌翻译的标志
+            href: https://www.rozetta.jp/lp/t3mt/
+            target: _blank
+      - icon: __
+        link: __
+        $title:
+          ja: DeepL
+          zh: DeepL
+        $blks:
+          - type: plain
+            $texts:
+              ja: 「Googleより分かりやすい」と一世を風靡したDeepLも導入。API経由でのバッチ処理などに活用しています。
+              zh: 以 "比谷歌更容易理解 "而风靡全球的DeepL，也已被引入，并通过API用于批量处理。
+          - type: image
+            src: lang/deepl.png
+            $alt:
+              ja: DeepL ロゴ
+              zh: DeepL 标志
+            href: https://www.rozetta.jp/lp/t3mt/
+            target: _blank

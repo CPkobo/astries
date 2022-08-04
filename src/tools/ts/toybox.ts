@@ -6,6 +6,7 @@ import { NavGenerator } from "./toys/navGenerator.js"
 import { Validator } from "./toys/validater.js"
 import { DirOperator } from "./toys/dirOperator.js";
 import { PostPageGenerator } from "./toys/postPageGenerator.js";
+import { MtHandler } from "./toys/mtHandler.js";
 
 // ファイル書き出しのための型
 export type Writing = {
@@ -43,6 +44,7 @@ class ToolBox {
   public dirs: DirOperator
   public writer: Array<Writing | null>
   public config: AstriesConfig
+  public mt: MtHandler
 
   constructor(envPath: string) {
     this.env = JSON.parse(readFileSync(envPath).toString()) as AstriesEnv
@@ -60,12 +62,14 @@ class ToolBox {
     this.posts = new PostPageGenerator()
     // this.mlml = new MlMl()
 
+    this.mt = new MtHandler()
+
     this.writer = []
     this.config = {}
   }
 
   // JSONで書いたコンテンツファイルをYAMLに変換する
-  convJson2Yaml(path: string): void {
+  public convJson2Yaml(path: string): void {
     const data = JSON.parse(readFileSync(path).toString())
     const yml = dump(data)
     console.log(yml)
@@ -73,13 +77,13 @@ class ToolBox {
   }
 
   // JavaScriptオブジェクトをYAMLに変換する
-  convObj2Yaml(obj: any): void {
+  public convObj2Yaml(obj: any): void {
     const yml = dump(obj)
     console.log(yml)
     writeFileSync("./tools/obj.yaml", yml)
   }
 
-  initConfig(): void {
+  public initConfig(): void {
     this.prof.readProf(this.dirs)
     this.config.profile = this.prof.prof
 
@@ -125,7 +129,7 @@ export const indices: PostPagenation[] = ${JSON.stringify(pages, null, 2)}`
     this.writer.push(postIndice)
   }
 
-  createEnvDeclare(): string {
+  public createEnvDeclare(): string {
     const langList_: string[] = []
     const dispList_: string[] = []
     this.prof.prof.Langs.forEach(lang => {
@@ -149,11 +153,11 @@ declare const SITE_NAME = "${this.prof.prof.SiteName}"
   }
 
   // プロフィールファイルを作成する
-  exportProf(): void {
+  public exportProf(): void {
     this.writer.push(this.prof.exportProf(this.dirs))
   }
 
-  exportLangConf(): void {
+  public exportLangConf(): void {
     this.writer.push(this.prof.exportLangConfig(this.dirs))
   }
 
@@ -161,7 +165,7 @@ declare const SITE_NAME = "${this.prof.prof.SiteName}"
   //   this.writer.push(...this.nav.execGeneratorAsWritings(this.dirs))
   // }
 
-  exportValidateLog(): void {
+  public exportValidateLog(): void {
     this.val.execBatchValidate()
     this.writer.push(this.val.exportErrors())
   }
@@ -170,11 +174,16 @@ declare const SITE_NAME = "${this.prof.prof.SiteName}"
   //   this.writer.push(...this.posts.exportPageIndices(this.dirs))
   // }
 
-  writeFiles(): void {
+  public writeFiles(): void {
     if (this.writer.length > 0) {
       this.dirs.writeFiles(this.writer)
     }
   }
+
+  public getMachineTranslations(): void {
+
+  }
+
 }
 
 const ENV_PATH = "./astries.env.json"
@@ -227,6 +236,12 @@ if (process.argv.length < 3) {
       tbx.writeFiles()
       break;
     }
+
+    case '-m':
+    case '--mt': {
+      tbx.mt.exec()
+    }
+
 
     case "--post":
       // tbx.exportPagenation()
