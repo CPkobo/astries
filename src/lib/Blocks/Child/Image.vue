@@ -15,14 +15,23 @@ const cls = classNaming("", props.blk.classes, props.blk.preset, presets)
 
 <template>
   <div :id="blk.id" :class="cls">
-    <img v-if="!blk.href" :src="blk.src" alt="blk.$alt" />
+    <figure v-if="!blk.href">
+      <img :src="blk.src" alt="blk.$alt" />
+      <figcaption v-if="blk.caption">{{ blk.caption }}</figcaption>
+    </figure>
 
     <a v-else-if="blk.href.startsWith('http')" :href="blk.href" target="_blank">
-      <img :src="blk.src" :alt="blk.$alt" />
+      <figure>
+        <img :src="blk.src" :alt="blk.$alt" />
+        <figcaption v-if="blk.caption">{{ blk.caption }}</figcaption>
+      </figure>
     </a>
 
     <a v-else-if="blk.href" :href="blk.href">
-      <img :src="blk.src" alt="blk.$alt" />
+      <figure>
+        <img :src="blk.src" alt="blk.$alt" />
+        <figcaption v-if="blk.caption">{{ blk.caption }}</figcaption>
+      </figure>
     </a>
   </div>
 </template>

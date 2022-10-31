@@ -45,7 +45,7 @@ export const config: AstriesConfig = {
             "$title": "会社情報",
             "path": "information",
             "fullpath": "/about/information",
-            "img": "about/toc-information.jpg",
+            "img": "about/information.jpg",
             "$summary": "株式会社ゴールデンブリッジの各種情報を掲載しています",
             "langs": [
               "ja"
@@ -59,7 +59,7 @@ export const config: AstriesConfig = {
             "$title": "経営理念・社是",
             "path": "philosophy",
             "fullpath": "/about/philosophy",
-            "img": "about/toc-philosophy.jpg",
+            "img": "about/philosophy.jpg",
             "$summary": "株式会社ゴールデンブリッジの経営理念・社是についてご紹介します",
             "langs": [
               "ja"
@@ -566,6 +566,33 @@ export const config: AstriesConfig = {
     }
   ],
   "staticPosts": [
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20220922-kankeiren-jc50"
+      },
+      "props": {
+        "title": "【同時通訳・ハイブリッド会議運営レポート】関西経済連合会 日中国交正常化50周年記念事業"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20220922-jc-high-level-forum"
+      },
+      "props": {
+        "title": "【同時通訳レポート】第一回日中科学技術交流ハイレベルフォーラム"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20220824-taiwa-shandong"
+      },
+      "props": {
+        "title": "【開催報告】対話山東2022―日本・山東シルバー産業協力交流会"
+      }
+    },
     {
       "params": {
         "dirs": "post",

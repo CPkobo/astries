@@ -1,95 +1,100 @@
 ---
-  import fm from "front-matter"
-  import { Markdown } from 'astro/components';
-  import { indices } from '$envs/postIndice'
-  import { navs, staticPosts } from "$envs/paths"
-  import { profile } from "$envs/profile"
-  import { getPostContents } from "$scripts/_i18n"
-  import Base from "$layouts/Base.astro"
-  import Sticker from "$lib/Globals/SideSticker/Sticker.astro"
-  import FilledBar from "$lib/Util/FilledBar.astro"
+import fm from "front-matter";
+import { Markdown } from "astro/components";
+import { indices } from "$envs/postIndice";
+import { navs, staticPosts } from "$envs/paths";
+import { profile } from "$envs/profile";
+import { getPostContents, getFormatedDate } from "$scripts/_i18n";
+import Base from "$layouts/Base.astro";
+import Sticker from "$lib/Globals/SideSticker/Sticker.astro";
+import FilledBar from "$lib/Util/FilledBar.astro";
 
-  export async function getStaticPaths() {
-    return staticPosts
+export async function getStaticPaths() {
+  return staticPosts;
+}
+
+const { dirs, path } = Astro.params;
+const post = await getPostContents(String(dirs), String(path), "ja");
+const content = fm<PostInfo>(post);
+const date = getFormatedDate(
+  content.attributes.published,
+  content.attributes.modified
+);
+let img =
+  content.attributes.image === undefined ? "" : content.attributes.image;
+if (img.startsWith("http")) {
+  // pass
+} else {
+  if (img === "") {
+    for (const index of indices) {
+      for (const page of index.pages) {
+        if (page.title === content.attributes.title) {
+          img = page.image || "";
+          break;
+        }
+      }
+      if (img !== "") {
+        break;
+      }
+    }
+  }
+  if (img === "") {
+    img = "/pict/sys/defaultimg.jgp";
   }
 
-  const { dirs, path } = Astro.params
-  const post = await getPostContents(String(dirs), String(path), "ja")
-  const content = fm<PostInfo>(post)
-  let img = content.attributes.image === undefined ? '' : content.attributes.image
-  if (img.startsWith('http')) {
-    // pass
+  if (img.startsWith("/pict")) {
+    img = `${profile.url}/${img}`;
   } else {
-    if (img === '') {
-      for (const index of indices) {
-        for (const page of index.pages) {
-          if (page.title === content.attributes.title) {
-            img = page.image || ''
-            break
-          }
-        }
-        if (img !== '') {
-          break
-        }
-      }
-    }
-    if (img === '') {
-      img = '/pict/sys/defaultimg.jgp'
-    }
-
-    if (img.startsWith('/pict')) {
-      img = `${profile.url}/${img}`
-    } else {
-      img = `${profile.url}/pict/${img}`
-    }
+    img = `${profile.url}/pict/${img}`;
   }
+}
 
-  const JsonLdArticle: JsonLdArticle = {
-    "@context": "http://schema.org",
-    "@type": "Article",
-    headline: content.attributes.title,
+const JsonLdArticle: JsonLdArticle = {
+  "@context": "http://schema.org",
+  "@type": "Article",
+  headline: content.attributes.title,
+  description: content.attributes.summary,
+  author: {
+    "@type": "Organization",
+    name: profile.OrganizationName,
+  },
+  image: [img],
+  datePublished: content.attributes.pubstr,
+  dateModified: content.attributes.modstr,
+};
+
+const direction: AstriesDirection = {
+  head: {
+    lang: "ja",
+    title: `${content.attributes.title} | ${profile.SiteName}`,
     description: content.attributes.summary,
-    author: {
-      "@type": "Organization",
-      "name": profile.OrganizationName,
+    jsonld: [JsonLdArticle],
+    ogp: {
+      url: `${profile.url}/${dirs}/${path}`,
+      type: "article",
+      title: content.attributes.title,
+      description: content.attributes.summary || content.attributes.pubstr,
+      name: content.attributes.title,
+      img,
     },
-    image: [img],
-    datePublished: content.attributes.pubstr,
-    dateModified: content.attributes.modstr
-  }
-
-  const direction: AstriesDirection = {
-    head: {
-      lang: 'ja',
-      title: `${content.attributes.title} | ${profile.SiteName}`,
-      description: content.attributes.summary,
-      jsonld: [JsonLdArticle],
-      ogp: {
-        url: `${profile.url}/${dirs}/${path}`,
-        type: 'article',
-        title: content.attributes.title,
-        description: content.attributes.summary || content.attributes.pubstr,
-        name: content.attributes.title,
-        img,
-      }
-    },
-    hasHeaderMenu: true,
-    hasFooterMenu: true,
-    hasSideMenu: true,
-    pagetype: 'LeftMain',
-    navigations: navs.ja,
-  }
+  },
+  hasHeaderMenu: true,
+  hasFooterMenu: true,
+  hasSideMenu: true,
+  pagetype: "LeftMain",
+  navigations: navs.ja,
+};
 ---
 
 <Base direction={direction}>
-<section slot="top" class="my-5">
-  <FilledBar title={content.attributes.title} />
-</section>
-<section slot="main" class="content">
-
-  <Markdown content={content.body} />
-</section>
-<section slot="side" style="width: 100%; height: 100%">
-  <Sticker hasMenu={false} />
-</section>
+  <section slot="top" class="my-5">
+    <FilledBar title={content.attributes.title} />
+  </section>
+  <section slot="main" class="content">
+    <p class="post-date-str">{date}</p>
+    <Markdown content={content.body} />
+  </section>
+  <section slot="side" style="width: 100%; height: 100%">
+    <Sticker hasMenu={false} />
+  </section>
 </Base>

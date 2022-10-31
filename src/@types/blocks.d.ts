@@ -76,6 +76,7 @@ declare interface ImageBlock<T extends IsSingle | IsMulti> extends BaseBlock {
   type: 'image';
   src: string;
   $alt: IsStr<T>;
+  caption?: IsStr<T>;
   href?: string;
   target?: '_self' | '_blank'
 }

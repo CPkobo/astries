@@ -12,26 +12,15 @@ href: /
 img: gb-logo.svg
 pageType: LP
 contents:
-  - type: Slide
-    $blks:
-      - type: hero
-        src: cooporate_top.jpg
-        $alt:
-          ja: ゴールデンブリッジ トップ画像
-        $title:
-          ja: ことばの響きあいから <br />こころの響きあいへ
-        $subtitle:
-          ja: 交流を深め、共に発展する日本と中国<br />株式会社ゴールデンブリッジは<br />コミュニケーションの架け橋としてお役に立ちます
-        cta: contact
-      - type: hero
-        src: cooporate_top.jpg
-        $alt:
-          ja: ゴールデンブリッジ トップ画像
-        $title:
-          ja: ことばの響き <br />こころの響き
-        $subtitle:
-          ja: 交流を深め、共に発展する日本と中国<br />株式会社ゴールデンブリッジは<br />コミュニケーションの架け橋としてお役に立ちます
-        cta: contact
+  - type: hero
+    src: cooporate_top.jpg
+    $alt:
+      ja: ゴールデンブリッジ トップ画像
+    $title:
+      ja: ことばの響きあいから <br />こころの響きあいへ
+    $subtitle:
+      ja: 交流を深め、共に発展する日本と中国<br />株式会社ゴールデンブリッジは<br />コミュニケーションの架け橋としてお役に立ちます
+    cta: contact
   - type: spacer
     y: 5
   - type: heading 2
@@ -126,6 +115,8 @@ contents:
       - img: top/sanpo.png
         $title: ""
         link: https://sanpo-yoshi.net/
-
+      - img: top/osaka-josei.png
+        $title: ""
+        link: https://osaka-jyoseikai.jp/
   - type: spacer
     y: 6

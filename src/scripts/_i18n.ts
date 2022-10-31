@@ -171,3 +171,24 @@ export async function getPostContents(dirs: string, path: string, lang: LangList
     return readFileSync(join(targetDir, srcFile)).toString()
   }
 }
+
+export function getFormatedDate(published?: Date, modified?: Date): string {
+  let pub: string = ''
+  if (published) {
+    // console.log(a.toString())
+    const y = published.getFullYear()
+    const m = published.getMonth() + 1
+    const d = published.getDate()
+    pub = `${y}年${m}月${d}日`
+  }
+  let mod: string = ''
+  if (modified) {
+    if (published !== modified) {
+      const y = modified.getFullYear()
+      const m = modified.getMonth() + 1
+      const d = modified.getDate()
+      mod = `${y}年${m}月${d}日`
+    }
+  }
+  return pub === '' ? '（作成日未設定）' : mod === '' ? pub : `${pub} （更新：${mod}）`
+}

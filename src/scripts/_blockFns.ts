@@ -132,6 +132,7 @@ export function _image(blk: ImageBlock<IsMulti>, lang: string): ImageBlock<IsSin
     ...blk,
     src: normalizeSrc(blk.src),
     $alt: convI18n2Str(blk.$alt, lang),
+    caption: blk.caption ? convI18n2Str(blk.caption, lang) : '',
     href: blk.href,
     target: blk.target === undefined ? "_self" : blk.target === "_blank" ? blk.target : "_self"
   }

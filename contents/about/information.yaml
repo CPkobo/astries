@@ -9,7 +9,7 @@ $description:
   ja: 株式会社ゴールデンブリッジの各種情報を掲載しています。インバウンド事業に取り組むうえでの旅行業登録や有料職業紹介、加盟団体や育児休業に向けた取り組みなども紹介しています。
 $summary:
   ja: 株式会社ゴールデンブリッジの各種情報を掲載しています
-img: about/toc-information.jpg
+img: about/information.jpg
 pageType: LeftMain
 contents:
   - type: Table
@@ -96,6 +96,24 @@ contents:
         - type: plain
           $texts:
             ja: 27-ユ-302506
+
+      - - type: plain
+          $texts:
+            ja: 認証等
+        - type: image
+          src: about/danjo-ikiiki.png
+          $alt:
+            ja: 男女いきいき元気宣言 認証ロゴ
+          caption:
+            ja: 男女いきいき元気宣言
+
+      - - type: plain
+          $texts:
+            ja: 交通アクセス
+        - type: image
+          src: about/access.jpg
+          $alt:
+            ja: 交通アクセス
 
   - type: spacer
 
