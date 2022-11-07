@@ -16,7 +16,7 @@ export const config: AstriesConfig = {
     "Tel": "06-6543-6898",
     "Fax": "06-7635-9508",
     "url": "https://goldenbridge2002.com",
-    "Email": "trans@goldenbridge",
+    "Email": "trans@goldenbridge2002.com",
     "Langs": [
       {
         "locale": "ja",
