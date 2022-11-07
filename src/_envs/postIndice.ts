@@ -299,6 +299,16 @@ export const indices: PostPagenation[] = [
         "href": "20200305"
       },
       {
+        "title": "中国へ支援物資を発送　NHKニュースで報道されました",
+        "published": "2020-02-10T00:00:00.000Z",
+        "modified": "2020-02-10T00:00:00.000Z",
+        "pubstr": "2020-02-10",
+        "modstr": "2020-02-10",
+        "image": "/pict/posts/2020/0210/0210-1.png",
+        "summary": "中国へ支援物資を発送　NHKニュースで報道されました",
+        "href": "20200210-suport-for-wuhan"
+      },
+      {
         "title": "ITソリューション部　設立のお知らせ",
         "published": "2020-02-03T00:00:00.000Z",
         "modified": "2020-02-03T00:00:00.000Z",
@@ -306,7 +316,21 @@ export const indices: PostPagenation[] = [
         "modstr": "2020-02-03",
         "summary": "ITソリューション部を設立しましたこと、お知らせいたします",
         "href": "20200203"
-      },
+      }
+    ],
+    "num": 3,
+    "prev": {
+      "title": "前のページへ",
+      "href": "/posts/post/page-2"
+    },
+    "next": {
+      "title": "次のページへ",
+      "href": "/posts/post/page-4"
+    }
+  },
+  {
+    "title": "ニュースリリース",
+    "pages": [
       {
         "title": "エベレストの山旅に行ってきました",
         "published": "2019-01-05T00:00:00.000Z",
@@ -318,10 +342,10 @@ export const indices: PostPagenation[] = [
         "href": "20190105"
       }
     ],
-    "num": 3,
+    "num": 4,
     "prev": {
       "title": "前のページへ",
-      "href": "/posts/post/page-2"
+      "href": "/posts/post/page-3"
     },
     "next": {
       "title": "次のページへ",

@@ -812,6 +812,15 @@ export const config: AstriesConfig = {
     {
       "params": {
         "dirs": "post",
+        "path": "20200210-suport-for-wuhan"
+      },
+      "props": {
+        "title": "中国へ支援物資を発送　NHKニュースで報道されました"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
         "path": "20200203"
       },
       "props": {
@@ -845,6 +854,12 @@ export const config: AstriesConfig = {
       "params": {
         "dirs": "post",
         "pageNum": "3"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "pageNum": "4"
       }
     }
   ]
