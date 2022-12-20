@@ -17,6 +17,7 @@ declare interface NavigationMenu {
   // path: string;
   // fullpath: stirng;
   items?: SinglePageIndex<IsSingle>[];
+  // links: MultiLingualLink[]
 }
 
 // 目次
@@ -42,6 +43,17 @@ declare interface CategoryInit extends HeadingInInit {
   position: number;
   img?: string;
   publishLangs: LangList[];
+}
+
+declare interface StaticTop {
+  params: {
+    path: string
+  }
+  props: TopPageProps
+}
+
+declare interface TopPageProps extends PageProp {
+  isIndex: boolean
 }
 
 declare interface StaticPath {
@@ -79,4 +91,5 @@ declare interface StaticPostPagenate {
 declare interface PageProp {
   layout: PageType,
   lang: LangList
+  links: MultiLingualLink[]
 }

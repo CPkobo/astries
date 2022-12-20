@@ -14,7 +14,11 @@ import { errorNav, errorPage } from "$envs/error"
  * @returns 
  */
 export async function getContents(dirs: string, path: string, lang: LangList): Promise<PageContents<IsSingle>> {
-  const targetDir = dirs === "/" ? "contents" : join("contents", dirs)
+  let targetDir = dirs === "/" ? "contents" : join("contents", dirs).replace("\\", "/")
+  // if (targetDir.endsWith(lang)) {
+  //   const els = targetDir.split("\\")
+  //   targetDir = join(...els.slice(0, els.length - 1))
+  // }
   if (!existsSync(targetDir)) {
     // フォルダが見つからなかったら404にする
     return errorPage
@@ -43,12 +47,43 @@ export async function getContents(dirs: string, path: string, lang: LangList): P
     if ($yml.useJsonLd === 'faq') {
       metas.jsonld.push(createFaqJsonLd(contents))
     }
-    return { ...metas, contents }
+    const links = createLinks($yml, metas.fullpath)
+    console.log(metas.fullpath)
+    return { ...metas, contents, links }
   }
 }
 
+function createLinks(contents: PageContentsInYaml<IsMulti>, path: string): MultiLingualLink[] {
+  const links: MultiLingualLink[] = []
+  for (const l of contents.langs) {
+    let displayName = ""
+    for (const ld of profile.Langs) {
+      if (l === ld.locale) {
+        displayName = ld.display
+        break
+      }
+    }
+    if (l === profile.deflang) {
+      links.push({
+        lang: l,
+        displayName,
+        url: `/${path}`.replace(/\/\//g, "/")
+      })
+    }
+    else {
+      links.push({
+        lang: l,
+        displayName,
+        url: `/${l}/${path}`.replace(/\/\//g, "/")
+      })
+    }
+  }
+  return links
+}
+
 export async function getNavmenu(dirs: string, path: string, lang: LangList): Promise<NavigationMenu> {
-  const url = `/${dirs}/${path}`
+  const d = dirs.startsWith(`/${lang}`) ? dirs.substring(lang.length) : dirs
+  const url = `/${d}/${path}`
   for (const nav of navs[lang]) {
     if (nav.root === url) {
       return nav
@@ -153,7 +188,6 @@ function createBreadcrumb(navmenu: NavigationMenu, title: string, href: string):
       position++
     }
   }
-  // console.log(breadCrumb)
   return breadCrumb
 }
 
@@ -175,7 +209,6 @@ export async function getPostContents(dirs: string, path: string, lang: LangList
 export function getFormatedDate(published?: Date, modified?: Date): string {
   let pub: string = ''
   if (published) {
-    // console.log(a.toString())
     const y = published.getFullYear()
     const m = published.getMonth() + 1
     const d = published.getDate()

@@ -35,11 +35,11 @@ class MtHandler {
     exec() {
         this.execWrapper()
             .then(() => {
-                this.writeStats();
-            })
+            this.writeStats();
+        })
             .catch(() => {
-                // pass
-            });
+            // pass
+        });
     }
     normalizeDirNames() {
         const endSlash = new RegExp('/+?$', '');
@@ -59,12 +59,12 @@ class MtHandler {
             });
             Promise.all(prs)
                 .then(() => {
-                    resolve(true);
-                })
+                resolve(true);
+            })
                 .catch(err => {
-                    console.error(err);
-                    reject(err);
-                });
+                console.error(err);
+                reject(err);
+            });
         });
     }
     execToADirectory(srcDir) {
@@ -88,15 +88,15 @@ class MtHandler {
                 const $yml = (0, js_yaml_1.load)((0, fs_1.readFileSync)(target).toString());
                 this.walker(thisDir, index, $yml, this.srcLang, this.tgtLang, this.getMt)
                     .then(translated => {
-                        const multiYaml = (0, js_yaml_1.dump)(translated);
-                        const newFile = `${this.outDir}/${srcDir}__${file}`;
-                        (0, fs_1.writeFileSync)(newFile, multiYaml);
-                        resolve(true);
-                    })
+                    const multiYaml = (0, js_yaml_1.dump)(translated);
+                    const newFile = `${this.outDir}/${srcDir}__${file}`;
+                    (0, fs_1.writeFileSync)(newFile, multiYaml);
+                    resolve(true);
+                })
                     .catch(err => {
-                        console.error(err);
-                        reject(err);
-                    });
+                    console.error(err);
+                    reject(err);
+                });
             });
         });
     }
@@ -105,7 +105,7 @@ class MtHandler {
             const prs = [];
             prs.push(this.setTimer());
             Object.keys(data).forEach(key => {
-                if (data !== null || undefined) {
+                if (data !== null || data !== undefined) {
                     const val = data[key] || {};
                     if (val[src] !== undefined) {
                         prs.push(this.getMt(dirIndex, fileIndex, data, key, val, src, tgt));
@@ -123,11 +123,11 @@ class MtHandler {
             });
             Promise.all(prs)
                 .then(() => {
-                    resolve(data);
-                })
+                resolve(data);
+            })
                 .catch(() => {
-                    reject();
-                });
+                reject();
+            });
         });
     }
     getMt(dirIndex, fileIndex, data, key, value, src, tgt) {
@@ -150,22 +150,22 @@ class MtHandler {
             const tl = this.tgtLang;
             this.engine.translateText(text, sl, tl)
                 .then(res => {
-                    if (isStr) {
-                        data[key][tgt] = res.text;
-                    }
-                    else if (isArray) {
-                        data[key][tgt] = res.text.split('\n');
-                    }
-                    else {
-                        const texts = res.text.split('\n');
-                        data[key][tgt] = texts.map(val => val.split('<br/>'));
-                    }
-                    resolve(true);
-                })
+                if (isStr) {
+                    data[key][tgt] = res.text;
+                }
+                else if (isArray) {
+                    data[key][tgt] = res.text.split('\n');
+                }
+                else {
+                    const texts = res.text.split('\n');
+                    data[key][tgt] = texts.map(val => val.split('<br/>'));
+                }
+                resolve(true);
+            })
                 .catch(err => {
-                    console.error(err);
-                    reject(err);
-                });
+                console.error(err);
+                reject(err);
+            });
         });
     }
     setTimer() {

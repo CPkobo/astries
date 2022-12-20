@@ -3,6 +3,7 @@
 @import "./builtin";
 @import "../../contents/_init/overwrite";
 
+
 @import "bulma/sass/utilities/_all";
 @import "bulma/sass/base/_all";
 @import "bulma/sass/elements/_all";
@@ -17,11 +18,11 @@
 
 :root {
 	--font-mono: "Fira Mono", monospace;
-	--tertiary-color: #f8f5f2;	
+	--tertiary-color: #f8f5f2;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
-  }
+}
 
 // @media (min-width: 460px){
 // 	html{
@@ -39,17 +40,15 @@ body {
 	// font-family: 'Inter', 'system-ui', sans-serif;
 	min-height: 100vh;
 	width: 100vw;
-	background: linear-gradient(
-		330deg,
-		rgba(235, 235, 235, 0.5) 0%,
-		rgba(235, 235, 235, 0.5) 25%,
-		rgba(195, 255, 208, 0.5) 28%,
-		rgba(235, 235, 235, 0.5) 31%,
-		rgba(235, 235, 235, 0.5) 37%,
-		rgba(195, 255, 208, 0.5) 39%,
-		rgba(235, 235, 235, 0.5) 41%,
-		rgba(235, 235, 235, 0.5)
-	);
+	background: linear-gradient(330deg,
+			rgba(235, 235, 235, 0.5) 0%,
+			rgba(235, 235, 235, 0.5) 25%,
+			rgba(195, 255, 208, 0.5) 28%,
+			rgba(235, 235, 235, 0.5) 31%,
+			rgba(235, 235, 235, 0.5) 37%,
+			rgba(195, 255, 208, 0.5) 39%,
+			rgba(235, 235, 235, 0.5) 41%,
+			rgba(235, 235, 235, 0.5));
 	background-attachment: fixed;
 }
 
@@ -67,7 +66,7 @@ dt {
 	font-weight: bold;
 	margin-bottom: 0.3rem;
 }
-  
+
 dt:nth-of-type(n+2) {
 	margin-top: 0.7rem;
 }

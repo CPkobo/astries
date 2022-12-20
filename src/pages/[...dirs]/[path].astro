@@ -1,76 +1,84 @@
 ---
-  import { navs, staticPaths } from "$envs/paths"
-  import { profile } from "$envs/profile"
-  import { getContents } from "$scripts/_i18n"
-  import Base from "$layouts/Base.astro"
-  import BlockControl from "$lib/Blocks/BlockControl.vue"
-  import Sticker from "$lib/Globals/SideSticker/Sticker.astro"
-  import TitleBar from "$lib/Util/TitleBar.astro"
-  import BreadCrumb from "$lib/Util/BreadCrumb/BreadCrumb.astro"
+import { navs, staticPaths } from "$envs/paths";
+import { profile } from "$envs/profile";
+import { getContents } from "$scripts/_i18n";
+import Base from "$layouts/Base.astro";
+import BlockControl from "$lib/Blocks/BlockControl.vue";
+import Sticker from "$lib/Globals/SideSticker/Sticker.astro";
+import TitleBar from "$lib/Util/TitleBar.astro";
+import BreadCrumb from "$lib/Util/BreadCrumb/BreadCrumb.astro";
+import { join } from "path";
 
-  export async function getStaticPaths() {
-    return staticPaths
-  }
+export async function getStaticPaths() {
+  return staticPaths;
+}
 
-  const { dirs, path } = Astro.params
-  const { lang, layout } = Astro.props
-  const l = lang as LangList
-  const lt = layout as PageType
-  const page = await getContents(String(dirs), String(path), "ja")
-  const direction: AstriesDirection = {
-    head: {
-      lang: 'ja',
-      title: `${page.$title} | ${profile.SiteName}`,
+const { dirs, path } = Astro.params;
+let lang: LangList;
+let layout: PageType;
+let links: MultiLingualLink[] = [];
+({ lang, layout, links } = Astro.props);
+
+let dir_ = String(dirs);
+if (dir_.startsWith(`${lang}/`)) {
+  dir_ = dir_.substring(lang.length).replace("\\", "/");
+}
+const page = await getContents(dir_, String(path), lang);
+const direction: AstriesDirection = {
+  head: {
+    lang,
+    title: `${page.$title} | ${profile.SiteName}`,
+    description: page.$description,
+    jsonld: page.jsonld,
+    ogp: {
+      url: `${profile.url}/${page.fullpath}`,
+      type: "website",
+      title: page.$title,
       description: page.$description,
-      jsonld: page.jsonld,
-      ogp: {
-        url: `${profile.url}/${page.fullpath}`,
-        type: 'website',
-        title: page.$title,
-        description: page.$description,
-        name: page.name,
-        img: page.img.startsWith('http')
-          ? page.img
-          : page.img === ''
-            ? `${profile.url}/pict/sys/defaultimg.jpg`
-            : page.img.startsWith('/pict')
-              ? `${profile.url}/${page.img}`
-              : `${profile.url}/pict/${page.img}`
-      }
+      name: page.name,
+      img: page.img.startsWith("http")
+        ? page.img
+        : page.img === ""
+        ? `${profile.url}/pict/sys/defaultimg.jpg`
+        : page.img.startsWith("/pict")
+        ? `${profile.url}/${page.img}`
+        : `${profile.url}/pict/${page.img}`,
     },
-    hasHeaderMenu: true,
-    hasFooterMenu: true,
-    hasSideMenu: true,
-    pagetype: lt,
-    navigations: navs[lang],
-  }
-
-  let menu: NavigationMenu;
-  const url = `/${dirs}/${path}`
-  for (const nav of navs[l]) {
-    for (const item of nav.items) {
-      if (item.fullpath === url) {
-        menu = nav
-        break
-      }
-    }
-    if (menu !== undefined) {
+  },
+  hasHeaderMenu: true,
+  hasFooterMenu: true,
+  hasSideMenu: true,
+  pagetype: layout,
+  navigations: navs[lang],
+  links,
+};
+let menu: NavigationMenu;
+const url = `/${dirs}/${path}`;
+for (const nav of navs[lang]) {
+  // console.log(nav);
+  for (const item of nav.items) {
+    if (item.fullpath === url) {
+      menu = nav;
       break;
     }
   }
-  // console.log(page)
+  if (menu !== undefined) {
+    break;
+  }
+}
+// console.log(menu);
 ---
 
 <Base direction={direction}>
-<scetion slot="top">
-  <!-- <FilledBar title={page.$title} /> -->
-  <BreadCrumb breadCrumb={page.breadCrumb} />
-  <TitleBar title={page.$title} />
-</scetion>
-<section slot="main">
-  <BlockControl blks={page.contents} />
-</section>
-<section slot="side" style="width: 100%; height: 100%">
-  <Sticker menu={menu} />
-</section>
+  <scetion slot="top">
+    <!-- <FilledBar title={page.$title} /> -->
+    <BreadCrumb breadCrumb={page.breadCrumb} />
+    <TitleBar title={page.$title} />
+  </scetion>
+  <section slot="main">
+    <BlockControl blks={page.contents} />
+  </section>
+  <section slot="side" style="width: 100%; height: 100%">
+    <Sticker menu={menu} />
+  </section>
 </Base>

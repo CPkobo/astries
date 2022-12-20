@@ -1,38 +1,42 @@
 ---
-  import { navs, staticDirs } from "$envs/paths"
-  import { profile } from "$envs/profile"
-  import { getNavmenu } from "$scripts/_i18n"
-  import Base from "$layouts/Base.astro"
-  import TocCardWrap from "$lib/Tocs/tocCardWrap.astro"
+import { navs, staticDirs } from "$envs/paths";
+import { profile } from "$envs/profile";
+import { getNavmenu } from "$scripts/_i18n";
+import Base from "$layouts/Base.astro";
+import TocCardWrap from "$lib/Tocs/tocCardWrap.astro";
 
-  export async function getStaticPaths() {
-    return staticDirs
-  }
-  const { dirs } = Astro.params
-  const navmenu = await getNavmenu(String(dirs), "toc", "ja")
-  const direction: AstriesDirection = {
-    head: {
-      lang: 'ja',
-      title: `${navmenu.category} | ${profile.SiteName}`,
-      description: `${navmenu.category} | ${profile.SiteName}`,
-      // jsonld: undefined,
-      ogp: {
-        url: `${profile.url}/${navmenu.root}`,
-        type: 'website',
-        title: navmenu.category,
-        description: navmenu.category,
-        name: navmenu.category,
-        img: `${profile.url}/pict/sys/defaultimg.jpg`,
-      }
+export async function getStaticPaths() {
+  return staticDirs;
+}
+const { dirs } = Astro.params;
+let lang: LangList;
+let links: MultiLingualLink[] = [];
+({ lang, links } = Astro.props);
+const navmenu = await getNavmenu(String(dirs), "toc", lang);
+const direction: AstriesDirection = {
+  head: {
+    lang,
+    title: `${navmenu.category} | ${profile.SiteName}`,
+    description: `${navmenu.category} | ${profile.SiteName}`,
+    // jsonld: undefined,
+    ogp: {
+      url: `${profile.url}/${navmenu.root}`,
+      type: "website",
+      title: navmenu.category,
+      description: navmenu.category,
+      name: navmenu.category,
+      img: `${profile.url}/pict/sys/defaultimg.jpg`,
     },
-    hasHeaderMenu: true,
-    hasFooterMenu: true,
-    hasSideMenu: false,
-    pagetype: 'LP',
-    navigations: navs.ja,
-  }
+  },
+  hasHeaderMenu: true,
+  hasFooterMenu: true,
+  hasSideMenu: false,
+  pagetype: "LP",
+  navigations: navs[lang],
+  links,
+};
 ---
 
 <Base direction={direction}>
-<TocCardWrap toc={navmenu} slot="main" />
+  <TocCardWrap toc={navmenu} slot="main" />
 </Base>

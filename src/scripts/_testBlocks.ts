@@ -2,45 +2,45 @@ import type { AstriesConfig } from "../../contents/astries.config"
 import { config } from "../../contents/astries.config"
 
 const plain: PlainBlock<IsSingle> = {
-    type: "Plain",
+    type: "plain",
     $texts: ["akasatana"]
 }
 
 const list: ListBlock<IsSingle> = {
-    type: "List",
+    type: "list",
     $texts: ["a", "b", "c"]
 }
 
 const define: DefineBlock<IsSingle> = {
-    type: "Define",
+    type: "define",
     $texts: [["a", "b", "c"], ["d", "e"]]
 }
 
 const link: LinkBlock<IsSingle> = {
-    type: "Link",
+    type: "link",
     $text: "Link",
     href: "/",
 }
 
 const img: ImageBlock<IsSingle> = {
-    type: "Image",
+    type: "image",
     src: "/pict/mv01.jpg",
     $alt: "pict",
     href: "/"
 }
 
 const hd2: HeadingBlock<IsSingle> = {
-    type: "Heading 2",
+    type: "heading 2",
     $text: "akasatana"
 }
 
 const hd3: HeadingBlock<IsSingle> = {
-    type: "Heading 3",
+    type: "heading 3",
     $text: "akasatana"
 }
 
 const hd4: HeadingBlock<IsSingle> = {
-    type: "Heading 4",
+    type: "heading 4",
     $text: "akasatana"
 }
 
@@ -63,7 +63,7 @@ const ih4: IconHeadingBlock<IsSingle> = {
 }
 
 const hero: HeroBlock<IsSingle> = {
-    type: "Hero",
+    type: "hero",
     $title: "HERO",
     $subtitle: "Hero...",
     src: "/pict/mv01.jpg",
@@ -71,19 +71,19 @@ const hero: HeroBlock<IsSingle> = {
 }
 
 const shero: SubHeroBlock<IsSingle> = {
-    type: "Sub Hero",
+    type: "sub hero",
     $title: "SUB HERO",
     src: "/pict/mv01.jpg",
     $alt: "hero"
 }
 
 const bar: SubBarBlock<IsSingle> = {
-    type: "Sub Bar",
+    type: "sub bar",
     $title: "HERO",
 }
 
 const rels: RelativeBlock<IsSingle> = {
-    type: "Relatives",
+    type: "relatives",
     $title: "関連記事",
     $articles: [
         {

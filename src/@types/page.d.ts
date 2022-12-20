@@ -14,6 +14,7 @@ declare interface AstriesDirection {
   hasSideMenu: boolean;
   pagetype: PageType;
   navigations: NavigationMenu[];
+  links: MultiLingualLink[];
 }
 
 declare interface AstriesOGP {
@@ -41,9 +42,16 @@ declare interface PageContentsInYaml<T extends IsSingle | IsMulti> {
   useJsonLd?: 'faq' | 'howto' | ''
 }
 
+declare interface MultiLingualLink {
+  lang: string;
+  displayName: string;
+  url: string;
+}
+
 declare interface PageContents<T extends IsSingle | IsMulti> extends Omit<PageContentsInYaml<T>, 'useJsonLd'> {
   path: string;
   fullpath: string;
+  links: MultiLingualLink[];
   breadCrumb?: BreadcrumbList[];
 }
 

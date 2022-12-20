@@ -7,18 +7,22 @@ const dirOperator_1 = require("./dirOperator");
 class NavGenerator {
     langs;
     deflang;
+    langDisps;
     contentsDir;
     srcDir;
     stDirs;
     stPaths;
+    stTops;
     navs;
     hasGened;
     blankI18n = {};
     constructor(dirope, prof) {
         this.langs = prof.Langs.map(val => { return val.locale; });
         this.deflang = this.langs[0];
+        this.langDisps = prof.Langs;
         this.contentsDir = dirope.getContentsDir();
         this.srcDir = dirope.getSrcDir();
+        this.stTops = [];
         this.stPaths = [];
         this.stDirs = [];
         this.navs = {};
@@ -67,8 +71,9 @@ class NavGenerator {
             }
             return 0;
         });
+        const tops = this.createTopPaths();
         const { navs, dirs, paths } = this.createNavFromIndices(indices);
-        return { navs, dirs, paths };
+        return { navs, tops, dirs, paths };
     }
     /**
     * contentsDir にあるディレクトリを再帰的な配列にする
@@ -220,6 +225,53 @@ class NavGenerator {
         return dirtop;
     }
     /**
+    * トップディレクトリにあるファイルを走査して、静的パスを作成する
+    * @returns {StaticTop[]} 多言語ナビゲーション
+    * @param {DirOperator} dirope contentsフォルダの場所を格納しているオブジェクト
+    */
+    createTopPaths() {
+        const stTops = [];
+        const validLangs = [];
+        const files = (0, fs_1.readdirSync)(this.contentsDir).filter(val => val.endsWith(".yaml"));
+        if (files.includes("_init.yaml")) {
+            const filepath = dirOperator_1.DirOperator.join(this.contentsDir, "_init.yaml");
+            const contents = (0, js_yaml_1.load)((0, fs_1.readFileSync)(filepath).toString());
+            validLangs.push(...contents.publishLangs);
+        }
+        files.forEach(file => {
+            if (!file.startsWith("_")) {
+                const path = file.replace(".yaml", "");
+                const filepath = dirOperator_1.DirOperator.join(this.contentsDir, file);
+                const contents = (0, js_yaml_1.load)((0, fs_1.readFileSync)(filepath).toString());
+                const links = this.createLinks(contents.langs, filepath.replace(this.contentsDir, "").replace("index", "").replace(".yaml", ""));
+                links[0].url = `/${this.deflang}`;
+                contents.langs.forEach(lang => {
+                    if ((validLangs.length === 0) || (validLangs.includes(lang))) {
+                        let filepath = "";
+                        if (path === "index") {
+                            filepath = lang;
+                        }
+                        else {
+                            filepath === this.deflang ? path : `${lang}-${path}`;
+                        }
+                        stTops.push({
+                            params: {
+                                path: filepath
+                            },
+                            props: {
+                                lang,
+                                layout: contents.pageType,
+                                isIndex: path === "index",
+                                links
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        return stTops;
+    }
+    /**
     * 目次オブジェクトからナビゲーションを作成する
     * @param {Array<CategoryIndex<IsMulti>>} toc 目次オブジェクト
     * @param {Number} depth 入れ子の層数を指定。デフォルト=2
@@ -229,6 +281,7 @@ class NavGenerator {
         const stdirs = [];
         const stpaths = [];
         const i18nmenu = {};
+        const lang = this.langs;
         this.langs.forEach(lang => {
             const dupliPaths = [];
             const singleLangDir = [];
@@ -238,27 +291,41 @@ class NavGenerator {
                 if (!index.$title[lang]) {
                     continue;
                 }
+                const includingLangs = [...Object.keys(index.$title)];
                 const navmenu = {
                     category: index.$title[lang] || "",
-                    // root: index.href,
-                    root: index.fullpath,
+                    root: lang === this.deflang ? index.fullpath : `/${lang}${index.fullpath}`,
                     items: [],
                 };
+                for (const inlang of includingLangs) {
+                    let displayName = "";
+                    for (const ld of this.langDisps) {
+                        if (inlang === ld.locale) {
+                            displayName = ld.display;
+                            break;
+                        }
+                    }
+                    // navmenu.links.push({
+                    //   lang: inlang,
+                    //   displayName,
+                    //   url: inlang === this.deflang ? index.fullpath : `/${inlang}${index.fullpath}`,
+                    // })
+                }
                 // Pageが複数ある場合はTOCに飛ばす
                 if (index.data.length > 1) {
-                    singleLangDir.push(this.createStaticDir(index.fullpath, lang));
-                    // singleLangDir.push(this.createStaticDir(index.href, lang))
+                    // singleLangDir.push(this.createStaticDir(index.fullpath, lang))
+                    singleLangDir.push(this.createStaticDir(navmenu.root, lang, index.langs));
                 }
                 else {
-                    // singleLangPath.push(this.createStaticPath(index.href, lang, index.pageType))
-                    singleLangPath.push(this.createStaticPath(index.fullpath, lang, index.pageType));
+                    // singleLangPath.push(this.createStaticPath(index.fullpath, lang, index.pageType))
+                    singleLangPath.push(this.createStaticPath(navmenu.root, lang, index.langs, index.pageType));
                 }
                 if (!dupliPaths.includes(index.fullpath)) {
                     dupliPaths.push(index.fullpath);
                 }
-                if (index.data.length > 1) {
-                    navmenu.root = index.fullpath;
-                }
+                // if (index.data.length > 1) {
+                //   navmenu.root = index.fullpath
+                // }
                 for (const datum of index.data) {
                     // datum の方は SingleTOC
                     if (datum.$title[lang] === undefined) {
@@ -271,7 +338,7 @@ class NavGenerator {
                     else {
                         const navitem = this.convMulti2Single(datum, lang);
                         if (!dupliPaths.includes(navitem.fullpath)) {
-                            singleLangPath.push(this.createStaticPath(navitem.fullpath, lang, navitem.pageType));
+                            singleLangPath.push(this.createStaticPath(navitem.fullpath, lang, index.langs, navitem.pageType));
                         }
                         if (navmenu.items === undefined) {
                             navmenu.items = [navitem];
@@ -331,6 +398,14 @@ class NavGenerator {
             pageType: index.pageType,
             data: [],
         };
+        if (lang !== this.deflang) {
+            // singleIndex.path = `/${lang}${singleIndex.path}`
+            singleIndex.fullpath = `/${lang}${singleIndex.fullpath}`;
+            // const pathEls = singleIndex.path.split("/")
+            // singleIndex.path = pathEls.slice(0, pathEls.length - 1).join('/') + "/" + lang + "/" + pathEls[pathEls.length - 1]
+            // const fullpathEls = singleIndex.fullpath.split("/")
+            // singleIndex.fullpath = fullpathEls.slice(0, fullpathEls.length - 1).join('/') + "/" + lang + "/" + fullpathEls[fullpathEls.length - 1]
+        }
         if (index.data !== undefined) {
             if (index.data.length > 0) {
                 singleIndex.data.push(...this.convMutli2SingleBatch(index.data, lang));
@@ -364,33 +439,68 @@ export const pagepaths: StaticPath[] = ${JSON.stringify(stpaths, null, 2)}
         });
         return writings;
     }
-    createStaticDir(path, lang) {
-        const dirs = lang === this.deflang
-            ? path.replace(/^\//, "").replace(/\/toc$/, "")
-            : path.replace(/^\//, "").replace(/\/toc$/, `/${lang}`);
+    createStaticDir(path, lang, langs) {
+        // const dirs = lang === this.deflang
+        //   ? path.replace(/^\//, "").replace(/\/toc$/, "")
+        //   : lang + "/" + path.replace(/^\//, "").replace(/\/toc$/, "")
+        const path_ = path.startsWith(`/${lang}/`) ? path.substring(lang.length + 1) : path;
+        const links = this.createLinks(langs, path_);
         return {
             params: {
-                dirs,
+                // dirs,
+                dirs: path.replace(/^\//, "").replace(/\/toc$/, "")
             },
             props: {
                 lang,
-                layout: "TOC"
+                layout: "TOC",
+                links,
             }
         };
     }
-    createStaticPath(path, lang, layout) {
+    createStaticPath(path, lang, langs, layout) {
         const paths = path.replace(/\\/g, "/").split("/");
         const pathLast = paths.length - 1;
-        const dirs = lang === this.deflang
-            ? paths.slice(0, pathLast).join("/")
-            : paths.slice(0, pathLast).join("/") + "/" + lang;
+        // const dirs = path.replace(/\\/g, "/")
+        // const dirs = lang === this.deflang
+        //   ? path.replace(/\\/g, "/")
+        //   : lang + "/" + path.replace(/\\/g, "/")
+        // const dirs = paths.slice(0, pathLast).join("/")
+        const path_ = path.startsWith(`/${lang}/`) ? path.substring(lang.length + 1) : path;
+        const links = this.createLinks(langs, path_);
         return {
             params: {
-                dirs: dirs.replace(/^\//, ""),
+                dirs: paths.slice(0, pathLast).join("/").replace(/^\//, ""),
                 path: paths[pathLast]
             },
-            props: { lang, layout }
+            props: { lang, layout, links }
         };
+    }
+    createLinks(langs, path) {
+        const links = [];
+        for (const l of langs) {
+            let displayName = "";
+            for (const ld of this.langDisps) {
+                if (l === ld.locale) {
+                    displayName = ld.display;
+                    break;
+                }
+            }
+            if (l === this.deflang) {
+                links.push({
+                    lang: l,
+                    displayName,
+                    url: `/${path}`.replace(/\/\//g, "/")
+                });
+            }
+            else {
+                links.push({
+                    lang: l,
+                    displayName,
+                    url: `/${l}/${path}`.replace(/\/\//g, "/")
+                });
+            }
+        }
+        return links;
     }
 }
 exports.NavGenerator = NavGenerator;

@@ -59,7 +59,7 @@ const presets = {
     <SubHero v-else-if="blk.type === 'sub hero'" :blk="blk" />
     <SubBar v-else-if="blk.type === 'sub bar'" :blk="blk" />
     <Relatives v-else-if="blk.type === 'relatives'" :blk="blk" />
-    <Spacer v-else-if="blk.type === 'spacer'" :blk="blk" />
+    <Spacer v-else-if="blk.type === 'spacer'" :blk="blk"></Spacer>
     <Separator v-else-if="blk.type === 'separator'" :blk="blk" />
     <MediaLeft v-else-if="blk.type === 'Media Left'" :blk="blk" />
     <MediaRight v-else-if="blk.type === 'Media Right'" :blk="blk" />
@@ -67,7 +67,7 @@ const presets = {
     <Features v-else-if="blk.type === 'Features'" :blk="blk" />
     <Horizontal v-else-if="blk.type === 'Horizontal'" :blk="blk" />
     <Flow v-else-if="blk.type === 'Flow'" :blk="blk" />
-    <Table v-else-if="blk.type === 'Table'" :blk="blk" />
+    <Table v-else-if="blk.type === 'Table'" :blk="blk"></Table>
     <Faq v-else-if="blk.type === 'Faq'" :blk="blk" />
     <Slide v-else-if="blk.type === 'Slide'" :blk="blk" />
     <Flexlayout v-else-if="blk.type === 'FLEX'" :blk="blk" />

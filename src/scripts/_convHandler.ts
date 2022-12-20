@@ -33,7 +33,7 @@ export function handleConvI18n2StrInMeta(
   return {
     name: $pg.name,
     path: pathWithLang,
-    fullpath: `${dir}/${path}`,
+    fullpath: `${dir}/${path}`.replace(/\/\//g, "/"),
     jsonld: $pg.jsonld,
     $title: convI18n2Str($pg.$title, lang),
     $description: convI18n2Str($pg.$description, lang),
@@ -42,6 +42,7 @@ export function handleConvI18n2StrInMeta(
     position: $pg.position,
     pageType: $pg.pageType,
     langs: $pg.langs,
+    links: []
   }
 }
 

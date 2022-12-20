@@ -1,9 +1,11 @@
 ---
-import Logo from "$lib/Util/FooterLogo.astro"
-import FooterCol from "./FooterCol.astro"
+import Logo from "$lib/Util/FooterLogo.astro";
+import FooterCol from "./FooterCol.astro";
 import Langsw from "./langsw.astro";
-let navigations: NavigationMenu[]
-({navigations} = Astro.props)
+let navigations: NavigationMenu[];
+let links: MultiLingualLink[] = [];
+let currentLang: string = "";
+({ navigations, links, currentLang } = Astro.props);
 ---
 
 <footer class="footer mt-5">
@@ -12,32 +14,47 @@ let navigations: NavigationMenu[]
       <div class="column is-one-third-desktop is-full-touch">
         <Logo />
         <p>&copy; All Rights Reserved.</p>
+        {
+          () => {
+            if (links !== undefined) {
+              if (links.length > 1) {
+                return <Langsw multiLink={links} currentLang={currentLang} />;
+              }
+            }
+          }
+        }
         <!-- {#if useLangSw}
           <Langsw />
         {/if} -->
       </div>
       <div class="column is-hidden-touch">
         <div class="columns">
-          {navigations.map(fnav => {
-            if (fnav.items) {
+          {
+            navigations.map((fnav) => {
+              if (fnav.items) {
+                return (
+                  <div class="column">
+                    <h4 class="is-size-4 has-text-weight-semibold is-underlined">
+                      {fnav.category}
+                    </h4>
+                    <FooterCol items={fnav.items} />
+                  </div>
+                );
+              }
               return (
                 <div class="column">
-                  <h4 class="is-size-4 has-text-weight-semibold is-underlined">{fnav.category}</h4>
-                  <FooterCol items={fnav.items} />
+                  <h4>{fnav.category}</h4>
+                  <ul class="ml-1">
+                    <li>
+                      <a class="footer-link" href={fnav.root}>
+                        {fnav.category}
+                      </a>
+                    </li>
+                  </ul>
                 </div>
-              )
-            }
-            return (
-              <div class="column">
-                <h4>{fnav.category}</h4>
-                <ul class="ml-1">
-                  <li>
-                    <a class="footer-link" href={fnav.root}>{fnav.category}</a>
-                  </li>
-                </ul>
-              </div>
-            )
-          })}
+              );
+            })
+          }
         </div>
       </div>
     </div>
@@ -45,26 +62,26 @@ let navigations: NavigationMenu[]
 </footer>
 
 <style lang="scss">
-@use "../../../styles/colors" as c;
-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  color: c.$footer-text-color;
-  @media(max-width: 768px) {
-    display:none;
-  }
-}
-
-section.in-footer {
-  width: 80vw;
-}
-
-@media (min-width: 480px) {
+  @use "../../../styles/colors" as c;
   footer {
-    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: c.$footer-text-color;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
-}
+
+  section.in-footer {
+    width: 80vw;
+  }
+
+  @media (min-width: 480px) {
+    footer {
+      padding: 40px 0;
+    }
+  }
 </style>

@@ -3,6 +3,7 @@
 export type AstriesConfig = {
   profile?: Profile,
   navs?: Partial<I18nNavMenu>,
+  staticTops?: StaticTop[],
   staticDirs?: StaticDir[],
   staticPaths?: StaticPath[],
   staticPosts?: StaticPost[],
@@ -45,10 +46,11 @@ export const config: AstriesConfig = {
             "$title": "会社情報",
             "path": "information",
             "fullpath": "/about/information",
-            "img": "about/information.jpg",
+            "img": "about/toc-information.jpg",
             "$summary": "株式会社ゴールデンブリッジの各種情報を掲載しています",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -59,10 +61,11 @@ export const config: AstriesConfig = {
             "$title": "経営理念・社是",
             "path": "philosophy",
             "fullpath": "/about/philosophy",
-            "img": "about/philosophy.jpg",
+            "img": "about/toc-philosophy.jpg",
             "$summary": "株式会社ゴールデンブリッジの経営理念・社是についてご紹介します",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -76,7 +79,8 @@ export const config: AstriesConfig = {
             "img": "about/toc-message.jpg",
             "$summary": "株式会社ゴールデンブリッジの社長 楊金峰よりご挨拶申し上げます",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -90,7 +94,8 @@ export const config: AstriesConfig = {
             "img": "about/toc-privacy.jpg",
             "$summary": "株式会社ゴールデンブリッジのプライバシーポリシーです。",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -104,7 +109,8 @@ export const config: AstriesConfig = {
             "img": "about/toc-recruit.jpg",
             "$summary": "株式会社ゴールデンブリッジの登録翻訳者・社内スタッフ募集ページです。",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -214,7 +220,8 @@ export const config: AstriesConfig = {
             "img": "ec/shopping-bag.jpg",
             "$summary": "株式会社ゴールデンブリッジのオンラインショップ（EC）事業について紹介します",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -332,9 +339,158 @@ export const config: AstriesConfig = {
         ]
       }
     ],
-    "zh": [],
+    "zh": [
+      {
+        "category": "ABOUT",
+        "root": "/zh/about/toc",
+        "items": [
+          {
+            "name": "information",
+            "position": 1,
+            "$title": "公司信息",
+            "path": "information",
+            "fullpath": "/zh/about/information",
+            "img": "about/toc-information.jpg",
+            "$summary": "关于株式会社金桥公司的各种信息",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "philosophy",
+            "position": 2,
+            "$title": "管理理念和公司政策",
+            "path": "philosophy",
+            "fullpath": "/zh/about/philosophy",
+            "img": "about/toc-philosophy.jpg",
+            "$summary": "介绍金桥公司的管理理念和公司政策。",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "message",
+            "position": 3,
+            "$title": "主席致辞",
+            "path": "message",
+            "fullpath": "/zh/about/message",
+            "img": "about/toc-message.jpg",
+            "$summary": "金桥公司总裁杨金凤的问候。",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "privacy policy",
+            "position": 4,
+            "$title": "隐私政策。",
+            "path": "privacy",
+            "fullpath": "/zh/about/privacy",
+            "img": "about/toc-privacy.jpg",
+            "$summary": "金桥公司的隐私政策。",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "recruit",
+            "position": 5,
+            "$title": "招聘和职位空缺",
+            "path": "recruit",
+            "fullpath": "/zh/about/recruit",
+            "img": "about/toc-recruit.jpg",
+            "$summary": "金桥公司注册译员和内部员工的招聘页面。",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          }
+        ]
+      },
+      {
+        "category": "网上商店",
+        "root": "/zh/ec/ec",
+        "items": [
+          {
+            "name": "onlineshop",
+            "position": 1,
+            "$title": "网上商店",
+            "path": "ec",
+            "fullpath": "/zh/ec/ec",
+            "img": "ec/shopping-bag.jpg",
+            "$summary": "介绍株式会社金桥的网上商店（EC）业务。",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          }
+        ]
+      }
+    ],
     "en": []
   },
+  "staticTops": [
+    {
+      "params": {
+        "path": "ja"
+      },
+      "props": {
+        "lang": "ja",
+        "layout": "LP",
+        "isIndex": true,
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/ja"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "path": "zh"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LP",
+        "isIndex": true,
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/ja"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/"
+          }
+        ]
+      }
+    }
+  ],
   "staticDirs": [
     {
       "params": {
@@ -342,7 +498,19 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "TOC"
+        "layout": "TOC",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/toc"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/toc"
+          }
+        ]
       }
     },
     {
@@ -351,7 +519,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "TOC"
+        "layout": "TOC",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/lang/toc"
+          }
+        ]
       }
     },
     {
@@ -360,7 +535,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "TOC"
+        "layout": "TOC",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/it/toc"
+          }
+        ]
       }
     },
     {
@@ -369,7 +551,35 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "TOC"
+        "layout": "TOC",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/others/toc"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/about"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "TOC",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/toc"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/toc"
+          }
+        ]
       }
     }
   ],
@@ -381,7 +591,19 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/information"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/information"
+          }
+        ]
       }
     },
     {
@@ -391,7 +613,19 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/philosophy"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/philosophy"
+          }
+        ]
       }
     },
     {
@@ -401,7 +635,19 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/message"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/message"
+          }
+        ]
       }
     },
     {
@@ -411,7 +657,19 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/privacy"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/privacy"
+          }
+        ]
       }
     },
     {
@@ -421,7 +679,19 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/recruit"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/recruit"
+          }
+        ]
       }
     },
     {
@@ -431,7 +701,19 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/faq"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/faq"
+          }
+        ]
       }
     },
     {
@@ -441,7 +723,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/lang/translation"
+          }
+        ]
       }
     },
     {
@@ -451,7 +740,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/lang/interpretation"
+          }
+        ]
       }
     },
     {
@@ -461,7 +757,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/lang/online"
+          }
+        ]
       }
     },
     {
@@ -471,7 +774,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/lang/mt"
+          }
+        ]
       }
     },
     {
@@ -481,7 +791,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/lang/works"
+          }
+        ]
       }
     },
     {
@@ -491,7 +808,19 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/ec/ec"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/ec/ec"
+          }
+        ]
       }
     },
     {
@@ -501,7 +830,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/it/cat"
+          }
+        ]
       }
     },
     {
@@ -511,7 +847,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/it/nlp"
+          }
+        ]
       }
     },
     {
@@ -521,7 +864,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/it/dx"
+          }
+        ]
       }
     },
     {
@@ -531,7 +881,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/others/edit"
+          }
+        ]
       }
     },
     {
@@ -541,7 +898,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/others/inbound"
+          }
+        ]
       }
     },
     {
@@ -551,7 +915,14 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/others/train"
+          }
+        ]
       }
     },
     {
@@ -561,7 +932,168 @@ export const config: AstriesConfig = {
       },
       "props": {
         "lang": "ja",
-        "layout": "LeftMain"
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/others/copyright"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/about",
+        "path": "information"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/information"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/information"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/about",
+        "path": "philosophy"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/philosophy"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/philosophy"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/about",
+        "path": "message"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/message"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/message"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/about",
+        "path": "privacy"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/privacy"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/privacy"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/about",
+        "path": "recruit"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/about/recruit"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/about/recruit"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/ec",
+        "path": "ec"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/ec/ec"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/ec/ec"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/ec",
+        "path": "ec"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/ec/ec"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/ec/ec"
+          }
+        ]
       }
     }
   ],

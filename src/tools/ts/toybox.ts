@@ -19,6 +19,7 @@ export type Writing = {
 export type AstriesConfig = {
   profile?: Profile,
   navs?: Partial<I18nNavMenu>,
+  staticTops?: StaticTop[],
   staticDirs?: StaticDir[],
   staticPaths?: StaticPath[],
   staticPosts?: StaticPost[],
@@ -87,8 +88,9 @@ class ToolBox {
     this.prof.readProf(this.dirs)
     this.config.profile = this.prof.prof
 
-    const { navs, dirs, paths } = this.nav.execGenerator(this.dirs)
+    const { navs, tops, dirs, paths } = this.nav.execGenerator(this.dirs)
     this.config.navs = navs
+    this.config.staticTops = tops
     this.config.staticDirs = dirs
     this.config.staticPaths = paths
     const { pagenatePaths, postPaths, pages } = this.posts.execGenerator(this.dirs)
@@ -102,6 +104,7 @@ class ToolBox {
 export type AstriesConfig = {
   profile?: Profile,
   navs?: Partial<I18nNavMenu>,
+  staticTops?: StaticTop[],
   staticDirs?: StaticDir[],
   staticPaths?: StaticPath[],
   staticPosts?: StaticPost[],

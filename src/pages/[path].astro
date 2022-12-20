@@ -1,13 +1,25 @@
 ---
 // Component Imports
 import Base from "$layouts/Base.astro";
-import { navs } from "$envs/paths";
+import { navs, staticTops } from "$envs/paths";
 import { profile } from "$envs/profile";
 import { getContents } from "$scripts/_i18n";
 import BlockControl from "$lib/Blocks/BlockControl.vue";
 import Recent from "$lib/Globals/SideSticker/Recent.astro";
 
-const page = await getContents("/", "index", "ja");
+export async function getStaticPaths() {
+  return staticTops;
+}
+const { path } = Astro.params;
+let lang: LangList;
+let layout: PageType;
+let links: MultiLingualLink[] = [];
+let isIndex = true;
+({ lang, layout, links, isIndex } = Astro.props);
+// const { lang, layout, isIndex } = Astro.props;
+const filepath = isIndex ? "index" : String(path);
+
+const page = await getContents("/", filepath, lang);
 
 const direction: AstriesDirection = {
   head: {
@@ -35,8 +47,14 @@ const direction: AstriesDirection = {
   hasSideMenu: true,
   pagetype: "LP",
   navigations: navs.ja,
-  // links: page.links,
-  links: [],
+  links: isIndex
+    ? links.map((val) => {
+        return {
+          url: val.url.replace("/index", ""),
+          ...val,
+        };
+      })
+    : links,
 };
 ---
 

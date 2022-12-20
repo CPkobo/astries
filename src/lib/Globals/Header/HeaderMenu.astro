@@ -1,36 +1,47 @@
 ---
-import Logo from "$lib/Util/HeaderLogo.astro"
-import Singlenav from "./Singlenav.astro"
-import Multinav from "./Multinav.astro"
-let navigations: NavigationMenu[]
-({navigations} = Astro.props)
+import { profile } from "$envs/profile";
+import Logo from "$lib/Util/HeaderLogo.astro";
+import Singlenav from "./Singlenav.astro";
+import Multinav from "./Multinav.astro";
+let navigations: NavigationMenu[];
+let lang: LangList = "ja";
+({ navigations, lang } = Astro.props);
+console.log(lang);
+const homeURL = lang === profile.deflang ? "/" : `/${lang}`;
+console.log(homeURL);
 ---
 
 <header>
-  <nav class="navbar has-text-weight-semibold" role="navigation" aria-label="main navigation">
+  <nav
+    class="navbar has-text-weight-semibold"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="navbar-brand px-3">
-      <a href="/">
+      <!-- <a href="/"> -->
+      <a href={homeURL}>
         <Logo />
       </a>
     </div>
     <div class="navbar-menu">
       <div class="navbar-start">
-        {navigations.map(hnav => {
-          if (hnav.items) {
-            if (hnav.items.length > 1) {
-              return (<Multinav menu={hnav} />)
+        {
+          navigations.map((hnav) => {
+            if (hnav.items) {
+              if (hnav.items.length > 1) {
+                return <Multinav menu={hnav} />;
+              }
+              return <Singlenav menu={hnav} />;
             }
-            return (<Singlenav menu={hnav} />)
-          }
-          return
-        })}
+            return;
+          })
+        }
       </div>
-      <div class="navbar-end" />
+      <div class="navbar-end"></div>
     </div>
   </nav>
 </header>
 
 <style lang="scss">
-@use "../../../styles/colors" as c;
-
+  @use "../../../styles/colors" as c;
 </style>

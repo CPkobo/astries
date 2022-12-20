@@ -1,29 +1,39 @@
 ---
-  import { profile } from "$envs/profile"
-  import Langlink from "./langlink.astro";
-  const rootPath = Astro.request.url
-  const langsets = []
-  for (const i in profile.Langs.slice(1)) {
-    langsets.push(`${rootPath}--${profile.Langs[i].locale}`, profile.Langs[i].display)
+// import { profile } from "$envs/profile";
+import Langlink from "./langlink.astro";
+// const rootPath = Astro.request.url;
+
+let multiLink: MultiLingualLink[] = [];
+let currentLang: string = "";
+({ multiLink, currentLang } = Astro.props);
+
+let currentDisp = "Language";
+for (const ml of multiLink) {
+  if (ml.lang === currentLang) {
+    currentDisp = ml.displayName;
+    break;
   }
+}
 ---
 
 <div class="navbar-item has-dropdown is-hoverable">
-  <p class="navbar-link is-size-6 is-arrowless  langswitch">
-    LANGUAGE: langname
+  <p class="navbar-link is-size-6 is-arrowless langswitch">
+    {currentDisp}
   </p>
   <div class="navbar-dropdown">
     <ul>
-      <li>
+      <!-- <li>
         <Langlink href={rootPath} disp={profile.Langs[0].display} />
-      </li>
-      {langsets.map(langset => {
-      return (
-      <li>
-        <Langlink href={langset[0]} disp={langset[1]} />
-      </li>
-      )
-      })}
+      </li> -->
+      {
+        multiLink.map((link) => {
+          return (
+            <li>
+              <Langlink href={link.url} disp={link.displayName} />
+            </li>
+          );
+        })
+      }
     </ul>
   </div>
 </div>

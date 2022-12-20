@@ -1,36 +1,39 @@
 ---
 import Menu from "./Menu.astro";
 import Contact from "./Contact.astro";
-import Recent from "./Recent.astro"
+import Recent from "./Recent.astro";
 // import Posts from "../../Utils/posts.svelte";
-const {
-  hasMenu = true,
-  hasContact = true,
-  hasPosts = true
-} = Astro.props
-let menu: NavigationMenu
-({ menu } = Astro.props)
+const { hasMenu = true, hasContact = true, hasPosts = true } = Astro.props;
+let menu: NavigationMenu;
+({ menu } = Astro.props);
+// console.log(menu);
 ---
-  
+
 <div class="stick-menu">
-  {() => {
-    if (hasMenu) {
-      return (<Menu menu={menu}/>)
+  {
+    () => {
+      if (hasMenu) {
+        return <Menu menu={menu} />;
+      }
     }
-  }}
+  }
 
-  {() => {
-    if (hasContact) {
-      return (<Contact />)
+  {
+    () => {
+      if (hasContact) {
+        return <Contact />;
+      }
     }
-  }}
+  }
 
-  {() => {
-    if (hasPosts) {
-      return (<Recent />)
-      // return (<Posts />)
+  {
+    () => {
+      if (hasPosts) {
+        return <Recent />;
+        // return (<Posts />)
+      }
     }
-  }}
+  }
 </div>
 
 <style lang="scss">

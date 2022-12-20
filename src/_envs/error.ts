@@ -17,21 +17,23 @@ export const errorPage: PageContentsWithNav = {
   $title: "Not Found",
   $description: "Page Not Found",
   $summary: "Page Not Found",
-  href: "/",
+  path: "/",
+  fullpath: "/",
   img: "gb-logo.svg",
   pageType: "LeftMain",
+  links: [],
   contents: [
     {
-      type: "Heading 2",
+      type: "heading 2",
       $text: "Page Not Found"
     },
     {
-      type: "Image",
+      type: "image",
       src: "https://http.cat/404",
       $alt: "404"
     },
     {
-      type: "Link",
+      type: "link",
       $text: "Back to TOP",
       href: "/"
     }
@@ -42,4 +44,5 @@ export const errorPage: PageContentsWithNav = {
 export const errorNav: NavigationMenu = {
   category: "Under Construction",
   root: "/404",
+  links: []
 }

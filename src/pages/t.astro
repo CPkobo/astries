@@ -1,0 +1,33 @@
+---
+// Component Imports
+const hoge = "hogehoge~";
+const fuga = [1, 2, 3, 4, 5, 6];
+---
+
+<button id="button1">{hoge}</button>
+<ul id="is-slide">
+  {
+    fuga.map((val) => {
+      if (val === 1) {
+        return <li class="is-visible">{val}</li>;
+      }
+      return <li class="is-not-visible">{val}</li>;
+    })
+  }
+</ul>
+<script>
+  document.getElementById("button1").addEventListener("click", () => {
+    console.log("aaaaa");
+    const slide = document.getElementById("is-slide");
+    console.log(slide);
+  });
+</script>
+
+<style>
+  .is-visible {
+    color: red;
+  }
+  .is-not-visible {
+    color: green;
+  }
+</style>

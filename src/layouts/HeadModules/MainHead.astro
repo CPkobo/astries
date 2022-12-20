@@ -1,33 +1,38 @@
 ---
-	import '../../styles/global.scss'
-	import '../../styles/post.scss'
-	import OGP from "./OGP.astro"
+import "../../styles/global.scss";
+import "../../styles/post.scss";
+import "../../styles/_langfonts.scss";
+import OGP from "./OGP.astro";
 
-	let head: AstriesHead
-	({ head } = Astro.props);
+let head: AstriesHead;
+({ head } = Astro.props);
 ---
 
 <meta charset="UTF-8" />
 <meta name="description" content={head.description} />
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 <title>{head.title}</title>
 
 <link rel="icon" type="image/x-icon" href="/pict/sys/favicon64.ico" />
 <OGP ogp={head.ogp} />
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43120147-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43120147-1"
+></script>
 <script>
 	window.dataLayer = window.dataLayer || [];
-	function gtag() { dataLayer.push(arguments); }
-	gtag('js', new Date());
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag("js", new Date());
 
-	gtag('config', 'UA-43120147-1');
+	gtag("config", "UA-43120147-1");
 </script>
 
 <!-- BowNow -->
 <script id="_bownow_ts">
-	var _bownow_ts = document.createElement('script');
-	_bownow_ts.charset = 'utf-8';
-	_bownow_ts.src = 'https://contents.bownow.jp/js/UTC_937514b9fab93e16cf47/trace.js';
-	document.getElementsByTagName('head')[0].appendChild(_bownow_ts);
+	var _bownow_ts = document.createElement("script");
+	_bownow_ts.charset = "utf-8";
+	_bownow_ts.src =
+		"https://contents.bownow.jp/js/UTC_937514b9fab93e16cf47/trace.js";
+	document.getElementsByTagName("head")[0].appendChild(_bownow_ts);
 </script>

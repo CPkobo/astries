@@ -1,7 +1,8 @@
 ---
 import TocCard from "./tocCard.astro";
 let toc: NavigationMenu;
-({toc} = Astro.props);
+({ toc } = Astro.props);
+// console.log(toc);
 ---
 
 <section class="section">
@@ -9,11 +10,11 @@ let toc: NavigationMenu;
   <div
     class="content is-flex is-flex-wrap-wrap is-justify-content-space-around is-align-items-stretch"
   >
-  {toc.items.map(item => {
-    return (
-      <TocCard item={item} />
-    )
-  })}
+    {
+      toc.items.map((item) => {
+        return <TocCard item={item} />;
+      })
+    }
   </div>
 </section>
 

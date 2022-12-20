@@ -2,35 +2,43 @@ name: onlineshop
 position: 1
 langs:
   - ja
+  - zh
 $title:
   ja: Online Shop
+  zh: 网上商店
 $description:
-  ja: 株式会社ゴールデンブリッジのオンラインショップ（EC）事業についての紹介です。主に「健康・美容・自然 YOU樂SHOP 楽天市場店」と取扱い商品についてのお知らせも含みます。
+  ja: >-
+    株式会社ゴールデンブリッジのオンラインショップ（EC）事業についての紹介です。主に「健康・美容・自然 YOU樂SHOP
+    楽天市場店」と取扱い商品についてのお知らせも含みます。
+  zh: 介绍株式会社金桥的网上商店（EC）业务。主要包括“健康、美容、自然 YOU乐SHOP 乐天市场店”及销售产品的信息。
 $summary:
   ja: 株式会社ゴールデンブリッジのオンラインショップ（EC）事業について紹介します
+  zh: 介绍株式会社金桥的网上商店（EC）业务。
 img: ec/shopping-bag.jpg
 pageType: LeftMain
 contents:
   - type: icon heading 2
     $text:
       ja: 健康・美容・自然 YOU樂SHOP 楽天市場店
-
+      zh: 健康、美容、自然 YOU乐SHOP 乐天市场店
   - type: plain
     $texts:
-      ja: ポストコロナ時代を見据え、人々の健康志向によるニーズを取り入れ、楽天市場にて健康・美容・自然をテーマにした オンラインショップ【YOU樂SHOP（ゆうらくショップ）】を立ち上げました。
-
+      ja: >-
+        ポストコロナ時代を見据え、人々の健康志向によるニーズを取り入れ、楽天市場にて健康・美容・自然をテーマにした
+        オンラインショップ【YOU樂SHOP（ゆうらくショップ）】を立ち上げました。
+      zh: 着眼于后疫情时代，考虑到人们对健康的追求，我们在乐天市场上推出了以健康、美丽和自然为主题的网上商店“YOU乐SHOP”，。
   - type: image
     src: ec/signboard.jpg
     $alt:
       ja: 店舗サインボード
-
+      zh: 商店招牌
   - type: link
     href: https://www.rakuten.co.jp/yourakshop/
     target: _blank
     classes: has-text-centered
     $text:
       ja: ショップページへ
-
+      zh: 跳转至商店页面
   - type: define
     $texts:
       ja:
@@ -41,7 +49,14 @@ contents:
         - - 商品構成
           - 有機・自然食品、健康用品
           - (今後はスマートライフ関連商品も展開)
-
+      zh:
+        - - 店铺名称
+          - YOU乐SHOP 乐天市场店
+        - - 理念
+          - “助力自然、健康、愉快的生活”
+        - - 产品结构
+          - 有机天然食品，健康产品
+          - （未来将开发与智能生活相关的产品）
   - type: Gallary
     classes: my-5
     $blks:
@@ -49,34 +64,23 @@ contents:
         src: ec/rakuten/set_egoma110x2_amani110.png
         $alt:
           ja: エゴマ・アマニ油セット
+          zh: 紫苏、亚麻籽油套装
         preset: half
-
       - type: image
         src: ec/rakuten/squalene.png
         $alt:
           ja: スクワランオイル
+          zh: 角鲨烷油
         preset: half
-
-      # - type: image
-      #   src: ec/rakuten/set_egoma140_amani140.png
-      #   $alt:
-      #     ja: エゴマ・アマニ油セット大
-      #   preset: half
-
       - type: image
         src: ec/rakuten/inpackage.png
         $alt:
           ja: のど飴
+          zh: 润喉糖
         preset: half
-
       - type: image
         src: ec/rakuten/soap.png
         $alt:
           ja: 天然バラの香り石けん
+          zh: 天然玫瑰香皂
         preset: half
-
-      # - type: image
-      #   src: ec/rakuten/amani_spoon.png
-      #   $alt:
-      #     ja: アマニ油
-      #   preset: half

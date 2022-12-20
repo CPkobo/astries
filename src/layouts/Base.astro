@@ -1,85 +1,120 @@
 ---
-import Astries from './Astries.astro';
-import HeaderMenu from "$lib/Globals/Header/HeaderMenu.astro"
-import FooterMenu from "$lib/Globals/Footer/FooterMenu.astro"
-import BottomMenu from '$lib/Globals/Bottom/BottomMenu.astro';
+import Astries from "./Astries.astro";
+import HeaderMenu from "$lib/Globals/Header/HeaderMenu.astro";
+import FooterMenu from "$lib/Globals/Footer/FooterMenu.astro";
+import BottomMenu from "$lib/Globals/Bottom/BottomMenu.astro";
 let direction: AstriesDirection;
 ({ direction } = Astro.props);
-const mainClass = direction.pagetype === "Base"
-  ? "astries-base"
-  : direction.pagetype === "LP"
+const mainClass =
+  direction.pagetype === "Base"
+    ? "astries-base"
+    : direction.pagetype === "LP"
     ? "astries-base-fluid"
-    : "astries-base"
+    : "astries-base";
 ---
 
 <Astries head={direction.head}>
-  {() => {
+  {
+    () => {
       if (direction.hasHeaderMenu) {
-        return (<HeaderMenu navigations={direction.navigations}/>)
+        return (
+          <HeaderMenu
+            navigations={direction.navigations}
+            lang={direction.head.lang}
+          />
+        );
       }
-      return (<header />)
-  }}
+      return <header />;
+    }
+  }
   <main class={mainClass}>
-    {() => {
-      if (direction.pagetype === "LeftMain") {
-        return (
-          <div class="container">
-            <slot name="top"/>
-            <div class="columns">
-              <div id="astries-main-contents" class="column is-three-quarters">
-                <slot name="main"/>
-              </div>
-              <div id="astries-side-contents" class="column is-one-quarter is-hidden-mobile">
-                <slot name="side" />
-              </div>
-            </div>
-          </div>
-        )
-      }
-    }}
-    {() => {
-      if (direction.pagetype === "RightMain") {
-        return (
-          <div class="container">
-            <div class="columns">
-              <div id="astries-side-contents" class="column is-one-quarter is-hidden-mobile">
-                <slot name="side" />
-              </div>
-              <div id="astries-main-contents" class="column is-three-quarters">
-                <slot name="main"/>
+    {
+      () => {
+        if (direction.pagetype === "LeftMain") {
+          return (
+            <div class="container">
+              <slot name="top" />
+              <div class="columns">
+                <div
+                  id="astries-main-contents"
+                  class="column is-three-quarters"
+                >
+                  <slot name="main" />
+                </div>
+                <div
+                  id="astries-side-contents"
+                  class="column is-one-quarter is-hidden-mobile"
+                >
+                  <slot name="side" />
+                </div>
               </div>
             </div>
-          </div>
-        )
+          );
+        }
       }
-    }}
-    {() => {
-      if (direction.pagetype === "LP") {
-        return (
-          <slot name="main"/>
-        )
+    }
+    {
+      () => {
+        if (direction.pagetype === "RightMain") {
+          return (
+            <div class="container">
+              <div class="columns">
+                <div
+                  id="astries-side-contents"
+                  class="column is-one-quarter is-hidden-mobile"
+                >
+                  <slot name="side" />
+                </div>
+                <div
+                  id="astries-main-contents"
+                  class="column is-three-quarters"
+                >
+                  <slot name="main" />
+                </div>
+              </div>
+            </div>
+          );
+        }
       }
-    }}
-    {() => {
-      if (direction.pagetype === "Base") {
-        return (
-          <div class="container">
-            <slot name="main"/>
-          </div>
-        )
+    }
+    {
+      () => {
+        if (direction.pagetype === "LP") {
+          return <slot name="main" />;
+        }
       }
-    }}
-    
+    }
+    {
+      () => {
+        if (direction.pagetype === "Base") {
+          return (
+            <div class="container">
+              <slot name="main" />
+            </div>
+          );
+        }
+      }
+    }
   </main>
-  {() => {
+  {
+    () => {
       if (direction.hasFooterMenu) {
         return (
           <>
-            <FooterMenu navigations={direction.navigations}/>
-            <BottomMenu navigations={direction.navigations}/>
+            <FooterMenu
+              navigations={direction.navigations}
+              links={direction.links}
+              currentLang={direction.head.lang}
+            />
+            <BottomMenu
+              navigations={direction.navigations}
+              links={direction.links}
+              currentLang={direction.head.lang}
+            />
           </>
-        )
+        );
       }
-      return (<footer />)
-    }}
+      return <footer />;
+    }
+  }
 </Astries>

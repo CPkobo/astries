@@ -1,23 +1,28 @@
 ---
-  import MainHead from './HeadModules/MainHead.astro';
-  import JsonLD from './HeadModules/JsonLD.astro'
-  let head: AstriesHead;
-  ({ head } = Astro.props);
-  const jd = head.jsonld
+import MainHead from "./HeadModules/MainHead.astro";
+import JsonLD from "./HeadModules/JsonLD.astro";
+let head: AstriesHead;
+({ head } = Astro.props);
+const jd = head.jsonld;
 ---
 
 <html lang={head.lang}>
+  <head>
+    <MainHead head={head} />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
+      integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <MainHead head={head} />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
-    integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
-</head>
-
-<body class="astries-main">
-  <slot />
-  <JsonLD jsonld={head.jsonld} />
-</body>
-
+  <body class={`astries-main is-lang-${head.lang}`}>
+    <slot />
+    <JsonLD jsonld={head.jsonld} />
+  </body>
 </html>

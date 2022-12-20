@@ -1,26 +1,30 @@
 ---
-  import FilledBar from "$lib/Util/FilledBar.astro";
+import FilledBar from "$lib/Util/FilledBar.astro";
 
-  let menu: NavigationMenu
-  ({ menu } = Astro.props)
+let menu: NavigationMenu;
+({ menu } = Astro.props);
+// console.log(menu);
 ---
 
 <aside class="stick-menu has-text-centered pb-3">
   <FilledBar title={menu.category} />
   <ul class="menu-list is-size-3">
-    {() => {
-    if (menu.items) {
-    return (
-    menu.items.map(item => {
-    return (
-    <li>
-      <a class="menu-item is-size-6" href={item.fullpath}>{item.$title}</a>
-    </li>)
-    })
-    )
+    {
+      () => {
+        if (menu.items) {
+          return menu.items.map((item) => {
+            return (
+              <li>
+                <a class="menu-item is-size-6" href={item.fullpath}>
+                  {item.$title}
+                </a>
+              </li>
+            );
+          });
+        }
+        return;
+      }
     }
-    return
-    }}
   </ul>
 </aside>
 
