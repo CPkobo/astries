@@ -144,7 +144,8 @@ export const config: AstriesConfig = {
             "img": "lang/toc/translation.jpg",
             "$summary": "株式会社ゴールデンブリッジの翻訳サービスの紹介です",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -158,7 +159,8 @@ export const config: AstriesConfig = {
             "img": "lang/toc/interpretation.jpg",
             "$summary": "株式会社ゴールデンブリッジの通訳サービスについての紹介です",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -172,7 +174,8 @@ export const config: AstriesConfig = {
             "img": "lang/toc/online.jpg",
             "$summary": "株式会社ゴールデンブリッジのオンライン通訳サービスについての紹介です",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -186,7 +189,8 @@ export const config: AstriesConfig = {
             "img": "lang/toc/mt.png",
             "$summary": "株式会社ゴールデンブリッジの機械翻訳の紹介です",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -200,7 +204,8 @@ export const config: AstriesConfig = {
             "img": "lang/toc/works.jpg",
             "$summary": "株式会社ゴールデンブリッジの翻訳・通訳実績一覧です",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -241,7 +246,8 @@ export const config: AstriesConfig = {
             "img": "it/toc/catovis-logo.svg",
             "$summary": "株式会社ゴールデンブリッジで使用している翻訳支援ツール（CATツール）と、独自開発ツールについて紹介しています",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -255,7 +261,8 @@ export const config: AstriesConfig = {
             "img": "it/toc/nlp.jpg",
             "$summary": "株式会社ゴールデンブリッジの機械翻訳・自然言語処理について紹介しています",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -269,7 +276,8 @@ export const config: AstriesConfig = {
             "img": "it/toc/dx.jpg",
             "$summary": "株式会社ゴールデンブリッジのデジタル・トランスフォーメーション（DX）と、テレワークの取り組みについて紹介しています",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -289,7 +297,8 @@ export const config: AstriesConfig = {
             "img": "others/toc/edit.jpg",
             "$summary": "株式会社ゴールデンブリッジの編集・ＤＴＰサービスの紹介です。翻訳成果物の録音・ナレーションや動画字幕、DTPなどご要望の形態に編集いたします。",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -303,7 +312,8 @@ export const config: AstriesConfig = {
             "img": "others/toc/inbound.jpg",
             "$summary": "株式会社ゴールデンブリッジのインバウンド事業の紹介です",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -317,7 +327,8 @@ export const config: AstriesConfig = {
             "img": "others/toc/train.jpg",
             "$summary": "ビジネスに使える中国語を、経験豊富な講師が丁寧に指導いたします。オンラインやカスタマイズなども自由自在",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -331,7 +342,8 @@ export const config: AstriesConfig = {
             "img": "others/toc/copyright.jpg",
             "$summary": "株式会社ゴールデンブリッジの著作権登録サービスの紹介です。中国進出を考える日本企業へ、知財の視点からサポートを提供いたします",
             "langs": [
-              "ja"
+              "ja",
+              "zh"
             ],
             "pageType": "LeftMain",
             "data": []
@@ -341,7 +353,7 @@ export const config: AstriesConfig = {
     ],
     "zh": [
       {
-        "category": "ABOUT",
+        "category": "关于我们",
         "root": "/zh/about/toc",
         "items": [
           {
@@ -362,11 +374,11 @@ export const config: AstriesConfig = {
           {
             "name": "philosophy",
             "position": 2,
-            "$title": "管理理念和公司政策",
+            "$title": "经营理念和社训",
             "path": "philosophy",
             "fullpath": "/zh/about/philosophy",
             "img": "about/toc-philosophy.jpg",
-            "$summary": "介绍金桥公司的管理理念和公司政策。",
+            "$summary": "介绍株式会社金桥的经营理念和社训",
             "langs": [
               "ja",
               "zh"
@@ -377,11 +389,11 @@ export const config: AstriesConfig = {
           {
             "name": "message",
             "position": 3,
-            "$title": "主席致辞",
+            "$title": "社长致辞",
             "path": "message",
             "fullpath": "/zh/about/message",
             "img": "about/toc-message.jpg",
-            "$summary": "金桥公司总裁杨金凤的问候。",
+            "$summary": "来自株式会社金桥社长杨金峰的问候",
             "langs": [
               "ja",
               "zh"
@@ -392,11 +404,11 @@ export const config: AstriesConfig = {
           {
             "name": "privacy policy",
             "position": 4,
-            "$title": "隐私政策。",
+            "$title": "隐私政策",
             "path": "privacy",
             "fullpath": "/zh/about/privacy",
             "img": "about/toc-privacy.jpg",
-            "$summary": "金桥公司的隐私政策。",
+            "$summary": "株式会社金桥公司的隐私政策。",
             "langs": [
               "ja",
               "zh"
@@ -407,11 +419,92 @@ export const config: AstriesConfig = {
           {
             "name": "recruit",
             "position": 5,
-            "$title": "招聘和职位空缺",
+            "$title": "招聘和招募",
             "path": "recruit",
             "fullpath": "/zh/about/recruit",
             "img": "about/toc-recruit.jpg",
             "$summary": "金桥公司注册译员和内部员工的招聘页面。",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          }
+        ]
+      },
+      {
+        "category": "笔译和口译",
+        "root": "/zh/lang/toc",
+        "items": [
+          {
+            "name": "Translation",
+            "position": 1,
+            "$title": "笔译",
+            "path": "translation",
+            "fullpath": "/zh/lang/translation",
+            "img": "lang/toc/translation.jpg",
+            "$summary": "介绍株式会社金桥的笔译服务",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "Interpretation",
+            "position": 2,
+            "$title": "口译",
+            "path": "interpretation",
+            "fullpath": "/zh/lang/interpretation",
+            "img": "lang/toc/interpretation.jpg",
+            "$summary": "介绍株式会社的口译服务",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "online",
+            "position": 3,
+            "$title": "线上口译",
+            "path": "online",
+            "fullpath": "/zh/lang/online",
+            "img": "lang/toc/online.jpg",
+            "$summary": "介绍株式会社金桥的线上口译服务",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "Machine Translation",
+            "position": 4,
+            "$title": "机械翻译",
+            "path": "mt",
+            "fullpath": "/zh/lang/mt",
+            "img": "lang/toc/mt.png",
+            "$summary": "金桥公司的机械翻译介绍。",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "Past Works",
+            "position": 5,
+            "$title": "笔译与口译成果一览",
+            "path": "works",
+            "fullpath": "/zh/lang/works",
+            "img": "lang/toc/works.jpg",
+            "$summary": "株式会社金桥的笔译与口译成果一览",
             "langs": [
               "ja",
               "zh"
@@ -433,6 +526,123 @@ export const config: AstriesConfig = {
             "fullpath": "/zh/ec/ec",
             "img": "ec/shopping-bag.jpg",
             "$summary": "介绍株式会社金桥的网上商店（EC）业务。",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          }
+        ]
+      },
+      {
+        "category": "IT领域",
+        "root": "/zh/it/toc",
+        "items": [
+          {
+            "name": "cat",
+            "position": 1,
+            "$title": "翻译工具",
+            "path": "cat",
+            "fullpath": "/zh/it/cat",
+            "img": "it/toc/catovis-logo.svg",
+            "$summary": "介绍株式会社金桥使用的翻译工具（CAT工具）以及我们独立开发的工具",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "Natural Language Processing",
+            "position": 2,
+            "$title": "自然语言处理",
+            "path": "nlp",
+            "fullpath": "/zh/it/nlp",
+            "img": "it/toc/nlp.jpg",
+            "$summary": "介绍株式会社金桥的机械翻译和自然语言处理",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "digital transformation",
+            "position": 3,
+            "$title": "数字化转型（DX）和远程办公",
+            "path": "dx",
+            "fullpath": "/zh/it/dx",
+            "img": "it/toc/dx.jpg",
+            "$summary": "介绍金桥公司的数字化转型（DX）及其远程办公举措。",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          }
+        ]
+      },
+      {
+        "category": "其他",
+        "root": "/zh/others/toc",
+        "items": [
+          {
+            "name": "edit",
+            "position": 1,
+            "$title": "编辑和DTP（桌面出版）",
+            "path": "edit",
+            "fullpath": "/zh/others/edit",
+            "img": "others/toc/edit.jpg",
+            "$summary": "介绍株式会社金桥的编辑和DTP服务。我们可以将译文编辑成客户需要的形式，包括解说录音、视频字幕和DTP等。",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "INBOUND",
+            "position": 2,
+            "$title": "入境交流业务",
+            "path": "inbound",
+            "fullpath": "/zh/others/inbound",
+            "img": "others/toc/inbound.jpg",
+            "$summary": "介绍株式会社金桥公司的入境业务",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "Training",
+            "position": 3,
+            "$title": "语言培训",
+            "path": "train",
+            "fullpath": "/zh/others/train",
+            "img": "others/toc/train.jpg",
+            "$summary": "经验丰富的l傲视将会认真指导学习商务中文。我们还有在线课程以及定制课程，可供自由选择",
+            "langs": [
+              "ja",
+              "zh"
+            ],
+            "pageType": "LeftMain",
+            "data": []
+          },
+          {
+            "name": "copy right",
+            "position": 4,
+            "$title": "著作权登记",
+            "path": "copyright",
+            "fullpath": "/zh/others/copyright",
+            "img": "others/toc/copyright.jpg",
+            "$summary": "介绍株式会社金桥的著作权登记服务的介绍。从知识产权角度为考虑希望开拓中国市场的日本公司提供支持与服务。",
             "langs": [
               "ja",
               "zh"
@@ -525,6 +735,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/lang/toc"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/lang/toc"
           }
         ]
       }
@@ -541,6 +756,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/it/toc"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/it/toc"
           }
         ]
       }
@@ -557,6 +777,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/others/toc"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/others/toc"
           }
         ]
       }
@@ -578,6 +803,69 @@ export const config: AstriesConfig = {
             "lang": "zh",
             "displayName": "中文",
             "url": "/zh/about/toc"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/lang"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "TOC",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/lang/toc"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/lang/toc"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/it"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "TOC",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/it/toc"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/it/toc"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/others"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "TOC",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/others/toc"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/others/toc"
           }
         ]
       }
@@ -729,6 +1017,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/lang/translation"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/lang/translation"
           }
         ]
       }
@@ -746,6 +1039,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/lang/interpretation"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/lang/interpretation"
           }
         ]
       }
@@ -763,6 +1061,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/lang/online"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/lang/online"
           }
         ]
       }
@@ -780,6 +1083,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/lang/mt"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/lang/mt"
           }
         ]
       }
@@ -797,6 +1105,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/lang/works"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/lang/works"
           }
         ]
       }
@@ -836,6 +1149,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/it/cat"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/it/cat"
           }
         ]
       }
@@ -853,6 +1171,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/it/nlp"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/it/nlp"
           }
         ]
       }
@@ -870,6 +1193,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/it/dx"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/it/dx"
           }
         ]
       }
@@ -887,6 +1215,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/others/edit"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/others/edit"
           }
         ]
       }
@@ -904,6 +1237,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/others/inbound"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/others/inbound"
           }
         ]
       }
@@ -921,6 +1259,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/others/train"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/others/train"
           }
         ]
       }
@@ -938,6 +1281,11 @@ export const config: AstriesConfig = {
             "lang": "ja",
             "displayName": "日本語",
             "url": "/others/copyright"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/others/copyright"
           }
         ]
       }
@@ -1054,6 +1402,116 @@ export const config: AstriesConfig = {
     },
     {
       "params": {
+        "dirs": "zh/lang",
+        "path": "translation"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/lang/translation"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/lang/translation"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/lang",
+        "path": "interpretation"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/lang/interpretation"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/lang/interpretation"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/lang",
+        "path": "online"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/lang/online"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/lang/online"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/lang",
+        "path": "mt"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/lang/mt"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/lang/mt"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/lang",
+        "path": "works"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/lang/works"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/lang/works"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
         "dirs": "zh/ec",
         "path": "ec"
       },
@@ -1095,9 +1553,181 @@ export const config: AstriesConfig = {
           }
         ]
       }
+    },
+    {
+      "params": {
+        "dirs": "zh/it",
+        "path": "cat"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/it/cat"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/it/cat"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/it",
+        "path": "nlp"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/it/nlp"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/it/nlp"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/it",
+        "path": "dx"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/it/dx"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/it/dx"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/others",
+        "path": "edit"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/others/edit"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/others/edit"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/others",
+        "path": "inbound"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/others/inbound"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/others/inbound"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/others",
+        "path": "train"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/others/train"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/others/train"
+          }
+        ]
+      }
+    },
+    {
+      "params": {
+        "dirs": "zh/others",
+        "path": "copyright"
+      },
+      "props": {
+        "lang": "zh",
+        "layout": "LeftMain",
+        "links": [
+          {
+            "lang": "ja",
+            "displayName": "日本語",
+            "url": "/others/copyright"
+          },
+          {
+            "lang": "zh",
+            "displayName": "中文",
+            "url": "/zh/others/copyright"
+          }
+        ]
+      }
     }
   ],
   "staticPosts": [
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20230104-new-year"
+      },
+      "props": {
+        "title": "新年明けましておめでとうございます"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20221222-report-online-ux"
+      },
+      "props": {
+        "title": "【リモート同時通訳レポート】UX調査・オンラインインタビューの日中同時通訳"
+      }
+    },
     {
       "params": {
         "dirs": "post",

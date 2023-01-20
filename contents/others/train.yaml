@@ -2,12 +2,17 @@ name: Training
 position: 3
 langs:
   - ja
+  - zh
 $title:
   ja: 語学研修
+  zh: 语言培训
 $description:
-  ja: ビジネスに使える中国語を、経験豊富な講師が丁寧に指導いたします。オンラインやカスタマイズなども自由自在。入門・初級から翻訳や通訳レベルの訓練まで、何でもご相談ください。
+  ja: >-
+    ビジネスに使える中国語を、経験豊富な講師が丁寧に指導いたします。オンラインやカスタマイズなども自由自在。入門・初級から翻訳や通訳レベルの訓練まで、何でもご相談ください。
+  zh: 经验丰富的l傲视将会认真指导学习商务中文。我们还有在线课程以及定制课程，可供自由选择。从入门、初级水平到专业笔译、口译水平的培训，欢迎随时联系。
 $summary:
   ja: ビジネスに使える中国語を、経験豊富な講師が丁寧に指導いたします。オンラインやカスタマイズなども自由自在
+  zh: 经验丰富的l傲视将会认真指导学习商务中文。我们还有在线课程以及定制课程，可供自由选择
 img: others/toc/train.jpg
 pageType: LeftMain
 contents:
@@ -15,11 +20,12 @@ contents:
     icon: fa fa-pencil-square
     $text:
       ja: 多様なレッスン形態
-
+      zh: 多种多样的课程形式
   - type: Media Right
     src: others/train-kanshi.jpg
     $alt:
       ja: 語学研修・授業風景 その1
+      zh: 语言培训、上课的情形 其一
     $blks:
       - type: define
         $texts:
@@ -28,21 +34,26 @@ contents:
               - 常時開講しておりますので、気軽に始められます。
             - - オーダーメイド研修
               - お客様のニーズに合わせてアレンジいたします。
-
+          zh:
+            - - 一般讲学班
+              - 常年开课，轻松入门。
+            - - 量身定制培训
+              - 根据客户的需求进行安排。
   - type: spacer
     x: 0
-    y: 3
-
+    'y': 3
   - type: icon heading 2
     icon: fa fa-user-circle
     $text:
       ja: 豊富な実績と丁寧な指導
-
+      zh: 丰富的经验与精心的指导
   - type: Media Right
     src: others/train-teaching.jpg
     $alt:
       ja: 語学研修・授業風景 その2
+      zh: 语言培训、上课的情形 其二
     $blks:
       - type: plain
         $texts:
           ja: 現役の通訳としても活躍している、指導経験豊富な講師陣が授業を行います。
+          zh: 由活跃在一线的口译员担任老师，拥有丰富的教学经验。

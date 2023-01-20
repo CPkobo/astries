@@ -76,7 +76,7 @@ for (const nav of navs[lang]) {
     <TitleBar title={page.$title} />
   </scetion>
   <section slot="main">
-    <BlockControl blks={page.contents} />
+    <BlockControl blks={page.contents} lang={lang} />
   </section>
   <section slot="side" style="width: 100%; height: 100%">
     <Sticker menu={menu} />

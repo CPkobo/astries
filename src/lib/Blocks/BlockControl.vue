@@ -34,6 +34,7 @@ import Columnlayout from "$lib/Blocks/Ancestor/ColumnLayout.vue";
 
 interface Props {
   blks: AnyBlock<IsSingle>[]
+  lang: LangList
 }
 const props = defineProps<Props>();
 const presets = {
@@ -61,17 +62,17 @@ const presets = {
     <Relatives v-else-if="blk.type === 'relatives'" :blk="blk" />
     <Spacer v-else-if="blk.type === 'spacer'" :blk="blk"></Spacer>
     <Separator v-else-if="blk.type === 'separator'" :blk="blk" />
-    <MediaLeft v-else-if="blk.type === 'Media Left'" :blk="blk" />
-    <MediaRight v-else-if="blk.type === 'Media Right'" :blk="blk" />
-    <Gallary v-else-if="blk.type === 'Gallary'" :blk="blk" />
-    <Features v-else-if="blk.type === 'Features'" :blk="blk" />
-    <Horizontal v-else-if="blk.type === 'Horizontal'" :blk="blk" />
-    <Flow v-else-if="blk.type === 'Flow'" :blk="blk" />
-    <Table v-else-if="blk.type === 'Table'" :blk="blk"></Table>
-    <Faq v-else-if="blk.type === 'Faq'" :blk="blk" />
-    <Slide v-else-if="blk.type === 'Slide'" :blk="blk" />
-    <Flexlayout v-else-if="blk.type === 'FLEX'" :blk="blk" />
-    <Columnlayout v-else-if="blk.type === 'COLUMN'" :blk="blk" />
+    <MediaLeft v-else-if="blk.type === 'Media Left'" :blk="blk" :lang="lang" />
+    <MediaRight v-else-if="blk.type === 'Media Right'" :blk="blk" :lang="lang" />
+    <Gallary v-else-if="blk.type === 'Gallary'" :blk="blk" :lang="lang" />
+    <Features v-else-if="blk.type === 'Features'" :blk="blk" :lang="lang" />
+    <Horizontal v-else-if="blk.type === 'Horizontal'" :blk="blk" :lang="lang" />
+    <Flow v-else-if="blk.type === 'Flow'" :blk="blk" :lang="lang" />
+    <Table v-else-if="blk.type === 'Table'" :blk="blk" :lang="lang"></Table>
+    <Faq v-else-if="blk.type === 'Faq'" :blk="blk" :lang="lang" />
+    <Slide v-else-if="blk.type === 'Slide'" :blk="blk" :lang="lang" />
+    <Flexlayout v-else-if="blk.type === 'FLEX'" :blk="blk" :lang="lang" />
+    <Columnlayout v-else-if="blk.type === 'COLUMN'" :blk="blk" :lang="lang" />
     <div v-else-if="blk.type === '_'"></div>
     <div v-else>
       <p>Iregular block</p>

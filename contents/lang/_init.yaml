@@ -1,6 +1,7 @@
 position: 1
 ja: 翻訳・通訳
-zh: LANG
+zh: 笔译和口译
 en: LANG
 publishLangs:
   - ja
+  - zh

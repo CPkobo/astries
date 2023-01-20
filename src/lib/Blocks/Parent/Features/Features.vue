@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { classNaming } from "$scripts/_className"
-import FetItem from "./FeatureItem.vue"
+import FeatureItem from "./FeatureItem.vue"
 interface Props {
   blk: FeaturesBlock<IsSingle>
+  lang: LangList
 }
 const props = defineProps<Props>();
 const presets = {
@@ -15,7 +16,7 @@ const cls = classNaming("", props.blk.classes, props.blk.preset, presets)
 <template>
   <div :id="blk.id" :class="cls">
     <div class="is-flex is-flex-wrap-wrap is-justify-content-space-around is-align-items-stretch">
-      <FetItem v-for="itm in blk.$items" :itm="itm" />
+      <FeatureItem v-for="itm in blk.$items" :itm="itm" :lang="lang" />
     </div>
   </div>
 </template>
@@ -30,6 +31,7 @@ div.feature-box {
     background-color: green;
     transition: 0.5s;
   }
+
   @media (min-width: 1024px) {
     width: calc(100% - 2rem * 1);
     max-width: calc(50% - 2rem * 2);

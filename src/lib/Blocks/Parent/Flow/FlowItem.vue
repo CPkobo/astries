@@ -3,6 +3,7 @@ import BlockControl from "$lib/Blocks/BlockControl.vue"
 interface Props {
   itm: FlowItem<IsSingle>;
   order: number;
+  lang: LangList
 }
 const props = defineProps<Props>();
 </script>
@@ -13,13 +14,14 @@ const props = defineProps<Props>();
       <p class="is-size-4">{{ order }}</p>
     </div>
     <div class="flow-text">
-      <BlockControl :blks="itm.$blks" />
+      <BlockControl :blks="itm.$blks" :lang="lang" />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use "../../../../styles/colors" as c;
+
 div.flow-box {
   display: flex;
 }

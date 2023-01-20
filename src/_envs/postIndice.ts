@@ -5,6 +5,26 @@ export const indices: PostPagenation[] = [
     "title": "ニュースリリース",
     "pages": [
       {
+        "title": "新年明けましておめでとうございます",
+        "published": "2023-04-04T00:00:00.000Z",
+        "modified": "2023-01-04T00:00:00.000Z",
+        "pubstr": "2023-04-04",
+        "modstr": "2023-01-04",
+        "image": "/pict/posts/2023/0104/0.jpg",
+        "summary": "新年明けましておめでとうございます。2023年 新年のご挨拶をさせていただきます",
+        "href": "20230104-new-year"
+      },
+      {
+        "title": "【リモート同時通訳レポート】UX調査・オンラインインタビューの日中同時通訳",
+        "published": "2022-12-22T00:00:00.000Z",
+        "modified": "2022-12-22T00:00:00.000Z",
+        "pubstr": "2022-12-22",
+        "modstr": "2022-12-22",
+        "image": "/pict/posts/2022/1222/0.jpg",
+        "summary": "弊社の会議室が同時通訳ブースに大変身。",
+        "href": "20221222-report-online-ux"
+      },
+      {
         "title": "【同時通訳・ハイブリッド会議運営レポート】関西経済連合会 日中国交正常化50周年記念事業",
         "published": "2022-10-13T00:00:00.000Z",
         "modified": "2022-10-13T00:00:00.000Z",
@@ -73,7 +93,21 @@ export const indices: PostPagenation[] = [
         "image": "/pict/stamps/ggsddu.png",
         "summary": "フィンランドのマリン首相は5月に日本を訪れ、岸田首相と会談を行ったことでも話題になりました。時の人の中国語名について紹介します",
         "href": "20220519"
-      },
+      }
+    ],
+    "num": 1,
+    "prev": {
+      "title": "前のページへ",
+      "href": ""
+    },
+    "next": {
+      "title": "次のページへ",
+      "href": "/posts/post/page-2"
+    }
+  },
+  {
+    "title": "ニュースリリース",
+    "pages": [
       {
         "title": "アマニ油の再入荷（5月20日）について",
         "published": "2022-05-17T00:00:00.000Z",
@@ -93,21 +127,7 @@ export const indices: PostPagenation[] = [
         "image": "/pict/posts/2022/voov/Voov4.png",
         "summary": "中国で開発されている「騰訊会議（テンセント・ミーティング）」　の日本語版を使用するための手順を紹介いたします。",
         "href": "introduce-voov"
-      }
-    ],
-    "num": 1,
-    "prev": {
-      "title": "前のページへ",
-      "href": ""
-    },
-    "next": {
-      "title": "次のページへ",
-      "href": "/posts/post/page-2"
-    }
-  },
-  {
-    "title": "ニュースリリース",
-    "pages": [
+      },
       {
         "title": "Webサイトをリニューアルしました",
         "published": "2022-04-28T00:00:00.000Z",
@@ -185,7 +205,21 @@ export const indices: PostPagenation[] = [
         "image": "/pict/posts/2022/liaoning1.jpg",
         "summary": "遼寧省輸出展示会（2021年12月13日～15日）について、ご紹介いたします",
         "href": "liaoning-export-2021"
-      },
+      }
+    ],
+    "num": 2,
+    "prev": {
+      "title": "前のページへ",
+      "href": "/posts/post/page-1"
+    },
+    "next": {
+      "title": "次のページへ",
+      "href": "/posts/post/page-3"
+    }
+  },
+  {
+    "title": "ニュースリリース",
+    "pages": [
       {
         "title": "医薬特化型AI 翻訳エンジン AIKO SciLingualをリリースしました",
         "published": "2021-12-01T00:00:00.000Z",
@@ -204,21 +238,7 @@ export const indices: PostPagenation[] = [
         "modstr": "2021-11-08",
         "summary": "弊社スタッフが講師を務める「医薬特化型の日中リレーAI翻訳で中国でのビジネスをサポート」 オンラインセミナーについて、ご案内いたします",
         "href": "20211108"
-      }
-    ],
-    "num": 2,
-    "prev": {
-      "title": "前のページへ",
-      "href": "/posts/post/page-1"
-    },
-    "next": {
-      "title": "次のページへ",
-      "href": "/posts/post/page-3"
-    }
-  },
-  {
-    "title": "ニュースリリース",
-    "pages": [
+      },
       {
         "title": "「日中翻訳におけるＡＩ技術の応用」 オンラインセミナーのご案内",
         "published": "2021-08-19T00:00:00.000Z",
@@ -297,7 +317,21 @@ export const indices: PostPagenation[] = [
         "image": "/pict/posts/2020/0305/0.png",
         "summary": "弊社のコロナ感染蔓延、不況対策について紹介します",
         "href": "20200305"
-      },
+      }
+    ],
+    "num": 3,
+    "prev": {
+      "title": "前のページへ",
+      "href": "/posts/post/page-2"
+    },
+    "next": {
+      "title": "次のページへ",
+      "href": "/posts/post/page-4"
+    }
+  },
+  {
+    "title": "ニュースリリース",
+    "pages": [
       {
         "title": "中国へ支援物資を発送　NHKニュースで報道されました",
         "published": "2020-02-10T00:00:00.000Z",
@@ -316,21 +350,7 @@ export const indices: PostPagenation[] = [
         "modstr": "2020-02-03",
         "summary": "ITソリューション部を設立しましたこと、お知らせいたします",
         "href": "20200203"
-      }
-    ],
-    "num": 3,
-    "prev": {
-      "title": "前のページへ",
-      "href": "/posts/post/page-2"
-    },
-    "next": {
-      "title": "次のページへ",
-      "href": "/posts/post/page-4"
-    }
-  },
-  {
-    "title": "ニュースリリース",
-    "pages": [
+      },
       {
         "title": "エベレストの山旅に行ってきました",
         "published": "2019-01-05T00:00:00.000Z",

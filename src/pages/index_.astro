@@ -1,29 +1,17 @@
 ---
 // Component Imports
 import Base from "$layouts/Base.astro";
-import { navs, staticTops } from "$envs/paths";
+import { navs } from "$envs/paths";
 import { profile } from "$envs/profile";
 import { getContents } from "$scripts/_i18n";
 import BlockControl from "$lib/Blocks/BlockControl.vue";
 import Recent from "$lib/Globals/SideSticker/Recent.astro";
 
-export async function getStaticPaths() {
-  return staticTops;
-}
-const { path } = Astro.params;
-let lang: LangList;
-let layout: PageType;
-let links: MultiLingualLink[] = [];
-let isIndex = true;
-({ lang, layout, links, isIndex } = Astro.props);
-// const { lang, layout, isIndex } = Astro.props;
-const filepath = isIndex ? "index" : String(path);
-
-const page = await getContents("/", filepath, lang);
+const page = await getContents("/", "index", "ja");
 
 const direction: AstriesDirection = {
   head: {
-    lang,
+    lang: profile.deflang || "ja",
     title: profile.SiteName,
     description: page.$description,
     // jsonld: undefined,
@@ -46,21 +34,15 @@ const direction: AstriesDirection = {
   hasFooterMenu: true,
   hasSideMenu: true,
   pagetype: "LP",
-  navigations: navs[lang],
-  links: isIndex
-    ? links.map((val) => {
-        return {
-          url: val.url.replace("/index", ""),
-          ...val,
-        };
-      })
-    : links,
+  navigations: navs.ja,
+  // links: page.links,
+  links: [],
 };
 ---
 
 <Base direction={direction}>
   <section slot="main">
-    <BlockControl blks={page.contents} lang={lang} />
+    <BlockControl blks={page.contents} lang={direction.head.lang} />
     <div class="has-text-centered my-5">
       <div
         class="box pa-5 is-max-width-70"

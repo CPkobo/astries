@@ -2,8 +2,9 @@
 import BlockControl from "$lib/Blocks/BlockControl.vue"
 import DefImg from "$lib/Util/DefImg.vue"
 interface Props {
-  itm: HorizontalItem<IsSingle>,
-  size: string
+  itm: HorizontalItem<IsSingle>;
+  size: string;
+  lang: LangList;
 }
 const props = defineProps<Props>();
 </script>
@@ -32,7 +33,7 @@ const props = defineProps<Props>();
         </div>
       </div>
       <div class="content">
-        <BlockControl :blks="itm.$blks" />
+        <BlockControl :blks="itm.$blks" :lang="lang" />
       </div>
     </div>
   </div>

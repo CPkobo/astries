@@ -4,6 +4,7 @@ interface Props {
   qa: QuestionAndAnser<IsSingle>;
   order: number;
   qaid: string;
+  lang: LangList;
 }
 const props = defineProps<Props>();
 
@@ -21,7 +22,7 @@ const slag = props.qa.slag
         <p class="is-size-4">Q.</p>
       </div>
       <div class="faq-question-text">
-        <BlockControl :blks="qa.$q" />
+        <BlockControl :blks="qa.$q" :lang="lang" />
       </div>
     </div>
     <hr style="height: 1rem;" />
@@ -30,7 +31,7 @@ const slag = props.qa.slag
         <p class="is-size-4">A.</p>
       </div>
       <div class="faq-answer-text">
-        <BlockControl :blks="qa.$a" />
+        <BlockControl :blks="qa.$a" :lang="lang" />
       </div>
     </div>
   </div>
@@ -56,6 +57,7 @@ const slag = props.qa.slag
 .faq-question-text {
   padding: 1rem;
 }
+
 .faq-answer-box {
   display: flex;
 }

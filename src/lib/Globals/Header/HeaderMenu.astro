@@ -3,12 +3,12 @@ import { profile } from "$envs/profile";
 import Logo from "$lib/Util/HeaderLogo.astro";
 import Singlenav from "./Singlenav.astro";
 import Multinav from "./Multinav.astro";
+import Langsw from "../Footer/langsw.astro";
 let navigations: NavigationMenu[];
+let links: MultiLingualLink[] = [];
 let lang: LangList = "ja";
-({ navigations, lang } = Astro.props);
-console.log(lang);
+({ navigations, lang, links } = Astro.props);
 const homeURL = lang === profile.deflang ? "/" : `/${lang}`;
-console.log(homeURL);
 ---
 
 <header>
@@ -37,11 +37,27 @@ console.log(homeURL);
           })
         }
       </div>
-      <div class="navbar-end"></div>
+      <div class="navbar-end header-switch">
+        {
+          () => {
+            if (links !== undefined) {
+              if (links.length > 1) {
+                return <Langsw multiLink={links} currentLang={lang} />;
+              }
+            }
+          }
+        }
+      </div>
     </div>
   </nav>
 </header>
 
 <style lang="scss">
   @use "../../../styles/colors" as c;
+
+  .header-switch {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 10px;
+  }
 </style>

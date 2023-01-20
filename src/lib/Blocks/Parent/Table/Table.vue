@@ -5,6 +5,7 @@ import BlockControl from "$lib/Blocks/BlockControl.vue"
 // import TableRow from "./TableRow.astro"
 interface Props {
   blk: TableBlock<IsSingle>
+  lang: LangList
 }
 const props = defineProps<Props>();
 const presets = {
@@ -24,7 +25,7 @@ const cls = classNaming("", props.blk.classes, props.blk.preset, presets)
     <tbody>
       <tr v-for="row in blk.$trs">
         <td v-for="cell in row">
-          <BlockControl :blks="[cell]" />
+          <BlockControl :blks="[cell]" :lang="lang" />
         </td>
       </tr>
     </tbody>

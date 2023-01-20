@@ -1,13 +1,13 @@
 ---
-  let navigations: NavigationMenu[]
-  ({ navigations } = Astro.props)
+let navigations: NavigationMenu[];
+let links: MultiLingualLink[] = [];
+({ navigations, links } = Astro.props);
 ---
 
 <ul class="bottom-menu">
   <!-- アイコン1つ目　トップへ -->
   <li>
-    <a class="Menu-Bottom-btn" href="/">
-      <i class="fa fa-home"></i></a>
+    <a class="Menu-Bottom-btn" href="/"> <i class="fa fa-home"></i></a>
   </li>
 
   <!-- アイコン2つ目 カテゴリの2階層目を表示 -->
@@ -15,9 +15,13 @@
     <a href="#"><i class="fa fa-bars"></i></a>
     <!-- 2階層目のメニュー-->
     <ul class="menu-second-level">
-      {navigations.map(bnav =>
-      <li><a href={bnav.root}>{bnav.category}</a></li>
-      )}
+      {
+        navigations.map((bnav) => (
+          <li>
+            <a href={bnav.root}>{bnav.category}</a>
+          </li>
+        ))
+      }
       <!-- <li><a href="表示させたいページのアドレス2">タイトル2</a></li>
         <li><a href="表示させたいページのアドレス3">タイトル3</a></li>
         <li><a href="表示させたいページのアドレス4">タイトル4</a></li> -->
@@ -27,19 +31,33 @@
   <!-- アイコン3つ目 投稿一覧へ -->
   <li>
     <a class="Menu-Bottom-btn" href="/posts/post/page-1">
-      <i class="fa fa-hand-o-up"></i></a>
+      <i class="fa fa-hand-o-up"></i>
+    </a>
   </li>
 
   <!-- アイコン4つ目 問い合わせ -->
   <li>
     <a href="/forms/contact-ja" target="_blank">
-      <i class="fa fa-comment-o"></i></a>
+      <i class="fa fa-comment-o"></i>
+    </a>
   </li>
 
   <!-- アイコン5つ目 言語 -->
-  <li>
-    <a href="/">
-      <i class="fa fa-language"></i></a>
+  <li class="menu-width-max">
+    <a href="#"> <i class="fa fa-language"></i></a>
+    <!-- 2階層目のメニュー-->
+    <ul class="menu-second-level">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.url}>{link.displayName}</a>
+          </li>
+        ))
+      }
+      <!-- <li><a href="表示させたいページのアドレス2">タイトル2</a></li>
+        <li><a href="表示させたいページのアドレス3">タイトル3</a></li>
+        <li><a href="表示させたいページのアドレス4">タイトル4</a></li> -->
+    </ul>
   </li>
 </ul>
 
@@ -104,7 +122,7 @@ Based on "https://www.bambi.pro/entry/navigation-bottom-smartphone"
 
   .menu-second-level li a:hover {
     height: 100%;
-    transition: 1.0s;
+    transition: 1s;
     background: lavender;
   }
 
@@ -133,8 +151,7 @@ Based on "https://www.bambi.pro/entry/navigation-bottom-smartphone"
   }
 
   /* ボトムメニューを表示しない指示 */
-  @media(orientation:landscape),
-  @media(min-width: 768px) {
+  @media (orientation: landscape), @media(min-width: 768px) {
     .bottom-menu {
       display: none;
     }

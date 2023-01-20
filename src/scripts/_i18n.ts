@@ -48,7 +48,6 @@ export async function getContents(dirs: string, path: string, lang: LangList): P
       metas.jsonld.push(createFaqJsonLd(contents))
     }
     const links = createLinks($yml, metas.fullpath)
-    console.log(metas.fullpath)
     return { ...metas, contents, links }
   }
 }
