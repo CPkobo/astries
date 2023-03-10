@@ -92,10 +92,19 @@ contents:
             zh:
               - - 【地址】
                 - 邮编：550-0005  大阪市西区西本町1-7-7 CE西本町大厦801室
-              - - 'Contact:'
+              - - "Contact:"
                 - 电话：06-6543-6898
                 - 传真：06-7635-9508
                 - trans@goldenbridge2002.com
+      - - type: plain
+          $texts:
+            ja: アクセス
+            zh: 交通方式
+        - type: image
+          src: /about/access.jpg
+          $alt:
+            ja: アクセスマップ
+            zh: 交通方式
       - - type: plain
           $texts:
             ja: 加入団体
@@ -137,7 +146,7 @@ contents:
       ja: 育児休業についての行動計画
       zh: 关于育儿假的行动计划
   - type: spacer
-    'y': 4
+    "y": 4
   - type: heading 3
     $text:
       ja: 株式会社　ゴールデンブリッジ　行動計画
@@ -170,8 +179,8 @@ contents:
           - 平成30年 9月～　法に基づく諸制度の調査
           - 平成30年 9月～　制度に関するパンフレットを作成し社員に配布
       zh:
-        - - ''
-          - ''
+        - - ""
+          - ""
           - 2008年9月～ 调查基于法律规定的各种制度
           - 2008年9月～ 编写制度相关的小册子并分发给员工
   - type: separator
