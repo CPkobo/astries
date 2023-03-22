@@ -1713,6 +1713,24 @@ export const config: AstriesConfig = {
     {
       "params": {
         "dirs": "post",
+        "path": "20230322-ma-cream"
+      },
+      "props": {
+        "title": "高保湿クリーム「純雪肌 まーくりーむ」100gを入荷しました！"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
+        "path": "20230316-shandong-OOH"
+      },
+      "props": {
+        "title": "【インバウンド事業再開】山東省屋外広告協会訪日視察・交流団が来日しました"
+      }
+    },
+    {
+      "params": {
+        "dirs": "post",
         "path": "20230104-new-year"
       },
       "props": {
